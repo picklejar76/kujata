@@ -1,62 +1,62 @@
 <html>
-	<head>
-		<title>Final Fantasy 7 Model Viewer</title>
-		<style>
-			body { margin: 0; }
-			canvas { width: 100%; height: 100% }
-		</style>
-	</head>
-	<body>
-		<script src="js/three.js"></script>
+  <head>
+    <title>Final Fantasy 7 Model Viewer</title>
+    <style>
+      body { margin: 0; }
+      canvas { width: 100%; height: 100% }
+    </style>
+  </head>
+  <body>
+    <script src="js/three.js"></script>
     <script src="js/GLTFLoader.js"></script>
-		<script>
+    <script>
 
-			// Create a standard THREE.js scene, camera, lights, renderer
-			var scene, camera, light, ambientLight, renderer;
-			scene = new THREE.Scene();
+      // Create a standard THREE.js scene, camera, lights, renderer
+      var scene, camera, light, ambientLight, renderer;
+      scene = new THREE.Scene();
       scene.background = new THREE.Color(0x404040);
-			camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
       scene.add(camera);
       light = new THREE.DirectionalLight(0xffffff);
       light.position.set(1, 1, 1).normalize();
       scene.add(light);
       ambientLight = new THREE.AmbientLight(0x404040);
       scene.add(ambientLight);
-			renderer = new THREE.WebGLRenderer();
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			document.body.appendChild(renderer.domElement);
-			camera.position.x = 0;
-			camera.position.y = 13.53;
-			camera.position.z = 40;
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+      camera.position.x = 0;
+      camera.position.y = 13.53;
+      camera.position.z = 40;
 
-			// Load the glTF model and start the first animation in the glTF
-			var model, animationMixer, clock;
-			var gltfLoader = new THREE.GLTFLoader();
+      // Load the glTF model and start the first animation in the glTF
+      var model, animationMixer, clock;
+      var gltfLoader = new THREE.GLTFLoader();
       gltfLoader.load('../output-example/gltf/aaaa.hrc.gltf', function (gltf) {
-				model = gltf.scene;
+        model = gltf.scene;
         scene.add(model);
-				renderer.render(scene, camera);
-				if (gltf.animations && gltf.animations.length > 0) {
-					clock = new THREE.Clock();
-					animationMixer = new THREE.AnimationMixer(model);
-					animationMixer.clipAction(gltf.animations[0]).play();
-					animate();
-				}
+        renderer.render(scene, camera);
+        if (gltf.animations && gltf.animations.length > 0) {
+          clock = new THREE.Clock();
+          animationMixer = new THREE.AnimationMixer(model);
+          animationMixer.clipAction(gltf.animations[0]).play();
+          animate();
+        }
       }, undefined, function (error) {
-      	console.error('Error while loading glTF:', error);
+        console.error('Error while loading glTF:', error);
       });
 
-			// html/js animation loop callback
-			var animate = function () {
-				requestAnimationFrame(animate);
-				var delta = clock.getDelta();
-				model.rotation.y += delta * 90 * Math.PI/180; // rotate model 90 degrees per second
+      // html/js animation loop callback
+      var animate = function () {
+        requestAnimationFrame(animate);
+        var delta = clock.getDelta();
+        model.rotation.y += delta * 90 * Math.PI/180; // rotate model 90 degrees per second
         if (animationMixer) {
-					animationMixer.update(delta);
+          animationMixer.update(delta);
         }
-				renderer.render(scene, camera);
-			};
+        renderer.render(scene, camera);
+      };
 
-		</script>
-	</body>
+    </script>
+  </body>
 </html>
