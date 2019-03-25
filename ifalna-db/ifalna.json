@@ -1,0 +1,8175 @@
+{
+  "AAAA": {
+    "Names": [
+      "main_n_cloud",
+      "main_n_cloud00",
+      "1main_n_cloud",
+      "2main_n_cloud",
+      "3main_n_cloud",
+      "4main_n_cloud"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "HMID",
+      "BTCE",
+      "AVFD",
+      "BVJC",
+      "BVJD",
+      "EQHA",
+      "HOCD",
+      "HOJE",
+      "BYHF",
+      "CPHF",
+      "AJEC",
+      "HOEB",
+      "HOEA",
+      "CAED",
+      "ASBD",
+      "ASHF",
+      "AQCB",
+      "AAFE",
+      "AJDD",
+      "FYFD",
+      "FYFE",
+      "FYFF",
+      "FYGA",
+      "FYGB",
+      "FYGC",
+      "FYGD",
+      "FYGE",
+      "FYFC",
+      "AJDC",
+      "BUAA",
+      "AQBF",
+      "AQCD",
+      "EFEF",
+      "AVDE",
+      "EFFA",
+      "CAFB",
+      "EBDD",
+      "AUEE",
+      "EBDE",
+      "AVJE",
+      "BVJB",
+      "CAGD",
+      "BYGB",
+      "CCIF",
+      "EBJE",
+      "BICA",
+      "BICB",
+      "BICC",
+      "BICD",
+      "BICE",
+      "CDAD",
+      "EGDB",
+      "BTCD",
+      "BDCC",
+      "APEE",
+      "AUEC",
+      "AUED",
+      "DJGC",
+      "CTAC",
+      "BYAA",
+      "BXIF",
+      "AQFA",
+      "CJIC",
+      "DDEC",
+      "EFGB",
+      "EFEA",
+      "EFEB",
+      "EFEC",
+      "EFED",
+      "EFEE",
+      "CGCF",
+      "AGEE",
+      "DOIA",
+      "ALGB",
+      "EGGD",
+      "EGGE",
+      "EGIC",
+      "BYJA",
+      "EGID",
+      "EGIE",
+      "CMHF",
+      "GWBC",
+      "GSID",
+      "EFJD",
+      "APED",
+      "APEB",
+      "AQCC",
+      "GDAB",
+      "GDAC",
+      "GDAD",
+      "GDAE",
+      "GDAF",
+      "GDBA",
+      "GDBB",
+      "GDBC",
+      "GDBD",
+      "CCJD",
+      "CCJE",
+      "CCJF",
+      "CDAA",
+      "AQAA",
+      "APJF",
+      "CDAB",
+      "AQAB",
+      "CDAC",
+      "AJDF",
+      "ETAA",
+      "FHHF",
+      "DECF",
+      "DDFC",
+      "APJE",
+      "AJEB",
+      "DECE",
+      "DGIB",
+      "CXJD",
+      "DGIC",
+      "DGID",
+      "CUEA",
+      "DGIE",
+      "CUEB",
+      "BZCE",
+      "AJDE",
+      "CXEA",
+      "CSEC",
+      "DIBB",
+      "EVEF",
+      "CAFC",
+      "ASBE",
+      "DCDF",
+      "DHAB",
+      "DCEA",
+      "DCEB",
+      "AWAB",
+      "CDIF",
+      "GIDB",
+      "DJEE",
+      "CPID",
+      "GSIB",
+      "GSIC",
+      "DWFB",
+      "DUEF",
+      "CKFB",
+      "EWHB",
+      "EAFF",
+      "AJEA",
+      "DSAD",
+      "GIEA",
+      "GIEB",
+      "GIGE",
+      "FKJF",
+      "AQCF",
+      "FOIF",
+      "DJDA",
+      "BYIF",
+      "BYDB",
+      "BYFD",
+      "ETCE",
+      "BZCD",
+      "ETCF",
+      "ETDA",
+      "ETDB",
+      "ETDC",
+      "BYJB",
+      "CPIA",
+      "EVDC",
+      "APEC",
+      "AQEE",
+      "AQEF",
+      "AQFB",
+      "AQCA",
+      "AQFC"
+    ],
+    "Anims2": [
+      "AQCE",
+      "APJC",
+      "HSEA",
+      "BIBF",
+      "HQJF",
+      "HRAA",
+      "HRAB",
+      "HRAC",
+      "HRAD",
+      "DCEC",
+      "FEBB",
+      "HSBC",
+      "HSBD",
+      "HSBE",
+      "HSBF",
+      "HSCA",
+      "HSCB",
+      "HSCC",
+      "HSCD",
+      "HSCE",
+      "HSCF",
+      "HSDA",
+      "HSDB",
+      "HSDC",
+      "HSDD",
+      "HSDE",
+      "HSDF",
+      "DOFC",
+      "GIEC",
+      "HRIC",
+      "HRID",
+      "HRIE",
+      "HRIF",
+      "HRJA",
+      "HRJB",
+      "HRJC",
+      "HRJD",
+      "HRJE",
+      "HRJF",
+      "HSAA",
+      "HSAB",
+      "HSAC",
+      "HSAD",
+      "HSAE",
+      "HSAF",
+      "HSBA",
+      "HSBB",
+      "GIFC",
+      "GIFD",
+      "GIFE",
+      "GIFF",
+      "GIGA",
+      "GIGB",
+      "GIGC",
+      "GIGD",
+      "GJDD",
+      "GJDE",
+      "GIDF",
+      "GJFD",
+      "GJFE",
+      "GJFF",
+      "GJGA",
+      "BIDA",
+      "GJGB",
+      "GJGC",
+      "GJGD",
+      "GJGE",
+      "GJGF",
+      "GDIB",
+      "CAHB",
+      "GGCD",
+      "GGCE",
+      "ASID",
+      "DVHD",
+      "BYJC",
+      "GREA",
+      "GREB",
+      "GREC",
+      "EMDB",
+      "EMDC",
+      "GRED",
+      "GRDC",
+      "HODC",
+      "HODD",
+      "HODE",
+      "IAFD",
+      "IAFE",
+      "IAFF",
+      "EIGB",
+      "HQFB",
+      "AREF",
+      "ARFA",
+      "ETFB",
+      "HQIE",
+      "HSJB",
+      "FVEA",
+      "DLAC",
+      "GCBB",
+      "CDCD",
+      "HJBB",
+      "HJBC",
+      "EMDD",
+      "HJBD",
+      "HJBE",
+      "CDEA",
+      "CDDD",
+      "CDDA",
+      "CEEE",
+      "BYAD",
+      "DBBD",
+      "FSDA",
+      "DBBA",
+      "FSDB",
+      "DACE",
+      "FEBC",
+      "HYCA",
+      "IAIB",
+      "HZED",
+      "HZEE",
+      "HZEF",
+      "HZFA",
+      "HZFB",
+      "HZFC",
+      "HZFD",
+      "HZFE",
+      "HZFF",
+      "DCEF",
+      "DCFA",
+      "HXAE",
+      "HXAF",
+      "CNJD",
+      "HYCD",
+      "HYCE",
+      "HYCF",
+      "HYDA",
+      "HYFA",
+      "HYFB",
+      "HYFC",
+      "HUIF",
+      "HOBC",
+      "CDDF",
+      "AWAC",
+      "FEBD",
+      "HOBA",
+      "HOBB",
+      "HCEC",
+      "CAEE",
+      "CAEF",
+      "CAFA",
+      "DACF",
+      "DADA",
+      "DJGD",
+      "DJGE",
+      "DJGF",
+      "BYGC",
+      "CXJF",
+      "CXJE",
+      "CZHD",
+      "CZHE",
+      "CZHF",
+      "CZIA",
+      "CXCF",
+      "CXDA",
+      "CXDB",
+      "CXDC",
+      "CXDD",
+      "CXDE",
+      "CXDF",
+      "CWCB",
+      "CWCC",
+      "CDDB",
+      "CCHD",
+      "CCHE",
+      "DBBC",
+      "DJEF",
+      "BVJF"
+    ],
+    "Anims3": [
+      "EAHD",
+      "EAHE",
+      "CCJA",
+      "DDEA",
+      "DDEB",
+      "ICDE",
+      "ICDF",
+      "ICEA",
+      "ICEB",
+      "ICEC",
+      "DPEC",
+      "DPED",
+      "DPEE",
+      "DNDE",
+      "AKED",
+      "FSDC",
+      "EPEB",
+      "FSEB",
+      "FSEC",
+      "FSED",
+      "EIAB",
+      "EFHE",
+      "EHHB",
+      "EMBF",
+      "BYGA",
+      "BYHE",
+      "BXIC",
+      "BXID",
+      "EQGF",
+      "EQGE",
+      "BVJE",
+      "EQHB",
+      "EACF",
+      "DMBC",
+      "EADA",
+      "EADB",
+      "EADC",
+      "EADD",
+      "EADE",
+      "EADF",
+      "DBBE",
+      "DBBF",
+      "HBDA",
+      "HBDB",
+      "HBDC",
+      "HADF",
+      "HAEA",
+      "HAEB",
+      "HAEC",
+      "HAED",
+      "HAEE",
+      "HAEF",
+      "HAFA",
+      "HAFB",
+      "AVDD",
+      "AVEA",
+      "GREE",
+      "HBFE",
+      "HBFF",
+      "HBGA",
+      "HBGB",
+      "HBGC",
+      "HBGD",
+      "HBGE",
+      "HOAD",
+      "HOAB",
+      "HOAC",
+      "DCFE",
+      "DCEE",
+      "CADC",
+      "GWHA",
+      "FJCE",
+      "EMJD",
+      "CDCF",
+      "EEGB",
+      "ENJE",
+      "ENJF",
+      "EOAA",
+      "EOAB",
+      "AVDF",
+      "HMHE",
+      "DOHE",
+      "HQEA",
+      "BYJD",
+      "BYJE",
+      "BYJF",
+      "BZAA",
+      "BZAB",
+      "FDIF",
+      "FDJA",
+      "FDJB",
+      "FDJC",
+      "ETFC",
+      "CDDE",
+      "HSGB",
+      "HSGC",
+      "HSGD",
+      "HSHB",
+      "HSHC",
+      "HSHD",
+      "HSHE",
+      "HSHF",
+      "HSIA",
+      "HSGE",
+      "HXBA",
+      "HXBB",
+      "FJCB",
+      "FIIB",
+      "FIIC",
+      "FIID",
+      "FIAB",
+      "EUGB",
+      "FIJA",
+      "FIJB",
+      "FIJC",
+      "FIJD",
+      "FIJE",
+      "FIJF",
+      "FJAA",
+      "EUGC",
+      "HFEA",
+      "HFEB",
+      "EAIB",
+      "HOCF",
+      "HODB",
+      "HSIC"
+    ]
+  },
+  "AAGB": {
+    "Names": [
+      "main_n_tifa",
+      "main_n_tifa03"
+    ],
+    "Anims": [
+      "ABCD",
+      "ABCE",
+      "ABCF",
+      "HMIE",
+      "CDHC",
+      "EPDF",
+      "HPAB",
+      "HPAC",
+      "HPAD",
+      "HPAE",
+      "HPAF",
+      "ACGA",
+      "FYHF",
+      "FYIA",
+      "AUEF",
+      "FYIB",
+      "FYIC",
+      "FYID",
+      "FYIE",
+      "CDGF",
+      "BZAC",
+      "FYIF",
+      "APAA",
+      "AHCF",
+      "DLFA",
+      "ASIF",
+      "FYJA",
+      "FYJB",
+      "GCID",
+      "GCIE",
+      "GCIF",
+      "ASIE",
+      "GCJA",
+      "EBDB",
+      "APGC",
+      "EBDC",
+      "ACGB",
+      "EBDF",
+      "AQFF",
+      "EBEA",
+      "EBEB",
+      "EGDC",
+      "DVBC",
+      "BTCB",
+      "DBDF",
+      "EGDD",
+      "EGAF",
+      "EGBA",
+      "BTBC",
+      "BTBD",
+      "EGBB",
+      "EGBC",
+      "EGBD",
+      "EGBE",
+      "EFGE",
+      "EHBA",
+      "EGHB",
+      "EGHC",
+      "ACGC",
+      "GDEE",
+      "GDEF",
+      "GDFA",
+      "GDFB",
+      "GDFC",
+      "AJEE",
+      "EMCA",
+      "FUFA",
+      "EMCB",
+      "ACFF",
+      "CXHF",
+      "GRFD",
+      "AQFE",
+      "GRFE",
+      "GSJB",
+      "GSJC",
+      "DWFF",
+      "DWGA",
+      "BTCA",
+      "DWGB",
+      "EXFE",
+      "GUJB",
+      "EWHE",
+      "EWHF",
+      "FPJB",
+      "FPJC",
+      "CDHA",
+      "CDHB",
+      "EPEF",
+      "FOIA",
+      "FOIB",
+      "DIDF",
+      "APGB",
+      "DIEA",
+      "DIBC",
+      "ETEB",
+      "ETEC",
+      "ETED",
+      "ETEE",
+      "ETEF",
+      "ARFB",
+      "EKBB",
+      "APGD",
+      "AJED",
+      "AQFD",
+      "AJEF",
+      "AJFA",
+      "AJFB",
+      "AJFC",
+      "AJFD",
+      "AJFE",
+      "APAB",
+      "AQAC",
+      "AQDA",
+      "EMCF",
+      "GIED",
+      "FUEE",
+      "FUEF",
+      "GGDF",
+      "BKBE",
+      "BIJB",
+      "GGEA",
+      "GGEB",
+      "GGHD",
+      "GRDD",
+      "IAGA",
+      "IAGB",
+      "ARFC",
+      "FDJD",
+      "BTBE",
+      "AHDA",
+      "HTIE",
+      "AHDB",
+      "HTJC",
+      "HTIC",
+      "HTID",
+      "GXED",
+      "DCHE",
+      "DCHF",
+      "CWCF",
+      "FVDB",
+      "ASJA",
+      "CXGF",
+      "CDGE",
+      "FAHB",
+      "FEBF",
+      "FDCE",
+      "FDCF",
+      "FDDA",
+      "FDDB",
+      "FDDC",
+      "FDDD",
+      "FDDE",
+      "FDDF",
+      "FDEA",
+      "FDEB",
+      "FDEC",
+      "FDED",
+      "FDEE",
+      "FDEF",
+      "FDFA",
+      "FDFB",
+      "FDFC",
+      "FDFD",
+      "FDFE",
+      "FDFF",
+      "FDGA",
+      "FDGB",
+      "FDGC",
+      "FDGD",
+      "FDGE",
+      "FDGF",
+      "FDHA",
+      "FDHB",
+      "FDHC"
+    ],
+    "Anims2": [
+      "FDHD",
+      "FDHE",
+      "BTCC",
+      "FDHF",
+      "FDIA",
+      "FDIB",
+      "FDIC",
+      "FFBE",
+      "FFBF",
+      "CDGD",
+      "IAID",
+      "HZHC",
+      "HZHD",
+      "HZHE",
+      "HZHF",
+      "FKAE",
+      "HZIA",
+      "HZIB",
+      "HZIC",
+      "HZID",
+      "HUJA",
+      "ICDD",
+      "CXIF",
+      "DCHC",
+      "DCHD",
+      "DBDA",
+      "BTBF",
+      "CZJC",
+      "CZJD",
+      "CXHA",
+      "CWDA",
+      "CXGE",
+      "CXHB",
+      "CXHC",
+      "CXHD",
+      "CXHE",
+      "CXIA",
+      "CXIB",
+      "CWDB",
+      "CXIC",
+      "CXID",
+      "CXIE",
+      "AYFA",
+      "CWDC",
+      "DLEA",
+      "DLEB",
+      "DLEC",
+      "DLED",
+      "DLEE",
+      "DLEF",
+      "EAIA",
+      "DBDE",
+      "DOFE",
+      "FSEE",
+      "EMCC",
+      "ENIB",
+      "ENIC",
+      "ENJC",
+      "ENIE",
+      "ENIF",
+      "ENJB",
+      "ENID",
+      "ENJD",
+      "DBDB",
+      "DBDC",
+      "DBDD",
+      "IAGC",
+      "AVEB",
+      "HBHF",
+      "HBIA",
+      "HBIB",
+      "HBIC",
+      "HBID",
+      "HBIE",
+      "GYBC",
+      "HOAE",
+      "AUFA",
+      "CADD",
+      "BZBF",
+      "BZBC",
+      "BZCA",
+      "BZCB",
+      "BZCC",
+      "CIGD",
+      "DCED",
+      "HFEC"
+    ]
+  },
+  "ABDA": {
+    "Names": [
+      "main_cid",
+      "main_cid05"
+    ],
+    "Anims": [
+      "ABIE",
+      "ABIF",
+      "ABJA",
+      "HMID",
+      "BTCE",
+      "AVFD",
+      "GZAA",
+      "APDE",
+      "ACFE",
+      "EPEA",
+      "AJIE",
+      "APCB",
+      "GVCA",
+      "GDFF",
+      "FGJF",
+      "HXJE",
+      "FDJE",
+      "APCF",
+      "EYGD",
+      "AUEC",
+      "CWEB",
+      "EWIC",
+      "EAFF",
+      "APGF",
+      "CMHF",
+      "ASJB",
+      "HIFE",
+      "APHC",
+      "DOFF",
+      "APGE",
+      "APHA",
+      "APHB",
+      "APHD",
+      "AJFF",
+      "AJIC",
+      "AJID",
+      "APCA",
+      "APCC",
+      "APCD",
+      "APCE",
+      "APDA",
+      "APDB",
+      "APDC",
+      "APDD",
+      "APDF",
+      "APEA",
+      "AQBC",
+      "AQBD",
+      "AQBE",
+      "FPIF",
+      "HBDD",
+      "HQJC",
+      "GGBF",
+      "GGCA",
+      "GGCB",
+      "GGCC",
+      "GRDE",
+      "CWEA",
+      "FAHD",
+      "HTIF",
+      "GYJA",
+      "HTJA",
+      "HTJB",
+      "FECB",
+      "EOBB",
+      "HAFC",
+      "IAIF",
+      "IAAA",
+      "IAAB",
+      "IAAC",
+      "IAAD",
+      "IAAE",
+      "IAAF",
+      "IABA",
+      "IABB",
+      "IABC",
+      "FDJF",
+      "HYCC",
+      "HYEA",
+      "HYEB",
+      "HYEC",
+      "GYAF",
+      "APJE",
+      "AKED",
+      "FSEF",
+      "AQCA",
+      "FPIC",
+      "FPID",
+      "FPIE",
+      "BYGA",
+      "GYJE",
+      "HBDE",
+      "HBDF",
+      "HBEA",
+      "HBEB",
+      "GYJF",
+      "HAFD",
+      "HAFE",
+      "HAFF",
+      "CTAE",
+      "HAGA",
+      "IAGD",
+      "GYJD",
+      "GZAB",
+      "APJD",
+      "GZAC",
+      "HCJB",
+      "HCJC",
+      "HCJD",
+      "HBJF",
+      "HCAA",
+      "HCAB",
+      "HCAC",
+      "HCAD",
+      "HCAE",
+      "HCAF",
+      "GXEE",
+      "GYBD",
+      "GYBE",
+      "GYBF",
+      "GYCA",
+      "GYCB",
+      "GYCC",
+      "HOAF",
+      "HOAB",
+      "HOAC",
+      "AUFB",
+      "AUFC",
+      "AUFD",
+      "AUEE",
+      "AQCB",
+      "CDCF",
+      "AUED",
+      "AJDF",
+      "AJEA",
+      "CPHF",
+      "AJDD",
+      "DOIA",
+      "AQCC",
+      "APEB",
+      "AVEC",
+      "AVED",
+      "HFED",
+      "HFEE",
+      "HVBF",
+      "HVCA",
+      "HVCB",
+      "HVCC",
+      "HVCD",
+      "HVCE",
+      "HVDE",
+      "HVGD",
+      "HVGE",
+      "HVGF",
+      "HVHA",
+      "HVHB",
+      "HVHC",
+      "HVHD",
+      "HVHE"
+    ]
+  },
+  "HMIF": {
+    "Names": [
+      "fieldbg_batta"
+    ],
+    "Anims": [
+      "HNAE"
+    ]
+  },
+  "HNAF": {
+    "Names": [
+      "fieldbg_frog"
+    ]
+  },
+  "HNEB": {
+    "Names": [
+      "fieldbg_v4_bero"
+    ],
+    "Anims": [
+      "HNIE"
+    ]
+  },
+  "CNED": {
+    "Names": [
+      "fieldbg_zuta_orig"
+    ],
+    "Anims": [
+      "CNFA",
+      "DCGA",
+      "BYFC"
+    ]
+  },
+  "AUFF": {
+    "Names": [
+      "main_n_earith",
+      "main_n_earith01"
+    ],
+    "Anims": [
+      "AVBF",
+      "AVCA",
+      "AVCB",
+      "HOCE",
+      "BTDF",
+      "DDFB",
+      "FYGF",
+      "FYHA",
+      "AVCC",
+      "DWIE",
+      "FYHB",
+      "FYHC",
+      "DICC",
+      "DADE",
+      "FYHD",
+      "BTDD",
+      "BTDC",
+      "DJHA",
+      "FVBE",
+      "DICB",
+      "FYHE",
+      "BKBC",
+      "BTDB",
+      "DIBE",
+      "DIBF",
+      "BICF",
+      "GCIC",
+      "EVFA",
+      "EFJE",
+      "EFJF",
+      "EGAA",
+      "EGAB",
+      "AVFD",
+      "EGAC",
+      "DGJC",
+      "EGAD",
+      "CMIC",
+      "CMID",
+      "CMIA",
+      "CMIB",
+      "EGAE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CMIE",
+      "EGEF",
+      "BTCF",
+      "DWFE",
+      "EGEB",
+      "EGEC",
+      "EGED",
+      "EGEE",
+      "DWJB",
+      "GDBE",
+      "GDBF",
+      "GDCA",
+      "GDCB",
+      "GDCC",
+      "GDCD",
+      "GDCE",
+      "GDCF",
+      "DDEF",
+      "BTDA",
+      "DGCB",
+      "DDFE",
+      "DGCC",
+      "DCHA",
+      "DGIF",
+      "BTEA",
+      "DGJA",
+      "DADC",
+      "DDFA",
+      "DGJB",
+      "DGJD",
+      "DGJE",
+      "DGJF",
+      "DHAA",
+      "DICD",
+      "GGDB",
+      "DDGB",
+      "DHAC",
+      "DHAD",
+      "DHAE",
+      "DDGA",
+      "GGHC",
+      "GHGE",
+      "GHGB",
+      "BTDE",
+      "DADD",
+      "DDFD",
+      "AVCD",
+      "DJHF",
+      "DVBA",
+      "DVBB",
+      "DICA",
+      "DJIA",
+      "GSIE",
+      "DWFC",
+      "DWFD",
+      "GUJA",
+      "EWHC",
+      "DCGE",
+      "FKDA",
+      "AZHD",
+      "FOJA",
+      "DIBD",
+      "DJDB",
+      "DJDC",
+      "DJDD",
+      "DJDE",
+      "DJHC",
+      "FVBF",
+      "GGAF",
+      "GGBA",
+      "GGBB",
+      "GGCF",
+      "GGDA",
+      "GGDC",
+      "GGDD",
+      "GGDE",
+      "GGGE",
+      "GGGF",
+      "GGHA",
+      "GGHB",
+      "DCGF",
+      "FVBD",
+      "HJAB",
+      "HJAC",
+      "HJAD",
+      "DOHF",
+      "FKAB",
+      "DADF",
+      "DAEA",
+      "HDAD",
+      "HJBF",
+      "HJCA",
+      "FKAC",
+      "HJCB",
+      "DXAA",
+      "HJEA",
+      "DXAB",
+      "HKHF",
+      "DADB",
+      "HJHE",
+      "DCHB",
+      "BTEB",
+      "DJHB",
+      "DJHD",
+      "DJHE",
+      "DJIB",
+      "DJIC",
+      "DDFF",
+      "DDGF",
+      "DDED",
+      "DDEE",
+      "DWJE",
+      "DWJF",
+      "DCCA",
+      "DCCB",
+      "DCCC",
+      "DCCD",
+      "IAGF",
+      "AVEF",
+      "HMHF",
+      "HMIA",
+      "HMIB",
+      "HMIC"
+    ]
+  },
+  "ACGD": {
+    "Names": [
+      "main_ballet",
+      "main_ballet02"
+    ],
+    "Anims": [
+      "ADCB",
+      "ADCC",
+      "ADCD",
+      "HOJF",
+      "AQAD",
+      "BYFE",
+      "HPAA",
+      "DIDB",
+      "CAGA",
+      "DIDC",
+      "AGGA",
+      "EBCF",
+      "AJGB",
+      "EBDA",
+      "AJFF",
+      "ADCF",
+      "AJGA",
+      "BZBA",
+      "APGA",
+      "AQDC",
+      "DBAF",
+      "APAD",
+      "EGBF",
+      "BXJA",
+      "EGCA",
+      "EGCB",
+      "EGCC",
+      "EGCD",
+      "EFGC",
+      "EFGD",
+      "BYAF",
+      "CXEB",
+      "CZIB",
+      "EGGF",
+      "EGHA",
+      "EGIF",
+      "EGJA",
+      "EGJB",
+      "DBCD",
+      "CWCE",
+      "EGJC",
+      "BZAF",
+      "DBCB",
+      "DBCC",
+      "BYIA",
+      "APFD",
+      "BZAD",
+      "APEF",
+      "APFC",
+      "FXIF",
+      "GDDA",
+      "GDDB",
+      "GDDC",
+      "GDDD",
+      "GDDE",
+      "GDDF",
+      "GDEA",
+      "GDEB",
+      "GDEC",
+      "GDED",
+      "CDAE",
+      "CDAF",
+      "CDBA",
+      "CDBB",
+      "CDBC",
+      "CDBD",
+      "CDBE",
+      "CDBF",
+      "APAC",
+      "BYAE",
+      "CDCA",
+      "AGFE",
+      "DLDB",
+      "DLBF",
+      "DICE",
+      "DICF",
+      "FVCA",
+      "AQDE",
+      "AUFE",
+      "GRFC",
+      "GSIF",
+      "GSJA",
+      "ETDE",
+      "EWHD",
+      "APFB",
+      "HIGA",
+      "FKDB",
+      "CJIB",
+      "FXAF",
+      "FXBA",
+      "DLBE",
+      "DIDE",
+      "EVFB",
+      "FXBB",
+      "FXBC",
+      "FVCB",
+      "FVCC",
+      "FXBD",
+      "DLCA",
+      "FXBE",
+      "FXBF",
+      "FXCA",
+      "FXCB",
+      "DIDA",
+      "DIDD",
+      "CAFF",
+      "DJDF",
+      "DJEA",
+      "CNIF",
+      "AGFD",
+      "AGFF",
+      "ETDD",
+      "ETDF",
+      "ETEA",
+      "APAF",
+      "APFA",
+      "APFE",
+      "APFF",
+      "AQGA",
+      "AJEB",
+      "APAE",
+      "APBA",
+      "APBB",
+      "AQDB",
+      "AQDD",
+      "ADCE",
+      "AGFC",
+      "HQJB",
+      "GGBC",
+      "CAFD",
+      "CAGB",
+      "FVEB",
+      "FVCD",
+      "FVEC",
+      "FUED",
+      "FVCE",
+      "FVCF",
+      "FVDA",
+      "CIGB",
+      "CIGC",
+      "FEBE",
+      "FAJD",
+      "FEDE",
+      "FEDF",
+      "FAJF",
+      "FBAA",
+      "FBAB",
+      "FAGD",
+      "FAHA",
+      "FAGE",
+      "FAGF",
+      "CDGB",
+      "FAGC",
+      "HDAE",
+      "HJFC",
+      "CDFD",
+      "CDFE",
+      "HYDC",
+      "IAIC",
+      "HZGA",
+      "HZGB",
+      "HZGC",
+      "HZGD",
+      "FKAD",
+      "HZGE",
+      "HZGF",
+      "HZHA",
+      "HZHB",
+      "CCHF",
+      "HYDB",
+      "HYDD",
+      "HYDE",
+      "CAFE",
+      "DCGB"
+    ],
+    "Anims2": [
+      "DCGC",
+      "DCGD",
+      "BZBE",
+      "CDGC",
+      "CZIC",
+      "CZID",
+      "CZIE",
+      "CZIF",
+      "CZJA",
+      "CZJB",
+      "CDGA",
+      "CXEC",
+      "CXED",
+      "CXEE",
+      "CXEF",
+      "CXFA",
+      "CXFB",
+      "CXFC",
+      "CXFD",
+      "CXFE",
+      "CXFF",
+      "CXGA",
+      "CXGB",
+      "CXGC",
+      "CXGD",
+      "CWCD",
+      "DLAD",
+      "DLAE",
+      "DLAF",
+      "DLBA",
+      "DLBB",
+      "DLBC",
+      "DLBD",
+      "DLCB",
+      "DLCC",
+      "DLCD",
+      "DLCE",
+      "DLCF",
+      "DLDA",
+      "DLDC",
+      "DLDD",
+      "DLDE",
+      "DLDF",
+      "BWAA",
+      "EAHF",
+      "FPBB",
+      "DBCA",
+      "DBCE",
+      "DBCF",
+      "IAGE",
+      "AVEE",
+      "HCIF",
+      "HBGF",
+      "HBHA",
+      "HBHB",
+      "HBHC",
+      "HBHD",
+      "HBHE",
+      "GWHB",
+      "CADC",
+      "BZAC",
+      "BZAE",
+      "BYIE",
+      "BZBB",
+      "BZBC",
+      "BZBD",
+      "CDEB",
+      "CDEC",
+      "CDED",
+      "CDEE",
+      "CDEF",
+      "CDFA",
+      "CDFB",
+      "CDFC",
+      "CDFF",
+      "HUJE",
+      "HUJF",
+      "HVAA",
+      "HVDF",
+      "HVEA",
+      "HVEB"
+    ]
+  },
+  "ADDA": {
+    "Names": [
+      "main_red",
+      "main_red04"
+    ],
+    "Anims": [
+      "AEAE",
+      "AEAF",
+      "AEBA",
+      "AJGC",
+      "AQAE",
+      "DCIA",
+      "EGCE",
+      "ECBE",
+      "EGCF",
+      "AJGD",
+      "EGDA",
+      "AVCE",
+      "AQDF",
+      "EGFA",
+      "DCIB",
+      "EGFB",
+      "EGFC",
+      "EGFD",
+      "APBC",
+      "AHDD",
+      "GWBD",
+      "GWBE",
+      "GWBF",
+      "GWCA",
+      "GWCB",
+      "APBD",
+      "EWIB",
+      "GCBC",
+      "GDFD",
+      "GDFE",
+      "APBE",
+      "FPJD",
+      "FKDC",
+      "GVAD",
+      "ETFA",
+      "EWIA",
+      "EVFD",
+      "FLAA",
+      "FKDD",
+      "FOJB",
+      "ETCD",
+      "AQAF",
+      "AQEA",
+      "AHDE",
+      "GGBD",
+      "GGBE",
+      "FAHC",
+      "FECA",
+      "FADF",
+      "FAEA",
+      "HSFB",
+      "IAIE",
+      "HZIE",
+      "HZIF",
+      "HZJA",
+      "HZJB",
+      "FKAF",
+      "HZJC",
+      "HZJD",
+      "HZJE",
+      "HZJF",
+      "HYDF",
+      "IAHA",
+      "AVFA",
+      "HCJA",
+      "HBIF",
+      "HBJA",
+      "HBJB",
+      "HBJC",
+      "HBJD",
+      "HBJE",
+      "GWHC",
+      "HVAB",
+      "HVAC",
+      "HVAD",
+      "HVEC",
+      "HVED",
+      "HVEE"
+    ]
+  },
+  "AEBC": {
+    "Names": [
+      "main_ketcy",
+      "main_ketcy07"
+    ],
+    "Anims": [
+      "AEHA",
+      "AEHB",
+      "AEHC",
+      "FECE",
+      "GIEF",
+      "APBF",
+      "AJHC",
+      "APHE",
+      "HPBA",
+      "HPBB",
+      "APID",
+      "AIAD",
+      "APHF",
+      "APIC",
+      "APIF",
+      "GOEF",
+      "GOED",
+      "FVDD",
+      "AIAC",
+      "APIA",
+      "FHIB",
+      "APIB",
+      "FPJF",
+      "FQAA",
+      "AVCF",
+      "EWJA",
+      "AJHD",
+      "APIE",
+      "AJHE",
+      "AQBA",
+      "AQEC",
+      "AIAE",
+      "GIEE",
+      "GIFA",
+      "FEAD",
+      "FVDE",
+      "FBAC",
+      "HKJB",
+      "FECF",
+      "FGHE",
+      "GVJC",
+      "FEAC",
+      "HKIA",
+      "IAJB",
+      "IACF",
+      "IADA",
+      "IADB",
+      "IADC",
+      "IADD",
+      "IADE",
+      "IADF",
+      "IAEA",
+      "HYED",
+      "HYEE",
+      "HXAD",
+      "IAHB",
+      "HCCB",
+      "HCCC",
+      "HCCD",
+      "HCCE",
+      "HCCF",
+      "HCDA",
+      "GVJD",
+      "FEDA",
+      "HVBB",
+      "HVBC",
+      "HVFC",
+      "HVFD",
+      "HVFE"
+    ]
+  },
+  "AEHD": {
+    "Names": [
+      "main_vincent",
+      "main_vincent08"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBB",
+      "AFDF",
+      "AFEA",
+      "AFEB",
+      "EWJC",
+      "EOBC",
+      "GDHE",
+      "GDHF",
+      "GDIA",
+      "FEDD",
+      "FEDB",
+      "AJIA",
+      "FGJE",
+      "EWJD",
+      "EWJB",
+      "ATFA",
+      "APJA",
+      "APJB",
+      "AJHF",
+      "AJIB",
+      "AQED",
+      "AIAF",
+      "ATEF",
+      "AVDA",
+      "EOBE",
+      "FAHF",
+      "FEAE",
+      "EOCC",
+      "FEDC",
+      "EOBD",
+      "IAJC",
+      "IAEB",
+      "IAEC",
+      "IAED",
+      "HSFC",
+      "IAEE",
+      "IAEF",
+      "IAFA",
+      "IAFB",
+      "HYEF",
+      "IAHC",
+      "AVFB",
+      "FEAF",
+      "HCDB",
+      "HCDC",
+      "HCDD",
+      "HCDE",
+      "HCDF",
+      "HCEA",
+      "HCEB",
+      "EOBF",
+      "EOCA",
+      "EOCB",
+      "EOCD",
+      "HSIB",
+      "HVBD",
+      "HVBE",
+      "HVFF",
+      "HVGA",
+      "HVGB",
+      "HVGC",
+      "ATFB",
+      "ATFC",
+      "ATFD"
+    ]
+  },
+  "ABJB": {
+    "Names": [
+      "main_yufi",
+      "main_yufi06"
+    ],
+    "Anims": [
+      "ACFB",
+      "ACFC",
+      "ACFD",
+      "FECC",
+      "HPBC",
+      "HPBD",
+      "HPBE",
+      "HPBF",
+      "HPCA",
+      "HPCB",
+      "FPBC",
+      "HPCC",
+      "HPCD",
+      "FFAC",
+      "EWIE",
+      "FYJC",
+      "FYJD",
+      "AVDB",
+      "AVDC",
+      "FYJE",
+      "FYJF",
+      "FECD",
+      "FZAA",
+      "AJHA",
+      "FHIA",
+      "FOJC",
+      "FPJE",
+      "GCJB",
+      "BNGC",
+      "AQEB",
+      "BIJC",
+      "AJGE",
+      "EWIF",
+      "GVCB",
+      "GVAB",
+      "GDGA",
+      "GDGB",
+      "GDGC",
+      "GDGD",
+      "FGJD",
+      "GDGE",
+      "GDGF",
+      "GDHA",
+      "GDHB",
+      "GDHC",
+      "GDHD",
+      "EVFC",
+      "GGEC",
+      "FEAA",
+      "GRFF",
+      "GSJD",
+      "AJHB",
+      "EWID",
+      "HIHB",
+      "HIHC",
+      "HIHD",
+      "HIHE",
+      "HIHF",
+      "HIIA",
+      "FKDE",
+      "AQGB",
+      "AJGF",
+      "AEBB",
+      "FJCC",
+      "FKBA",
+      "FEAB",
+      "GGED",
+      "GGEE",
+      "HQJD",
+      "FAHE",
+      "FVDC",
+      "HDAF",
+      "HJCC",
+      "IAJA",
+      "IABD",
+      "IABE",
+      "IABF",
+      "IACA",
+      "FKBB",
+      "IACB",
+      "IACC",
+      "IACD",
+      "IACE",
+      "HYCB",
+      "HGHB",
+      "FFBB",
+      "FJCD",
+      "IAHD",
+      "AVFC",
+      "HCJE",
+      "HCBA",
+      "HCBB",
+      "HCBC",
+      "HCBD",
+      "HCBE",
+      "HCBF",
+      "HCCA",
+      "GVJB",
+      "HGJA",
+      "HGJB",
+      "FKAF",
+      "HFFA",
+      "HHJE",
+      "HDBA",
+      "HGGF",
+      "HGHA",
+      "GVIE",
+      "GVIF",
+      "HGHC",
+      "HGHD",
+      "HGHE",
+      "HGHF",
+      "HVAE",
+      "HVAF",
+      "HVBA",
+      "HVEF",
+      "HVFA",
+      "HVFB"
+    ]
+  },
+  "BHFF": {
+    "Names": [
+      "modify_clouds"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "HOEB",
+      "HOEC",
+      "FHHF",
+      "HOED",
+      "HOEE",
+      "HOEF",
+      "HOFA",
+      "HOFB",
+      "HOFC",
+      "HOFD",
+      "HOFE",
+      "HOFF",
+      "HOGA",
+      "HOGB",
+      "HOGC",
+      "HOGD",
+      "HOGE",
+      "HOGF",
+      "HOHA",
+      "HOHB",
+      "BIBF",
+      "BICA",
+      "BICB",
+      "BICC",
+      "BICD",
+      "BICE",
+      "BIDA",
+      "AAFE",
+      "EAIC",
+      "ETAA",
+      "BTCE",
+      "AQFA",
+      "BUAA",
+      "EVEF",
+      "ICCD",
+      "ICCE",
+      "ICCF",
+      "ICDA",
+      "ICDB",
+      "ICDC",
+      "AQAB",
+      "AQAA",
+      "APJF",
+      "BZCE",
+      "EAIB",
+      "ICED",
+      "ICEE",
+      "APEB",
+      "AJDF",
+      "AJEA",
+      "EAEA",
+      "EAEB"
+    ]
+  },
+  "AVFE": {
+    "Names": [
+      "fieldbg_saveicn",
+      "fieldbg_saveicn01",
+      "1fieldbg_saveicn"
+    ],
+    "Anims": [
+      "BYHD",
+      "BTBA",
+      "AVHD"
+    ]
+  },
+  "BYDD": {
+    "Names": [
+      "fieldbg_trb_mety"
+    ],
+    "Anims": [
+      "EDDF",
+      "BYFC"
+    ]
+  },
+  "FXJC": {
+    "Names": [
+      "gold_guard"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "ASHF",
+      "ACFE",
+      "GBFA",
+      "GBFB",
+      "AAGA",
+      "GIDF",
+      "CCJB",
+      "ASBE"
+    ]
+  },
+  "CRCA": {
+    "Names": [
+      "std_man2"
+    ],
+    "Anims": [
+      "AAFE",
+      "FYFA",
+      "AJDD",
+      "AAFF",
+      "AUEE",
+      "ASBE",
+      "APED",
+      "ACFE",
+      "FLGC",
+      "FLGD",
+      "AAGA",
+      "CRHE",
+      "DQGC",
+      "DSBA"
+    ]
+  },
+  "DOIB": {
+    "Names": [
+      "std_woman6"
+    ],
+    "Anims": [
+      "AAFE",
+      "FYFB",
+      "AJDD",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "CPIF",
+      "AAFF",
+      "AAGA",
+      "CPJB"
+    ]
+  },
+  "DCIC": {
+    "Names": [
+      "std_man5",
+      "std_man502"
+    ],
+    "Anims": [
+      "AAFE",
+      "FYFA",
+      "AJDD",
+      "AAFF",
+      "AUEC",
+      "GIGF",
+      "APED",
+      "ACFE",
+      "AAGA",
+      "DOIA",
+      "ETFB"
+    ]
+  },
+  "DAFB": {
+    "Names": [
+      "std_woman2"
+    ],
+    "Anims": [
+      "AAFE",
+      "FYFB",
+      "AJDD",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "DCFF",
+      "EFCB",
+      "EFCC",
+      "DIEE",
+      "DIEF",
+      "CXCE",
+      "CXBF",
+      "AAGA",
+      "DSAE",
+      "CPIF",
+      "AAFF",
+      "CPJD"
+    ]
+  },
+  "CMIF": {
+    "Names": [
+      "std_man1"
+    ],
+    "Anims": [
+      "AAFE",
+      "FYFC",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJDC",
+      "BDCC",
+      "APJF",
+      "AJDD",
+      "AQBF",
+      "APED",
+      "DAEF",
+      "DAFA",
+      "AQCD",
+      "DAEE",
+      "AUEE",
+      "ABIE",
+      "ABIF",
+      "ABJA",
+      "DDGC",
+      "DQGC",
+      "DSAF"
+    ]
+  },
+  "ETFE": {
+    "Names": [
+      "gon_boy"
+    ],
+    "Anims": [
+      "BVCC",
+      "DJCC",
+      "BVCD",
+      "BVCE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "EVDD",
+      "FPCA",
+      "CRIC",
+      "DTCD",
+      "CYGD",
+      "CRIB",
+      "DABD",
+      "HQFE"
+    ]
+  },
+  "EUAF": {
+    "Names": [
+      "gon_girl"
+    ],
+    "Anims": [
+      "BVCC",
+      "DJCC",
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJEC"
+    ]
+  },
+  "CJIF": {
+    "Names": [
+      "std_man4",
+      "std_man401",
+      "std_man403"
+    ],
+    "Anims": [
+      "AAFE",
+      "AJDD",
+      "CGCC",
+      "CJID",
+      "AAGA",
+      "CJIE",
+      "FOIC",
+      "FOID",
+      "AVJE",
+      "DXAE",
+      "GIGB",
+      "GIGA",
+      "GIFF",
+      "ACFE",
+      "AAFF",
+      "GBHE",
+      "APED",
+      "CPIA",
+      "CWDD",
+      "APFD",
+      "CTAB",
+      "CKFB",
+      "AVDE",
+      "CXBA",
+      "CXBB",
+      "CXBC",
+      "DXAF",
+      "DXBA",
+      "BTCE",
+      "DXBB",
+      "BDCC",
+      "AUEC",
+      "ETFB",
+      "FDJB",
+      "CGIE"
+    ]
+  },
+  "DRCC": {
+    "Names": [
+      "std_man6"
+    ],
+    "Anims": [
+      "AAFE",
+      "AJDD",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DVAC",
+      "DJGC",
+      "DVAE",
+      "AVJE",
+      "BTCE",
+      "FYFA",
+      "GJDF",
+      "GJEA",
+      "ETFB",
+      "DPEA",
+      "DPEB",
+      "FDJB",
+      "HGGD",
+      "BTCD",
+      "AJDC",
+      "BYAD",
+      "AQCD",
+      "DRCB",
+      "AQCA",
+      "CJIC",
+      "AQCB",
+      "BDCC",
+      "EFHE",
+      "CPHF",
+      "BYGB",
+      "DJGE",
+      "AUEC",
+      "CNJD",
+      "APEB",
+      "DCEF",
+      "FPBF",
+      "CKFB"
+    ]
+  },
+  "BQFB": {
+    "Names": [
+      "std_man7"
+    ],
+    "Anims": [
+      "AAFE",
+      "AJDD",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DVAC",
+      "DVAD",
+      "DVAE",
+      "DDEB",
+      "AVJE",
+      "BTCE",
+      "AUEE",
+      "ASHF",
+      "DOGE",
+      "BYAD",
+      "AQBF",
+      "AQCF",
+      "CNJA",
+      "CNJD",
+      "CNJB",
+      "CEEE",
+      "HYBC",
+      "HYBD",
+      "HYAF",
+      "HYBE",
+      "HYBF",
+      "DQGC",
+      "DMCA",
+      "AUED",
+      "AUEC",
+      "ETFB",
+      "FDJB",
+      "ETFC"
+    ]
+  },
+  "DYFD": {
+    "Names": [
+      "gold_king"
+    ],
+    "Anims": [
+      "FZAB",
+      "FZAC",
+      "FZAD",
+      "FZAE",
+      "FZAF",
+      "FZBA",
+      "FZBB",
+      "FZBC",
+      "FZBD",
+      "FZBE",
+      "FZBF",
+      "FZCA",
+      "FZCB",
+      "BDCB",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "DZAF"
+    ]
+  },
+  "FZCC": {
+    "Names": [
+      "gold_dragon"
+    ],
+    "Anims": [
+      "FZGB",
+      "FZGC",
+      "FZGD",
+      "FZGE",
+      "FZGF",
+      "FZHA",
+      "FZHB",
+      "FZHC",
+      "FZHD",
+      "FZHE",
+      "FZHF",
+      "FZIA",
+      "FZIB",
+      "FZIC",
+      "FZID",
+      "FZIE"
+    ]
+  },
+  "DZBB": {
+    "Names": [
+      "gold_soldier"
+    ],
+    "Anims": [
+      "FZIF",
+      "FZJA",
+      "FZJB",
+      "FZJC",
+      "FZJD",
+      "FZJE",
+      "FZJF",
+      "GAAA",
+      "GAAB",
+      "GAAC",
+      "GAAD",
+      "GAAE",
+      "GAAF",
+      "GABA",
+      "GABB",
+      "GABC",
+      "GABD",
+      "FVDF",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DZGE"
+    ]
+  },
+  "GABE": {
+    "Names": [
+      "gold_wizard"
+    ],
+    "Anims": [
+      "GAHA",
+      "GAHB",
+      "GAHC",
+      "GAHD",
+      "GAHE",
+      "GAHF",
+      "GAIA",
+      "GAIB",
+      "GAIC",
+      "GAID",
+      "GAIE"
+    ]
+  },
+  "ECBF": {
+    "Names": [
+      "std_woman7"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "GAIF",
+      "GAJA",
+      "GAJB",
+      "FYGB",
+      "ACFE",
+      "DVHC",
+      "AUEC",
+      "AUEE",
+      "AJEC",
+      "CDDB",
+      "AJEB",
+      "APED",
+      "DDGC",
+      "GRDF",
+      "DMBB",
+      "BZCE",
+      "APEB",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "DXJD",
+      "DIEF",
+      "AQFA",
+      "HYAE",
+      "HYAF",
+      "HYBA",
+      "HYBB"
+    ]
+  },
+  "CTCC": {
+    "Names": [
+      "gold_fstaff"
+    ],
+    "Anims": [
+      "BKAF",
+      "FWGC",
+      "FWGE",
+      "GCHB",
+      "GHGC",
+      "GHGD",
+      "GHAB",
+      "GHAC",
+      "AUED",
+      "BKBA",
+      "CTIA"
+    ]
+  },
+  "GCJC": {
+    "Names": [
+      "fieldbg_v2_kanra"
+    ],
+    "Anims": [
+      "GDAA"
+    ]
+  },
+  "CCHA": {
+    "Names": [
+      "fieldbg_potion"
+    ],
+    "Anims": [
+      "CNFA",
+      "BYHC"
+    ]
+  },
+  "BSFC": {
+    "Names": [
+      "midgal_obasan"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DBBC",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "DSGE",
+      "DMBD",
+      "CDDB",
+      "AUEE",
+      "BDCC",
+      "AJDC",
+      "AQCF",
+      "DOIA",
+      "APEE",
+      "EMDC",
+      "BTCE",
+      "DWFA",
+      "BOCB",
+      "CKEE",
+      "CAFB",
+      "BYAD",
+      "DOGE"
+    ]
+  },
+  "AWCB": {
+    "Names": [
+      "shinra_ippan_1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DBBC",
+      "DVHC",
+      "AVJE",
+      "EBJE",
+      "BDCC",
+      "AUEE",
+      "DVAF",
+      "EDJC",
+      "AJDD",
+      "APED",
+      "AKED",
+      "CPHF",
+      "APJF",
+      "DAEF",
+      "AJDC",
+      "BYDB",
+      "BYAA",
+      "BXID",
+      "BXIF",
+      "AJEB",
+      "AQCB",
+      "DJGC",
+      "BOCB",
+      "HOCD",
+      "EQHA",
+      "AQBF",
+      "FBAF",
+      "FDIE",
+      "AJEC",
+      "BVJB",
+      "ICHA",
+      "CEFA"
+    ]
+  },
+  "EFFB": {
+    "Names": [
+      "fieldbg_bl664ft"
+    ],
+    "Anims": [
+      "EFFE",
+      "EFFF",
+      "EFGA"
+    ]
+  },
+  "BOCC": {
+    "Names": [
+      "cf_oldman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "EXFC",
+      "EXFD"
+    ]
+  },
+  "BOHE": {
+    "Names": [
+      "snow_woman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "HQIF",
+      "HQJA",
+      "CKFB",
+      "CPIF",
+      "APEC",
+      "DSAD",
+      "CKFA",
+      "CPJB"
+    ]
+  },
+  "BPDC": {
+    "Names": [
+      "market_muki2"
+    ],
+    "Anims": [
+      "BPJA",
+      "BPJB",
+      "BPJC",
+      "FOBC",
+      "AQEE",
+      "AQBF",
+      "ACFE",
+      "BTCE",
+      "APEB",
+      "DNJD",
+      "BYGB",
+      "EAEC",
+      "AAFF",
+      "AAGA",
+      "CDCE",
+      "DMBC",
+      "EADA",
+      "EADB",
+      "CDCD",
+      "CLBA"
+    ]
+  },
+  "BPJD": {
+    "Names": [
+      "sub_leave"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "ACFE",
+      "AGEE",
+      "BUAA",
+      "EFJD",
+      "EFHE",
+      "BYAD",
+      "APEB",
+      "AQCB",
+      "AVJE",
+      "CPHF",
+      "AJDD",
+      "AQCD",
+      "EFDE",
+      "DOGE",
+      "EFDF",
+      "EDJC",
+      "EFHD",
+      "EFGF",
+      "EEGB",
+      "AVFD",
+      "AJDF",
+      "AJEA",
+      "AJEC",
+      "AQBF",
+      "BDCC",
+      "AUEE",
+      "BYJA"
+    ]
+  },
+  "EBEC": {
+    "Names": [
+      "farm_boy"
+    ],
+    "Anims": [
+      "BVCC",
+      "EVDE",
+      "BVCD",
+      "DNDC",
+      "DJEB",
+      "DJBE",
+      "EMDA",
+      "EVDF",
+      "EVEA",
+      "EVEB"
+    ]
+  },
+  "EBJF": {
+    "Names": [
+      "fieldbg_bleldr_l"
+    ],
+    "Anims": [
+      "ECAD"
+    ]
+  },
+  "ECAE": {
+    "Names": [
+      "fieldbg_bleldr_r"
+    ],
+    "Anims": [
+      "ECBC"
+    ]
+  },
+  "ANBD": {
+    "Names": [
+      "sub_hojyo"
+    ],
+    "Anims": [
+      "ANHD",
+      "ANHE",
+      "AAGA",
+      "EFDA",
+      "EGDE",
+      "EGDF",
+      "EFDB",
+      "EFDC",
+      "ANIB",
+      "ANIA",
+      "ANHF",
+      "EGEA",
+      "EGFE",
+      "EGFF",
+      "EGGA",
+      "EGGB",
+      "EGGC",
+      "HXJF",
+      "HSHA",
+      "HYAA",
+      "HYAB",
+      "HYAC",
+      "HYAD",
+      "FOJD",
+      "FOJE",
+      "FOJF",
+      "FPAA",
+      "FPAB",
+      "HSGF"
+    ]
+  },
+  "DZGF": {
+    "Names": [
+      "shinra_ippan_2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "DVHC",
+      "AUEE",
+      "AUED",
+      "AUEC",
+      "DVAF",
+      "AAGA",
+      "EACD",
+      "EACE"
+    ]
+  },
+  "CDJA": {
+    "Names": [
+      "shinra_ippan_3"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AUEC",
+      "DOGE",
+      "EDJC",
+      "BDCB",
+      "BAJC",
+      "ECBD",
+      "EACF",
+      "APJC",
+      "BYGB",
+      "CWEB",
+      "DOHC",
+      "CEEE",
+      "AQCD",
+      "CDIE",
+      "CDAC",
+      "AJDD",
+      "CEEF",
+      "CEFA",
+      "CEFB",
+      "CEFC"
+    ]
+  },
+  "AZHE": {
+    "Names": [
+      "shinra_guard"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AUEC",
+      "AUEE",
+      "AAFE",
+      "DBBC",
+      "AKED",
+      "BDCC",
+      "BADC",
+      "EYEC",
+      "EYED",
+      "CDDB",
+      "EYEE",
+      "AGEE",
+      "AJEC",
+      "AJDC",
+      "EYGF",
+      "FAEE",
+      "FAEF",
+      "EYIB",
+      "EYIC",
+      "ETFD",
+      "EYIA",
+      "EYHA",
+      "EYHB",
+      "FAEB",
+      "AVJE",
+      "AQCA",
+      "DACE",
+      "AMCB",
+      "EYID",
+      "AJDF",
+      "AJDD",
+      "DAED",
+      "COAC",
+      "CPHF",
+      "BXHC",
+      "BXHD",
+      "BXHE",
+      "BXHF",
+      "BXIA",
+      "AQBF",
+      "HADD",
+      "CKFB",
+      "FEBA",
+      "CDCE",
+      "CJIA",
+      "BXJA",
+      "CDAC",
+      "CDIF",
+      "CAGD"
+    ]
+  },
+  "ECHD": {
+    "Names": [
+      "fieldbg_blin1"
+    ],
+    "Anims": [
+      "ECIA"
+    ]
+  },
+  "ALAD": {
+    "Names": [
+      "sub_lufas"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "ALGC",
+      "APEC",
+      "EFHE",
+      "DOIA",
+      "AJEC",
+      "AQBF",
+      "EHBB",
+      "AQCD",
+      "CAFB",
+      "AQCB",
+      "AUEC",
+      "AUED",
+      "ALGB",
+      "AJDD",
+      "APED",
+      "APJE",
+      "FAEC",
+      "FAED",
+      "AJDC",
+      "AUEE",
+      "AQFA",
+      "EBJE",
+      "CMHF",
+      "EYHF",
+      "IAIA",
+      "AAFE",
+      "BZCE",
+      "BOCB",
+      "CPHF"
+    ]
+  },
+  "AMCC": {
+    "Names": [
+      "sub_scarlet"
+    ],
+    "Anims": [
+      "ANAE",
+      "ANAF",
+      "ANBA",
+      "EFHF",
+      "EFIA",
+      "ANBB",
+      "EFIB",
+      "EFIC",
+      "EFID",
+      "EFCA",
+      "EFDD",
+      "EFHB",
+      "EFHC",
+      "AVFD",
+      "ANBC",
+      "EHBC",
+      "EHBD",
+      "FDID",
+      "FBAD",
+      "FBAE"
+    ]
+  },
+  "ALGD": {
+    "Names": [
+      "sub_hyde"
+    ],
+    "Anims": [
+      "EFIE",
+      "EFIF",
+      "EFJA",
+      "DOGE",
+      "EDJC",
+      "EFDE",
+      "EEFA",
+      "EFJB",
+      "DSGE",
+      "AMCB",
+      "EFJC",
+      "ABIE",
+      "ABIF",
+      "ABJA",
+      "EFHA",
+      "EFGF",
+      "EEGB",
+      "AVFD",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "AAFE",
+      "AJEC",
+      "AJDC",
+      "AJEB",
+      "EHAD",
+      "EHAE",
+      "AUEC",
+      "AQCB",
+      "APJC",
+      "EHAF",
+      "AMCA",
+      "EYGE",
+      "BDCC",
+      "DACE",
+      "CDIE",
+      "APJE",
+      "AJDE",
+      "AUEE",
+      "FAIC",
+      "FAID",
+      "AQFA",
+      "BYJA",
+      "EBJE",
+      "CDCE",
+      "AVJE",
+      "CMHF"
+    ]
+  },
+  "EEGC": {
+    "Names": [
+      "sub_palmer"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DOGE",
+      "EDJC",
+      "EFCD",
+      "EFCE",
+      "EFCF",
+      "EFGF",
+      "EEGB",
+      "AVFD",
+      "EGJD",
+      "EGJE",
+      "EGJF",
+      "EHAA",
+      "EHAB",
+      "GYCF",
+      "GYDA",
+      "ARFA",
+      "IAHE",
+      "GYDB"
+    ]
+  },
+  "BWAB": {
+    "Names": [
+      "shinra_hei"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BTCD",
+      "AAFE",
+      "GOEE",
+      "ASHF",
+      "DWFA",
+      "DHGA",
+      "DHGB",
+      "DHGC",
+      "BTCE",
+      "DHGD",
+      "FTCD",
+      "FUEA",
+      "FTIB",
+      "CAED",
+      "CKFB",
+      "BOCB",
+      "CRHE",
+      "DOHC",
+      "FBAF",
+      "FDIE",
+      "DXHB",
+      "AVFD",
+      "FFCA",
+      "FFCB",
+      "CDHD",
+      "CDHE",
+      "DXHD",
+      "AJEB",
+      "AUEE",
+      "AQBF",
+      "AJEC",
+      "AJDC",
+      "BUAA",
+      "CAFC",
+      "CCJB",
+      "CCJC",
+      "DXHC",
+      "EPFA",
+      "DGIC",
+      "DGID",
+      "CUEA",
+      "EMDB",
+      "EMDC",
+      "AJDF",
+      "AJEA",
+      "EIGB",
+      "AQCC",
+      "AQAB",
+      "AQCD",
+      "AJDD",
+      "BYJA",
+      "DBBD",
+      "ESEA",
+      "ETBD",
+      "ETBE",
+      "DBBC",
+      "EYEC",
+      "COAC",
+      "EYHA",
+      "AVJE",
+      "BVJB",
+      "CMHF",
+      "BYGC",
+      "FJCE",
+      "BXJA",
+      "APJC",
+      "CPHF",
+      "AUED",
+      "APJE",
+      "AUEC",
+      "AKED",
+      "DOGE",
+      "BDCB",
+      "CDDC",
+      "EIHB",
+      "EIHC",
+      "EYFE",
+      "EFHE",
+      "CJIC",
+      "AGEE",
+      "HVHF",
+      "HVIA",
+      "HVIB"
+    ]
+  },
+  "ECIB": {
+    "Names": [
+      "shinra_woman"
+    ],
+    "Anims": [
+      "DOGE",
+      "EDJC",
+      "AAFF",
+      "AAGA",
+      "ACFE",
+      "AUEC",
+      "AKED",
+      "EFCB",
+      "EFCC",
+      "DMBB",
+      "EBJE",
+      "DVHC",
+      "DMBE",
+      "FAGA",
+      "CTIA",
+      "DXJD",
+      "EYFF"
+    ]
+  },
+  "DPEF": {
+    "Names": [
+      "std_man17"
+    ],
+    "Anims": [
+      "ACFE",
+      "AUED",
+      "AAFF",
+      "AAGA",
+      "ALAC",
+      "DQAD"
+    ]
+  },
+  "EDJD": {
+    "Names": [
+      "std_oldm4"
+    ],
+    "Anims": [
+      "BOCB",
+      "AAFF",
+      "ACFE",
+      "EEFA",
+      "BTCD",
+      "GRFA",
+      "AAGA",
+      "GRFB",
+      "FJAB",
+      "CKEE",
+      "FJAC",
+      "FAIB",
+      "DDGC",
+      "GRDF",
+      "CKED",
+      "GYBB"
+    ]
+  },
+  "AWHF": {
+    "Names": [
+      "sub_shinra"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DOGE",
+      "EFGF",
+      "ABIE",
+      "ABIF",
+      "ABJA",
+      "EEGB",
+      "AVFD",
+      "EGHD",
+      "AUEE",
+      "AQCB",
+      "AUEC",
+      "CPHF",
+      "EHAC",
+      "CAGD",
+      "APED",
+      "BDCC",
+      "AQCA",
+      "BZCD",
+      "AQCF",
+      "BZCE",
+      "BZCF",
+      "AJEC"
+    ]
+  },
+  "EEFB": {
+    "Names": [
+      "fieldbg_sptarm"
+    ],
+    "Anims": [
+      "EEGA"
+    ]
+  },
+  "AXDC": {
+    "Names": [
+      "midgal_avawoman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CDCF",
+      "AQCD",
+      "CDDA",
+      "CDDB",
+      "AJEC",
+      "CDDC",
+      "AQBF",
+      "BTCE",
+      "BYFF",
+      "BXJA",
+      "CAED",
+      "CAGE",
+      "CAFB",
+      "AJDC",
+      "CNJF",
+      "CNJA",
+      "COAA",
+      "COAB",
+      "AUEC",
+      "CNJE",
+      "CDCD",
+      "AVJE",
+      "AJDD",
+      "DABA",
+      "DABB",
+      "DABC",
+      "DAAE",
+      "CXJA",
+      "CXJB",
+      "CXJC",
+      "CMHF",
+      "CXJD",
+      "BDCC",
+      "CXJE",
+      "CXJF",
+      "AAFE",
+      "CCID",
+      "CCIE",
+      "CCIF",
+      "BXBD",
+      "BYGD",
+      "BYDB",
+      "BYDC",
+      "BYGC",
+      "BYGE",
+      "BYAB",
+      "BYAC",
+      "DCFF",
+      "AUEE",
+      "CJIC",
+      "CDIC",
+      "ASBD",
+      "CDIB"
+    ]
+  },
+  "BFCA": {
+    "Names": [
+      "midgal_fatman"
+    ],
+    "Anims": [
+      "ACFE",
+      "CTAB",
+      "BTCD",
+      "CDDB",
+      "AAFF",
+      "AAGA",
+      "AJEC",
+      "DOHE",
+      "DACE",
+      "DZAF",
+      "FADA",
+      "FADB",
+      "DAEE",
+      "AJEB",
+      "CNJD",
+      "CNJA",
+      "COAA",
+      "CAFB",
+      "AUEC",
+      "AJDC",
+      "AUEE",
+      "DNDD",
+      "HQEB",
+      "EFJB",
+      "HQEC"
+    ]
+  },
+  "BFHE": {
+    "Names": [
+      "std_oldm1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AUEC",
+      "AAFF",
+      "EUGA",
+      "AQBF",
+      "DOHE",
+      "BZBA",
+      "DLDB",
+      "EUGB",
+      "EUGC",
+      "BZCF",
+      "AAGA",
+      "AJEC",
+      "CKED",
+      "AJDC",
+      "AJDD",
+      "APED",
+      "DACE",
+      "CKEF",
+      "CXAF",
+      "CKEE",
+      "DNDD",
+      "FPJA",
+      "CXBD",
+      "DPDF",
+      "AUED",
+      "APEB",
+      "AJEB",
+      "GYJB"
+    ]
+  },
+  "ANIC": {
+    "Names": [
+      "shinra_lude",
+      "2shinra_lude"
+    ],
+    "Anims": [
+      "ACFE",
+      "BDCB",
+      "BDCC",
+      "AAFF",
+      "AAGA",
+      "ECBD",
+      "HIFF",
+      "HIJF",
+      "HJAA",
+      "AJEC",
+      "AQBF",
+      "AAFE",
+      "CPHF",
+      "AJDD",
+      "CGCC",
+      "ETDC",
+      "APED",
+      "CPIA",
+      "BYJB",
+      "AJDC",
+      "DWFA",
+      "AVFD",
+      "AWAB",
+      "AJDE",
+      "GYJB",
+      "ETFC"
+    ]
+  },
+  "BGDC": {
+    "Names": [
+      "sub_siera"
+    ],
+    "Anims": [
+      "ABIE",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "GYCD",
+      "HADE",
+      "GYBA",
+      "AJEC",
+      "HCJF",
+      "HDAA",
+      "HDAB",
+      "HDAC",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "GYCE",
+      "AWAB",
+      "AAFE",
+      "AJDD",
+      "CPHF",
+      "AUEE",
+      "AQBF",
+      "BYJB",
+      "HCEC",
+      "BYJC",
+      "BYAA",
+      "BXID",
+      "HCED",
+      "HCEE",
+      "EIGA",
+      "AUEC",
+      "AQCA",
+      "BUAA",
+      "AUED"
+    ]
+  },
+  "BCGD": {
+    "Names": [
+      "shinra_crew"
+    ],
+    "Anims": [
+      "ABIE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "APJC",
+      "BOCB",
+      "EACF",
+      "CDDB",
+      "BDCC",
+      "AJEB",
+      "DACF",
+      "CDCD",
+      "CPHF",
+      "AUEE",
+      "BYGB",
+      "DMBF",
+      "DMCA",
+      "EYHB",
+      "AKED",
+      "EBJE",
+      "AJDD",
+      "DBBC",
+      "FKAA",
+      "BYAD",
+      "AUED"
+    ]
+  },
+  "BGJC": {
+    "Names": [
+      "nible_cefiro3"
+    ],
+    "Anims": [
+      "BHFE",
+      "BLDD",
+      "EQEB",
+      "BBGD",
+      "EQEC",
+      "EQED",
+      "EQEE",
+      "EQEF",
+      "EQFA",
+      "EQFB",
+      "EQFC",
+      "EQFD"
+    ]
+  },
+  "BKBF": {
+    "Names": [
+      "sub_pricilla"
+    ],
+    "Anims": [
+      "ABCD",
+      "ABCE",
+      "ABCF",
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "FIIE",
+      "EVDD",
+      "CRIB",
+      "CRIC",
+      "CXAC",
+      "FIIF",
+      "CYGC",
+      "CYHC",
+      "CUDE",
+      "FIAC",
+      "FIAD",
+      "DTCD"
+    ]
+  },
+  "BKHD": {
+    "Names": [
+      "sub_n_sefiro"
+    ],
+    "Anims": [
+      "BLDD",
+      "BBGC",
+      "BBGD",
+      "HJCD",
+      "EHJC",
+      "FKBD",
+      "IAFC",
+      "EPED",
+      "EJJD",
+      "EMJE",
+      "EMJF",
+      "EKAF",
+      "EHJD",
+      "ENAA",
+      "EKAC",
+      "EKAD",
+      "EKAE",
+      "EKAB",
+      "EJJE",
+      "EKBC",
+      "EJJF",
+      "ELFC",
+      "ELFD",
+      "ELFE",
+      "EIGC",
+      "EJJC",
+      "EKAA",
+      "EPDC",
+      "EQEA",
+      "ETAB",
+      "ETAC",
+      "ETAD",
+      "ESJE",
+      "ESJF",
+      "EREF",
+      "ERFA",
+      "ERFB",
+      "ERFC",
+      "ERFD",
+      "ERFE",
+      "ERFF",
+      "FKBC",
+      "FKBE",
+      "FKBF",
+      "EPDE",
+      "EODF",
+      "HJDA",
+      "EKBA",
+      "EIGD",
+      "EIGF",
+      "EIGE",
+      "EIHA"
+    ]
+  },
+  "BLDE": {
+    "Names": [
+      "nible_man"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BZCE",
+      "AVJE",
+      "BVJB",
+      "BVJC",
+      "BVJD",
+      "BVJE"
+    ]
+  },
+  "BLJC": {
+    "Names": [
+      "island_doctor"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "HSID",
+      "HSIE",
+      "HSIF",
+      "HSJA",
+      "EWBC",
+      "HTJD"
+    ]
+  },
+  "BMEE": {
+    "Names": [
+      "nible_girl"
+    ],
+    "Anims": [
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "DTCD"
+    ]
+  },
+  "BNAF": {
+    "Names": [
+      "utai_zangan"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BTCE",
+      "AGEE",
+      "AQCA"
+    ]
+  },
+  "AKEE": {
+    "Names": [
+      "rocket_crew2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJIC",
+      "APJC"
+    ]
+  },
+  "EDEA": {
+    "Names": [
+      "shinra_onna"
+    ],
+    "Anims": [
+      "BOCB"
+    ]
+  },
+  "AXJA": {
+    "Names": [
+      "market_tifa"
+    ],
+    "Anims": [
+      "ABCD",
+      "ABCE",
+      "ABCF",
+      "AJEF",
+      "AYFA",
+      "DVBC",
+      "DBDF",
+      "ACGA",
+      "BZAC",
+      "APGB",
+      "APGC",
+      "APAA",
+      "ACGB",
+      "AJEE",
+      "AHCF",
+      "CXHB",
+      "BTCB",
+      "AUFA",
+      "DWJA",
+      "DWGB"
+    ]
+  },
+  "AYFB": {
+    "Names": [
+      "junon_c_ballet"
+    ],
+    "Anims": [
+      "ADCB",
+      "ADCC",
+      "ADCD",
+      "AZAF",
+      "AZBA",
+      "APAC",
+      "CDBE",
+      "CDFD",
+      "AQDC",
+      "ADCE",
+      "APFF",
+      "FJJF",
+      "AGFD",
+      "AGFE",
+      "AQAD",
+      "BYIA"
+    ]
+  },
+  "AZBB": {
+    "Names": [
+      "market_earith"
+    ],
+    "Anims": [
+      "AVBF",
+      "AZHD",
+      "AVCA",
+      "AVCB",
+      "BICF",
+      "BKBC",
+      "DADE",
+      "DIBE",
+      "BTDB",
+      "DDFA",
+      "BTCF",
+      "BTDD",
+      "DADD",
+      "DVBD",
+      "DADC",
+      "DGCB",
+      "DWID",
+      "DJHF",
+      "DWIE",
+      "DWIF",
+      "DDGB",
+      "DWFC",
+      "CMIE"
+    ]
+  },
+  "BADD": {
+    "Names": [
+      "market_dancer"
+    ],
+    "Anims": [
+      "BAJB",
+      "BAJC",
+      "AAGA",
+      "BAJD",
+      "BAJE",
+      "BAJF",
+      "BBAA",
+      "DXID",
+      "DXHF",
+      "DXIA",
+      "DXJD",
+      "DIEF",
+      "DXJC",
+      "BYAD",
+      "DXHE",
+      "DXIB",
+      "DXIC",
+      "DXIE",
+      "DXIF",
+      "DXJA",
+      "DXJB",
+      "BCCC",
+      "BCCD",
+      "AVJE",
+      "DZBA"
+    ]
+  },
+  "BBAB": {
+    "Names": [
+      "modify_swordc",
+      "modify_swordc09",
+      "modify_swordc00"
+    ],
+    "Anims": [
+      "BBGB",
+      "BBGC",
+      "BBGD",
+      "HJCD",
+      "HJCE",
+      "HJCF",
+      "HJDA",
+      "HJDB",
+      "EKAC",
+      "EKAD",
+      "BLDD",
+      "BHFE",
+      "EJJD",
+      "ELFE",
+      "HKGE",
+      "ELFD",
+      "ELFC",
+      "EJJF",
+      "EKBA",
+      "HKGF",
+      "HKHA",
+      "ESJF",
+      "HKIB",
+      "HKIC",
+      "HKID",
+      "HKIE",
+      "HKIF",
+      "HKJA",
+      "ESJE",
+      "ETAB",
+      "EHJC",
+      "EMDE",
+      "ERGA",
+      "ERGB",
+      "ERGC",
+      "ERGD",
+      "ERGE",
+      "ERGF",
+      "HSFD",
+      "HSFE",
+      "EJJC"
+    ]
+  },
+  "BBGE": {
+    "Names": [
+      "kosta_swoman2"
+    ],
+    "Anims": [
+      "BAJB",
+      "BCCC",
+      "BCCD",
+      "BCCE",
+      "FLAB",
+      "BAJD",
+      "FKJD",
+      "FPAE",
+      "FOIE"
+    ]
+  },
+  "BCCF": {
+    "Names": [
+      "another_guid2"
+    ],
+    "Anims": [
+      "BCGC",
+      "HKGA",
+      "HJFD",
+      "HJFE",
+      "HJHD",
+      "AEHC",
+      "HJFF"
+    ]
+  },
+  "BDCD": {
+    "Names": [
+      "another_iruka"
+    ],
+    "Anims": [
+      "BDFE",
+      "BDFF",
+      "FFEB",
+      "FIAE",
+      "FIAF"
+    ]
+  },
+  "BDGA": {
+    "Names": [
+      "animal_cat1",
+      "animal_cat100",
+      "animal_cat102"
+    ],
+    "Anims": [
+      "BEEB",
+      "EZBF",
+      "EZCA",
+      "FAAC",
+      "FAAB",
+      "EZCB"
+    ]
+  },
+  "BEEC": {
+    "Names": [
+      "animal_dog2"
+    ],
+    "Anims": [
+      "BFBF",
+      "DFGB",
+      "CTBA",
+      "CTBB",
+      "CTBC",
+      "CTAF",
+      "CTBD",
+      "EYGC"
+    ]
+  },
+  "BIDB": {
+    "Names": [
+      "nible_tifa15"
+    ],
+    "Anims": [
+      "ABCD",
+      "ABCE",
+      "ABCF",
+      "BIJB",
+      "ASJA",
+      "BKBE",
+      "ACFF",
+      "CDGF",
+      "AQFD",
+      "EPEC",
+      "EPDF",
+      "EPEE",
+      "EHBA",
+      "EPEF",
+      "AHCF",
+      "ARFB",
+      "EKBD",
+      "EKBE",
+      "BZAC",
+      "APAA",
+      "DOFE",
+      "EQDB",
+      "EQDC",
+      "EQDD",
+      "EQDE",
+      "EQHF",
+      "EQHD",
+      "EQIA",
+      "APGB",
+      "ARFC",
+      "ACGC",
+      "EQHC",
+      "EQHE"
+    ]
+  },
+  "BIJD": {
+    "Names": [
+      "shinra_yvin"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AGFA",
+      "AAFE",
+      "BKBD",
+      "EKHD",
+      "EKHE",
+      "EKHF",
+      "EKIA",
+      "EKIB",
+      "EKIC",
+      "EKID",
+      "ELFF",
+      "ELGA",
+      "EPAE",
+      "EPAF",
+      "EPBA",
+      "EPBB",
+      "EPBC",
+      "EPBD",
+      "EPBE",
+      "EPBF"
+    ]
+  },
+  "BJFB": {
+    "Names": [
+      "nible_cmother"
+    ],
+    "Anims": [
+      "BKAF",
+      "BKBA",
+      "BKBB",
+      "CPIF",
+      "AAFF",
+      "AAGA",
+      "DIEE",
+      "CPJB"
+    ]
+  },
+  "BZHF": {
+    "Names": [
+      "another_heli2"
+    ],
+    "Anims": [
+      "CACE",
+      "CACF",
+      "CADA",
+      "CADB"
+    ]
+  },
+  "BNGD": {
+    "Names": [
+      "korel_daing"
+    ],
+    "Anims": [
+      "AAFF",
+      "FXCC",
+      "FUEB",
+      "AAGA",
+      "FXCD",
+      "FXCE",
+      "FXCF",
+      "FXDA",
+      "FXDB",
+      "FXDC",
+      "FXDD",
+      "FXDE",
+      "FXDF",
+      "FXEA",
+      "FXEB",
+      "FXEC",
+      "FXED",
+      "FXEE",
+      "FXEF",
+      "FXFA",
+      "FXFB",
+      "FXFC",
+      "FXFD",
+      "FXFE",
+      "FXFF",
+      "FXGA",
+      "FXGB",
+      "FXGC",
+      "FXGD",
+      "FXGE",
+      "FXGF",
+      "FXHA",
+      "FXHB",
+      "FXHC",
+      "FXHD",
+      "AQAD",
+      "FXHE",
+      "FXHF",
+      "FXIA"
+    ]
+  },
+  "EGHE": {
+    "Names": [
+      "nible_katana"
+    ],
+    "Anims": [
+      "EGIB",
+      "EQDF"
+    ]
+  },
+  "EAID": {
+    "Names": [
+      "another_heli"
+    ],
+    "Anims": [
+      "CACF",
+      "CADB",
+      "CADA",
+      "CACE",
+      "EYGA"
+    ]
+  },
+  "ARFD": {
+    "Names": [
+      "std_oldm3",
+      "std_oldm300"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CKED",
+      "CKEE",
+      "APED",
+      "APEB",
+      "DQGC",
+      "AQBF",
+      "AVJE",
+      "AUEC",
+      "AQCC",
+      "ETFB",
+      "ETFC",
+      "FDJB",
+      "AQCA",
+      "AQCD",
+      "CKEF",
+      "CKFA",
+      "CKFB",
+      "ASBA",
+      "ASBB",
+      "ASBC"
+    ]
+  },
+  "BRAF": {
+    "Names": [
+      "std_woman1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BDCC",
+      "AAFE",
+      "BYGB",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "DOHE"
+    ]
+  },
+  "DBEC": {
+    "Names": [
+      "shinra_tuon"
+    ],
+    "Anims": [
+      "DCAC",
+      "DCAD",
+      "DCAE",
+      "GOFA",
+      "GOFB",
+      "GOFC",
+      "DCBC",
+      "DCAF",
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "AUEC",
+      "AUED",
+      "DCBE",
+      "HJEB",
+      "HJEC",
+      "HJED",
+      "HJEE",
+      "HJEF",
+      "HJFA",
+      "HJFB",
+      "DCBF",
+      "DCBA",
+      "HKGB",
+      "HKGC",
+      "HKGD",
+      "DCBB",
+      "DCBD"
+    ]
+  },
+  "BRGD": {
+    "Names": [
+      "fieldbg_c_bike"
+    ],
+    "Anims": [
+      "BRIA"
+    ]
+  },
+  "BRIB": {
+    "Names": [
+      "fieldbg_bcloud"
+    ],
+    "Anims": [
+      "BSEF",
+      "BSFA",
+      "BSFB"
+    ]
+  },
+  "ATEB": {
+    "Names": [
+      "fieldbg_mtra7"
+    ],
+    "Anims": [
+      "AWAD",
+      "DWJC",
+      "DWJD",
+      "ATEE",
+      "DACC",
+      "EXFF"
+    ]
+  },
+  "BYGF": {
+    "Names": [
+      "fieldbg_potion_b"
+    ],
+    "Anims": [
+      "BYHC",
+      "FAAD"
+    ]
+  },
+  "HLFC": {
+    "Names": [
+      "bone_man"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DOGE",
+      "FPBD",
+      "HMBA",
+      "HMBB",
+      "FJCB",
+      "AQBF",
+      "HMBC",
+      "HMBD",
+      "AVFD",
+      "EPEA",
+      "BTCE"
+    ]
+  },
+  "HMBE": {
+    "Names": [
+      "bone_woman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJEB",
+      "EHHB",
+      "EMBF",
+      "HMHC",
+      "HMHD",
+      "AVFD",
+      "EPEA",
+      "BTCE"
+    ]
+  },
+  "BYIB": {
+    "Names": [
+      "fieldbg_mtra3",
+      "fieldbg_mtra302"
+    ],
+    "Anims": [
+      "AWAD"
+    ]
+  },
+  "AFEC": {
+    "Names": [
+      "cosmo_boo"
+    ],
+    "Anims": [
+      "GSIA",
+      "AFIC",
+      "AFIB",
+      "GUGE",
+      "GUHB",
+      "GUHA",
+      "GVCC",
+      "GWGE",
+      "GWGF",
+      "AFID",
+      "GUGF",
+      "HODF",
+      "GWHD",
+      "GWHE",
+      "GWHF",
+      "GWIA",
+      "HODA"
+    ]
+  },
+  "GSBE": {
+    "Names": [
+      "cosmo_girl"
+    ],
+    "Anims": [
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "DFGC"
+    ]
+  },
+  "GTFC": {
+    "Names": [
+      "cosmo_old"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FXJB",
+      "BYAD",
+      "AAFE",
+      "AUEE",
+      "AJDC"
+    ]
+  },
+  "GWCC": {
+    "Names": [
+      "cosmo_boo2"
+    ],
+    "Anims": [
+      "GWFF",
+      "AFIC",
+      "GWGA",
+      "GWGB",
+      "GWGC",
+      "GWGD"
+    ]
+  },
+  "BWFD": {
+    "Names": [
+      "midgal_avaman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CDCB",
+      "AJEB",
+      "BTCE",
+      "BXJA",
+      "CAED",
+      "CAGC",
+      "CAGD",
+      "AJDC",
+      "AUEC",
+      "CNJA",
+      "CNJB",
+      "CNJC",
+      "CNJD",
+      "AUED",
+      "CNJE",
+      "CDCD",
+      "AVJE",
+      "AQBF",
+      "CZJE",
+      "CZJF",
+      "DAAA",
+      "DAAB",
+      "DAAC",
+      "DAAD",
+      "CDCF",
+      "DAAE",
+      "CYAA",
+      "CXJB",
+      "CXJC",
+      "CYAB",
+      "CMHF",
+      "CXJD",
+      "BDCC",
+      "CAFB",
+      "AAFE",
+      "CCIA",
+      "CCIB",
+      "CCIC",
+      "BXBB",
+      "BXBC",
+      "DBBB",
+      "BYDB",
+      "AVFD",
+      "CGCF",
+      "CDHD",
+      "CDHE",
+      "CDHF",
+      "CDIA",
+      "CDIB"
+    ]
+  },
+  "BXBE": {
+    "Names": [
+      "midgal_avafat"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CDCC",
+      "CDCD",
+      "CDCE",
+      "BTCE",
+      "BXJA",
+      "CAED",
+      "CAGF",
+      "CAHA",
+      "CAFB",
+      "AJDC",
+      "DAEB",
+      "DAEC",
+      "DAAD",
+      "BDCC",
+      "CNJE",
+      "AVJE",
+      "AQBF",
+      "DAAF",
+      "CDCF",
+      "DAAE",
+      "CYAA",
+      "CYAC",
+      "CXJB",
+      "CXJC",
+      "CYAD",
+      "CMHF",
+      "CXJD",
+      "AJDD",
+      "AAFE",
+      "BXBB",
+      "CKFB",
+      "DBBA",
+      "DCFF",
+      "CDID",
+      "CDIE",
+      "AJEC",
+      "CDHF",
+      "CDIA",
+      "CDIB"
+    ]
+  },
+  "AWAE": {
+    "Names": [
+      "fieldbg_trb_glow",
+      "3fieldbg_trb_glow"
+    ],
+    "Anims": [
+      "AWBD"
+    ]
+  },
+  "AODD": {
+    "Names": [
+      "shinra_reno",
+      "2shinra_reno"
+    ],
+    "Anims": [
+      "AOJD",
+      "AOJE",
+      "AOJF",
+      "AWAA",
+      "AVJF",
+      "DBEA",
+      "HIJA",
+      "HIJB",
+      "HIJC",
+      "HIJD",
+      "HIJE",
+      "DBEB",
+      "HGGE"
+    ]
+  },
+  "DGCD": {
+    "Names": [
+      "nible_boy"
+    ],
+    "Anims": [
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "CRIC",
+      "DTCD"
+    ]
+  },
+  "DHAF": {
+    "Names": [
+      "shinra_reno2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AAFE",
+      "BZCE",
+      "AVJE",
+      "AJEB",
+      "AQBF",
+      "APEE"
+    ]
+  },
+  "DHGE": {
+    "Names": [
+      "fieldbg_taru"
+    ],
+    "Anims": [
+      "DHHB",
+      "DHHC",
+      "DHHD",
+      "DHHE"
+    ]
+  },
+  "DHHF": {
+    "Names": [
+      "fieldbg_ladd"
+    ],
+    "Anims": [
+      "DHIC"
+    ]
+  },
+  "DHID": {
+    "Names": [
+      "fieldbg_gun_e"
+    ]
+  },
+  "GAJC": {
+    "Names": [
+      "sub_dio"
+    ],
+    "Anims": [
+      "GBFA",
+      "GBFB",
+      "GBGA",
+      "GIDA",
+      "GBFE",
+      "GBFF",
+      "GBFC",
+      "GBFD",
+      "GBGC",
+      "GBGD",
+      "GBGE",
+      "GBHB",
+      "GBHD",
+      "GBGF",
+      "GBHA",
+      "ASHF",
+      "GICF",
+      "APED",
+      "AVJE",
+      "GBHC",
+      "GBGB"
+    ]
+  },
+  "GHGF": {
+    "Names": [
+      "gold_mech"
+    ],
+    "Anims": [
+      "GICA",
+      "GICB",
+      "GICC",
+      "GICD",
+      "GICE",
+      "GIDC",
+      "GIDD",
+      "GIDE"
+    ]
+  },
+  "GCBD": {
+    "Names": [
+      "gold_mstaff"
+    ],
+    "Anims": [
+      "CAED",
+      "AJDD",
+      "ASBE",
+      "AAFF",
+      "AQCB",
+      "AAFE",
+      "EVDC",
+      "GGGD",
+      "ASHF",
+      "ASHE",
+      "AJEC",
+      "AQBF"
+    ]
+  },
+  "FNEF": {
+    "Names": [
+      "std_man11"
+    ],
+    "Anims": [
+      "AAFE",
+      "AQCD",
+      "ASBE",
+      "ASHF",
+      "APED",
+      "ASIC",
+      "AJEB",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BYGB",
+      "DADA",
+      "CDCD",
+      "FOAD",
+      "CPHF",
+      "BUAA",
+      "DOHC"
+    ]
+  },
+  "FTCF": {
+    "Names": [
+      "std_fmw2",
+      "std_fmw1"
+    ],
+    "Anims": [
+      "EFIE",
+      "EFIF",
+      "DSGE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FTIB",
+      "AQCD",
+      "AJDD",
+      "AQCA"
+    ]
+  },
+  "GHAD": {
+    "Names": [
+      "std_woman4"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "CJIC",
+      "DOFC",
+      "ACFE",
+      "GIGB",
+      "GIGA",
+      "GIFF"
+    ]
+  },
+  "DLFB": {
+    "Names": [
+      "market_cloudw"
+    ],
+    "Anims": [
+      "DMBB",
+      "DMBC",
+      "DMBD",
+      "AAFE",
+      "AVJE",
+      "CPHF",
+      "AUED",
+      "AJDC",
+      "AUEC",
+      "AJDD",
+      "AJEB",
+      "BUAB",
+      "DMBE",
+      "DWIA",
+      "BTCE",
+      "DUEF",
+      "DWIB",
+      "DWIC",
+      "AQBF",
+      "AQCA",
+      "AKED",
+      "CNJD",
+      "AQCD",
+      "AWAC"
+    ]
+  },
+  "DTCE": {
+    "Names": [
+      "rocket_man"
+    ],
+    "Anims": [
+      "AAFE",
+      "AQCF",
+      "AUEC",
+      "CDDB",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQCB"
+    ]
+  },
+  "DTIC": {
+    "Names": [
+      "fieldbg_clnbpl"
+    ]
+  },
+  "GRGA": {
+    "Names": [
+      "cosmo_man"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AUED",
+      "AQBF",
+      "EBDD",
+      "CPHF",
+      "AUEC",
+      "FXJB",
+      "AAGA"
+    ]
+  },
+  "CSED": {
+    "Names": [
+      "std_man16"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AUEE",
+      "DDEC",
+      "AVJE",
+      "FTCD",
+      "FTCE",
+      "CKFB",
+      "BDCC",
+      "CXJE",
+      "AAFE",
+      "CVAE",
+      "CTAB",
+      "AJEB",
+      "CPIA",
+      "CTAC",
+      "CDCF",
+      "AUED",
+      "DQGC",
+      "ETFB"
+    ]
+  },
+  "GSHC": {
+    "Names": [
+      "fieldbg_cos_pro1"
+    ],
+    "Anims": [
+      "GSHF"
+    ]
+  },
+  "DTJB": {
+    "Names": [
+      "market_buka"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AUED",
+      "AUEC",
+      "DVAC",
+      "AJDD",
+      "BTCE",
+      "AVJE",
+      "AAGA",
+      "CDEA",
+      "AQAB",
+      "DXAC",
+      "DXAD",
+      "AQBF",
+      "BDCC"
+    ]
+  },
+  "DVBE": {
+    "Names": [
+      "market_youjin_l"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "DVAF",
+      "DBBC",
+      "DVHC",
+      "DVHD",
+      "DVHE",
+      "DVAD",
+      "CNJD",
+      "BOCB",
+      "DWFA",
+      "APJC"
+    ]
+  },
+  "DVHF": {
+    "Names": [
+      "market_korneo"
+    ],
+    "Anims": [
+      "DWDD",
+      "DWDE",
+      "DWDF",
+      "DWEA",
+      "DWEB",
+      "DWEC",
+      "DWED",
+      "DWEE",
+      "DWEF",
+      "DWGC",
+      "DWGD",
+      "DWGE",
+      "DWGF",
+      "DWHA",
+      "DWHB",
+      "DWHC",
+      "DWHD",
+      "DWHE",
+      "DWHF",
+      "HHJA",
+      "HIGB",
+      "HIGC",
+      "HIGD",
+      "HIGE",
+      "HIGF",
+      "HIHA",
+      "HHJB",
+      "HHJC"
+    ]
+  },
+  "DUFA": {
+    "Names": [
+      "market_youjin_r"
+    ],
+    "Anims": [
+      "BOCB",
+      "AAFF",
+      "APJC",
+      "AGEE",
+      "BTCE"
+    ]
+  },
+  "GUBA": {
+    "Names": [
+      "cosmo_boy"
+    ],
+    "Anims": [
+      "BVCC",
+      "BVCD",
+      "DDGE",
+      "CXAC",
+      "BVCE",
+      "EVDD",
+      "DNDC"
+    ]
+  },
+  "GUHC": {
+    "Names": [
+      "fieldbg_cos_dor1"
+    ],
+    "Anims": [
+      "GUIA"
+    ]
+  },
+  "GUIB": {
+    "Names": [
+      "fieldbg_cos_dor2"
+    ],
+    "Anims": [
+      "GUIF"
+    ]
+  },
+  "COAD": {
+    "Names": [
+      "midgal_obasan2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AUED",
+      "AAFF",
+      "AAGA",
+      "DBBC",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "DSGE",
+      "COAB",
+      "BAJC",
+      "CNJD",
+      "AQCA",
+      "AVJE",
+      "CWDF",
+      "CPIA",
+      "CNJB",
+      "CPIB",
+      "CPIC",
+      "CXBE",
+      "CXBF",
+      "CXCA",
+      "CXCB",
+      "CXCC"
+    ]
+  },
+  "FQCB": {
+    "Names": [
+      "korel_yballet"
+    ],
+    "Anims": [
+      "ADCB",
+      "ADCC",
+      "ADCD",
+      "FSFB",
+      "FSFC",
+      "FSFD",
+      "FSFE",
+      "FSFF",
+      "FSGA",
+      "FXIE",
+      "FXIF"
+    ]
+  },
+  "FQJB": {
+    "Names": [
+      "korel_dainy"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FREF",
+      "FSGB",
+      "FRFA",
+      "FSGC",
+      "FSGD",
+      "FXCC",
+      "FXIB",
+      "FXIC",
+      "FXID"
+    ]
+  },
+  "CRID": {
+    "Names": [
+      "std_man12"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "AJDD",
+      "FVEA",
+      "ASHF",
+      "ACFE",
+      "FOBD",
+      "FOHF",
+      "APEB",
+      "GREE",
+      "GREF",
+      "DDGC",
+      "GRDF",
+      "CSEB",
+      "AQFA",
+      "HYAE",
+      "HYAF",
+      "CPHF"
+    ]
+  },
+  "EHBE": {
+    "Names": [
+      "std_woman5"
+    ],
+    "Anims": [
+      "BKAF",
+      "AAFF",
+      "AAGA",
+      "FWGC",
+      "FWGE",
+      "BKBB",
+      "AAFE",
+      "AUEE",
+      "ASHF",
+      "ACFE",
+      "AQBF",
+      "DPDF",
+      "DPEA",
+      "CUFB",
+      "EZBE",
+      "CPIF"
+    ]
+  },
+  "GGID": {
+    "Names": [
+      "fieldbg_clossl2"
+    ],
+    "Anims": [
+      "GGJB"
+    ]
+  },
+  "GGJC": {
+    "Names": [
+      "fieldbg_clossl4"
+    ],
+    "Anims": [
+      "GHAA"
+    ]
+  },
+  "DFGD": {
+    "Names": [
+      "market_merchant"
+    ],
+    "Anims": [
+      "ACFE",
+      "FTCC",
+      "GVAC",
+      "AJEB",
+      "AUED",
+      "AAFE",
+      "AAFF",
+      "BYAD",
+      "AJDD",
+      "AAGA",
+      "DOGF",
+      "DOHA",
+      "DOHB",
+      "DOHC",
+      "DOHD",
+      "DNDE",
+      "AJEC",
+      "DOHE",
+      "DSAD",
+      "CDDB",
+      "AVJE",
+      "DMBF",
+      "GYAD",
+      "GYAE"
+    ]
+  },
+  "DABF": {
+    "Names": [
+      "fieldbg_mtra8"
+    ],
+    "Anims": [
+      "DACC",
+      "AWAD"
+    ]
+  },
+  "CFHA": {
+    "Names": [
+      "market_usan"
+    ],
+    "Anims": [
+      "AAFE",
+      "DVAC",
+      "DVAD",
+      "DVAE",
+      "AVJE",
+      "BTCE",
+      "CGCC",
+      "CJID",
+      "AAGA",
+      "CKFB",
+      "CNJD",
+      "ACFE",
+      "AUED",
+      "CWEA",
+      "CWDD",
+      "CIFE",
+      "CJIE",
+      "DXBC",
+      "AAFF",
+      "CDDB",
+      "AUEE",
+      "CGCD"
+    ]
+  },
+  "ASBF": {
+    "Names": [
+      "std_man10"
+    ],
+    "Anims": [
+      "AAFE",
+      "DVAC",
+      "DVAF",
+      "DVAE",
+      "DVAD",
+      "AVJE",
+      "BTCE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CWDE",
+      "CWDF",
+      "CWEA",
+      "CWEB",
+      "AVDE",
+      "CWEC",
+      "CXBD",
+      "ASHD",
+      "ASHE",
+      "ASHF",
+      "ASIA",
+      "ASIB",
+      "AJEC",
+      "ASIC"
+    ]
+  },
+  "GSJE": {
+    "Names": [
+      "cosmo_woman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DSBB",
+      "FXJB",
+      "BYAD"
+    ]
+  },
+  "EWBD": {
+    "Names": [
+      "cf_man"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "AUEC",
+      "AJDC",
+      "APEB",
+      "AQCF",
+      "AVJE",
+      "APED",
+      "AJEB",
+      "AQCD"
+    ]
+  },
+  "EMDF": {
+    "Names": [
+      "std_man15"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FTCC",
+      "DBBC",
+      "FTCD",
+      "FUEB",
+      "FUEC",
+      "BDCC",
+      "ETCA",
+      "ETCB",
+      "ETCC",
+      "DJGE",
+      "DJGD",
+      "FPBD",
+      "FPBE",
+      "AJEB",
+      "DCEF",
+      "FPBF",
+      "CDIE",
+      "EMJD"
+    ]
+  },
+  "FSGE": {
+    "Names": [
+      "std_fm2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DBBC",
+      "FXJB"
+    ]
+  },
+  "FTIC": {
+    "Names": [
+      "std_fmw1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FUEA",
+      "FTIB"
+    ]
+  },
+  "GUJC": {
+    "Names": [
+      "fieldbg_icemap"
+    ],
+    "Anims": [
+      "GVAA"
+    ]
+  },
+  "AWBE": {
+    "Names": [
+      "fieldbg_mtra4",
+      "4fieldbg_mtra4"
+    ],
+    "Anims": [
+      "EXFF",
+      "AWAD",
+      "DWJC",
+      "DWJD"
+    ]
+  },
+  "EXGA": {
+    "Names": [
+      "another_condor"
+    ],
+    "Anims": [
+      "EYDB",
+      "EYDC",
+      "EYDD",
+      "EYDE",
+      "EYDF"
+    ]
+  },
+  "FRGD": {
+    "Names": [
+      "korel_mayor"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJEC",
+      "FXJA"
+    ]
+  },
+  "DMIA": {
+    "Names": [
+      "std_fm1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BDCC",
+      "CFGF",
+      "CFGE",
+      "BYAD",
+      "AGEE",
+      "AJDC",
+      "DMBF",
+      "AQCA",
+      "AUEC",
+      "CKFA",
+      "DSAD"
+    ]
+  },
+  "CTIB": {
+    "Names": [
+      "std_boy3"
+    ],
+    "Anims": [
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "CXAB",
+      "CUDD",
+      "CUDE",
+      "CUDF",
+      "CUEA",
+      "CUEB",
+      "CUEC",
+      "CUED",
+      "CRIB",
+      "EAFD",
+      "CRIC"
+    ]
+  },
+  "GVAE": {
+    "Names": [
+      "fieldbg_cos_ant"
+    ],
+    "Anims": [
+      "GVBB"
+    ]
+  },
+  "GVBC": {
+    "Names": [
+      "fieldbg_cos_tori"
+    ],
+    "Anims": [
+      "GVBF"
+    ]
+  },
+  "EWJE": {
+    "Names": [
+      "cf_woman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "AJEB",
+      "AQCD",
+      "APED",
+      "AUEC"
+    ]
+  },
+  "EHHC": {
+    "Names": [
+      "sub_cloak",
+      "sub_cloak00"
+    ],
+    "Anims": [
+      "EHIF",
+      "EHJA",
+      "EHJB",
+      "HJAE",
+      "HJAF",
+      "HJBA",
+      "HSFF",
+      "HSGA"
+    ]
+  },
+  "GPCD": {
+    "Names": [
+      "gold_dirver1"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "GPIB",
+      "FVBC",
+      "GPIC",
+      "GPID",
+      "GPIE",
+      "GPIF",
+      "GPJA"
+    ]
+  },
+  "GPJB": {
+    "Names": [
+      "gold_driver2"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "GQEF",
+      "GQFA",
+      "GQFB",
+      "GQFC",
+      "GQFD",
+      "GRBC",
+      "GRBD",
+      "GRBE"
+    ]
+  },
+  "GQFE": {
+    "Names": [
+      "gold_driver3"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "GQEF",
+      "GQFA",
+      "GQFB",
+      "GQFC",
+      "GRBC",
+      "GQFD",
+      "GRBE",
+      "GRBF",
+      "GRCA"
+    ]
+  },
+  "FWAE": {
+    "Names": [
+      "sub_esto"
+    ],
+    "Anims": [
+      "BKAF",
+      "DIEB",
+      "FWGC",
+      "FWGE",
+      "BKBB",
+      "GHAC",
+      "GRCB",
+      "GHAB",
+      "FWGD"
+    ]
+  },
+  "GOFD": {
+    "Names": [
+      "gold_cgirl"
+    ],
+    "Anims": [
+      "GPBB",
+      "GPBC",
+      "GPBD",
+      "GPBE",
+      "GPBF",
+      "GPCA"
+    ]
+  },
+  "DEDA": {
+    "Names": [
+      "std_man3"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "GIGE",
+      "GPCB",
+      "GPCC",
+      "ACFE",
+      "AAGA",
+      "ETCA",
+      "ETCB",
+      "ETCC",
+      "ETFD",
+      "GIGB",
+      "GIGA",
+      "GIFF",
+      "AQCD",
+      "APED",
+      "BDCC",
+      "BYAD",
+      "AUEC",
+      "AQCB",
+      "DQGC",
+      "CKFA",
+      "AQCA",
+      "AJDC",
+      "AVJE",
+      "BYJA",
+      "AUED",
+      "DOIA",
+      "AQBF",
+      "EHHB",
+      "AJDD",
+      "ALAC"
+    ]
+  },
+  "CTBE": {
+    "Names": [
+      "fieldbg_mtra5"
+    ],
+    "Anims": [
+      "CTCB",
+      "AWAD",
+      "DWJC",
+      "DWJD"
+    ]
+  },
+  "EVFE": {
+    "Names": [
+      "shinra_irena"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "HIIB",
+      "HIIC",
+      "HIID",
+      "HIIE",
+      "HIIF",
+      "AAFE",
+      "AGEE",
+      "AVJE",
+      "DWFA",
+      "AUEC",
+      "APED",
+      "APJE",
+      "CDCF",
+      "AQBF",
+      "AJDC",
+      "BDCC",
+      "ETDC",
+      "DOIA",
+      "APEB",
+      "AJEC",
+      "BZCE",
+      "CGCF",
+      "AJEB",
+      "AJDF",
+      "EWBC",
+      "APJC",
+      "AVFD",
+      "AQCA",
+      "AJDD",
+      "BUAA",
+      "FPBE",
+      "HQFC",
+      "CJIC",
+      "BYGB",
+      "CPID",
+      "CPHF",
+      "HIFE",
+      "AUEE",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "HIFD",
+      "DSBB",
+      "EFHD",
+      "AUED",
+      "EIGB",
+      "BYJA"
+    ]
+  },
+  "FLAC": {
+    "Names": [
+      "kosta_woman"
+    ],
+    "Anims": [
+      "FLGA",
+      "FLGB",
+      "BAJB",
+      "BCCC",
+      "BCCD",
+      "AJDC",
+      "FOAE",
+      "BCCE"
+    ]
+  },
+  "CEFD": {
+    "Names": [
+      "std_man13"
+    ],
+    "Anims": [
+      "ACFE",
+      "BDCC",
+      "DACE",
+      "EFIE",
+      "EFIF",
+      "EFJA",
+      "AAFE",
+      "ASHF",
+      "CFBA",
+      "DMBF",
+      "AAFF",
+      "AAGA",
+      "EYGB"
+    ]
+  },
+  "FKDF": {
+    "Names": [
+      "kosta_rgirl",
+      "kosta_rgirl05",
+      "kosta_rgirl07"
+    ],
+    "Anims": [
+      "EFCB",
+      "EFCC",
+      "BCCD",
+      "EUGA",
+      "AQCD",
+      "CGCE",
+      "FKJD",
+      "FKJE",
+      "CNJE",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "EFIC",
+      "EIGB",
+      "EVDD",
+      "HQFB",
+      "ACFE",
+      "DSBB",
+      "CJIC"
+    ]
+  },
+  "FLGE": {
+    "Names": [
+      "kosta_swoman1"
+    ],
+    "Anims": [
+      "BAJB",
+      "BCCC",
+      "BCCD",
+      "BTCD",
+      "DSGE",
+      "CKEF",
+      "BCCE",
+      "FPAC",
+      "FPAD",
+      "FPAF"
+    ]
+  },
+  "FMCC": {
+    "Names": [
+      "kosta_sboy"
+    ],
+    "Anims": [
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "CXAC",
+      "FMIA"
+    ]
+  },
+  "FMIB": {
+    "Names": [
+      "kosta_sgirl"
+    ],
+    "Anims": [
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "CYGC",
+      "FMIA"
+    ]
+  },
+  "FNDF": {
+    "Names": [
+      "fieldbg_bal_toy"
+    ],
+    "Anims": [
+      "FNEC",
+      "FNED",
+      "FNEE"
+    ]
+  },
+  "CLBB": {
+    "Names": [
+      "kosta_sman2",
+      "kosta_sman206"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQCF",
+      "CEEE",
+      "APJF",
+      "AQBF",
+      "CXJD",
+      "CDDB",
+      "AQAB",
+      "ALGC",
+      "AJEC",
+      "AVJE",
+      "DXAD",
+      "FOBA",
+      "ETFB",
+      "FDJB",
+      "ETFC",
+      "CLBA"
+    ]
+  },
+  "DJID": {
+    "Names": [
+      "agon",
+      "another_wagon"
+    ],
+    "Anims": [
+      "DKIC",
+      "DKID"
+    ]
+  },
+  "AVHE": {
+    "Names": [
+      "fieldbg_trb_wood",
+      "fieldbg_trb_wood06",
+      "1fieldbg_trb_wood",
+      "4fieldbg_trb_wood"
+    ],
+    "Anims": [
+      "AVJD"
+    ]
+  },
+  "CKFC": {
+    "Names": [
+      "kosta_sman1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CVAF",
+      "FIIC",
+      "FPBA",
+      "AUEC",
+      "AQCF",
+      "CJIE",
+      "AJEC",
+      "CEEE",
+      "AQBF",
+      "FOAF",
+      "ETFB",
+      "FDJB",
+      "ETFC",
+      "CLBA"
+    ]
+  },
+  "DNJE": {
+    "Names": [
+      "market_muki1"
+    ],
+    "Anims": [
+      "FOBB",
+      "ACFE",
+      "BPJB",
+      "BPJC",
+      "DOFC",
+      "EAEC",
+      "AAFF",
+      "AAGA",
+      "CDCE",
+      "EAED",
+      "DMBC",
+      "EADA",
+      "EADB",
+      "CDCD",
+      "AQBF",
+      "EAEE",
+      "EAEF",
+      "EAFA",
+      "EAFB",
+      "EAFC",
+      "BAJB"
+    ]
+  },
+  "DNDF": {
+    "Names": [
+      "market_muki3"
+    ],
+    "Anims": [
+      "FOBD",
+      "BPJA",
+      "BPJB",
+      "BPJC",
+      "AQEE",
+      "APEB",
+      "AJEB",
+      "ACFE",
+      "CKFA",
+      "DNDE",
+      "DGID",
+      "BYJA",
+      "CPHF",
+      "EAEC",
+      "AAFF",
+      "AAGA",
+      "CDCE",
+      "DMBC",
+      "EADA",
+      "EADB",
+      "CDCD"
+    ]
+  },
+  "FOBE": {
+    "Names": [
+      "std_beggar2"
+    ],
+    "Anims": [
+      "BDCC",
+      "AQCA",
+      "CKFA"
+    ]
+  },
+  "CIGE": {
+    "Names": [
+      "midgal_nman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FOHC",
+      "FOHD",
+      "AJEB",
+      "CEEE",
+      "CDDA",
+      "AQCD",
+      "FOHE",
+      "CDDD",
+      "BXJA",
+      "AQBF",
+      "AUEC",
+      "CDAC"
+    ]
+  },
+  "FWGF": {
+    "Names": [
+      "fieldbg_dyne_p"
+    ],
+    "Anims": [
+      "FXAE"
+    ]
+  },
+  "COGB": {
+    "Names": [
+      "midgal_emother"
+    ],
+    "Anims": [
+      "CPIF",
+      "DIEB",
+      "AAGA",
+      "DIEC",
+      "DIED",
+      "CPJD",
+      "DIEE",
+      "DIEF",
+      "CPJB",
+      "DIFA",
+      "DIFB",
+      "DIFC",
+      "DIFD",
+      "DIFE",
+      "COAB",
+      "BAJC",
+      "CAGD",
+      "AJDC",
+      "AJDD",
+      "CPBF",
+      "CPJA",
+      "CPJC",
+      "CPID",
+      "CPIB",
+      "CPJE"
+    ]
+  },
+  "DIFF": {
+    "Names": [
+      "midgal_earith10"
+    ],
+    "Anims": [
+      "DJBD",
+      "BVCD",
+      "BVCE",
+      "DJBE",
+      "DJBF",
+      "DJCA",
+      "DJCB",
+      "DJCC",
+      "DJCD"
+    ]
+  },
+  "CQGA": {
+    "Names": [
+      "midgal_earith5"
+    ],
+    "Anims": [
+      "DJBD",
+      "BVCD",
+      "BVCE",
+      "DJCE",
+      "DJCF",
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "CRBE",
+      "CRBF"
+    ]
+  },
+  "CYAE": {
+    "Names": [
+      "sub_marine"
+    ],
+    "Anims": [
+      "DJBD",
+      "BVCD",
+      "BVCE",
+      "DJEB",
+      "DJEC",
+      "DJCD",
+      "DJED",
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "DABD",
+      "DABE",
+      "CYGC",
+      "CYGD",
+      "CYGE",
+      "CYGF",
+      "CYHA",
+      "CWDF",
+      "CYHB",
+      "CRBE",
+      "CYHC",
+      "CYHD",
+      "CYHE",
+      "CYHF",
+      "CYIA",
+      "CYIB",
+      "CYIC",
+      "CYID",
+      "CYIE"
+    ]
+  },
+  "AUDE": {
+    "Names": [
+      "fieldbg_mtra6",
+      "fieldbg_mtra604",
+      "3fieldbg_mtra6"
+    ],
+    "Anims": [
+      "AUEB",
+      "AWAD",
+      "DWJC",
+      "DWJD"
+    ]
+  },
+  "DCFB": {
+    "Names": [
+      "fieldbg_potion_g"
+    ],
+    "Anims": [
+      "BYHC",
+      "DHHC",
+      "HUIE"
+    ]
+  },
+  "AQGC": {
+    "Names": [
+      "another_choko",
+      "another_choko00",
+      "another_choko01",
+      "another_choko03"
+    ],
+    "Anims": [
+      "AREB",
+      "AREC",
+      "EUGD",
+      "ARED",
+      "AREE",
+      "ATEA",
+      "EUGE",
+      "EUGF",
+      "EUHA",
+      "EVEC",
+      "EVED",
+      "EVEE"
+    ]
+  },
+  "DSBC": {
+    "Names": [
+      "std_fw1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "DOHE",
+      "AAFE",
+      "DSGE"
+    ]
+  },
+  "CPCA": {
+    "Names": [
+      "std_girl2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BDCC",
+      "AJEC",
+      "CUEE",
+      "CUEF",
+      "CUFA",
+      "CUFB",
+      "CRIB",
+      "BNAC",
+      "BNAD",
+      "BNAE",
+      "CNJD",
+      "CPHE",
+      "EAFE",
+      "CRIC",
+      "CYGD",
+      "FPIB",
+      "EVDD"
+    ]
+  },
+  "DMCB": {
+    "Names": [
+      "std_oldm2"
+    ],
+    "Anims": [
+      "ETFB",
+      "ETFC",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "AQCA",
+      "AGEE",
+      "AVJE",
+      "APEC",
+      "AJDC",
+      "AQCC",
+      "AJDD",
+      "HQJE",
+      "HQIA",
+      "EFHE",
+      "AUED",
+      "AJEB",
+      "CKED",
+      "APED",
+      "ASBD",
+      "APJE",
+      "CKFA",
+      "DMHF",
+      "CKEE",
+      "BNAE",
+      "FIJD",
+      "FIJE",
+      "FIAC",
+      "FJAB",
+      "BYGB",
+      "FJAC",
+      "FJAD",
+      "FJAE"
+    ]
+  },
+  "DEIE": {
+    "Names": [
+      "animal_dog1"
+    ],
+    "Anims": [
+      "CTBC",
+      "CTBA",
+      "CTBB",
+      "CTAF",
+      "FAIA",
+      "HUID",
+      "CTBD",
+      "BFBF",
+      "EYGC",
+      "DFGB"
+    ]
+  },
+  "CWED": {
+    "Names": [
+      "std_woman3"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJDC",
+      "BDCC",
+      "APJF",
+      "AJDD",
+      "AJEC",
+      "AAFE",
+      "FYFB",
+      "GIGF",
+      "BKBA",
+      "GBHF",
+      "CXCE",
+      "CXBF",
+      "DXIA",
+      "DXJD",
+      "DIEF",
+      "COAB",
+      "BAJC",
+      "AQCF",
+      "CPIA",
+      "CPJC",
+      "CPJA",
+      "CXCA",
+      "CXCC",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "DSBB",
+      "DMBB",
+      "DMBC",
+      "DMBD",
+      "AQBF",
+      "DOFD",
+      "AUEC",
+      "APEB",
+      "AQCA",
+      "BYGB",
+      "CJIC",
+      "DNDE",
+      "AVJE"
+    ]
+  },
+  "CGIF": {
+    "Names": [
+      "std_boy2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "CRIA",
+      "CRIC",
+      "CRIB",
+      "CRHF",
+      "DNDC",
+      "EAFD",
+      "DTCD",
+      "CGIE"
+    ]
+  },
+  "EUHB": {
+    "Names": [
+      "farm_oldm"
+    ],
+    "Anims": [
+      "EVCB",
+      "AAFF",
+      "AAGA",
+      "EVCC",
+      "EVCD",
+      "EVCE",
+      "EVCF",
+      "EVDA",
+      "EVDB"
+    ]
+  },
+  "CHED": {
+    "Names": [
+      "std_girl3"
+    ],
+    "Anims": [
+      "BNAC",
+      "BNAD",
+      "DNDC",
+      "DJED",
+      "DJCC",
+      "DJBF",
+      "DJEB",
+      "EVDD",
+      "CXJF",
+      "DPEA",
+      "DPEB",
+      "APED",
+      "AJDC",
+      "CIAB"
+    ]
+  },
+  "AJIF": {
+    "Names": [
+      "rocket_crew1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AKED",
+      "APJC",
+      "ALAC",
+      "APJD",
+      "AJDC",
+      "AQBF",
+      "APEB",
+      "AJEC"
+    ]
+  },
+  "AFIE": {
+    "Names": [
+      "midgal_pcloud"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AGEE",
+      "AGEF",
+      "AGFA",
+      "AGFB"
+    ]
+  },
+  "AGGB": {
+    "Names": [
+      "midgal_ptifa"
+    ],
+    "Anims": [
+      "ABCD",
+      "ABCE",
+      "ABCF",
+      "AHCF",
+      "AHDA",
+      "AHDB",
+      "AHDC"
+    ]
+  },
+  "AHDF": {
+    "Names": [
+      "midgal_pyufi"
+    ],
+    "Anims": [
+      "ACFB",
+      "ACFC",
+      "ACFD",
+      "AIAB"
+    ]
+  },
+  "AIBA": {
+    "Names": [
+      "midgal_pballet"
+    ],
+    "Anims": [
+      "ADCB",
+      "ADCC",
+      "ADCD",
+      "AIHA"
+    ]
+  },
+  "AIHB": {
+    "Names": [
+      "midgal_pcid"
+    ],
+    "Anims": [
+      "ABIE",
+      "ABIF",
+      "ABJA",
+      "AJDB"
+    ]
+  },
+  "HRCE": {
+    "Names": [
+      "fieldbg_trb_metb"
+    ],
+    "Anims": [
+      "HRED"
+    ]
+  },
+  "HSEB": {
+    "Names": [
+      "fieldbg_icecle"
+    ],
+    "Anims": [
+      "HSEF",
+      "HRGE",
+      "HRGF",
+      "HSFA"
+    ]
+  },
+  "HRAE": {
+    "Names": [
+      "fieldbg_triflag"
+    ],
+    "Anims": [
+      "HRCD"
+    ]
+  },
+  "HREE": {
+    "Names": [
+      "fieldbg_rock"
+    ],
+    "Anims": [
+      "HRFC",
+      "HRFD",
+      "HRFE"
+    ]
+  },
+  "HRFF": {
+    "Names": [
+      "fieldbg_toge1"
+    ],
+    "Anims": [
+      "HRGD",
+      "HRGE",
+      "HRGF"
+    ]
+  },
+  "HRHA": {
+    "Names": [
+      "fieldbg_toge2"
+    ],
+    "Anims": [
+      "HRGE",
+      "HRGD",
+      "HRGF"
+    ]
+  },
+  "HRHE": {
+    "Names": [
+      "fieldbg_toge3"
+    ],
+    "Anims": [
+      "HRGF",
+      "HRGD",
+      "HRGE"
+    ]
+  },
+  "GBIA": {
+    "Names": [
+      "gold_costume",
+      "gold_costume00"
+    ],
+    "Anims": [
+      "GCAD",
+      "AAFE",
+      "GCAF",
+      "GCBA",
+      "GIFB",
+      "GCAE"
+    ]
+  },
+  "CJCC": {
+    "Names": [
+      "std_man9",
+      "std_man904"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "ASHF",
+      "GCHB",
+      "ACFE",
+      "CWEA",
+      "DOGE",
+      "AAGA",
+      "EFDF",
+      "EEFA",
+      "BXJA",
+      "CDAC"
+    ]
+  },
+  "GIHA": {
+    "Names": [
+      "gold_ude2"
+    ],
+    "Anims": [
+      "GIJE",
+      "GIJF",
+      "GJAA"
+    ]
+  },
+  "GJAB": {
+    "Names": [
+      "gold_ude1"
+    ],
+    "Anims": [
+      "GIJE",
+      "GIJF",
+      "GJAA"
+    ]
+  },
+  "GJCF": {
+    "Names": [
+      "fieldbg_bal_toy2"
+    ],
+    "Anims": [
+      "GJDC"
+    ]
+  },
+  "GJEB": {
+    "Names": [
+      "fieldbg_bike"
+    ],
+    "Anims": [
+      "GJFA",
+      "GJFB"
+    ]
+  },
+  "DQGD": {
+    "Names": [
+      "std_man8"
+    ],
+    "Anims": [
+      "GJFC",
+      "AAFF",
+      "ACFE",
+      "DVHC",
+      "AAGA",
+      "DRCB"
+    ]
+  },
+  "GJHA": {
+    "Names": [
+      "gold_kaku1"
+    ],
+    "Anims": [
+      "AAFE",
+      "GJFD",
+      "AJEC",
+      "GJFE",
+      "GJFF",
+      "GJGA",
+      "BIDA",
+      "GJGB",
+      "GJGC",
+      "GJGD",
+      "GJGE",
+      "GKCE"
+    ]
+  },
+  "GKCF": {
+    "Names": [
+      "gold_kaku2"
+    ],
+    "Anims": [
+      "AAFE",
+      "GJFD",
+      "AJEC",
+      "GJFE",
+      "BIDA",
+      "GJGA",
+      "GJFF",
+      "GJGB",
+      "GJGC",
+      "GJGD",
+      "GJGE",
+      "GKCE"
+    ]
+  },
+  "GKID": {
+    "Names": [
+      "gold_kaku3"
+    ],
+    "Anims": [
+      "AAFE",
+      "GJFD",
+      "AJEC",
+      "GJFE",
+      "BIDA",
+      "GJFF",
+      "GJGA",
+      "GJGB",
+      "GJGC",
+      "GJGD",
+      "GJGE",
+      "GKCE"
+    ]
+  },
+  "GLEB": {
+    "Names": [
+      "gold_kaku4"
+    ],
+    "Anims": [
+      "AAFE",
+      "GJFD",
+      "AJEC",
+      "GJFE",
+      "BIDA",
+      "GJGA",
+      "GJFF",
+      "GJGB",
+      "GJGC",
+      "GJGD",
+      "GJGE",
+      "GKCE"
+    ]
+  },
+  "GEBB": {
+    "Names": [
+      "gold_noppo"
+    ],
+    "Anims": [
+      "GEGF",
+      "GEHA",
+      "GEHB",
+      "GEHC"
+    ]
+  },
+  "GEHD": {
+    "Names": [
+      "gold_semusi"
+    ],
+    "Anims": [
+      "GFDB",
+      "GFDC",
+      "GFDD",
+      "GFDE"
+    ]
+  },
+  "GFDF": {
+    "Names": [
+      "gold_hang"
+    ],
+    "Anims": [
+      "GFJF",
+      "GGAA",
+      "GGAB",
+      "GGAC",
+      "GGAD",
+      "GGAE"
+    ]
+  },
+  "GDIC": {
+    "Names": [
+      "another_bat"
+    ],
+    "Anims": [
+      "GEAF",
+      "GEBA"
+    ]
+  },
+  "GGEF": {
+    "Names": [
+      "fieldbg_ght2_l"
+    ],
+    "Anims": [
+      "GGFD"
+    ]
+  },
+  "GGFE": {
+    "Names": [
+      "fieldbg_ght2_r"
+    ],
+    "Anims": [
+      "GGGC"
+    ]
+  },
+  "GRCC": {
+    "Names": [
+      "fieldbg_v2_gldel"
+    ],
+    "Anims": [
+      "GRDA"
+    ]
+  },
+  "GGHE": {
+    "Names": [
+      "fieldbg_cursor"
+    ],
+    "Anims": [
+      "GGIC"
+    ]
+  },
+  "DXJE": {
+    "Names": [
+      "std_oldw2"
+    ],
+    "Anims": [
+      "CKED",
+      "CKEE",
+      "FJAB",
+      "FJAE",
+      "CKEF",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DYFC"
+    ]
+  },
+  "CZGF": {
+    "Names": [
+      "fieldbg_hana"
+    ],
+    "Anims": [
+      "GRDB",
+      "CZHC"
+    ]
+  },
+  "DSGF": {
+    "Names": [
+      "std_oldw1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "AJDD",
+      "AJDC",
+      "EXFC",
+      "DMBC",
+      "EXFD",
+      "HUIC",
+      "CKED",
+      "CKEE",
+      "DXID",
+      "DXHF",
+      "DXIA",
+      "DXJD",
+      "DIEF",
+      "CKEF",
+      "ETFB",
+      "FDJB",
+      "FPHF",
+      "FPIA",
+      "CDDB",
+      "DACE",
+      "ETFC"
+    ]
+  },
+  "FABE": {
+    "Names": [
+      "fieldbg_potion_2"
+    ],
+    "Anims": [
+      "HJHC",
+      "FAAD"
+    ]
+  },
+  "EZCC": {
+    "Names": [
+      "animal_cat2",
+      "animal_cat201"
+    ],
+    "Anims": [
+      "BEEB",
+      "EZBF",
+      "EZCA",
+      "EZCB"
+    ]
+  },
+  "DQAE": {
+    "Names": [
+      "std_woman9"
+    ],
+    "Anims": [
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "EIGA",
+      "EZBE",
+      "EUGA",
+      "APJF",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJDC",
+      "DNDE"
+    ]
+  },
+  "BTEC": {
+    "Names": [
+      "island_nurse"
+    ],
+    "Anims": [
+      "DMBB",
+      "DMBC",
+      "DMBD",
+      "HSJC",
+      "BZCE",
+      "BUAB",
+      "BICE"
+    ]
+  },
+  "HTJE": {
+    "Names": [
+      "island_chair"
+    ],
+    "Anims": [
+      "HUHE",
+      "HUHF",
+      "HUIA",
+      "HUIB"
+    ]
+  },
+  "HSJD": {
+    "Names": [
+      "another_ultima"
+    ],
+    "Anims": [
+      "BTEA",
+      "AVCA",
+      "AVCB",
+      "HTHC",
+      "HTHD",
+      "HTHE",
+      "HTHF"
+    ]
+  },
+  "FUFE": {
+    "Names": [
+      "korel_bou1",
+      "korel_bou104",
+      "korel_bou109"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "ASHF",
+      "CCIA",
+      "FVDF"
+    ]
+  },
+  "FVED": {
+    "Names": [
+      "korel_korts"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "ASIA",
+      "ASIC",
+      "ASIB",
+      "ASHE",
+      "EVEF",
+      "BUAA",
+      "APED",
+      "ARFA",
+      "FWAB",
+      "BKBD",
+      "FWAC",
+      "FWAD"
+    ]
+  },
+  "CVBA": {
+    "Names": [
+      "korel_narazu2",
+      "korel_narazu205",
+      "korel_narazu208"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "FUEA",
+      "FUFB",
+      "FUFC",
+      "FUFD",
+      "FVBC",
+      "ASHF",
+      "EVDC",
+      "AJDD",
+      "CCIA",
+      "CVAE",
+      "CVAF"
+    ]
+  },
+  "CUFC": {
+    "Names": [
+      "korel_narazu1",
+      "korel_narazu100",
+      "korel_narazu107"
+    ],
+    "Anims": [
+      "FTCD",
+      "AAFE",
+      "CCJB",
+      "AAFF",
+      "AAGA",
+      "ASBE",
+      "AJEB",
+      "CVAE",
+      "CVAF"
+    ]
+  },
+  "CVGE": {
+    "Names": [
+      "korel_bou202",
+      "korel_bou203",
+      "korel_bou20a",
+      "korel_bou2"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "ASHF",
+      "CCIA",
+      "CVAE",
+      "CVAF"
+    ]
+  },
+  "GCHC": {
+    "Names": [
+      "fieldbg_v3_jet"
+    ],
+    "Anims": [
+      "GCIB"
+    ]
+  },
+  "BUGE": {
+    "Names": [
+      "nible_cloud800",
+      "nible_cloud8"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CXAC",
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "CRIC",
+      "EMDA",
+      "CRIB",
+      "AJDD",
+      "BVCF"
+    ]
+  },
+  "HJDC": {
+    "Names": [
+      "fieldbg_kuromtra0a",
+      "fieldbg_kuromtra"
+    ],
+    "Anims": [
+      "HJDF"
+    ]
+  },
+  "FEEA": {
+    "Names": [
+      "junon_r_yufi"
+    ],
+    "Anims": [
+      "ACFB",
+      "ACFC",
+      "ACFD",
+      "FFAC",
+      "FFAD",
+      "FFAE",
+      "FFAF",
+      "FFBA",
+      "FFBB"
+    ]
+  },
+  "FCGD": {
+    "Names": [
+      "junon_report2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FDCB",
+      "FFBC",
+      "FFBD",
+      "FDCD",
+      "FDCC"
+    ]
+  },
+  "DXBD": {
+    "Names": [
+      "shinra_reifuku"
+    ],
+    "Anims": [
+      "DXGF",
+      "EYEA",
+      "EYEB",
+      "EYEF",
+      "EYFD",
+      "EYHC",
+      "FACB",
+      "EYFA",
+      "DXHA",
+      "CDAA",
+      "APJF",
+      "EYHE",
+      "EYFC",
+      "EYFB",
+      "ETFD",
+      "CDDB",
+      "EYHD",
+      "FAFC",
+      "FAFD",
+      "FAFE",
+      "FAFF",
+      "EYFE",
+      "AVFD",
+      "BTCE",
+      "AQAB",
+      "FAEB",
+      "AJEB",
+      "AJDC",
+      "CXJD",
+      "AQCA",
+      "AVJE",
+      "AUEE",
+      "FAGB",
+      "EYEE",
+      "DXHB",
+      "DXHC",
+      "DXHD",
+      "FAIB",
+      "AMCB",
+      "BZCE",
+      "ICFF",
+      "ICGA",
+      "ICGB",
+      "ICGC",
+      "ICGD",
+      "ICGE",
+      "FGHD",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "IAHF",
+      "GYJC",
+      "HQID",
+      "CDCE",
+      "FEBA"
+    ]
+  },
+  "CBFE": {
+    "Names": [
+      "midgal_woman"
+    ],
+    "Anims": [
+      "DXID",
+      "DXHF",
+      "DXIA",
+      "DXJD",
+      "DIEF",
+      "CAED",
+      "AAFF",
+      "AAGA",
+      "BAJB",
+      "BCCC",
+      "BCCD",
+      "CKFB",
+      "CNJD",
+      "COAB",
+      "AJDD",
+      "CPID",
+      "CNJA",
+      "CPIE",
+      "COAA",
+      "AGEE",
+      "APJF",
+      "CDDB",
+      "CGCE",
+      "CEEE"
+    ]
+  },
+  "FABB": {
+    "Names": [
+      "fieldbg_potion_r"
+    ],
+    "Anims": [
+      "FAAD",
+      "FSFA"
+    ]
+  },
+  "EOAC": {
+    "Names": [
+      "fieldbg_key"
+    ],
+    "Anims": [
+      "EOAF",
+      "EOBA"
+    ]
+  },
+  "CIAC": {
+    "Names": [
+      "std_man14"
+    ],
+    "Anims": [
+      "CGCC",
+      "AAFF",
+      "AAGA",
+      "CIFE",
+      "CIFF",
+      "CIGA"
+    ]
+  },
+  "FBBA": {
+    "Names": [
+      "junon_report1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DOGE"
+    ]
+  },
+  "FBGE": {
+    "Names": [
+      "junon_r_ketcy"
+    ],
+    "Anims": [
+      "FCAC",
+      "FCAD",
+      "FCAE"
+    ]
+  },
+  "FCAF": {
+    "Names": [
+      "junon_report3"
+    ],
+    "Anims": [
+      "EFCB",
+      "EFCC",
+      "AAGA",
+      "DOGE",
+      "ACFE"
+    ]
+  },
+  "FACC": {
+    "Names": [
+      "fieldbg_v2_bigpl"
+    ],
+    "Anims": [
+      "FACF"
+    ]
+  },
+  "FAAE": {
+    "Names": [
+      "fieldbg_potion_1"
+    ],
+    "Anims": [
+      "FAAD",
+      "HQDF"
+    ]
+  },
+  "FADC": {
+    "Names": [
+      "fieldbg_potion_4"
+    ],
+    "Anims": [
+      "FAAD"
+    ]
+  },
+  "EYIE": {
+    "Names": [
+      "fieldbg_v3_car"
+    ],
+    "Anims": [
+      "EZBD"
+    ]
+  },
+  "HJGA": {
+    "Names": [
+      "fieldbg_trbox_k"
+    ],
+    "Anims": [
+      "HKFF",
+      "HJHB"
+    ]
+  },
+  "HKJC": {
+    "Names": [
+      "another_demon"
+    ],
+    "Anims": [
+      "HLFB"
+    ]
+  },
+  "HJIE": {
+    "Names": [
+      "fieldbg_v2_linea"
+    ],
+    "Anims": [
+      "HJJC"
+    ]
+  },
+  "HJJD": {
+    "Names": [
+      "fieldbg_v2_lineb"
+    ],
+    "Anims": [
+      "HKAB"
+    ]
+  },
+  "HKAC": {
+    "Names": [
+      "fieldbg_v2_linec"
+    ],
+    "Anims": [
+      "HKBA"
+    ]
+  },
+  "HKBB": {
+    "Names": [
+      "v4_face_kabe"
+    ],
+    "Anims": [
+      "HKDF"
+    ]
+  },
+  "HKEA": {
+    "Names": [
+      "v4_face_kao"
+    ],
+    "Anims": [
+      "HKFE"
+    ]
+  },
+  "HKHB": {
+    "Names": [
+      "fieldbg_jtmpobj"
+    ],
+    "Anims": [
+      "HKHE"
+    ]
+  },
+  "HJHF": {
+    "Names": [
+      "fieldbg_rollobj2"
+    ],
+    "Anims": [
+      "HJID"
+    ]
+  },
+  "HYFD": {
+    "Names": [
+      "another_jenova"
+    ],
+    "Anims": [
+      "HZEC"
+    ]
+  },
+  "HOBD": {
+    "Names": [
+      "fieldbg_coralkey"
+    ],
+    "Anims": [
+      "HOCC"
+    ]
+  },
+  "CCBC": {
+    "Names": [
+      "midgal_man"
+    ],
+    "Anims": [
+      "CTAD",
+      "AAFF",
+      "AAGA",
+      "AUEC",
+      "CTAE",
+      "CAED",
+      "AQCD"
+    ]
+  },
+  "IAJD": {
+    "Names": [
+      "fieldbg_beam2"
+    ]
+  },
+  "HXBC": {
+    "Names": [
+      "another_robo"
+    ],
+    "Anims": [
+      "HXIB",
+      "HXIC",
+      "HXID",
+      "HXIE",
+      "HXIF",
+      "HXJA",
+      "HXJB",
+      "HXJC",
+      "HXJD"
+    ]
+  },
+  "DKIE": {
+    "Names": [
+      "fieldbg_md62dr_r"
+    ],
+    "Anims": [
+      "DKJC"
+    ]
+  },
+  "DKJD": {
+    "Names": [
+      "fieldbg_md62dr_l"
+    ],
+    "Anims": [
+      "DLAB"
+    ]
+  },
+  "CNFB": {
+    "Names": [
+      "fieldbg_v2_kisya"
+    ],
+    "Anims": [
+      "CNHE"
+    ]
+  },
+  "CNHF": {
+    "Names": [
+      "fieldbg_kyak"
+    ],
+    "Anims": [
+      "CNIE"
+    ]
+  },
+  "CAHC": {
+    "Names": [
+      "modify_earithf"
+    ],
+    "Anims": [
+      "CBDC",
+      "CBDD",
+      "CBDE",
+      "CBDF",
+      "CBEA",
+      "CBEB",
+      "CBEC",
+      "CBED",
+      "CBEE",
+      "CBEF",
+      "CBFA",
+      "CBFB",
+      "CBFC",
+      "CBFD"
+    ]
+  },
+  "CYIF": {
+    "Names": [
+      "nible_camera"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "DGIC",
+      "AQBF"
+    ]
+  },
+  "CZED": {
+    "Names": [
+      "fieldbg_pinbl"
+    ],
+    "Anims": [
+      "CZFF",
+      "DACD",
+      "CZGA"
+    ]
+  },
+  "CZGB": {
+    "Names": [
+      "fieldbg_cash"
+    ],
+    "Anims": [
+      "CZGE"
+    ]
+  },
+  "CGDA": {
+    "Names": [
+      "midgal_child"
+    ],
+    "Anims": [
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "CXAB",
+      "CXAC",
+      "CXAD",
+      "CRBE",
+      "CXAE",
+      "DDGE",
+      "DFGC",
+      "CXCD",
+      "DDGD",
+      "CGIE"
+    ]
+  },
+  "DJFA": {
+    "Names": [
+      "fieldbg_tkklen"
+    ],
+    "Anims": [
+      "DJFD"
+    ]
+  },
+  "DJFE": {
+    "Names": [
+      "fieldbg_tekotu"
+    ],
+    "Anims": [
+      "DJGB"
+    ]
+  },
+  "CFBB": {
+    "Names": [
+      "midgal_beggar"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AUED",
+      "AAFE",
+      "AAGA",
+      "BDCC",
+      "AJDC",
+      "AJDD",
+      "DECF",
+      "CFGE",
+      "CFGF"
+    ]
+  },
+  "CPJF": {
+    "Names": [
+      "sub_ifarna"
+    ],
+    "Anims": [
+      "COAB",
+      "CQFF",
+      "AVBF",
+      "AVCA",
+      "AVCB",
+      "BTCF",
+      "BTDB",
+      "BTDA",
+      "BTDD",
+      "FKAB",
+      "DADB",
+      "DICB",
+      "HJHE",
+      "HJEA",
+      "DICD",
+      "DGJD",
+      "DCGE",
+      "DADC",
+      "BTDC",
+      "HQIC",
+      "DDFA",
+      "GGHA",
+      "DHAD",
+      "GGGF",
+      "HJAB"
+    ]
+  },
+  "DDHA": {
+    "Names": [
+      "midgal_man_sol"
+    ],
+    "Anims": [
+      "DECE",
+      "DECF"
+    ]
+  },
+  "EBCA": {
+    "Names": [
+      "fieldbg_spotlgt"
+    ],
+    "Anims": [
+      "EBCE"
+    ]
+  },
+  "FPCB": {
+    "Names": [
+      "std_woman8"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "DVHC",
+      "AUEE",
+      "HYAF",
+      "AAGA",
+      "AQCF",
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "EUGA"
+    ]
+  },
+  "IBGD": {
+    "Names": [
+      "sub_szacks"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "ICEF",
+      "ICFA",
+      "ICFB",
+      "ICFC",
+      "IBGC"
+    ]
+  },
+  "EJDC": {
+    "Names": [
+      "sub_zacks"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "ICFD",
+      "ICFE",
+      "AJEC",
+      "AVJE",
+      "BVJB",
+      "AJDD",
+      "AJDC",
+      "CNJD",
+      "AQCA",
+      "CDDF",
+      "ESDE",
+      "BYJA",
+      "ESDF",
+      "IBGC",
+      "BYGB",
+      "AQAB",
+      "CDDE",
+      "CDAC",
+      "AQBF",
+      "AQEE",
+      "AUED",
+      "ASBD",
+      "AQCC",
+      "AGEE",
+      "AJEB",
+      "BDCC",
+      "EIAB"
+    ]
+  },
+  "IBAD": {
+    "Names": [
+      "sub_lzacks"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "ICFC",
+      "ICGF",
+      "AUEE",
+      "AJEC",
+      "FBAF",
+      "FDIE",
+      "BYGB",
+      "IBGB",
+      "AQBF",
+      "ICHC",
+      "CDDE",
+      "FEBC",
+      "AQAB",
+      "AJDD",
+      "EUGB",
+      "EUGC",
+      "AJDC",
+      "BDCC",
+      "AJEB",
+      "AQCA",
+      "AQAA",
+      "AQEE",
+      "APEE",
+      "AWAC",
+      "CXEA",
+      "FIJD"
+    ]
+  },
+  "DRIA": {
+    "Names": [
+      "fieldbg_lnchyn"
+    ],
+    "Anims": [
+      "DRIE"
+    ]
+  },
+  "DRIF": {
+    "Names": [
+      "fieldbg_lnchss"
+    ],
+    "Anims": [
+      "DRJD"
+    ]
+  },
+  "DRJE": {
+    "Names": [
+      "fieldbg_lnchsm"
+    ],
+    "Anims": [
+      "DSAC"
+    ]
+  },
+  "DOGA": {
+    "Names": [
+      "weapon_tifa_w"
+    ],
+    "Anims": [
+      "DOGD"
+    ]
+  },
+  "GLJD": {
+    "Names": [
+      "another_mogrif"
+    ],
+    "Anims": [
+      "GMDE",
+      "GMDF",
+      "GMEA",
+      "GMEB",
+      "GMEC",
+      "GMED",
+      "GMEE",
+      "GMEF",
+      "GMFA",
+      "GMFB",
+      "GMFC",
+      "GMFD",
+      "GMFE",
+      "GMFF",
+      "GMGA",
+      "GMGB",
+      "GMGC",
+      "GMGD",
+      "GMGE",
+      "GMGF"
+    ]
+  },
+  "GMHA": {
+    "Names": [
+      "another_mogrim"
+    ],
+    "Anims": [
+      "GNBB",
+      "GNBC",
+      "GMEA",
+      "GMEB",
+      "GNBD",
+      "GNBE",
+      "GMFA",
+      "GNBF"
+    ]
+  },
+  "GNCA": {
+    "Names": [
+      "another_mogriw"
+    ],
+    "Anims": [
+      "GMDE",
+      "GMDF",
+      "GMEA",
+      "GMEC",
+      "GMED",
+      "GMEF",
+      "GMGE"
+    ]
+  },
+  "GNGB": {
+    "Names": [
+      "another_mogriy"
+    ],
+    "Anims": [
+      "GMDE",
+      "GMDF",
+      "GMEA"
+    ]
+  },
+  "GOAC": {
+    "Names": [
+      "another_mogrip"
+    ],
+    "Anims": [
+      "GMDE",
+      "GMDF",
+      "GMEA",
+      "GMGE"
+    ]
+  },
+  "FSDD": {
+    "Names": [
+      "fieldbg_potion_3"
+    ],
+    "Anims": [
+      "FSEA"
+    ]
+  },
+  "BUAC": {
+    "Names": [
+      "nible_tifa7"
+    ],
+    "Anims": [
+      "ABCD",
+      "ABCE",
+      "ABCF",
+      "CDGF",
+      "ACGC",
+      "BZAC",
+      "EHBA",
+      "EKBD",
+      "EMCD",
+      "EMCE",
+      "EKBE",
+      "ENIA",
+      "ENIB",
+      "ENIC",
+      "ENID",
+      "ENIE",
+      "ENIF",
+      "ENJA",
+      "ENJB",
+      "ENJC",
+      "ENJD",
+      "BUGC",
+      "BUGD"
+    ]
+  },
+  "FQAB": {
+    "Names": [
+      "fieldbg_kisya_l"
+    ],
+    "Anims": [
+      "FQBA"
+    ]
+  },
+  "FQBB": {
+    "Names": [
+      "fieldbg_kisya_s"
+    ],
+    "Anims": [
+      "FQCA"
+    ]
+  },
+  "EIAC": {
+    "Names": [
+      "nible_woman"
+    ],
+    "Anims": [
+      "CPIF",
+      "AAFF",
+      "AAGA",
+      "DIEE",
+      "CPJB",
+      "EIGA"
+    ]
+  },
+  "ATFE": {
+    "Names": [
+      "shinra_rkret"
+    ],
+    "Anims": [
+      "EHJE",
+      "AUBF",
+      "EKIE",
+      "EKIF",
+      "EKJA",
+      "ELGB",
+      "EHJF",
+      "EIAA",
+      "EPCA",
+      "AUBE",
+      "AUCA",
+      "AUCB",
+      "AUCC",
+      "AUCD",
+      "AUCE",
+      "AUCF"
+    ]
+  },
+  "EKJB": {
+    "Names": [
+      "shinra_yhojo"
+    ],
+    "Anims": [
+      "ELEF",
+      "ELFA",
+      "ELFB",
+      "EPCB",
+      "EPCC",
+      "EPCD",
+      "EPCE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "APEC",
+      "AGEE",
+      "CPHF",
+      "BZCE"
+    ]
+  },
+  "ELGC": {
+    "Names": [
+      "shinra_gast"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "ACFE",
+      "AAGA",
+      "AJIC",
+      "AQCD",
+      "AJDC",
+      "DOIA",
+      "APEC",
+      "AQCB",
+      "AJEB",
+      "BVIE",
+      "APJF",
+      "HQIA",
+      "AJDD",
+      "HQIB",
+      "BICB",
+      "CPHF",
+      "AGEE",
+      "AQCA",
+      "BUAA",
+      "EMDD",
+      "BYGB"
+    ]
+  },
+  "EKBF": {
+    "Names": [
+      "nible_hei4"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AJDD",
+      "ICDE",
+      "APEB",
+      "EQFE",
+      "EQFF",
+      "EQGA",
+      "EQGB",
+      "EQGC",
+      "EQGD",
+      "BVJC",
+      "BVJD",
+      "EQHA",
+      "BVJE",
+      "EQHB",
+      "ESJC",
+      "ESJD",
+      "AJEC",
+      "AUEE",
+      "CKFB",
+      "IBAC",
+      "ICHB",
+      "ICHD"
+    ]
+  },
+  "BVDA": {
+    "Names": [
+      "nible_tfather"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQBF",
+      "AJDD",
+      "AJDC",
+      "BXIC",
+      "DBBC",
+      "AJEC",
+      "BVIE",
+      "BVIF",
+      "BVJA"
+    ]
+  },
+  "ENAB": {
+    "Names": [
+      "nible_cloud13"
+    ],
+    "Anims": [
+      "ENFF",
+      "ENGA",
+      "AAGA",
+      "ENGB",
+      "ENGC",
+      "ENGD",
+      "ENGE",
+      "ENGF",
+      "ENHA",
+      "ENHB",
+      "ENHC",
+      "ENHD",
+      "ENHE",
+      "ENHF"
+    ]
+  },
+  "BYBA": {
+    "Names": [
+      "fieldbg_nmkdr_3"
+    ],
+    "Anims": [
+      "BYBE"
+    ]
+  },
+  "BYBF": {
+    "Names": [
+      "fieldbg_nmkdr_1"
+    ],
+    "Anims": [
+      "BYBE"
+    ]
+  },
+  "BYCD": {
+    "Names": [
+      "fieldbg_nmkdr_2"
+    ],
+    "Anims": [
+      "BYBE"
+    ]
+  },
+  "ERHA": {
+    "Names": [
+      "modify_cefiro2"
+    ],
+    "Anims": [
+      "BLDD",
+      "EQEB",
+      "BBGD",
+      "ESDC",
+      "ESDD"
+    ]
+  },
+  "ESEB": {
+    "Names": [
+      "nible_hei2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "ESEA",
+      "EAIC",
+      "ETAE",
+      "ETAF",
+      "ETBA",
+      "ETBB",
+      "ETBC"
+    ]
+  },
+  "EIHD": {
+    "Names": [
+      "nible_hei1"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "ETBE",
+      "ETBF",
+      "EJDB",
+      "EIHC"
+    ]
+  },
+  "EQIB": {
+    "Names": [
+      "nible_tifas"
+    ],
+    "Anims": [
+      "ABCD",
+      "ABCE",
+      "ABCF",
+      "ERED",
+      "EREE",
+      "EQHE"
+    ]
+  },
+  "EPFB": {
+    "Names": [
+      "another_nible"
+    ],
+    "Anims": [
+      "EQDA"
+    ]
+  },
+  "DCCE": {
+    "Names": [
+      "fieldbg_plr3rop2"
+    ],
+    "Anims": [
+      "DCDD",
+      "DCDE"
+    ]
+  },
+  "GZAD": {
+    "Names": [
+      "rocket_ysid"
+    ],
+    "Anims": [
+      "ABIE",
+      "ABIF",
+      "ABJA",
+      "HBEC",
+      "HBED",
+      "HBEE",
+      "HBEF",
+      "HBFA",
+      "HBFB",
+      "HBFC",
+      "HBFD",
+      "APCC",
+      "GYJE",
+      "EOBB",
+      "GYJF",
+      "GYAF"
+    ]
+  },
+  "GZHF": {
+    "Names": [
+      "rocket_meca"
+    ],
+    "Anims": [
+      "AAFE",
+      "AAFF",
+      "AAGA",
+      "GYCD",
+      "AQBF",
+      "AUEC",
+      "AJDC",
+      "BYAD",
+      "APEB",
+      "AQCF",
+      "AJDD",
+      "CDDB",
+      "AUED",
+      "DOIA",
+      "ACFE",
+      "DACE",
+      "AJEC",
+      "APJC",
+      "GYCE",
+      "AWAB",
+      "CCJF",
+      "AGEE"
+    ]
+  },
+  "HAGB": {
+    "Names": [
+      "fieldbg_hmtra2"
+    ],
+    "Anims": [
+      "HBCF"
+    ]
+  },
+  "GWIF": {
+    "Names": [
+      "rocket_man2"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "AQCB",
+      "BDCC"
+    ]
+  },
+  "GXEF": {
+    "Names": [
+      "rocket_man3"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BYJB",
+      "BYJC",
+      "ETCB",
+      "EMDC"
+    ]
+  },
+  "GYDC": {
+    "Names": [
+      "rocket_woman"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "BYJB",
+      "BYJC",
+      "EIGA"
+    ]
+  },
+  "GZGB": {
+    "Names": [
+      "fieldbg_rkindr_l"
+    ],
+    "Anims": [
+      "GZGF"
+    ]
+  },
+  "GZHA": {
+    "Names": [
+      "fieldbg_rkindr_r"
+    ],
+    "Anims": [
+      "GZHE"
+    ]
+  },
+  "HCEF": {
+    "Names": [
+      "fieldbg_hahen"
+    ],
+    "Anims": [
+      "HCIC",
+      "HCID",
+      "HCIE"
+    ]
+  },
+  "CLGD": {
+    "Names": [
+      "main_cloudup"
+    ]
+  },
+  "FGEC": {
+    "Names": [
+      "fieldbg_v2_semkw"
+    ],
+    "Anims": [
+      "FGFA"
+    ]
+  },
+  "FGHF": {
+    "Names": [
+      "fieldbg_hmtra"
+    ],
+    "Anims": [
+      "FGIF"
+    ]
+  },
+  "FGFB": {
+    "Names": [
+      "fieldbg_v2_kulen"
+    ],
+    "Anims": [
+      "FGHC",
+      "FGJA",
+      "FGJB",
+      "FGJC"
+    ]
+  },
+  "FHAA": {
+    "Names": [
+      "another_kaitei"
+    ],
+    "Anims": [
+      "FHHB",
+      "FHHC",
+      "FHHD",
+      "FHHE"
+    ]
+  },
+  "GWIB": {
+    "Names": [
+      "fieldbg_sparkle"
+    ],
+    "Anims": [
+      "GWIE"
+    ]
+  },
+  "FJCF": {
+    "Names": [
+      "junon_c_red"
+    ],
+    "Anims": [
+      "FJJA",
+      "FJJB",
+      "FJJC",
+      "FJJD",
+      "FJJE"
+    ]
+  },
+  "FKCA": {
+    "Names": [
+      "fieldbg_jeno_arm"
+    ],
+    "Anims": [
+      "FKCF"
+    ]
+  },
+  "EOEA": {
+    "Names": [
+      "modify_readc"
+    ],
+    "Anims": [
+      "EPAA",
+      "EPAB",
+      "BBGD",
+      "EPAC",
+      "EPAD"
+    ]
+  },
+  "EOCE": {
+    "Names": [
+      "fieldbg_kanhuta"
+    ],
+    "Anims": [
+      "EODC",
+      "EODD",
+      "EODE"
+    ]
+  },
+  "CADE": {
+    "Names": [
+      "fieldbg_smkdr"
+    ],
+    "Anims": [
+      "CAEC"
+    ]
+  },
+  "HPCE": {
+    "Names": [
+      "snow_child"
+    ],
+    "Anims": [
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "CYGE",
+      "HPIA",
+      "HGJC",
+      "FPCA",
+      "HQFE",
+      "HQFF",
+      "HQGA",
+      "FPIB",
+      "HQGB",
+      "DNDC"
+    ]
+  },
+  "HPIB": {
+    "Names": [
+      "snow_man",
+      "snow_man00"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "CKFA",
+      "AJEB",
+      "BUAA",
+      "FJAE",
+      "BDCC",
+      "HQFD",
+      "BYGB",
+      "CCJF",
+      "AQCB",
+      "ETFB",
+      "ETFC",
+      "FDJB",
+      "HQED",
+      "ABIF",
+      "ABJA",
+      "HQEE",
+      "HQEF",
+      "HQFA"
+    ]
+  },
+  "HQGC": {
+    "Names": [
+      "fieldbg_sori"
+    ],
+    "Anims": [
+      "HQGF",
+      "HQHA",
+      "HQHB"
+    ]
+  },
+  "HQHC": {
+    "Names": [
+      "oard"
+    ],
+    "Anims": [
+      "HQHF"
+    ]
+  },
+  "BZDA": {
+    "Names": [
+      "another_hover"
+    ],
+    "Anims": [
+      "BZHB",
+      "BZHC",
+      "BZHD",
+      "BZHE"
+    ]
+  },
+  "FFEC": {
+    "Names": [
+      "fieldbg_fish1"
+    ],
+    "Anims": [
+      "FFGF",
+      "FFEB"
+    ]
+  },
+  "FGAE": {
+    "Names": [
+      "fieldbg_fish2"
+    ],
+    "Anims": [
+      "FGEB"
+    ]
+  },
+  "FFHA": {
+    "Names": [
+      "fieldbg_fish3"
+    ],
+    "Anims": [
+      "FGAD"
+    ]
+  },
+  "HFFB": {
+    "Names": [
+      "utai2_man"
+    ],
+    "Anims": [
+      "EFIE",
+      "EFIF",
+      "EFJA",
+      "APEE",
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FPHF",
+      "AQCD",
+      "AUED"
+    ]
+  },
+  "HGAF": {
+    "Names": [
+      "utai_child"
+    ],
+    "Anims": [
+      "BVCC",
+      "BVCD",
+      "BVCE",
+      "HGJC",
+      "CRIC",
+      "DNDC",
+      "EVDD"
+    ]
+  },
+  "HECD": {
+    "Names": [
+      "utai_woman"
+    ],
+    "Anims": [
+      "ACFE",
+      "DMBC",
+      "AQCF",
+      "CDDB",
+      "AAFF",
+      "AAGA",
+      "HHJD",
+      "AKED",
+      "DPDF",
+      "DPEA",
+      "BDCC"
+    ]
+  },
+  "HDGF": {
+    "Names": [
+      "utai_man"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "FDIF",
+      "DACE",
+      "AQCF",
+      "HHJD",
+      "AUED",
+      "FXJB",
+      "BYAD",
+      "HGGD"
+    ]
+  },
+  "HGJD": {
+    "Names": [
+      "utai_godoh"
+    ],
+    "Anims": [
+      "HHEE",
+      "BPJB",
+      "BPJC",
+      "HHEF",
+      "CVAF",
+      "HHFA",
+      "HHFB",
+      "CDDB",
+      "HHFC",
+      "HHFD",
+      "HHFE",
+      "HHFF",
+      "HHGA",
+      "HHGB",
+      "HHGC",
+      "HHGD",
+      "FOAF",
+      "BOCB",
+      "AAFF",
+      "DDGC",
+      "DVAF",
+      "DVAD",
+      "CPHF",
+      "AVJE",
+      "BVJB",
+      "AGEE",
+      "BICA",
+      "BICB",
+      "ACFE"
+    ]
+  },
+  "MMMO": {
+    "Names": [
+      "shinra_reno"
+    ],
+    "Anims": [
+      "AOJD",
+      "AOJE",
+      "AOJF",
+      "AWAA"
+    ]
+  },
+  "FIBA": {
+    "Names": [
+      "another_maru"
+    ],
+    "Anims": [
+      "FIHF",
+      "FIIA"
+    ]
+  },
+  "FHIC": {
+    "Names": [
+      "fieldbg_ujneldru"
+    ],
+    "Anims": [
+      "FHJA"
+    ]
+  },
+  "FHJB": {
+    "Names": [
+      "fieldbg_ujneldrd"
+    ],
+    "Anims": [
+      "FIAA"
+    ]
+  },
+  "FJAF": {
+    "Names": [
+      "gauge3_mark"
+    ],
+    "Anims": [
+      "FJBC"
+    ]
+  },
+  "FJBD": {
+    "Names": [
+      "gauge3_hai"
+    ],
+    "Anims": [
+      "FJCA"
+    ]
+  },
+  "HHGE": {
+    "Names": [
+      "fieldbg_husuma1l"
+    ],
+    "Anims": [
+      "HHHC"
+    ]
+  },
+  "HHHD": {
+    "Names": [
+      "fieldbg_husuma1r"
+    ],
+    "Anims": [
+      "HHIB"
+    ]
+  },
+  "HDBB": {
+    "Names": [
+      "utai3_man"
+    ],
+    "Anims": [
+      "ACFE",
+      "AAFF",
+      "AAGA",
+      "HHJD",
+      "DJEE",
+      "AKED"
+    ]
+  },
+  "HHJF": {
+    "Names": [
+      "utai_shinobi"
+    ],
+    "Anims": [
+      "HIFB",
+      "AAFF",
+      "HIFC"
+    ]
+  },
+  "HHIC": {
+    "Names": [
+      "fieldbg_rolldr"
+    ],
+    "Anims": [
+      "HHIF"
+    ]
+  },
+  "HEIB": {
+    "Names": [
+      "utai_woman2"
+    ],
+    "Anims": [
+      "DPDF",
+      "DPEA",
+      "DPEB",
+      "HFDF"
+    ]
+  },
+  "EAGA": {
+    "Names": [
+      "fieldbg_wcrm1pl"
+    ],
+    "Anims": [
+      "EAGD",
+      "EAGE"
+    ]
+  },
+  "EAGF": {
+    "Names": [
+      "fieldbg_wcrm1rp"
+    ],
+    "Anims": [
+      "EAHC"
+    ]
+  },
+  "HGIA": {
+    "Names": [
+      "fieldbg_ori"
+    ],
+    "Anims": [
+      "HGIF"
+    ]
+  },
+  "HVCF": {
+    "Names": [
+      "fieldbg_kisya_m"
+    ],
+    "Anims": [
+      "HVDD"
+    ]
+  },
+  "AUDA": {
+    "Names": [
+      "weapon_vinsen_w"
+    ],
+    "Anims": [
+      "AUDD"
+    ]
+  },
+  "ASJC": {
+    "Names": [
+      "another_guid"
+    ],
+    "Anims": [
+      "ATCF",
+      "ATDA",
+      "ATDB",
+      "ATDC",
+      "ATDD",
+      "ATDE",
+      "ATDF"
+    ]
+  }
+}

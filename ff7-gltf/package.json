@@ -1,0 +1,14 @@
+{
+  "name": "ff7-gltf",
+  "version": "1.0.0",
+  "description": "Translates graphics assets between Final Fantasy 7 format and glTF format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "picklejar76@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}
