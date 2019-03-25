@@ -3,7 +3,6 @@
   "inputFieldDirectory": "/ff7-models",
   "inputFieldDirectoryDescription": "Location of input files like AAAA.HRC",
 
-  "outputGltfDirectoryXXX": "/opt/ff7-model-viewer/ff7-model-viewer/src/assets/models",
   "outputGltfDirectory": "./output/gltf",
   "outputGltfDirectoryDescription": "Where the translator will put output files like aaaa.hrc.gltf, aaaa.hrc.bin",
 

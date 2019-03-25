@@ -57,8 +57,6 @@ module.exports = function() {
       mkdirp.sync(config.outputGltfDirectory);
     }
 
-    var USE_BASE_ANIMATION = baseAnimFileId ? true : false;
-    var INCLUDE_ANIMATIONS = animFileId ? true : false;
     var ROOT_X_ROTATION_DEGREES = 180.0;
     var FRAMES_PER_SECOND = 30.0;
 
@@ -71,12 +69,12 @@ module.exports = function() {
     let animId = animFileId ? animFileId.toLowerCase() : null;
 
     var animationData = null;
-    if (INCLUDE_ANIMATIONS) {
+    if (animFileId) {
       animationData = ALoader.loadA(config, animFileId);
     }
 
     var baseAnimationData = null;
-    if (USE_BASE_ANIMATION) {
+    if (baseAnimFileId) {
       // let baseAnimId = baseAnimFileId.toLowerCase();
       // baseAnimationData = require(config.inputJsonDirectory + "animations/" + baseAnimId + ".a.json");
       baseAnimationData = ALoader.loadA(config, baseAnimFileId);
@@ -116,12 +114,12 @@ module.exports = function() {
 
     var rotationOrder = "YXZ"; // TODO: use animation data rotationOrder instead
 
-    if (USE_BASE_ANIMATION) {
+    if (baseAnimFileId) {
       if (baseAnimationData.numBones != skeleton.bones.length) {
         throw new Error("number of bones do not match between hrcId=" + hrcId + " and baseAnimId=" + baseAnimId);
       }
     }
-    if (INCLUDE_ANIMATIONS) {
+    if (animFileId) {
       if (animationData.numBones != skeleton.bones.length) {
         throw new Error("number of bones do not match between hrcId=" + hrcId + " and animId=" + animId);
       }
@@ -144,12 +142,17 @@ module.exports = function() {
     gltf.materials = [];
     gltf.meshes = [];
     gltf.nodes = [];
-    //gltf.samplers = [];
+    gltf.samplers = [];
     gltf.scene = 0;
     gltf.scenes = [];
     gltf.textures = [];
 
-    //gltf.samplers.push({"magFilter": 9729, "minFilter": 9986, "wrapS": 10497, "wrapT": 10497});
+    gltf.samplers.push({
+      "magFilter": FILTER.LINEAR,
+      "minFilter": FILTER.NEAREST_MIPMAP_LINEAR,
+      "wrapS": WRAPPING_MODE.REPEAT,
+      "wrapT": WRAPPING_MODE.REPEAT
+    });
 
     gltf.scenes.push({ "nodes": [0] });
     let quat = rotationToQuaternion(0, 0, 0, rotationOrder);
@@ -231,17 +234,23 @@ module.exports = function() {
             for (let i=0; i<textureIds.length; i++) {
               let textureId = textureIds[i].toLowerCase();
               gltf.images.push({"uri": config.texturesDirectory + '/' + textureId + ".png"});
-              gltf.textures.push({"source": (gltfTextureIndexOffset + i), "name": textureId + "Texture"}); // Note: "source" = image index
+              gltf.textures.push({
+                "source": (gltfTextureIndexOffset + i), // index to gltf.images[]
+                "sampler": 0,                           // index to gltf.samplers[]
+                "name": textureId + "Texture"
+              });
               // TODO: Figure out why materials look reddish
               gltf.materials.push({
                   "pbrMetallicRoughness": {
                       "baseColorFactor": [1, 1, 1, 1],
-                      "baseColorTexture": { "index": (gltfTextureIndexOffset + i) }, // texture index
-                      "metallicFactor": 1.0,
+                      "baseColorTexture": {
+                        "index": (gltfTextureIndexOffset + i) // index to gltf.textures[]
+                      },
+                      "metallicFactor": 0.0,
                       "roughnessFactor": 0.5
                   },
                   "doubleSided": true,
-                  "alphaMode": "BLEND", // TODO: should this be "BLEND", "MASK", or "OPAQUE"?
+                  "alphaMode": "BLEND",
                   "name": textureId + "Material"
               });
             }
@@ -481,7 +490,7 @@ module.exports = function() {
 
     // animations
 
-    if (INCLUDE_ANIMATIONS) {
+    if (animFileId) {
 
       gltf.animations = [];
       gltf.animations.push({
@@ -495,7 +504,7 @@ module.exports = function() {
 
       // create buffer to store start-time/end-time pair(s)
       let numTimeMarkers = 2 * numFrames; // start time and end time per frame
-      let startAndEndTimeBuffer = Buffer.alloc(numTimeMarkers * 4); // 4 bytes per float time
+      let startAndEndTimeBuffer = Buffer.alloc(numFrames * 2 * 4); // 2 time markers per frame, 4 bytes per float time
       for (let f=0; f<numFrames; f++) {
         let startTime = f / FRAMES_PER_SECOND;
         let endTime = (f+1) / FRAMES_PER_SECOND;
@@ -510,7 +519,7 @@ module.exports = function() {
           "byteOffset": 0,
           "type": "SCALAR",
           "componentType": COMPONENT_TYPE.FLOAT,
-          "count": numTimeMarkers
+          "count": numFrames * 2 // 2 time markers per frame
       });
       gltf.bufferViews.push({
         "buffer": 0,
@@ -521,7 +530,7 @@ module.exports = function() {
 
       for (let boneIndex=0; boneIndex<animationData.numBones; boneIndex++) {
         // create buffer for animation frame data for this bone
-        let boneFrameDataBuffer = Buffer.alloc(numFrames * 4 * 4); // 4 floats per quaternion, 4 bytes per float
+        let boneFrameDataBuffer = Buffer.alloc(numFrames * 2 * 4 * 4); // 2 rotations per frame (start and end), 4 floats per rotation, 4 bytes per float
         for (let f=0; f<numFrames; f++) {
           let frameData = animationData.animationFrames[f];
           let boneRotation = frameData.boneRotations[boneIndex];
@@ -531,10 +540,16 @@ module.exports = function() {
             toRadians(boneRotation.z),
             rotationOrder
           );
-          boneFrameDataBuffer.writeFloatLE(quat.x, f*16);
-          boneFrameDataBuffer.writeFloatLE(quat.y, f*16 + 4);
-          boneFrameDataBuffer.writeFloatLE(quat.z, f*16 + 8);
-          boneFrameDataBuffer.writeFloatLE(quat.w, f*16 + 12);
+          // write rotation value for "start of frame"
+          boneFrameDataBuffer.writeFloatLE(quat.x, f*32 + 0);
+          boneFrameDataBuffer.writeFloatLE(quat.y, f*32 + 4);
+          boneFrameDataBuffer.writeFloatLE(quat.z, f*32 + 8);
+          boneFrameDataBuffer.writeFloatLE(quat.w, f*32 + 12);
+          // write rotation value for "end of frame" (TODO: use "f+1" rotation for smoother animations)
+          boneFrameDataBuffer.writeFloatLE(quat.x, f*32 + 16);
+          boneFrameDataBuffer.writeFloatLE(quat.y, f*32 + 20);
+          boneFrameDataBuffer.writeFloatLE(quat.z, f*32 + 24);
+          boneFrameDataBuffer.writeFloatLE(quat.w, f*32 + 28);
         }
         allBuffers.push(boneFrameDataBuffer);
         numBuffersCreated++;
@@ -544,12 +559,11 @@ module.exports = function() {
             "byteOffset": 0,
             "type": "VEC4",
             "componentType": COMPONENT_TYPE.FLOAT,
-            "count": numFrames
+            "count": numFrames * 2 // 2 rotations per frame
         });
         gltf.bufferViews.push({
           "buffer": 0,
           "byteLength": boneFrameDataBuffer.length,
-          "byteStride": 16, // 16 bytes per quaternion
           "target": ARRAY_BUFFER
         });
         gltf.animations[animationIndex].samplers.push({

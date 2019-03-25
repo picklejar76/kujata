@@ -65,4 +65,21 @@ module.exports = function() {
   this.ARRAY_BUFFER = 34962;
   this.ELEMENT_ARRAY_BUFFER = 34963;
 
+  // glTF sampler.magFilter and sampler.minFilter values
+  this.FILTER = {
+    "NEAREST": 9728,
+    "LINEAR": 9729,
+    "NEAREST_MIPMAP_NEAREST": 9984,
+    "LINEAR_MIPMAP_NEAREST": 9985,
+    "NEAREST_MIPMAP_LINEAR": 9986,
+    "LINEAR_MIPMAP_LINEAR": 9987
+  };
+
+  // glTF sampler.wrapS and sampler.wrapT values
+  this.WRAPPING_MODE = {
+    "CLAMP_TO_EDGE": 33071,
+    "MIRRORED_REPEAT": 33648,
+    "REPEAT": 10497
+  };
+
 };

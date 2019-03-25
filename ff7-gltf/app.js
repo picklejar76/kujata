@@ -3,10 +3,10 @@ const fs = require("fs");
 
 var config = JSON.parse(require("fs").readFileSync("config.json"));
 
-let hrcFileId = "AAAA";     // "AAAA" = translate AAAA.HRC (Cloud)
-let baseAnimFileId = null;  // null = use Ifalna DB to choose a default stance
-let animFileId = null;      // null = do not include an animation in the output glTF
-let includeTextures = true; // true = include references to xxxx.png in the output glTF
+let hrcFileId = "AAAA";       // "AAAA" = translate AAAA.HRC (Cloud)
+let baseAnimFileId = "AAFE";  // "AAFE" = use Cloud standing animation as default structure (null = use Ifalna DB)
+let animFileId = "AAGA";      // "AAGA" = add Cloud running aniation to the output glTF     (null = don't add any animations)
+let includeTextures = true;   // true = include references to xxxx.png in the output glTF
 
 translate_ff7_field_hrc_to_gltf(config, hrcFileId, baseAnimFileId, animFileId, includeTextures);
 
