@@ -17,7 +17,11 @@ Translates Final Fantasy 7 models to glTF
     - see ../tex-tool-0.10/
   - edit config.json to configure your input and output directories
     - see ./config.json
-- Run "node app.js" to translate AAAA.HRC to aaaa.gltf and aaaa.bin
+- Run "node app.js", which translates:
+  - AAAA.HRC (Cloud skeleton) to aaaa.gltf and aaaa.bin
+  - AAFE.A (Cloud standing animation) and uses it as base structure
+  - AAGA.A (Cloud running animation) and adds it as an animation
+- Look at ff7-gltf/viewer/viewer.html for example of how to view in html page
 - Edit app.js to translate other models as desired
 - For help, reach out to the author: picklejar76@gmail.com
 
@@ -25,6 +29,8 @@ Translates Final Fantasy 7 models to glTF
 - qhimm community
 - Aali, for patching FF7, graphics work, lgp/unlgp utility, etc.
 - Borde, for authoring Kimera and TexTool_0.10
+- ficedula, for authoring Ifalna (model viewer)
+- Kaldarasha, for model editing experience and design advice, etc.
 - halkun, for evangelizing glTF, FF7 file spreadsheet, etc.
 - Sega Chief, for field model friendly names, etc.
 - quantumpencil, for sister-ray
