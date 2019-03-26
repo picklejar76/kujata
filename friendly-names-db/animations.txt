@@ -1,0 +1,3227 @@
+TO DO: Translate to JSON format
+TO DO: Bring in data from halkun's spreadsheet as well
+TO DO: See if anyone else has "named" all of these animations
+TO DO: Find a way to track which animations are used in which places in the game, e.g. Makou Reactor integration
+
+AAFE: Cloud Stand
+AAFF: Cloud Walk
+AAGA: Cloud Run
+ABCD: Tifa Stand
+ABCE: Tifa Walk
+ABCF: Tifa Run
+ABIE: Cid Stand
+ABIF: Cid Walk
+ABJA: Cid Run
+ACFB: Yuffie Stand
+ACFC: Yuffie Walk
+ACFD: Yuffie Run
+ACFE: Stand but who? Cloud clone?
+ACFF:
+ACGA:
+ACGB:
+ACGC:
+ADCB: Barret Stand
+ADCC: Barret Walk
+ADCD: Barret Run
+ADCE: Barret WASSUP FOOL
+ADCF: Barret Abashed
+AEAE: Red Stand
+AEAF: Red Walk
+AEBA: Red Run
+AEBB:
+AEHA: Cait Stand
+AEHB: Cait walk
+AEHC: Cait Run
+AFDF: Vincent STand
+AFEA: Vincent walk
+AFEB: Vincent run
+AFIB: Bugen Hover/Stand
+AFIC: Bugen hover/arm flap
+AFID: Bugen hover/arms up gesture
+AGEE: Cloud Para
+AGEF: Cloud Para step up
+AGFA: Cloud para gesture come on!
+AGFB: Cloud para jump!
+AGFC: Barret Sector 7 Pillar1
+AGFD: Barret Fury
+AGFE: Barret Fury 2
+AGFF: Barret Fury 3
+AGGA: Barret Calming Down
+AHCF:
+AHDA:
+AHDB:
+AHDC:
+AHDD:
+AHDE:
+AIAB:
+AIAC:
+AIAD:
+AIAE:
+AIAF:
+AIHA: Para Jump
+AJDB: Para Jump (double-hop)
+AJDC: Cloud Nod
+AJDD: Cloud Shake Head
+AJDE: Cloud Cross Body Flourish
+AJDF: Cloud Despondent1
+AJEA: Cloud Despondent2
+AJEB: Cloud Head Scratch
+AJEC: Cloud Turn
+AJED:
+AJEE:
+AJEF:
+AJFA:
+AJFB:
+AJFC:
+AJFD:
+AJFE:
+AJFF: Nod (????)
+AJG:
+AJGA: Look Around (???)
+AJGB: Shake Head (???)
+AJGC:
+AJGD:
+AJGE:
+AJGF:
+AJHA:
+AJHB:
+AJHC:
+AJHD:
+AJHE:
+AJHF:
+AJIA:
+AJIB:
+AJIC: Tinkering ????
+AJID: Cid Abashed Head Scratch
+AJIE: Maybe Cid Nod
+AKED: HighWind Skinny Anim
+ALAC:
+ALGB: Cloud/Rufus Point
+ALGC: Rufus Swish
+AMCA: Heidegger Swagger
+AMCB: Heid Laugh
+ANAE:
+ANAF:
+ANBA:
+ANBB:
+ANBC:
+ANHD:
+ANHE:
+ANHF:
+ANIA:
+ANIB:
+AOJD:
+AOJE:
+AOJF:
+APAA:
+APAB:
+APAC: Barret Chest Pound
+APAD: Barret Swipe Down
+APAE: Barret Contemplate
+APAF: Barret Annoyed Jig
+APBA: Barret turn
+APBB: Barret point all
+APBC:
+APBD:
+APBE:
+APBF:
+APCA: Cid Push
+APCB: Cid Head Scratch
+APCC: Cid Leave it to him
+APCD: Cid Sleeping on floor
+APCE: Cid Wakes on floor1
+APCF: Cid wakes on floor2
+APDA: Cid arms up
+APDB: Cid Conviction1
+APDC: Cid Conviction2
+APDD: Cid Conviction3
+APDE: Cid turn
+APDF: Cid head shake
+APEA: Cid Yelled at
+APEB: Cross-arm swipe, Conviction (Cloud)
+APEC: Cloud Contemplates
+APED: Cloud cross-arms
+APEE: CLoud Let's Go
+APEF: Barret Let's Go
+APFA: Barret Jump Yell
+APFB: Barret Foot-tap
+APFC: Barret un-cross arms
+APFD: Barret Yelling
+APFE: Barret anger flex
+APFF: Barret looking around
+APGA: Barret look down
+APGB:
+APGC:
+APGD:
+APGE: what-what (?)
+APGF: Cid foot-tap
+APHA: Scarlet point (?)
+APHB: Cid startled
+APHC: Cid Up yours buddy
+APHD: Cid Shove
+APHE:
+APHF:
+APIA:
+APIB:
+APIC:
+APID:
+APIE:
+APIF:
+APJA:
+APJB:
+APJC: Salute
+APJD: Cid cry
+APJE: Cloud head back think
+APJF: Cloud Shrug
+AQAA: Cloud chillax
+AQAB: Cloud SOLDIER pose nod
+AQAC:
+AQAD: Turn (??)
+AQAE:
+AQAF:
+AQBA:
+AQBB:
+AQBC: Cid explaining
+AQBD: Cid squatting
+AQBE: Cid squat rise
+AQBF: Cloud Turn
+AQCA: Cloud despair shake head
+AQCB: Cloud shrug
+AQCC: Cloud gesture
+AQCD: Cloud head back
+AQCE: Cloud revitialised
+AQCF: Cloud chuckle
+AQDA:
+AQDB: Barret, gun ready
+AQDC: Barret, hands up
+AQDD: Barret again
+AQDE: Winning stance, Barret
+AQDF:
+AQEA:
+AQEE: Cloud Squats
+AQEF: Cloud Too bad those guys are over there
+AQFA: Cloud look around
+AQFB: Cloud shakes temple puzzle
+AQFC: Cloud inner turmoil
+AQFD:
+AQFE:
+AQFF:
+AQGA: Twitchy ???
+AQGB:
+AREA:
+AREB:
+AREC:
+ARED:
+AREE:
+AREF: Arms-cross Head Shake (Cloud?)
+ARFA: Cloud go to think (?)
+ARFB:
+ARFC:
+ASBA: Lying Down (?)
+ASBB: Sleeping onto side (?)
+ASBC: SLeeping gesturing
+ASBD: Cloud look right (?)
+ASBE: Gesture (Ester?)
+ASHD: Lean forward (?)
+ASHE: Static expansive gesture (Coates)
+ASHF: Point (Coates?)
+ASIA: Gesture up (Coates?)
+ASIB: Lean to point (Coates?)
+ASIC: NPC laugh out loud (Coates)
+ASID: Gesture to hear
+ASIE:
+ASIF:
+ASJA:
+ASJB: Quick gesture
+ATCF:
+ATDA:
+ATDB:
+ATDC:
+ATDD:
+ATDE:
+ATDF:
+ATEA:
+ATEE:
+ATEF:
+ATFA:
+ATFB:
+ATFC:
+ATFD:
+AUBE: Cloud foetus
+AUBF: Feminine walk
+AUCA: Fem talking
+AUCB: Extreme talking
+AUCC: Foetal, looks up
+AUCD: Foetal, shake head
+AUCE: Foetal, gesture apart
+AUCF: Foetal, looks up
+AUDD:
+AUEB:
+AUEC: Talking gesture
+AUED: Cloud explaining
+AUEE: Cloud Looking around
+AUEF:
+AUFA:
+AUFB: Cid trailing water on Bronco
+AUFC: Bronco Cid, looks up
+AUFD: Bronco Cid, gets up
+AUFE: Barret sits native
+AVBF: Aeris Idle
+AVCA: Aeris Walks
+AVCB: Aeris Runs
+AVCC: Aeris Sits/Rises
+AVCD: Aeris sitting, looks round
+AVCE:
+AVCF:
+AVDA:
+AVDB:
+AVDC:
+AVDD: Crawl stance (Cloud)
+AVDE: Crawl motion (Cloud)
+AVDF: Crawl backwards (Cloud)
+AVEA: Crawl Cloud look right
+AVEB:
+AVEC: Barret Mounting sec7 pillar wire
+AVED: Barret Prep to swing Sec7 Wire
+AVEE: Barret Mounted looking around
+AVEF:
+AVFA:
+AVFB:
+AVFC:
+AVFD: Ladder climb up
+AVHD:
+AVJD:
+AVJE: Cloud Surprise
+AVJF:
+AWAA:
+AWAB: Cloud gets up from kneel
+AWAC: Cloud looks at hands
+AWAD:
+AWAE:
+AWBD:
+AWFA:
+AZAF: Collapse (?)
+AZBA: Barret boxing hideout long
+AZHD:
+
+
+
+BADC: Stand
+BAJB: Stand, Looking right static
+BAJC: Bouncy walk
+BAJD: Costa Girl Allure Inside
+BAJE: Girl Allure
+BAJF: Girl Allure2
+BBAA: Honey Bee Dropped Something
+BBGB:
+BBGC:
+BBGD:
+BCCC: Costa girl walk, green dress, black
+BCCD: Bouncy Walk extreme
+BCCE: Getting item/Checking back Bee
+BCGC:
+BDCB:
+BDCC: Arms Cross, foot tap
+BDFE:
+BDFF:
+BEEB:
+BFBF:
+BHFE:
+BIBF: Cloud sword ready
+BICA: Cloud headache1
+BICB: Cloud headache2
+BICC: Cloud headache3
+BICD: Cloud headache4
+BICE: Cloud headache5
+BICF:
+BIDA: Battler mini-game, Cloud punch low
+BIJB:
+BIJC:
+BKAF: Stand rigid
+BKBA: Walk (Ester)
+BKBB: Ester Gesture
+BKBC:
+BKBD:
+BKBE:
+BLDD:
+BNAC: Kid Standing
+BNAD: Kid walk
+BNAE: Kid run
+BNGC:
+BOCB: STand to attention static
+BPJA: Muscle-man flexing static
+BPJB: Muscle-man walk
+BPJC: Muscle-man run
+BRIA:
+BSEF:
+BSFA:
+BSFB:
+BTBA:
+BTBB:
+BTBC:
+BTBD:
+BTBE:
+BTBF:
+BTCA:
+BTCB:
+BTCC:
+BTCD: Cloud chuckle
+BTCE: Cloud jump
+BTCF:
+BTDA:
+BTDB:
+BTDC:
+BTDE:
+BTDF:
+BTEA:
+BTEB:
+BTEC:
+BUAA: Cloud vigorous headshake
+BUAB: Hands clasped, headshake
+BUGC:
+BUGD:
+BVCC: Stand (young cloud)
+BVCD: Walk (young cloud)
+BVCE: Run (young cloud)
+BVCF: Waking Up from fall (Young Cloud)
+BVIE: (Button/panel press something)1
+BVIF: (Button/panel press something)2
+BVJA: (Panel)3
+BVJB: Part 2 of surprise (Cloud)
+BVJC: Kneel to pick up Tifa
+BVJD: Picking up Tifa (Cloud)
+BVJE: Carrying Tifa (Cloud)
+BVJF: Dismounting train opening (Cloud)
+BWAA: Barret train opening (DUN-DUN)
+BXBB: Biggs/Jessie/Wedge off train
+BXBC: Biggs shoulder-throw
+BXBD: Jessie kick
+BXHC: (Avalance down)
+BXHD: Guard Looking left train opening
+BXHE: Guard getting kicked
+BXHF: Someone falling? static
+BXIA: Guard shoulder-thrown
+BXIB: Looking up left
+BXIC: Jessie/Biggs gesture
+BXID: Jessie programming bomb/door
+BXIE: Jessie Bomb's ready
+BXIF: Jessie bomb, stand up
+BXJA: Wedge look out
+BXJF:
+BYAA: Kneeling to set bomb
+BYAB: Jessie trips
+BYAC: Jessie gets up
+BYAD: Gesture Avalance
+BYAE: Barret gesture
+BYAF: Barret gesture, fist shake
+BYBE:
+BYDB: Hand to head (?)
+BYDC: Hand flick look right (?)
+BYFC:
+BYFD: Hand comes down
+BYFE: Barret turn (looks like)
+BYFF: Come on! (?)
+BYGA: Avalanche down
+BYGB: Found something/Helping Jessie (Cloud)
+BYGC: Crawling/Climbing (CLoud?)
+BYGD: Jessie; foot stuck
+BYGE: Jessie, foot freed
+BYHC:
+BYHD:
+BYHE: Jessie falls, is helped up?
+BYHF: Cloud sinks then stands
+BYIA: Barret gestures
+BYIE: Barret steps back
+BYIF: Cloud steps back
+BYJA: Cloud WAIT!
+BYJB: Cloud looks up
+BYJC: And down again
+BYJD: Cloud Airbuster explosion
+BYJE: Cloud airbuster can't get a grip
+BYJF: Cloud Airbuster hangs on
+BZAA: Cloud Airbuster gets grip
+BZAB: Cloud airbuster two hand hold on
+BZAC:
+BZAD: Barret flexing?
+BZAE: Hand comes up (Barret?)
+BZAF: Barret disbelief
+BZBA: Barret gun high
+BZBB: Hand comes up
+BZBC: Hand comes down
+BZBD: Barret looking up static
+BZBE: DON'T Y'ALL BE SCARED OF THAT EXPLOSION
+BZBF:
+BZCA:
+BZCB:
+BZCC:
+BZCD: looking right standing
+BZCE: Cloud shrugs
+BZCF: Cloud points at Rufus
+BZHB: Air Buster Idle Animated
+BZHC: Hands are up, animated idle
+BZHD: Dashes
+BZHE: Raises hands for BZHC
+
+
+CACE:
+CACF:
+CADA:
+CADB:
+CADC: Slam table
+CADD:
+CAEC:
+CAED: Stand (??)
+CAEE: Forward tumble
+CAEF: Forward tumble 2
+CAFA: F. Tumble rise (Reactor tunnel escape!)
+CAFB: F. Tumble 180 turn
+CAFC: H-Hey (to Barret, after tunnel escape)
+CAFD: Barret escapes tunnel blast
+CAFE: Barret escapes tunnel blast 2
+CAFF: Barret 3
+CAGA: Barret gesture point
+CAGB: Barret Gesture, cross arm
+CAGC: Biggs escape tunnel blast
+CAGD: Biggs turn 2
+CAGE: Jessie escape tunnel blast
+CAGF: Wedge is ON FIRE.
+CAHA: Wedge douses the flames
+CAHB: Barret folds arms
+CBDC: (Aeris flower girl anims)
+CBDD:
+CBDE:
+CBDF:
+CBEA:
+CBEB:
+CBEC:
+CBED:
+CBEE:
+CBEF:
+CBFA:
+CBFB:
+CBFC:
+CBFD:
+CCHC:
+CCHD: Biggs leaning on train
+CCHE: Biggs out of lean
+CCHF: Barret/Biggs cross-arm nods
+CCIA: Sitting, tapping (Jessie, maybe?)
+CCIB: Sitting-tap rises
+CCIC: Sitting-tap head goes up
+CCID: Knelt, fiddling
+CCIE: Rises from fiddle (setting bomb?)
+CCIF: Turns
+CCJA: Takes a step up?
+CCJB: Unique-looking gesture
+CCJC: Shaking something
+CCJD: Clouds enters train!
+CCJE: Rise from entrance
+CCJF: Cloud dusts himself off
+CDAA: Looks like I'm a little late.
+CDAB: Hmm, you were worried about me!
+CDAC: Cloud hand to face
+CDAD: Cloud rises from freak-out (unused)
+CDAE: Barret leaning
+CDAF: Barret gesture No Way!
+CDBA: Barret lean looks up
+CDBB: Barret lean looks right
+CDBC: Barret lean slams
+CDBD: Barret gets a fright!
+CDBE: Barret stand-offish
+CDBF: Barret stand-off gesture
+CDCA: Barret leaves car jump
+CDCB: Biggs lean looks right
+CDCC: Wedge sitting looks right
+CDCD: Someone rises, prob Wedge
+CDCE: Wedge standing gesture
+CDCF: Wedge/someone nods
+CDDA: Someone turns (punk)
+CDDB: Jessie shuts door
+CDDC: Jessie cleans cloud face
+CDDD: Cloud looks up and around?
+CDDE: Someone leans forward
+CDDF: Cloud shrugs
+CDEA: Cloud SOLDIER foot-tap
+CDEB: Barret relaxes
+CDEC: Barret relax talking
+CDED: Barret sits back
+CDEE: Barret relaxes folds leg
+CDEF: Barret relax talks again
+CDFA: Barret relax talking
+CDFB: Barret turns in seat
+CDFC: Barret rises from seat
+CDFD: Barret Huh?
+CDFE: Barret speech 1
+CDFF: Barret speech 2
+CDGA: Barret speech 3
+CDGB: Barret punches gas chamber door
+CDGC: Barret talking outside train
+CDGD:
+CDGE:
+CDGF:
+CDHA:
+CDHB:
+CDHC:
+CDHD: Someone resting back, arms behind head
+CDHE: Rest back, leg folds (like MP does)
+CDHF: Someone being chased from Seventh Heaven?
+CDIA: Someone cowering
+CDIB: Rising from something
+CDIC: Someone sitting, slow
+CDIE: Wedge on train
+CDIF: Guard pushing Cloud out of car
+CEEE: looking left
+CEEF: Someone sits down
+CEFA: Someone sitting, foot tapping
+CEFB: Sitting, looks up
+CEFC: Sitting, gestures strongly
+CFBA: Drunk on train
+CFGE: Homeless phen down guy
+CFGF: Same again
+CGCC: Hi-pot Pusher idle
+CGCD: Makes animation, looks down
+CGCE: Talks to someone
+CGCF: Statue game, gesture to move
+CGIE: Kids on train
+CIAB: Kid on train, dangles feet
+CIFE: Punk headbutt?
+CIFF: Punk gesture
+CIGA: PUnk long nod
+CIGB: Something to kneel
+CIGC: Rise from kneel
+CIGD:
+CJIA: Crashed out
+CJIB: Gesture (Jessie?)
+CJIC: Jessie KO punch
+CJID: Punk walk
+CJIE: Punk squats, money returned
+CKED: Punk idle?
+CKEE: Punk sneak?
+CKEF: Someone standing, train
+CKFA: Perv fiddles
+CKFB: Cloud Collapse/Perv Goes down
+CLBA: Naked guys shiver train
+CMDA:
+CMDB:
+CMDC: Guy lying around...
+CMDD:
+CMHB: Very distorted jumble
+CMHC: Again, distorted
+CMHD: Likely for connected HRC
+CMHE: Again
+CMHF: Cloud on ladder
+CMIA:
+CMIB:
+CMIC:
+CMID:
+CMIE:
+CNFA:
+CNHE:
+CNIE:
+CNIF: 180 Turn
+CNJA: Husbands returning, arms out
+CNJB: Swinging husband around
+CNJC: Biggs-clone return war, swing lamp-post
+CNJD: Related animation, run step
+CNJE: Wife falls down, exhausted?
+CNJF: Related animation to this scene
+COAA: Husband being swung around
+COAB: Static, standing
+COAC: Big husband walk?
+CPBF: Elmyra disappointed
+CPHE: Pointing
+CPHF: Train Guard shakes head
+CPIA: Cloud looks away, ashamed?
+CPIB: Maybe Elmyra kneels beside Ifalna
+CPIC: Elmyra rises again
+CPID: looking right
+CPIE: Looking at hand
+CPIF: Standing static, perhaps Elmyra
+CPJA: Elmyra shakes head
+CPJB: Of course I'd heard it she was an ancient
+CPJC: Elmyra nods
+CPJD: Elmyra shocked (sees Ifalna)
+CPJE: Elmyra helping Ifalna?
+CQFF:
+CRBE: Someone crying, maybe Elmyra at table
+CRBF: Reaching across?
+CRHE: Unsure, gestures
+CRHF: Strange gesture to left, belongs to HRC
+CRIA: Gesture right, look right
+CRIB: Shrugs, perhaps Tseng during flashback
+CRIC: Nods
+CSEB: Soldier shoots?
+CSEC: Cloud, 'yes, some' (in church)
+CTAB: Fat guy laugh?
+CTAC: SHakes head
+CTAD: Static standing
+CTAE: Punches air jump
+CTAF:
+CTBA:
+CTBB:
+CTBC:
+CTBD:
+CTCB:
+CTIA: Standing, perhaps a woman
+CUDD: Standing as if holding something, hunched over
+    (See below)
+CUDE: Best animation evah. Arms Flailing
+    (Beginner's hall, kids fighting
+CUDF: Goes down for count
+CUEA: Cloud sits up, shakes head dazed
+CUEB: Cloud springs to feet
+CUEC: Spell animation, field
+CUED: Slash anim field
+CUEE: Ready to fight, dukes up
+CUEF: Reflect casted
+CUFA: Looks like limit break
+CUFB: Limit break again
+CVAE: Muscleman flex up
+CVAF: Muscleman GUNNING
+CWCB: 180 turn
+CWCC: Quick 180 turn (looks like Rufus uses this)
+CWCD: Coming down stairs, might be Barret
+CWCE: Looking left (Barret?)
+CWCF:
+CWDA:
+CWDB:
+CWDC:
+CWDD: Punk kicking things
+CWDE: Psssst!
+CWDF: Strange startled flailing
+CWEA: Hunkering down
+CWEB: Epic falling backwards
+CWEC: Crying/Sniggering
+CXAB: kid running from dog/cat in Corel Flashback
+CXAC: Kid being loud with girl in Sector 7 slums
+CXAD: Someone looking for someone
+CXAE: Guy in shop 'HEY WAIT A MINUTE YOU'
+CXAF: Old materia shop owner
+CXBA: Old owner static
+CXBB: Swagger
+CXBC: Punk sits down
+CXBD: Guy cross-legged, breathing
+CXBE: Static standing
+CXBF: Walking, odd gait.
+CXCA: Kid in shop, thinking (I think)
+CXCB: Guy sitting, breathing
+CXCC: Similar to CXCA
+CXCD: Guy sitting, legs apart
+CXCE: Static Standing
+CXCF: Someone springing from sitting?
+CXDA: Springing back to lean/sitting
+CXDB: Jerky stepping back, twist
+CXDC: Stepping forward then sitting, maybe stool in
+    that coupon kitchen in Wall Market?
+CXDD: Guy on a stool, I reckon
+CXDE: Another stool guy
+CXDF: Another stool guy
+CXEA: Cloud hired by Aeris, more money pls
+CXEB: Barret looks right
+CXEC: Someone sits
+CXED: No idea, rises from sitting, looks astonished
+CXEF: Looks like someone on phone
+CXFA: Still on phone, gesturing
+CXFB: Still on phone, looks around
+CXFC: Maybe not on phone, gesturing others to move
+CXFD: Walking on phone, maybe carrying something?
+CXFE: Phone/Carry standing static
+CXFF: Kneel, rise, sit. Hands out
+CXGA: Someone climbing a ladder, maybe Barret
+CXGB: Barret jumping
+CXGC: Barret fishes money out
+CXGD: Barret tosses money
+CXGE:
+CXGF:
+CXHA:
+CXHB:
+CXHC:
+CXHD:
+CXHE:
+CXHF:
+CXIA:
+CXIB:
+CXIC:
+CXID:
+CXIE:
+CXIF:
+CXJA: Jessie drinking
+CXJB: Jumping from seat for barret entrance
+CXJC: Jumping down into hideout
+CXJD: Maybe opening the bar/jumping
+CXJE: Standing, hands together, looks right slow
+CXJF: Same but static
+CYAA: Drinking as well
+CYAB: Biggs looks around
+CYAC: Biggs or Wedge drinking/eating
+CYAD: One of them looks up
+CYGC: Maybe Marlene Shy
+CYGD: Marlene reaching for drink
+CYGE: Not sure, sweeping ground with hands
+CYGF: Shaking/prepping a drink
+CYHA: Someone jumping down from high?
+CYHB: Kid shaking head (looks like kid Aeris)
+CYHC: Potentially a kid animation again
+CYHD: Marlene being picked up, put on shoulder
+CYHE: Marlene being picked up again?
+CYHF: Marlene I reckon, hands go up
+CYIA: Marlene on shoulder, static
+CYIB: Marlene shoulder, nods
+CYIC: Marlene gesture on shoulder
+CYID: Marlene shoulder nods, other direction
+CYIE: Marlene shoulder, change bearing slightly
+CZFF:
+CZGA:
+CZGE:
+CZHC:
+CZHD: Cloud squares up to Barret
+CZHE: Cloud wakes in morning
+CZHF: Prob a Cloud animation
+CZIA: Cloud again, maybe explaining materia?
+CZIB: Barret boxing
+CZIC: Stops boxing to talk
+CZID: Barret talking, out of breath
+CZIE: After hitting Biggs, turns
+CZIF: Talking out of breath still
+CZJA: Shucks! Money... (maybe)
+CZJB: Tifa, let him go. Looks like he still misses
+    the Shinra.
+CZJC:
+CZJD:
+CZJE: Someone sitting
+CZJF: Sitting, turns in seat
+
+
+DAAA: Sitting then approaches. Strange.
+DAAB: Twists wrist, from DAAA
+DAAC: Falling, maybe from Sec5 Reactor, maybe para jump
+DAAD: Maybe falling, feet moving. Not moving
+DAAE: Looks frantic, then squats in panic
+DAAF: Sitting, static
+DABA: Sitting, rotating
+DABB: Sit, facing left, talking?
+DABC: Sitting, head in hands
+DABD: Marlene sitting, kicks legs
+DABE: Marlene imitates punch barret
+DACC:
+DACD:
+DACE: Reaching up for something
+DACF: Kneels, checking body?
+DADA: Kneels Slow head shake.
+DADB:
+DADC:
+DADD:
+DADE:
+DADF:
+DAEA:
+DAEB:
+DAEC: Lying down, moving.
+DAED: Standing, looking around?
+DAEE: Standing, holding onto something, looking
+DAEF: Someone at toilet/needing toilet/ the guy DAFA
+DAFA: Startled guy strange and wonderful place
+DBAF: Barret shooting high!
+DBBA: Wedge falling from pillar
+DBBB: Biggs dying
+DBBC: Jessie going down? Someone dying?
+DBBD: Cloud coming out of I'LL GO ON ALONE
+DBBE: Mounting Barret (for hook swing)
+DBBF: Mounted, taking the swing itself
+DBCA: Barret unhooks hook swing pillar
+DBCB: Barret stop firing high
+DBCC: Barret shoots mid
+DBCD: Barret shoots high into DISBELIEF
+DBCE: Barret gets hook swing open, gestures others
+DBCF: Hook swing, Barret or Tifa?
+DBDA:
+DBDB:
+DBDC:
+DBDD:
+DBDE:
+DBDF:
+DBEA:
+DBEB:
+DCAC:
+DCAD:
+DCAE:
+DCAF:
+DCBA:
+DCBB:
+DCBC:
+DCBD:
+DCBE:
+DCBF:
+DCCA:
+DCCB:
+DCCC:
+DCCD:
+DCDD:
+DCDE:
+DCDF: Kneels
+DCEA: Kneels, looks up
+DCEB: Kneels, looks down again
+DCEC: Climbing a ladder (maybe sect5 shaft)
+DCED:
+DCEE: Falling from sect5 shaft
+DCEF: Mounting ladder, twirl
+DCFA: Ladder climbing ACTION
+DCFE: Crawling through shafts
+DCFF: Static, knelt and held.
+DCGA:
+DCGB: Stood, doing something
+DCGC: From DGB, stops doing it
+DCGD: Gestures behind
+DCGE:
+DCGF:
+DCHA:
+DCHB:
+DCHC:
+DCHD:
+DCHE:
+DCHF:
+DCIA:
+DCIB:
+DDEA: Jump-run over something
+DDEB: Lands the jump
+DDEC: Smaller jump?
+DDED:
+DDEE:
+DDEF:
+DDFA:
+DDFB:
+DDFC: Wading? Then stops
+DDFD:
+DDFE:
+DDFF:
+DDGA:
+DDGB:
+DDGC: Sitting cross-legged
+DDGD: Someone sleeping, turns over.
+DDGE: Kid crying likely
+DDGF:
+DECE: Homeless guy. Also anim for #2 seph clone
+DECF: Ditto
+DFGB:
+DFGC: Sitting, dangling feet
+DGCB:
+DGCC:
+DGIB: Guy lying down sits up.
+DGIC: Guy lying down (looks like photographer
+     in flashback, during fire)
+DGID: Guy struggling to get up MP/Cloud
+DGIE: Sit up from there. Look dazed
+DGIF:
+DGJA:
+DGJB:
+DGJC:
+DGJD:
+DGJE:
+DGJF:
+DHAA:
+DHAB: Crouched, shake head. During flashback?
+DHAC:
+DHAD:
+DHAE:
+DHGA: Stand pull something, oddly static
+DHGB: Same again
+DHGC: Falls down forward
+DHGD: Another falls.
+DHHB:
+DHHC:
+DHHD:
+DHHE:
+DHIC:
+DIBA:
+DIBB:
+DIBC:
+DIBD:
+DIBE:
+DIBF:
+DICA:
+DICB:
+DICC:
+DICD:
+DICE: Stand gesture
+DICF: STand nods. Barret-esque
+DIDA: Gestures to left
+DIDB: Barret-like gesture, hands go up
+DIDC: Looks like pistol shot.
+DIDD: Barret taps head
+DIDE: Barret looks up, nods
+DIDF:
+DIEA:
+DIEB: Walking calmly
+DIEC: Nods
+DIED: Turns on spot
+DIEE: Hand on chest, thanks
+DIEF: Please shop again!
+DIFA: Robotic 180 turn
+DIFB: Head nodding upward
+DIFC: Kneeling gesture
+DIFD: Sitting, head in hands
+DIFE: Gesture
+DJBD: Static stand
+DJBE: Gesture up
+DJBF: Nods
+DJCA: Looking for something, hand up
+DJCB: Aeris gesture 'Oh you're terrible'
+DJCC: Aeris shakes head
+DJCD: Looks like Yuffie lean forward
+DJCE: Aeris falls under gunfire
+DJCF: Aeris gets up
+DJDA: Someone gets out of bed
+DJDB:
+DJDC:
+DJDD:
+DJDE:
+DJDF: Someone kneeling, shakes head
+DJEA: Rises from DJDF?
+DJEB: Looks up, gestures
+DJEC: Slow look right
+DJED: Hand goes to mouth, like drinking.
+DJEE: Slowly goes to pick something up
+DJEF: Nod gesture
+DJFD:
+DJGB:
+DJGC: Sits down, rises
+DJGD: Sitting in park, Cloud
+DJGE: Sitting Looks up '1st Class'
+DJGF: Gets onto Park slide thing. Jump up
+DJHA:
+DJHB:
+DJHC:
+DJHD:
+DJHE:
+DJHF:
+DJIA:
+DJIB:
+DJIC:
+DKIC:
+DKID:
+DKJC:
+DLAB:
+DLAC: Cloud up after Snowboard jump to Glacier
+DLAD: Shakes head, looks dazed
+DLAE: Falls to hands/knees, reaches forward
+DLAF: Same, but rises up
+DLBA: Turns to right
+DLBB: Barret gesture, arms out
+DLBC: Barret gesture
+DLBD: Barret hangs head
+DLBE: Barret shakes head
+DLBF: Barret makes gesture
+DLCA: Barret deep breath
+DLCB: Strange punch motion
+DLCC: Barret flexes
+DLCD: Barret rage? Corel FB
+DLCE: Rage subsides
+DLCF: Rage subsides more
+DLDA: Rage still, looks up shakes head
+DLDB: Out of shoot anim.
+DLDC: Barret kneels
+DLDD: Sitting after sector 7 collapse rage
+DLDE: Sitting, breathing
+DLDF: Barret gets up from DLDE
+DLEA:
+DLEB:
+DLEC:
+DLED:
+DLEE:
+DLEF:
+DLFA:
+DMBB: Standing, woman clerk
+DMBC: Walking, woman clerk
+DMBD: Running, woman clerk
+DMBE: SHaking head, woman clerk
+DMBF: Expansive gesture
+DMCA: Guy Wall Market Inn, usherer, claps hands
+DMHF: Kneels, jerky animation
+DNDC: Strange gestures, wall market?
+DNDD: Wall M guy sifts through rubbish/weapon shop junk guy
+DNDE: Guy hands you tiara
+DNJD: Guy flexes angrily
+DOFC: Gym guy, kicking bag
+DOFD: Come here gesture
+DOFE:
+DOFF: Second gym guy, sidewinder kick
+DOGD:
+DOGE: Sitting, static
+DOGF: Materia shop tiara guy, gets up from sleep
+DOHA: Initial tiara guy, come back later
+DOHB: Lying on side
+DOHC: Shinra manager, tossing turning
+DOHD: Tiara guy rises
+DOHE: Tiara guy reaches for tiara
+DOHF:
+DOIA: Mild sweep (cloud similar)
+DPDF: Stand static
+DPEA: Seductive walk
+DPEB: Prob run twin of DPEA
+DPEC: Sliding to seat in cafeteria
+DPED: Eats up
+DPEE: Leaves seat
+DQAD: Fiddles with something
+DQGC: Another diner
+DRCB: Another diner
+DRIE:
+DRJD:
+DSAC:
+DSAD: Clumsy pick-up
+DSAE: Vomiting woman
+DSAF: Guy bursting for toilet
+DSBA: Restraunt guy
+DSBB: Ditto
+DSGE: Gesture, feminine
+DTCD: Nibel copy-cat kid
+DTIF:
+DTJA:
+DUEF: Cloud reveals himself! Twirl!
+DVAC: Walking like zombie
+DVAD: Rises after sitting
+DVAE: Arms come up, like shop counter?
+DVAF: This is Kotch; freed from torture table
+DVBA:
+DVBB:
+DVBC:
+DVBD:
+DVHC: Kotch chasing Aeris
+DVHD: Kotch about to fall stairs
+DVHE: Kotch falling down stairs
+DWDD: Corneo Stand static, arms by back
+DWDE: Corneo Walking,
+DWDF: Corneo springs forward onto desk
+DWEA: Corneo surveys ladies from desk
+DWEB: Corneo springs to standing
+DWEC: Corneo appraises girl, standing
+DWED: Corneo reaches a decision!
+DWEE: Corneo slides toward his choice
+DWEF: Corneo rises, turns 'you can have the other ones'
+DWFA: Alright ladies, line up in front of the Don!
+DWFB: Cloud: Or I'll chop them off
+DWFC:
+DWFD:
+DWFE:
+DWFF:
+DWGA:
+DWGB:
+DWGC: Up from hands on knees, thrusting motion (Corneo?)
+DWGD: Onto hands knees, then flat to face
+DWGE: Hands knees, static
+DWGF: Corneo stunned, on bed, jumps back
+DWHA: Corneo stunned bed, static
+DWHB: Corneo bed gesture
+DWHC: Corneo bed hands knees sways
+DWHD: Corneo bed jands knees (And how do YOU know that?)
+DWHE: Corneo hands knees turns to door
+DWHF: Corneo victory dance bed
+DWIA: 180 turn then point
+DWIB: Aeris-gesture, different model assuming
+DWIC: Fast head shake
+DWID:
+DWIE:
+DWIF:
+DWJA:
+DWJB:
+DWJC:
+DWJD:
+DWJE:
+DWJF:
+DXAA:
+DXAB:
+DXAC: A possible Scarlet gesture
+DXAD: Someone leaning, relaxed
+DXAE: Johnny gesture
+DXAF: Johnny looks at feet
+DXBA: Someone standing rigid
+DXBB: Johnny crawling, probably when Aeris surrounded outside Honey Bee
+DXBC: Johnny again
+DXGF: Static stand
+DXHA: DXGF, but turning now. No idea
+DXHB: Someone ready for fight
+DXHC: DXHB, but advancing, like Shinra soldiers on sub (pincer)
+DXHD: A run version of DXHC?
+DXHE: Someone sitting, rubbing face
+DXHF: Seductive walk
+DXIA: Bouncy Bee walk
+DXIB: Someone sitting, looking around
+DXIC: Make-up middle when you bother her
+DXID: Standing, static (animation runtime, but no movement)
+DXIE: Bee swaying back and forth
+DXIF: Bee checks herself
+DXJA: Bee mincing
+DXJB: Something wrong? Not yet. OH!
+DXJC: Bee poses
+DXJD: Bee 'this room?'
+DYFC: Grandaughter in room, sit nodding
+DZAF: Standing hands behind back static
+DZBA: Someone lying (Queen in Bee President Shinra scene)
+DZGE: Someone crouched (prob same scene)
+
+
+EACD: Crouched, hand up, bone village?
+EACE: Working
+EACF: Both hands fo right up, NPC
+EADA: Seems to sink into himself
+EADB: Floating, in water? EADA
+EADC: Someone falls back flat
+EADD: They rise back up
+EADE: From EADA to this might be Cloud in Bee Inn
+EADF: Cloud vaults fence/out of bed
+EAEA: Cloud's shadow lunges over him, Honey Bee
+EAEB: Cloud's shadow down, before rising
+EAEC: Mukki stand stance
+EAED: Mukki gesture stand
+EAEE: Mukki revives you!
+EAEF: Mukki succeeds, exhausted
+EAFA: Mukki falls back
+EAFB: Mukki props up, to talk to you on bed
+EAFC: Mukki gets up
+EAFD: Someone on bed edge, shaking head
+EAFE: Someone looking up
+EAFF: Looks like rope climbing
+EAGD:
+EAGE:
+EAHC:
+EAHD: Climbs onto something
+EAHE: Climbs down from something
+EAHF: Standing sideways, nods
+EAIA:
+EAIB: Cloud outside Sector 0, storming Shinra Tower
+EAIC: Cloud runs into Shinra tower, sword on back
+EBCE:
+EBCF: Barret, stairs, 'I didn' mean that!'
+EBDA: Barret looks up, sigh
+EBDB:
+EBDC:
+EBDD: Looks back over shoulder
+EBDE: Cloud goes for sword-waist
+EBDF:
+EBEA:
+EBEB:
+ECAD:
+ECBC:
+ECBD: Rude 'would you push up please?'
+ECBE:
+ECIA:
+EDJC: Sitting, looks around
+EEFA: Heidegger laughing at desk?
+EEGA:
+EEGB: Someone taking seat at desk
+EFCA:
+EFCB: Standing static
+EFCC: Super seductive walk (Scarlet?)
+EFCD: Rate hike rate hike tra la la
+EFCE: Palmer hears news
+EFCF: Palmer Aw man!
+EFDA:
+EFDB:
+EFDC:
+EFDD:
+EFDE: Someone (maybe reeve) tapping something/desk
+EFDF: Same, but static
+EFEA: Someone leans forward
+EFEB: EFEA but climbing down>?
+EFEC: Someone looks up
+EFED: Cloud jumps up for toilet vent
+EFEE: Cloud jumps down from toilet vent
+EFEF: Climbing into toilet vent proper
+EFFA: Climbing down from toilet vent proper
+EFFE:
+EFFF:
+EFGA:
+EFGB: IN vent, turns head
+EFGC: Another vent crawling anim?
+EFGD: In vent turns head other way
+EFGE:
+EFGF: Rises from sitting
+EFHA: Sitting, head goes back
+EFHB:
+EFHC:
+EFHD: Rises from sit, looks right
+EFHE: Points at someone
+EFHF:
+EFIA:
+EFIB:
+EFIC:
+EFID:
+EFIE: Stand static, strange posture
+EFIF: Slow walk, strange gait
+EFJA: Waddle walk (Heidegger?)
+EFJB: Gesture (Heidegger, maybe?)
+EFJC: Heid punches air
+EFJD: Someone uses phone, might be Reeve
+EFJE:
+EFJF:
+EGAA: Someone uses phone again
+EGAB:
+EGAC:
+EGAD:
+EGAE:
+EGAF:
+EGBA:
+EGBB:
+EGBC:
+EGBD:
+EGBE:
+EGBF: Splits sit (Barret cell?)
+EGCA: Barret looks at Red in cell
+EGCB: Barret sitting, head dips
+EGCC: Barret gestures in cell
+EGCD: Barret cell head goes back
+EGCE:
+EGCF:
+EGDA:
+EGDB: Cloud slowly rises? cell
+EGDC:
+EGDD:
+EGDE:
+EGDF:
+EGEA:
+EGEB:
+EGEC:
+EGED:
+EGEE:
+EGEF:
+EGFA:
+EGFB:
+EGFC:
+EGFD:
+EGFE:
+EGFF:
+EGGA:
+EGGB:
+EGGC:
+EGGD: Hojo walk? Or prisoner walk
+EGGE: Hojo stand OR Prisoner stand static
+EGGF: Barret prisoner walk
+EGHA: Prisoner stand (Barret?) static
+EGHB:
+EGHC:
+EGHD: Pres Shinra dead at desk
+EGIB:
+EGIC: Cloud prisoner looks round for Aeris
+EGID: Someone gesture
+EGIE: Another gesture, standing
+EGIF: Barret prisoner head moves
+EGJA: Barret '&*%&* QUIT DREAMIN'
+EGJB: Barret dragged away by Rude
+EGJC: Gesture again
+EGJD: Palmer peeks out from behind pillar
+EGJE: Palmer caught between Cloud/Barret
+EGJF: Palmer struggles
+EHAA: Palmer questioned
+EHAB: Palmer breaks free
+EHAC: Rufus brushes himself off (?)
+EHAD: Leans back
+EHAE: Laughing, maybe Heidegger
+EHAF: Heidegger SUPER walk
+EHBA:
+EHBB: Hands on hips, laughs
+EHBC:
+EHBD:
+EHHB: Strange gesture, like pulling on glove
+EHIF:
+EHJA:
+EHJB:
+EHJC:
+EHJD:
+EHJE: Stand static (Lucretia?)
+EHJF: Lucretia sitting, rubs stomach
+EIAA: Lucretia collapses
+EIAB: Someone sitting, hand to knee
+EIGA: Someone tinkering, young hojo on Vincent?
+EIGB: Someone sits, looks like an effort
+EIGC:
+EIGD:
+EIGE:
+EIGF:
+EIHA:
+EIHB: Someone sitting, static. Cloud MP
+EIHC: Cloud MP, waves arm, 'I'm alright'
+EJDB: Maybe Cloud MP, head goes forward, travel sick
+EJJC:
+EJJD:
+EJJE:
+EJJF:
+EKAA:
+EKAB:
+EKAC:
+EKAD:
+EKAE:
+EKAF:
+EKBA:
+EKBB:
+EKBC:
+EKBD:
+EKBE:
+EKHD: Static standing (Vincent old?)
+EKHE: Walking (Vincent old?)
+EKHF: Vincent running (flashback?)
+EKIA: Someone tinkering, maybe holding hands w/ lucretia?
+EKIB: Vincent FB 'Don't go!'
+EKIC: Turning
+EKID: Head shakes, 'so long as she is happy, I don't mind'
+EKIE: Hand holding broken off by Lucretia
+EKIF: Lucretia runs off, upset
+EKJA: STatic, strange standing lop-sided
+ELEF: STatic standing
+ELFA: Walking
+ELFB: Static, standing hands out
+ELFC:
+ELFD:
+ELFE:
+ELFF: Slow head goes up
+ELGA: Vincent arguing with scientist, walk n talk
+ELGB: Scientist listening
+EMBF: Strange gesture, like with pulling on glove
+EMCA:
+EMCB:
+EMCC:
+EMCD:
+EMCE:
+EMCF:
+EMDA: Gesture, rigis
+EMDB: Cloud MP ong round, during Sephy rampage
+EMDC: Same again, gesture extension
+EMDD: Cloud to Seph as he kills those two guys
+EMDE:
+EMJD: Seph victim nibel falls back
+EMJE:
+EMJF:
+ENAA:
+ENGA: Walking (must be kid cloud)
+ENGB: Cloud kid sitting at well
+ENGC: Kicks his feet
+ENGD: Sighs
+ENGE: SHakes head
+ENGF: Gets up
+ENHA: To kid tifa 'I want to join Soldier'
+ENHB: Nods
+ENHC: Turns head slightly
+ENHD: Lies down (maybe on top of well)
+ENHE: Crawl position
+ENHF: Nods 'I promise'
+ENIA:
+ENIB:
+ENIC:
+ENID:
+ENIE:
+ENIF:
+ENJA:
+ENJB:
+ENJC:
+ENJD:
+ENJE: Slow rise from sleeping (Shin Mansion)
+ENJF: Edges off bed (SHin mansion FB)
+EOAA: Getting off bed
+EOAB: Stands up
+EOAF:
+EOBA:
+EOBB: Turns slightly
+EOBC:
+EOBD:
+EOBE:
+EOBF:
+EOCA:
+EOCB:
+EOCC:
+EOCD:
+EODC:
+EODD:
+EODF:
+EPAA:
+EPAB:
+EPAC:
+EPAD:
+EPAE: Vincent FB confronts Hojo
+EPAF: Vincent issues arrest order to Hojo
+EPBA: Vincent FB gets shot
+EPBB: Vincent goes down
+EPBC: Vincent on operating table
+EPBD: Vincent wakes up and comes off table
+EPBE: Vincent swaying
+EPBF: Vincent roars
+EPCA: Nods
+EPCB: Very minute gesture, prob Hojo w/ Vincent
+EPCC: Hojo stress to Vincent's threat
+EPCD: Hojo shoots Vincent
+EPCE: Hojo operates on Vincent
+EPCF: Cloud in shin mansion, talks to Sephy
+EPDA: Cloud hit by Destruct materia, Seph flies overhead
+EPDB: Cloud down, winded
+EPDC:
+EPDD:
+EPDE:
+EPDF:
+EPEA: Ladder animation
+EPEB: Bridge collapses, Cloud/MP reaches for Tifa,
+    then bridge goes.
+EPEC:
+EPED:
+EPEE:
+EPEF:
+EPFA: No entry! Cloud MP Nibel reactor
+EQDA:
+EQDB:
+EQDC:
+EQDD:
+EQDE:
+EQDF:
+EQEA:
+EQEB:
+EQEC:
+EQED:
+EQEE:
+EQEF:
+EQFA:
+EQFB:
+EQFC:
+EQFD:
+EQFE: Cloud stabbed by Sephy
+EQFF: Lifted up while impaled
+EQGA: Brings himself back down
+EQGB: Resists Sephy's attempt to move him again
+EQGC: Lifts him instead
+EQGD: Throws him into Mako
+EQGE: Shocked by contents of Reactor pod, falls
+EQGF: Jumps up to look into Reactor pod
+EQHA: Moving while carrying Tifa FB
+EQHB: Lays Tifa down FB
+EQHC:
+EQHD:
+EQHE:
+EQHF:
+EQIA:
+ERED:
+EREE:
+EREF:
+ERFA:
+ERFB:
+ERFC:
+ERFD:
+ERFE:
+ERFF:
+ERGA:
+ERGB:
+ERGC:
+ERGD:
+ERGE:
+ERGF:
+ESDC:
+ESDD:
+ESDE: Zack knocked from JENOVA room
+ESDF: Zack to cloud 'cloud, kill Sephiroth'
+ESEA: Cloud MP takes sword?
+ESJC: Kneeling (maybe by Tifa), looks up FB
+ESJD: Cloud MP gets up
+ESJE:
+ESJF:
+ETAA: Cloud goes for sword 'no you're not the sephy I knew'
+ETAB:
+ETAC:
+ETAE: Cloud MP runs into Jen room, takes sword from back
+ETAF: Running with sword
+ETBA: Cloud MP stabs Sephiroth
+ETBB: Cloud removes sword after stab
+ETBC: Cloud walks back down to ground after stab
+ETBD: Cloud panting before reveal
+ETBE: Goes to take off helmet
+ETBF: Helmet comes off
+ETCA: Sitting static
+ETCB: Looks up to side
+ETCC: Looks to other side
+ETCD:
+ETCE: Kicks cabinet for Megalixir
+ETCF: Looking back to straight, very short
+ETDA: Cloud about to tell Nibel story, slow look down
+ETDB: Cloud story teller gesture
+ETDC: Arms folded, arms drop
+ETDD: Barret second part of arms up gesture
+ETDE: 'DAMN SHINRA! THE MORE I HEAR, THE MORE I HATE 'EM'
+ETDF: Same gesture, second part
+ETEA: End of gesture
+ETEB:
+ETEC:
+ETED:
+ETEE:
+ETEF:
+ETFA:
+ETFB: Someone sitting static
+ETFC: Sitting, looks to side
+ETFD: VICTORY MOVE (MP Parade?)
+EUGA: Standing stern, foot tapping
+EUGB: Kneeling to pet dog?
+EUGC: Rising again
+EUGD:
+EUGE:
+EUGF:
+EUHA:
+EVCB: STanding static
+EVCC: Gesture
+EVCD: Another gesture
+EVCE: Gesture (might be cloud's mom?)
+EVCF: Like pulling curtain back
+EVDA: Jumping
+EVDB: Arms go right up
+EVDC: Gesture
+EVDD: Kid jumping up into air (Priscilla?)
+EVDE: Static sdtanding again
+EVDF: NPC Gesture
+EVEA: Waves hand
+EVEB: Gesture
+EVEC:
+EVED:
+EVEE:
+EVEF: Cloud shocked (well-known gesture)
+EVFA:
+EVFB: Gesture
+EVFC:
+EVFD:
+EWHB: Cloud rises on beach after sub is destroyed
+EWHC:
+EWHD: Barret rises after being floored (like snowboard jump)
+EWHE:
+EWHF:
+EWIA:
+EWIB:
+EWIC: Cid gets up after flooring
+EWID:
+EWIE:
+EWIF:
+EWJA:
+EWJB:
+EWJC:
+EWJD:
+EXFC: Cloud by Sephy, about to give Blck Materia
+EXFD: Cloud gesture during this scene
+EXFE:
+EXFF:
+EYDB:
+EYDC:
+EYDD:
+EYDE:
+EYDF:
+EYEA: MP walking with rifle
+EYEB: Running with rifle
+EYEC: Standing to attention, rifle
+EYED: Heidegger walk? Parade?
+EYEE: About face!
+EYEF: March holding something
+EYFA: About face!
+EYFB: Square!
+EYFC: Circle!
+EYFD: Triangle!
+EYFE: Salute?
+EYFF: Gesture, leant forward
+EYGA:
+EYGB: Someone yells
+EYGC:
+EYGD: Cloud jump
+EYGE: Heidegger punch?
+EYGF: About face!
+EYHA: Some kind of walk
+EYHB: Gesture
+EYHC: Gesture
+EYHD: Gesture
+EYHE: Rifle gesture during parade
+EYHF: Arm up for long time
+EYIA: Drill sergeant barks!
+EYIB: Drill sergeant gesture Triangle
+EYIC: Cross!
+EYID: Turn salute while marching
+EZBD:
+EZBE: Polite bow
+EZBF:
+EZCA:
+EZCB:
+
+
+FAAB:
+FAAC:
+FAAD:
+FACB: NPC Gesture
+FACF:
+FADA: NPC Walk
+FADB: Old Man Surveys
+FADF:
+FAEA:
+FAEB: Sailor-like pose
+FAEC: NPC Waves Hand
+FAED: NPC Explains
+FAEE: Flexing UP
+FAEF: Super Double Point Squat
+FAFA: Barret 'Yo! Better watch my back 'til the end...partner!'
+FAFB: Points gun-arm out (2nd part of FAFA)
+FAFC: Npc Gesture
+FAFD: Arm up, waves other arm
+FAFE: Both arms up, swaying
+FAFF: Same, but slight bow, one arm
+FAGA: NPC gesture
+FAGB: Turns, as if ready to fight
+FAGC: Barret prisoner walk
+FAGD: Barret takes hold of door
+FAGE: Barret pulls at door (right)
+FAGF: Barret pulls at door (left)
+FAHA: Barret pulls at door (straight)
+FAHB:
+FAHC:
+FAHD: Barret ready to fight
+FAHE:
+FAHF:
+FAIA:
+FAIB: Crouched, examining something, animated
+FAIC: The cannon...FIRE!
+FAID: Second part of FAIC
+FAIE:
+FAIF:
+FAJA:
+FAJB:
+FAJC:
+FAJD: Standing despondent. Maybe Barret.
+FAJE: Barret opens window for Meteor reveal
+FAJF: Barret prisoner looks around
+FBAA: Barret prisoner struggles
+FBAB: Barret prisoner pulls on binds
+FBAC:
+FBAD:
+FBAE:
+FBAF: NPC gesture
+FCAC:
+FCAD:
+FCAE:
+FDCB: NPC Gesture
+FDCC: Continuation of FDCB, walking while thinking
+FDCD: Again, but this time with a lunge forward
+FDCE:
+FDCF:
+FDDA:
+FDDB:
+FDDC:
+FDDD:
+FDDE:
+FDDF:
+FDEA:
+FDEB:
+FDEC:
+FDED:
+FDEE:
+FDEF:
+FDFA:
+FDFB:
+FDFC:
+FDFD:
+FDFE:
+FDFF:
+FDGA:
+FDGB:
+FDGC:
+FDGD:
+FDGE:
+FDGF:
+FDHA:
+FDHB:
+FDHC:
+FDHD:
+FDHE:
+FDHF:
+FDIA:
+FDIB:
+FDIC:
+FDID:
+FDIE: Tying/tightening something (Zack to capsule?)
+FDIF: Zack victory pose, replaces sword on back
+FDJA: Someone sitting, maybe driving?
+FDJB: Might be Zack, on truck anyway
+FDJC: Truck sit gesture
+FDJD:
+FDJE: Cid victory dance (corel train)
+FDJF: Cid contemplating
+FEAA:
+FEAB:
+FEAC:
+FEAD:
+FEAE:
+FEAF:
+FEBA: Someone cowering? Cloud in sub
+FEBB: Cloud freaking out in sub 'everyone I'm sorry'
+FEBC: Cloud pushes something on sub panel
+FEBD: 'But I AM going' Cloud, clenches fist
+FEBE: Cutting motion, feet not Cloud's
+FEBF:
+FECA:
+FECB: Same again, cut motion
+FECC:
+FECD:
+FECE:
+FECF:
+FEDA:
+FEDB:
+FEDC:
+FEDD:
+FEDE: Braced against an explosion/flash
+FEDF: Second part of FEDE
+FFAC:
+FFAD:
+FFAE:
+FFAF:
+FFBA:
+FFBB:
+FFBC: Holding breath, looking for something? Cloud
+FFBD: Backing off, like FFBC
+FFBE:
+FFBF:
+FFCA: Hanging on from something, arm dangling
+FFCB: Loses grip, hits something, then falls away
+    (MPs chasing Tifa?)
+FFCC:
+FFCD:
+FFCE:
+FFCF:
+FFDA:
+FFDB:
+FFDC:
+FFDD:
+FFDE:
+FFDF:
+FFEA:
+FFEB:
+FFGF:
+FGAD:
+FGEB:
+FGFA:
+FGHC:
+FGHD: Turns as if flinching from something
+FGHE:
+FGIF:
+FGJA:
+FGJB:
+FGJC:
+FGJD:
+FGJE:
+FGJF: Cid Spear Stab
+FHHB:
+FHHC:
+FHHD:
+FHHE:
+FHHF: Cloud ready to slash down?
+FHIA:
+FHIB:
+FHJA:
+FIAA:
+FIAB: Hop into driver's position
+FIAC: Waving to someone
+FIAD: Shot in the back?
+FIAE:
+FIAF:
+FIHF:
+FIIA:
+FIIB: Swimming, shallow
+FIIC: Swimming, deep
+FIID: FIIC but faster
+FIIE: Someone lying down, maybe Cloud after sub sunk
+FIIF: FIIE, stirring to wake
+FIJA: On knees (CPR)
+FIJB: Inhaling for CPR (short)
+FIJC: Inhaling for CPR (long)
+FIJD: Administering CPR
+FIJE: Part two of FIJD
+FIJF: Part three of FIJD
+FJAA: CPR, shakes head
+FJAB: Standing slouched (Pris' Dad)
+FJAC: Priscilla's Dad picks her up
+FJAD: Part two of FJAC
+FJAE: Runs off with her
+FJBC:
+FJCA:
+FJCB: Long dusting himself off
+FJCC:
+FJCD:
+FJCE: Yawn then hand goes down
+FJJA:
+FJJB:
+FJJC:
+FJJD:
+FJJE:
+FJJF: Strange dance, not Cloud's feet
+FKKA: Pushing something, failing?
+FKAB:
+FKAC:
+FKAD: Blasted onto back, not Cloud
+FKAE:
+FKAF:
+FKBA:
+FKBB:
+FKBC:
+FKBD:
+FKBE:
+FKBF:
+FKCF:
+FKDA:
+FKDB: Someone scratches head/smell their armpit?
+FKDC:
+FKDD:
+FKDE:
+FKJD: Hojo groupie, lying down
+FKJE: Rises to feet
+FKJF: Cloud kicks ball at Red XIII
+FLAA:
+FLAB: Hojo Groupie, sitting
+FLGA: Old man pose, animated but stood still
+FLGB: Does a gesture FLGA
+FLGC: Johnny flatmate in shower?
+FLGD: Butch (I think)
+FMIA: Kicking the ball again
+FNEC:
+FNED:
+FNEE:
+FOAD: Guy in Weapon Shop (Sector 7)
+FOAE: Girl in Junon shop, 'buy a lot cutie'
+FOAF: Muscleman flex
+FOBA: Superhero pose
+FOBB: Someone eating
+FOBC: Talking while FOBB
+FOBD: FOBB, now with head in hands
+FOHC: Phoenix Down hobo
+FOHD: Looks up to talk
+FOHE: Rises all the way to standing
+FOHF: FOBD, makes a gesture, back to head in hands
+FOIA:
+FOIB:
+FOIC: Down and out, on back
+FOID: Sitting, gesture
+FOIE: Red-head/Scarlet, shimmy gesture
+FOIF: Knelt, adjusting tech or something
+FOJA:
+FOJB:
+FOJC:
+FOJD:
+FOJE:
+FOJF:
+FPAA:
+FPAB:
+FPAC: Hojo groupie #3
+FPAD: Someone sunbathing, rubs eyes
+FPAE: Sunbather, with lotion
+FPAF: Same as FPAE, but slightly different
+FPBA: Sunbather
+FPBB: Like someone (Barret) has been struck
+FPBC:
+FPBD: Bends down to pick something up
+FPBE: Elena PAWNCH! (fail)
+FPBF: Coming down a ladder
+FPCA: Sitting, hands hugging legs
+FPHF: Sitting knees, hands on knees
+FPIA: FPHF, but nods
+FPIB: Legs apart, doing some kind of routine
+FPIC: Asleep, hands on stomach, feet backward
+FPID: Turns over in sleep (Bet this is Cid)
+FPIE: Gets up
+FPIF: Looks around (after Corel train fail?)
+FPJA: Sitting, animated
+FPJB:
+FPJC:
+FPJD:
+FPJE:
+FPJF:
+FQAA:
+FQBA:
+FQCA:
+FQHF: Cid opens something?
+FQIA: Slight turn, looks fast, Mideel door side-quest?
+FQIB: A little jig
+FQIC: Reaches down for beat-up useless old key!
+FQID: Part 2 of FQIC
+FQIE: Part 3 of FQIC
+FQIF: Part 4 of FQIC
+FQJA: Likely a prototype of FQIC
+FREF: Slight gesture
+FRFA: Side-quest as Cloud? Key breaks
+FRFB: Standing as FREF
+FRFC: FREF, looks down
+FRFD: Knocked back by something
+FRFE: Knocked back, FRFD, hanging from ledge
+FRFF: Dangling from FRFE
+FRGA: Nods from FRFF
+FRGB: Let's go?
+FRGC: Falls quite a way
+FSBE: Looks back, makes to run
+FSBF: Panting
+FSCA: Jumps from something
+FSCB: mp Solder shooting
+FSCC: Same, more aggressive
+FSCD: Hands up, don't shoot! (Scarlet threatening soldiers)
+FSCE: MP Shot by Scarlet, falls back
+FSCF:
+FSDA: About to fall (Corel train tracks?)
+FSDB: Fallen!
+FSDC: Corel train track fall, direct your fall, get items
+FSEA:
+FSEB: Hanging, then up to climb (Corel train track fall)
+FSEC: Climbing sideways (Ancient City?)
+FSED: Climbing, looks over shoulder
+FSEE:
+FSEF: Climbing a steep incline
+FSFA:
+FSFB: Barret panting quick (flashback)
+FSFC: Barret FB 'What the hell happened?!'
+FSFD: Part 2 of FSFD
+FSFE: Part 3
+FSFF: Part 4
+FSGA: Slams ground, Part 5
+FSGB: Nods
+FSGC: Shakes head
+FSGD: Might be Dyne, these ones
+FTCC: Sitting, head moves slightly
+FTCD: Lying on face, static
+FTCE: Same, slightly different
+FTIB: Same, but on back
+FUEA: Same, on face
+FUEB: Dyne limp-walk
+FUEC: Strange tumble then thrust
+FUED: Barret backing up?
+FUEE:
+FUEF:
+FUFA:
+FUFB: Cocks head
+FUFC: Head from side to side
+FUFD: FUFB/FUFC ends
+FVBC: Gesture
+FVBD:
+FVBE:
+FVBF:
+FVCA: Barret aims gun at party
+FVCB: Barret shoots at party
+FVCC: Barret stops shooting
+FVCD: Barret sighs
+FVCE: Barret looks at his gun
+FVCF: FVCE, Barret angy
+FVDA: End of FVCF
+FVDB:
+FVDC:
+FVDD:
+FVDE:
+FVDF: Someone falls back hard
+FVEA: Looks left
+FVEB: Gesture, Barret
+FVEC: Ditto
+FWAB: Mr. Coates grabbed
+FWAC: Mr. Coates shakes head, grabbed
+FWAD: Gesture, while grabbed
+FWGC: Ester Gesture
+FWGD: Ester 'that's so rude'
+FWGE: Ester gesture
+FXAE:
+FXAF: Barret gesture
+FXBA: Barret shot but Dyne
+FXBB: Barret guards against another shot
+FXBC: Both hands to guard against shots
+FXBD: Gesture
+FXBE: Barret, to knees 'my hands ain't any cleaner'
+FXBF: 'URRRRRGGHHHHH!'
+FXCA: Part 2 of FXBF
+FXCB: Barret panting quick
+FXCC: Someone standing, static
+FXCD: Someone sitting, head down, hand up
+FXCE: Hand comes down to stomach
+FXCF: Slow rise from FXCE
+FXDA: Leg slowly moves
+FXDB: Hands something over
+FXDC: Must be Dyne, these ones, looks up slowly
+FXDD: 'Myrna's lonely, I gotta take Marlene to her'
+FXDE: 'I guess you and me gotta fight'
+FXDF: Dyne gesture
+FXEA: Dyne gesture
+FXEB: 'I don't CARE what the reason is'
+FXEC: Dyne turn
+FXED: Dyne points left
+FXEE: Shoots left
+FXEF: Looks over shoulder
+FXFA: Turn
+FXFB: 'Marlene wants to see her mom, don't she?'
+FXFC: Shooting at Barret
+FXFD: Dyne loses
+FXFE: Goes down to a knee 'Stay back'
+FXFF: Looks up from FXFE
+FXGA: Rises back to feet
+FXGB: Leans against wall
+FXGC: Talking, from FXGB
+FXGD: Looks up, FXGB
+FXGE: Gestures to Barret, FXGB
+FXGF: 'Hands are too stained to carry Marlene anymore'
+FXHA: Nods, still from FXGB
+FXHB: Unhooks pendant
+FXHC: Throws pendant to Barret
+FXHD: Exits FXGB
+FXHE: Enters limp walk/wall lean
+FXHF: Walking in FXHE
+FXIA: Falls back into canyon
+FXIB: Someone gets up, brushes off
+FXIC: Cloud explains something (know the gesture, can't place it)
+FXID: Back to sitting, head in hands
+FXIE: Barret talking
+FXIF: Similar to FXIE
+FXJA: Pressing a switch?
+FXJB: Gesture
+FYFA: Sitting, arm over back of chair?
+FYFB: Other sitter, partner to FYFA
+FYFC: Neck-crick left
+FYFD: Casual gesture, hand
+FYFE: Jerk turn, maybe Mideel shopper?
+FYFF: Play, kissing Rosa's hand
+FYGA: Back up from FYFF
+FYGB: AND FOREVER TWIRLING, TWIRLING TOWARD FREEDOM
+FYGC: Gesture with hand
+FYGD: End of FYGC
+FYGE: Cloud knocked down by AP Slap
+FYGF:
+FYHA:
+FYHB:
+FYHC:
+FYHD:
+FYHE:
+FYHF:
+FYIA:
+FYIB:
+FYIC:
+FYID:
+FYIE:
+FYIF:
+FYJA:
+FYJB:
+FYJC:
+FYJD:
+FYJE:
+FYJF:
+FZAA:
+FZAB: Standing, static
+FZAC: Someone else twirling, entrance
+FZAD: End of FZAC
+FZAE: Play gesture
+FZAF: Play talking
+FZBA: End of FZAF
+FZBB: But, you don't have to defeat the EDK alone!
+FZBC: End of FZBB
+FZBD: More play-talk
+FZBE: End of FZBD
+FZBF: EDK Makes entrance, the horror
+FZCA: Reaches down slow for something
+FZCB: Stops, FZCA
+FZGB:
+FZGC:
+FZGD:
+FZGE:
+FZGF:
+FZHA:
+FZHB:
+FZHC:
+FZHD:
+FZHE:
+FZHF:
+FZIA:
+FZIB:
+FZIC:
+FZID:
+FZIE:
+FZIF: Standing, static
+FZJA: Twirling again
+FZJB: From twirl to gesture (Knight's Entrance)
+FZJC: You must be the legendary hero, Alfred!
+FZJD: Nods 'yeah, you'
+FZJE: AHEM
+FZJF: Oh I know in my soul, you'll save P. Rosa!
+
+
+GAAA: Play Gesture
+GAAB: Play Gesture
+GAAC: Play Gesture
+GAAD: Play Gesture (Knight, now talk to the king!)
+GAAE: Rises from gesture
+GAAF: Hands go up
+GABA: Gesture, hands go together
+GABB: I am...a lowly knight, how can...I help you?
+GABC: End of GABB
+GABD: Knight attacks EDK
+GAHA: Standing, static
+GAHB: Twirling Play
+GAHC: End of twirl
+GAHD: Another gesture, hands
+GAHE: Still the play, gesture
+GAHF: Play Gesture
+GAIA: Play gesture, down on one knee
+GAIB: Continuation of GAIA
+GAIC: GAIB again
+GAID: Rises from GAIC
+GAIE: Play gesture
+GAIF: Play Gesture
+GAJA: Play gesture
+GAJB: Play Gesture
+GBFA: Dio Standing static
+GBFB: Dio Walking
+GBFC: Dio Flexing
+GBFD: Dio Flex Finish
+GBFE: Alt Dio Flex
+GBFF: Alt Dio Finish Flex
+GBGA: Dio Turn Flex
+GBGB: Dio Finish Turn Flex
+GBGC: Another Dio flex
+GBGD: Another Dio Finish Flex
+GBGE: Dio Sustained Flex
+GBGF: Dio Yet Another Flex
+GBHA: Finishes that flex
+GBHB: Dio Flex Combo
+GBHC: Another Flex
+GBHD: Flex finish
+GBHE: Another Dio Flex
+GBHF: Dio Flex
+GCAD:
+GCAE:
+GCAF:
+GCBA:
+GCBB: Low bow
+GCBC:
+GCHB: Short bow
+GCIB:
+GCIC:
+GCID:
+GCIE:
+GCIF:
+GCJA:
+GCJB:
+GDAA:
+GDAB: Cloud in Gondola Sitting, arms crossed
+GDAC: Cloud looks up gondola
+GDAD: Cloud looks down, Gondola
+GDAE: Cloud looks left gondola
+GDAF: Cloud leans forward, Gondola
+GDBA: Cloud looks out window, Gondola
+GDBB: Cloud stops looking, Gondola
+GDBC: Same, but slightly different
+GDBD: Cloud (hoo boy) Gondola
+GDBE:
+GDBF:
+GDCA:
+GDCB:
+GDCC:
+GDCD:
+GDCE:
+GDCF:
+GDDA: Barret Gondola
+GDDB: Barret taps foot Gondola
+GDDC: Barret looks left Gondola
+GDDD: Barret leans forward, Gondola
+GDDE: Barret talk gesture, Gondola
+GDDF: Barret talk gesture 2, Gondola
+GDEA: Barret talk gesture 3, Gondola
+GDEB: Barret shakes head, Gondola
+GDEC: Barret talk gesture 4. Gondola
+GDED: Barret gesture 5, Gondola
+GDEE:
+GDEF:
+GDFA:
+GDFB:
+GDFC:
+GDFD:
+GDFE:
+GDFF: Barret Default/Cid Gondola?
+GDGA:
+GDGB:
+GDGC:
+GDGD:
+GDGE:
+GDGF:
+GDHA:
+GDHB:
+GDHC:
+GDHD:
+GDHE:
+GDHF:
+GDIA:
+GDIB: Arms up
+GEAF:
+GEBA:
+GEGF: Hopeless looking stand static
+GEHA: Walk version of GEGF
+GEHB: Gesture of GEGF (Might be Lurch)
+GEHC: Gesture 2 of GEGF
+GFDF: Hunched over, NPC
+GFDC: Hunched Walk (Igor?)
+GFDD: Igor Gesture
+GFDE: Igor nods
+GFJF:
+GGAA:
+GGAB:
+GGAC:
+GGAD:
+GGAE:
+GGAF:
+GGBA:
+GGBB:
+GGBC: Standing, folds arms
+GGBD:
+GGBE:
+GGBF: Sitting, arms folded
+GGCA: GGBF, waves
+GGCB: Alt gesture for GGBF
+GGCC:
+GGCD:
+GGCD: Walking, looking left
+GGCE:
+GGCF:
+GGDA:
+GGDB:
+GGDC:
+GGDD:
+GGDE:
+GGDF:
+GGEA:
+GGEB:
+GGEC:
+GGED:
+GGEE:
+GGFD:
+GGGC:
+GGGD: Low bow (G. Saucer attendant?)
+GGGE:
+GGGF:
+GGHA:
+GGHB:
+GGHC:
+GGHD:
+GGIC:
+GGJB:
+GHAA:
+GHAB: Officer gesture
+GHAC: Another gesture
+GHGB:
+GHGC: Dead/Injured gsaucer attendant
+GHGD: Injured g.saucer stirs
+GHGE:
+GICA:
+GICB:
+GICC:
+GICD:
+GICE:
+GICF: Ester gesture
+GIDA: Dio exit flex
+GIDB: Cloud struggles in capture device
+GIDC:
+GIDD:
+GIDE:
+GIDF: Guard presses switch to open prison gate
+GIEA: Cloud given Dio's note
+GIEB: Finishes reading
+GIEC: Finishes reading alt
+GIED:
+GIEE:
+GIEF:
+GIFA:
+GIFB:
+GIFC: Preps for arm-wrestle
+GIFD: Arm-wrestling
+GIFE: Arm-wrestling opp.direction
+GIFF: Puts money into G.Saucer game
+GIGA: Preps for claw game
+GIGB: Controlling claw
+GIGC: Similar to GIGA
+GIGD: Basketball, takes a shot
+GIGE: Yeah, you won!
+GIGF: Prepping to take shot?
+GIJE: Static arm-wrestle
+GIJF: Full arm-wrestle (maybe Cloud, maybe opponent)
+GJAA: Again
+GJDC:
+GJDD: Operating a game
+GJDE: Again, but much more rapid, like button presses
+GJDF: Guy riding bike game static
+GJEA: Bike riding, animation
+GJFA:
+GJFB:
+GJFC: Snowboard guy anim
+GJFD: Cloud 3D Battler, anim stand
+GJFE: Raising dukes for battler
+GJFF: Mid Punch cloud
+GJGA: Low Punch Cloud
+GJGB: Low Punch, get hit by high
+GJGC: Mid punch, hit by low punch?
+GJGD: High punch, hit by mid?
+GJGE: Goes down
+GJGF: Battler victory!
+GKCE: Opponent introduces self/wins
+GMDE:
+GMDF:
+GMEA:
+GMEB:
+GMEC:
+GMED:
+GMEE:
+GMEF:
+GMFA:
+GMFB:
+GMFC:
+GMFD:
+GMFE:
+GMFF:
+GMGA:
+GMGB:
+GMGC:
+GMGD:
+GMGE:
+GMGF:
+GNBB:
+GNBC:
+GNBD:
+GNBE:
+GNBF:
+GOED:
+GOEE: Gestures talking
+GOEF:
+GOFA:
+GOFB:
+GOFC:
+GPBB: Sitting
+GPBC: Sitting, gesture
+GPBD: Sitting, shakes head
+GPBE: Stand static, unique?
+GPBF: GPBE, head cocks
+GPCA: Sitting
+GPCB: Goes to knees
+GPCC: Drinking something? Protracted gesture w/ arm
+GPIB: Leans against wall, stops leaning (Joe)
+GPIC: Gesture (Joe)
+GPID: Joe bows
+GPIE: Another gesture
+GPIF: GPIE gesture
+GPJA: Joe says goodbye
+GQEF: Jockey playing cards
+GQFA: Jockey places card
+GQFB: Another jockey
+GQFC: Another jockey
+GQFD: Jockey rises from table
+GRBC: Jockey looks left
+GRBD: Sitting, jockey?
+GRBE: Same as GRBD
+GRBF: Jockey again
+GRCA: Jockey again
+GRCB: Gesture, hands behind back, short bow
+GRDA:
+GRDB:
+GRDC: Climbing
+GRDD:
+GRDE: Climbing down?
+GRDF: Sitting cross-legged (Barret?)
+GREA: Lying down static
+GREB: Tries/fails to get up
+GREC: Gets up (Gongaga scene?)
+GRED: Cloud gets up
+GREE: Someone sitting (inn keeper?)
+GREF: Gongaga inn keeper, turns head to speak
+GRFA: Gongaga mayor static
+GRFB: Mayor talking
+GRFC: Barret denied admission to Cosmo
+GRFD:
+GRFE:
+GRFF:
+GSHF:
+GSIA:
+GSIB: Corel Mt. Path guy? (Might be Cloud)
+GSIC: Again Might be Cloud at Cosmo Candle
+GSID: Cloud shakes head (looks down slightly, regular gesture)
+GSIE:
+GSIF: Barret sitting, shakes head (Cosmo candle)
+GSJA: Barret rises, cosmo candle 'you came in handy at times'
+GSJB:
+GSJC:
+GSJD:
+GUGE:
+GUGF:
+GUHA:
+GUHB:
+GUIA:
+GUIF:
+GUJA:
+GUJB:
+GVAA:
+GVAB:
+GVAC: Materia store guy cosmo, wakes up w/fright
+GVAD:
+GVBB:
+GVBF:
+GVCA: Someone relaxing, prob corel miner secret cave
+GVCB:
+GVCC:
+GVCD: Cloud shields face
+GVDB:
+GVDF:
+GVED:
+GVFB:
+GVFC:
+GVFD:
+GVFE:
+GVFF:
+GVGA:
+GVGB: Barret, walking into Bugen's Machine
+GVGC: Looks down
+GVGD: Barret stunned by sights in Machine
+GVGE: Control look left (Barret) in Machine
+GVGF: Look right, Barret, in machine
+GVHA: Barret swipes, in machine
+GVHB:
+GVHC:
+GVHD:
+GVHE:
+GVHF:
+GVIA:
+GVIB:
+GVIC:
+GVID:
+GVIE:
+GVIF:
+GVJA:
+GVJB:
+GVJC:
+GVJD:
+GVJE:
+GVJF:
+GWBB:
+GWBC: Gesture to activate something
+GWBD:
+GWBE:
+GWBF:
+GWCA:
+GWCB:
+GWFF:
+GWGA:
+GWGB:
+GWGC:
+GWGD:
+GWGE:
+GWGF:
+GWHA: Gesture to side
+GWHB: Someone turns (Barret feet)
+GWHC:
+GWHD:
+GWHE:
+GWHF:
+GWIA:
+GWIE:
+GXED:
+GXEE: Someone points repeatedly (barret/cid feet)
+GYAD: Someone sitting, hands on knees
+GYAE: Shakes their head, GYAD
+GYAF: Cid, raising ruckus
+GYBA: Standing stock still, static
+GYBB: Hand on back, like old man
+GYBC:
+GYBD: Cid shakes head
+GYBE: Cid sits, foot on table
+GYBF: GYBE, makes gesture 'SI' DOWN!'
+GYCA: Sets up for sitting impatience gesture
+GYCB: GYCA 'where the hell is Rufus?'
+GYCC: Rises when Palmer shows up
+GYCD: Tinkering w/something (maybe technician)
+GYCE: Suddenly drops to knee
+GYCF: Palmer standing static
+GYDA: Young Cid walk? Palmer walk?
+GYDB: Palmer gesture
+GYJA: Cid ends head head scratch
+GYJB: Someone just falls back (Rude?)
+GYJC: A sweeping gesture, movement
+GYJD: My only hope is to talk to the president?
+GYJE: Cid ends laugh
+GYJF: Cid head scratch
+GZAA: 'Then we get to the day of the launch,
+    everything's going well'
+GZAB: Cid up yours buddy gesture
+GZAC: Cid cry end
+GZGF:
+GZHE:
+
+
+HADD: Collapsed guy (looks like guard in Rocket)
+HADE: Technician fiddling
+HADF: Half squat
+HAEA: Crouch to open Materia capsule (Rocket)
+HAEB: HAEA, looks round at Cid
+HAEC: Presses button on Capsule
+HAED: Arms go up (failure?)
+HAEE: Looking around (alarm went off?)
+HAEF: Looks directly up
+HAFA: Like HAED
+HAFB: Takes Huge Materia
+HAFC: Cid Gesture, brushes hand
+HAFD: Cid hand goes up, crosses arms
+HAFE: Cid Facepalm!
+HAFF: Panicking jig
+HAGA: Cid despair? (lost the Materia?)
+HBCF:
+HBDA: Looking left
+HBDB: Stronger version of 'Ill go on alone, you go home'
+HBDC: Looking around
+HBDD: Cid looks right
+HBDE: Cid Looking around
+HBDF: Cid big sigh
+HBEA: Cid reaches up
+HBEB: Cid head moving
+HBEC: Cid in cockpit (static)
+HBED: Cid pressing cockpit buttons
+HBEE: Cid Cockpit 'finally'
+HBEF: Cid Cokpit, alarm goes, looking around
+HBFA: Cid Cockpit 'WHO IS THE LITTLE $%^&*!'
+HBFB: 'What am I- What am I supposed to do?'
+HBFC: During freakout, looks at tannoy
+HBFD: 'SH-----------IT!'
+HBFE: Cloud after oxygen tank blast
+HBFF: Rises from HBFE
+HBGA: Crouches to lift debris from Cid
+HBGB: Struggling with debris
+HBGC: 'I can't just leave my friends'
+HBGD: Initial reaction to oxygen tank blast
+HBGE: Looks back (maybe to see SHera)
+HBGF: Barret after oxygen tank blast
+HBHA: Rises from blast
+HBHB: Barret crouches to clear debris
+HBHC: Struggling with debris
+HBHD: Looks at Cid
+HBHE: Looks up to see SHera
+HBHF:
+HBIA:
+HBIB:
+HBIC:
+HBID:
+HBIE:
+HBIF:
+HBJA:
+HBJB:
+HBJC:
+HBJD:
+HBJE:
+HBJF: Cid after blast, static
+HCAA: Cid after blast, animated
+HCAB: Cid after blast, gesture
+HCAC: Cid after blast, gesture2
+HCAD: Cid after blast, cry gesture
+HCAE: Cid after blast, regrets about Shera
+HCAF: Cid after blast, 'but this is it for me'
+HCBA:
+HCBB:
+HCBC:
+HCBD:
+HCBE:
+HCBF:
+HCCA:
+HCCB:
+HCCC:
+HCCD:
+HCCE:
+HCCF:
+HCDA:
+HCDB:
+HCDC:
+HCDD:
+HCDE:
+HCDF:
+HCEA:
+HCEB:
+HCEC: Shera Looking up and around
+HCED: Shera helping with debris
+HCEE: Struggling with debris
+HCIC:
+HCID:
+HCIE:
+HCIF: Cid sitting in escape pod
+HCJA:
+HCJB: Cid standing
+HCJC: Cid jump/hop (into escape pod)
+HCJD: Cid looking out window of escape pod
+HCJE:
+HCJF: Shera gesture 'I checked it myself'
+HDAA: Shera gesture
+HDAB: Shera sitting, escape pod
+HDAC: Shera looks round sitting
+HDAD:
+HDAE: Barret chest pound
+HADF:
+HDBA:
+HFDF: Shera fixing something
+HFEA: Going up stairs (wutai cathouse?)
+HFEB: Coming down the stairs
+HFEC:
+HFED: Cid up stairs
+HFEE: Cid down the stairs
+HFEF:
+HFFA:
+HGGD: Piloting something, presses button
+HGGE:
+HGGF:
+HGHA:
+HGHB:
+HGHC:
+HGHD:
+HGHE:
+HGHF:
+HGIF:
+HGJA:
+HGJB:
+HGJC: Kid jumps then back down into hands on knees sit (Shake?)
+HHEE: Stand static
+HHEF: Someone flat out on back (Godo?)
+HHFA: Godo points
+HHFB: Godo laughing while on deck
+HHFC: Godo looks down
+HHFD: Godo upset 'power without something is equally useless'
+HHFE: Godo looks up from HHFD
+HHFF: Godo gestures as if handing something over
+HHGA: Godo going to HHGB
+HHGB: 'Yuffie, do they think they'll still need their materia?'
+HHGC: Leaving HHGB
+HHGD: Godo final flexing gesture
+HHHC:
+HHIB:
+HHIF:
+HHJA: Corneo Wutai walk
+HHJB: Corneo Wutai Surprised
+HHJC: Corneo Wutai Super-dodge!
+HHJD: Wutai worshippers
+HHJE:
+HIFB: Corneo Ninja static
+HIFC: Corneo Ninja run
+HIFD: Elena struggling
+HIFE: Cid shocked, but on Cloud's skeleton
+HIFF: Looking around (Reno, likely)
+HIGB: Corneo wutai threatens the drop
+HIGC: Hand wave, in HIGB stance
+HIGD: 'hee-haw- wait, who's there!'
+HIGE: Hit and falls
+HIGF: Hanging from ledge, nods 'number 2! number 2...?'
+HIHA: Corneo falls!
+HIHB:
+HIHC:
+HIHD:
+HIHE:
+HIHF:
+HIIA:
+HIIB: Elena tied to Da Chao, static
+HIIC: Elena struggles
+HIID: Elena rotate to drop position
+HIIE: Elena drop static
+HIIF: Elena drop struggle
+HIJA:
+HIJB:
+HIJC:
+HIJD:
+HIJE:
+HIJF: Rude throws a rock
+HJAA: Gesture both hands coming back
+HJAB:
+HJAC:
+HJAD:
+HJAE:
+HJAF:
+HJBA:
+HJBB: Cloud goes to run (temple conclusion)
+HJBC: Cloud slow run to Sephy (hand over Black Materia)
+HJBD: Cloud falls to knees, attacking Aeris
+HJBE: Cloud striking Aeris
+HJBF:
+HJCA:
+HJCB:
+HJCC:
+HJCD:
+HJCE:
+HJCF:
+HJDA:
+HJDB:
+HJDF:
+HJEA:
+HJEB:
+HJEC:
+HJED:
+HJEE:
+HJEF:
+HJFA:
+HJFB:
+HJFC: Cid hand to face
+HJFD:
+HJFE:
+HJFF:
+HJHB:
+HJHC:
+HJHD:
+HJHE:
+HJID:
+HJJC:
+HKAB:
+HKBA:
+HKDF:
+HKFE:
+HKFF:
+HKGA:
+HKGB:
+HKGC:
+HKGD:
+HKGE:
+HKGF:
+HKHA:
+HKHE:
+HKHF:
+HKIA:
+HKIB:
+HKIC:
+HKID:
+HKIE:
+HKIF:
+HKJA:
+HKJB:
+HLFB:
+HMBA: Bone village npc, digging
+HMBB: Leans right back
+HMBC: Hands and knees, looks around
+HMBD: Still at HMBC
+HMHC: Going in pocket looking for something
+HMHD: Digger peeking into forest
+HMHE: Cloud lands in forest, during dream
+HMHF:
+HMIA:
+HMIB:
+HMIC:
+HMID: Jumps up to pull something down
+HMIE:
+HNAE:
+HNIE:
+HOAA:
+HOAB: Strange slow step
+HOAC: Similar to HOAB
+HOAD: Climbing round back of ancient city (Cloud)
+HOAE:
+HOAF: Cid doing the climb
+HOBA: Cloud fist clench
+HOBB: Fist goes down
+HOBC: Cloud dazzle, hand goes up to ward
+HOCC:
+HOCD: Cloud carrying Aeris
+HOCE:
+HOCF: Cloud revitalised
+HODA:
+HODB: Hand goes to chest, slow
+HODC: Looks up, hands out
+HODD: HODC crumpling
+HODE: Rises, presses something
+HODF:
+HOEA: Cloud tells others to wait (Aeris pedestal)
+HOEB: Cloud produces sword
+HOEC: Sword goes over head
+HOED: Cloud goes for kill
+HOEE: Cloud stops, 'what're you making me do?'
+HOEF: Cloud looks left (sword overhead)
+HOFA: right this time
+HOFB: Leans forward
+HOFC: Backward
+HOFD: Shakes head
+HOFE: Holding sword, goes right
+HOFF: Left
+HOGA: Forward
+HOGB: Back
+HOGC: Shakes
+HOGD: Just standing, edges right
+HOGE: Left
+HOGF: Forward
+HOHA: Back
+HOHB: Shakes
+HOHC: Cloud catches Aeris' body
+HOHD: Cloud tries to wake Aeris
+HOHE: Head goes down
+HOHF: 'Shut up'
+HOIA: Looks up, back 'the cycle of planet and your plan don't mean'
+HOIB: Looks down again
+HOIC: Aeris gets let go
+HOID: SHaking with rage 'what is this pain?'
+HOIE: 'Of course! Who do you think I am?!'
+HOIF: Knocked back by landing of Jenova LIFE
+HOJA:
+HOJB:
+HOJC:
+HOJD:
+HOJE: Cloud hugged by Yuffie (aeris death scene)
+HOJF: Cid in Aeris death scene
+HPAA: Barret in Aeris death scene
+HPAB:
+HPAC:
+HPAD:
+HPAE:
+HPAF:
+HPBA:
+HPBB:
+HPBC:
+HPBD:
+HPBE:
+HPBF:
+HPCA:
+HPCB:
+HPCC:
+HPCD:
+HPIA: Cloud slaps someone?
+HQDF:
+HQEA: Knocked onto back
+HQEB: Slamming something on a desk
+HQEC: Gesture
+HQED: Someone sitting bar stool (Icicle Inn?)
+HQEE: Nods, HQED
+HQEF: Talk gesture in HQED
+HQFA: HQED shake head
+HQFB: Getting up from stool
+HQFC: Tumbling (either Elena, or ice slide escape)
+HQFD: Like he's grabbed someone
+HQFE: Very strange rising anim
+HQFF: Guy setting up decorations on house (Icicle Inn)
+HQGA: HQFF but doing the splits?
+HQGB: Then up again
+HQGF:
+HQHA:
+HQHB:
+HQHF:
+HQIA: Gast despairs over Ifalna answer
+HQIB: Gives Ifalna a hug
+HQIC:
+HQID: A gesture, likely Gast
+HQIE: Tumbling again
+HQIF: On knees, static
+HQJA: Rises from tumble?
+HQJB: Barret warming up, dancing on spot
+HQJC: Cid warming up, rubbing knees
+HQJD:
+HQJE: Choco Gramps 'it's a serpent, over fifty feet tall!'
+HQJF: Climbing sideways
+HRAA: Long climbing anim
+HRAB: Climbing anim
+HRAC: Climbing still
+HRAD: Climbing still
+HRCD:
+HRED:
+HRFC:
+HRFD:
+HRFE:
+HRGD:
+HRGE:
+HRGF:
+HRIC: Climbing
+HRID: Climbing
+HRIE: Climbing
+HRIF: Climbing
+HRJA: Climbing
+HRJB: Climbing
+HRJC: Climbing
+HRJD: Climbing
+HRJE: Climbing
+HRJF: Climbing
+HSAA: Climbing
+HSAB: Climbing
+HSAC: Climbing
+HSAD: Climbing
+HSAE: Climbing
+HSAF: Climbing
+HSBA: Climbing
+HSBB: Climbing
+HSBC: Climbing
+HSBD: Climbing
+HSBE: Climbing
+HSBF: Climbing
+HSCA: Climbing
+HSCB: Climbing
+HSCD: Climbing
+HSCE: Climbing
+HSCF: Climbing
+HSDA: Climbing
+HSDB: Climbing
+HSDC: Climbing
+HSDD: Climbing
+HSDE: Climbing
+HSDF: Climbing
+HSEA: Jump from icicle room
+HSEF:
+HSFA:
+HSFB:
+HSFC:
+HSFD:
+HSFE:
+HSFF:
+HSGA:
+HSGB: Standing upside-down
+HSGC: Walking upside-down
+HSGD: Running upside-down
+HSGE: Cloud foetal, warped up to Sephy nest
+HSGF:
+HSHA:
+HSHB: Cloud upside down, squats to foetal
+HSHC: Upside down Foetal static
+HSHD: Looks up 'that's how it was'
+HSHE: Shakes head 'I wasn't pursuing sephy'
+HSHF: Stands up (upside down)
+HSIA: Looks up 'sephy where are you? I have the BM'
+HSIB:
+HSIC: Cloud static, looks frozen
+HSID: Stand static
+HSIE: Walking
+HSIF: Running
+HSJA: Mideel Doctor crosses arms
+HSJB: Someone crouched, petting dog?
+HSJC: Nurse nods
+HTHC:
+HTHD:
+HTHE:
+HTHF:
+HTIA:
+HTIB:
+HTIC:
+HTID:
+HTIE:
+HTIF: Cid gets up, from on deck
+HTJA: Cid petting dog?
+HTJB: Cid nods, with dog
+HTJD: Doctor shakes head
+HUHE:
+HUHF:
+HUIA:
+HUIB:
+HUIC: Squatted, hands go to face
+HUID:
+HUIE:
+HUIF: Cloud falling into lifestream
+HUJA:
+HUJB: Struggling, during CLoud-memoria segment
+HUJC: Rises from HUJB to turmoil head clutch
+HUJD: Rises from HUJC
+HUJE: Barret leans on train car (talking to Cid)
+HUJF: Cid leaps to next car (Corel Train)
+HVAA: Barret gesture for HUJE
+HVAB:
+HVAC:
+HVAD:
+HVAE:
+HVAF:
+HVBA:
+HVBB:
+HVBC:
+HVBD:
+HVBE:
+HVBF: Cid gesture, maybe grabbing levers
+HVCA: Cid pulling levers
+HVCB: Levers
+HVCC: Levers success
+HVCD: Levers success
+HVCE: Jumps to other train
+HVDD:
+HVDE: Cid jumps into last car
+HVDF: Cid lies down (prob Barret, last car)
+HVEA: Barret gesture, last car
+HVEB: Again, more frantic
+HVEC:
+HVED:
+HVEE:
+HVEF:
+HvFA:
+HvFB:
+HvFC:
+HvFD:
+HvFE:
+HvFF:
+HVGA:
+HVGB:
+HVGC:
+HVGD: Cid gesture train?
+HVGE: Grabs enemy train levers
+HVGF: Pulls levers down
+HVHA: Lets go of levers
+HVHB: Again
+HVHC: Grabs levers again
+HVHD: Hand up for emergency break
+HVHE: E.Breaks hit
+HVHF: Hand out, static. Shinra Soldier train driver
+HVIA: Shinra soldier looks back?
+HVIB: Turns to face Cid and co
+HVIC: Free-fall, Cloud
+HVID: Cloud para landing (floating)
+HVIE: Lands proper
+HVIF: Mid-air twirl
+HVJA: Quick twirl
+HVJB: Forward tumble
+HVJC: Backward tumble (para)
+HVJD:
+HVJE: Cid/Barret free-fall
+HWHF:
+HWIA: Cid free-fall
+HXAC:
+HXAD:
+HXAE: Cloud jumps into Midgar raid grate
+HXAF: Cloud lands
+HXBA: Cloud crawls (back)
+HXBB: Cloud climbs ladder into vent
+HXIB:
+HXIC:
+HXID:
+HXIE:
+HXIF:
+HXJA:
+HXJB:
+HXJC:
+HXJD:
+HXJE: Cloud hand to face, does a Cid 'up yours buddy'
+HXJF:
+HYAA:
+HYAB:
+HYAC:
+HYAD:
+HYAE: Looking up after rocket blast
+HYAF: Continue HYAE
+HYBA: Hands go to face Meteor-Rocket blast
+HYBB: HYBA looks down, shakes head despair
+HYBC: NPC gesture
+HYBD: After blast gesture
+HYBE: Points suddenly
+HYBF: Falls to hands/knees and slams ground
+HYCA: Climbs up
+HYCB:
+HYCC: Cid hand goes to mouth
+HYCD: Someone nods
+HYCE: Someone flicks hair
+HYCF: Come at me bro (gentle)
+HYDA: End of HYCF
+HYDB: Cid stands up from sitting (or barret)
+HYDC: Barret/Cid looks around
+HYDD: Barret/Cid gesture
+HYDE: Barret/Cid hands hips nod
+HYDF:
+HYEA: Cid sitting
+HYEB: Cid looks up, nods
+HYEC: Gets up
+HYED:
+HYEE:
+HYEF:
+HYFA: Cloud reverse head clutch
+HYFB: Looping round like somersaults(?)
+HYFC: Still doing it
+HZEC:
+HZED: Cloud gets up, hand shakes head
+HZEE: I think floating, maybe Sephy scene?
+HZEF: Yeah, sephy floating final scenes
+HZFA: Hurt by Sephy pulse
+HZFB: Falling toward Holy light (before sephy float scene)
+HZFC: Ready to charge
+HZFD: Cloud gesture
+HZFE: Cloud sword ready floating
+HZFF: Legs go back, ready to charge
+HZGA: Barret getting up, final scene
+HZGB: Barret lifted by sephy power
+HZGC: Barret struggling/floating
+HZGD: Hit by pulse
+HZGE: Barret gesture floating
+HZGF: Barret readies gun, floating
+HZHA: Barret gun ready, floating
+HZHB: Barret flies in
+HZHC:
+HZHD:
+HZHE:
+HZHF:
+HZIA:
+HZIB:
+HZIC:
+HZID:
+HZIE:
+HZIF:
+HZJA:
+HZJB:
+HZJC:
+HZJD:
+HZJE:
+HZJF:
+
+
+IAAA: Cid wakes up, final scene
+IAAB: Cid lifted by Sephy
+IAAC: Struggling, floating
+IAAD: Hit by pulse
+IAAE: Hit hard by pulse? Maybe ejected from fight?
+IAAF: Ready to charge in
+IABA: Points, floating
+IABB: Ready to fight, float
+IABC: Charges
+IABD:
+IABE:
+IABF:
+IACA:
+IACB:
+IACC:
+IACD:
+IACE:
+IACF:
+IADA:
+IADB:
+IADC:
+IADD:
+IADE:
+IADF:
+IAEA:
+IAEB:
+IAEC:
+IAED:
+IAEE:
+IAEF:
+IAFA:
+IAFB:
+IAFC:
+IAFD: Sitting, leans forward
+IAFE: Sitting, looks up
+IAFF: Shakes head
+IAGA:
+IAGD: Someone jumps and grabs onto something
+IAGE: Same
+IAGF:
+IAHA:
+IAHB:
+IAHC:
+IAHD:
+IAHE: Old man looking around or prisoner
+IAHF: Weird, leg up, as if mid-prance
+IAIA: Floor collapses after Jenny Synth fight
+IAIB: Falling after floor collapse
+IAIC: Barret falling
+IAID:
+IAIE:
+IAIF: Cid falling
+IAJA:
+IAJB:
+IAJC:
+IBAB:
+IBAC: Cloud waking after fall?
+IBGB: Cloud gets up (Might be Zack scene)
+IBGC: Cloud gesture
+ICCD: Sitting, knees tucked static
+ICCE: Looks up
+ICCF: Gets up (Zack scene stuff)
+ICDA: Slow walk, looks tired
+ICDB: Shakes head, from ICCD
+ICDC: Mini-freak out in ICCD
+ICDD:
+ICDE: Cloud being carried by Zack
+ICDF: CLoud left on ground
+ICEA: Cloud wakes up
+ICEB: Slowly crawling to Zack
+ICEC: Getting up slowly, checks Zack/takes sword
+ICED: Going into Platoon gesture, Zack dead, Cloud has sword
+ICEE: PLATOOOOOON
+ICEF: Zack leaves Cloud on ground
+ICFA: Zack takes bullets, knocked to ground
+ICFB: Shot while on ground1
+ICFC: Shot on ground2
+ICFD: Cloud maybe dragging sword to reach Midgar/Zack carrying Cloud
+ICFE: Stops, puts sword down?
+ICFF: STatic stand, MP Soldier w/rifle
+ICGA: Soldier walking with rifle
+ICGB: Running w/rifle
+ICGC: Turning w/rifle
+ICGD: Firing w/rifle
+ICGE: w/rifle looks at colleague
+ICGF: Stabbing motion? Zack breaks out, attacks assistant
+ICHA: Someone been shot? Falls against something? (Hojo Assistant?)
+ICHB: Cloud floating in vat
+ICHC: Other floating in vat
+ICHD: Cloud sitting, unable to get senses

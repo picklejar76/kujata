@@ -47,10 +47,14 @@ module.exports = function() {
   // config = configuration object, see config.json for example
   // hrcFileId = which skeleton to translate, e.g. "AAAA" for AAAA.HRC (Cloud)
   // baseAnimFileId = which animation to use for base structure, e.g. "AAFE" for AAFE.A (Cloud standing)
-  // animFileId = which animation to include in the output gltf
+  // animFileIds = which animation to include in the output gltf
+  //   null            = don't include any
+  //   []              = use ifalna
+  //   ["AAGA"]        = include AAGA.A animation in the output
+  //   ["AAFE, "AAGA"] = include multiple animations in the output
   // includeTextures = whether to include textures in the translation (set to false to disable)
 
-  this.translate_ff7_field_hrc_to_gltf = function(config, hrcFileId, baseAnimFileId, animFileId, includeTextures) {
+  this.translate_ff7_field_hrc_to_gltf = function(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures) {
 
     if (!fs.existsSync(config.outputGltfDirectory)) {
       console.log("Creating output directory: " + config.outputGltfDirectory);
@@ -66,11 +70,26 @@ module.exports = function() {
     let numBones = skeleton.bones.length;
 
     let hrcId = hrcFileId.toLowerCase();
-    let animId = animFileId ? animFileId.toLowerCase() : null;
+    if (animFileIds == null) {
+      console.log("Will not translate any animations.");
+      animFileIds = [];
+    } else {
+      if (animFileIds.length == 0) {
+        console.log("Will translate all animations from Ifalna database.");
+        let ifalnaEntry = IFALNA_DB[hrcFileId.toUpperCase()];
+        if (ifalnaEntry) {
+          if (ifalnaEntry["Anims"])  { animFileIds = animFileIds.concat(ifalnaEntry["Anims"]);  }
+          if (ifalnaEntry["Anims2"]) { animFileIds = animFileIds.concat(ifalnaEntry["Anims2"]); }
+          if (ifalnaEntry["Anims3"]) { animFileIds = animFileIds.concat(ifalnaEntry["Anims3"]); }
+        }
+      }
+    }
+    console.log("Will translate the following animFileIds: ", animFileIds);
 
-    var animationData = null;
-    if (animFileId) {
+    var animationDataList = [];
+    for (let animFileId of animFileIds) {
       animationData = ALoader.loadA(config, animFileId);
+      animationDataList.push(animationData);
     }
 
     var baseAnimationData = null;
@@ -119,9 +138,9 @@ module.exports = function() {
         throw new Error("number of bones do not match between hrcId=" + hrcId + " and baseAnimId=" + baseAnimId);
       }
     }
-    if (animFileId) {
+    for (let animationData of animationDataList) {
       if (animationData.numBones != skeleton.bones.length) {
-        throw new Error("number of bones do not match between hrcId=" + hrcId + " and animId=" + animId);
+        throw new Error("number of bones do not match between hrcId=" + hrcId + " and animationData=" + animationData);
       }
     }
 
@@ -489,12 +508,11 @@ module.exports = function() {
     }
 
     // animations
+    gltf.animations = [];
+    for (let animationData of animationDataList) {
 
-    if (animFileId) {
-
-      gltf.animations = [];
       gltf.animations.push({
-        "name": animId + "_animation",
+        //"name": animId + "_animation", // TODO: name the animation
         "channels": [],
         "samplers": []
       });
@@ -572,7 +590,7 @@ module.exports = function() {
           "output": boneFrameDataAccessorIndex
         });
         let nodeIndex = boneIndex + 2; // node0=RootContainer, node1=BoneRoot, node2=Bone0, node3=Bone1, etc.
-        let samplerIndex = gltf.animations[0].samplers.length - 1;
+        let samplerIndex = gltf.animations[animationIndex].samplers.length - 1;
         gltf.animations[animationIndex].channels.push({
           "sampler": samplerIndex,
           "target": {
