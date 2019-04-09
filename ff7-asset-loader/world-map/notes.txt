@@ -1,0 +1,6 @@
+walkmesh is 36x28 tiles
+
+0x2000 pixels per mesh = 8192 pixels per mesh = 294912 pixels wide total
+0x2000 pixels per mesh = 8192 pixels per mesh = 229376 pixels tall total
+
+codemann8's worldmap image is 9216 x 7168 pixels, so, factor of 32

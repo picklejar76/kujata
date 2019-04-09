@@ -1,0 +1,200 @@
+01d2	  IF ((GetSpecial(0006) == #0001)) {
+01d9	    ActiveEntity.SetMeshCoordsXZ(#0016, #000f)
+01df	    ActiveEntity.SetCoordsInMeshXZ(#1524, #01bd)
+
+01ec	  IF ((GetSpecial(0006) == #0002)) {
+01f3	    ActiveEntity.SetMeshCoordsXZ(#0018, #000d)
+01f9	    ActiveEntity.SetCoordsInMeshXZ(#13d6, #1920)
+
+0206	  IF ((GetSpecial(0006) == #0003)) {
+024e	    ActiveEntity.SetMeshCoordsXZ(#001d, #0010)
+0254	    ActiveEntity.SetCoordsInMeshXZ(#0712, #1d23)
+
+0261	  IF ((GetSpecial(0006) == #0004)) {
+0268	    ActiveEntity.SetMeshCoordsXZ(#001a, #0012)
+026e	    ActiveEntity.SetCoordsInMeshXZ(#073d, #15ba)
+
+027b	  IF ((GetSpecial(0006) == #0005)) {
+0282	    ActiveEntity.SetMeshCoordsXZ(#0019, #0013)
+0288	    ActiveEntity.SetCoordsInMeshXZ(#0fdd, #095c)
+
+0295	  IF ((GetSpecial(0006) == #0006)) {
+029c	    ActiveEntity.SetMeshCoordsXZ(#0018, #0014)
+02a2	    ActiveEntity.SetCoordsInMeshXZ(#1a1d, #19ff)
+
+02af	  IF ((GetSpecial(0006) == #0007)) {
+02c5	    ActiveEntity.SetMeshCoordsXZ(#0014, #0011)
+02cb	    ActiveEntity.SetCoordsInMeshXZ(#175d, #1e0e)
+
+02d8	  IF ((GetSpecial(0006) == #0008)) {
+02df	    ActiveEntity.SetMeshCoordsXZ(#0014, #0016)
+02e5	    ActiveEntity.SetCoordsInMeshXZ(#1814, #0d4d)
+
+02f2	  IF ((GetSpecial(0006) == #0009)) {
+02f9	    ActiveEntity.SetMeshCoordsXZ(#0018, #0010)
+02ff	    ActiveEntity.SetCoordsInMeshXZ(#0a8b, #09d1)
+
+030c	  IF ((GetSpecial(0006) == #000a)) {
+0313	    ActiveEntity.SetMeshCoordsXZ(#000f, #0015)
+0319	    ActiveEntity.SetCoordsInMeshXZ(#1908, #07f1)
+
+0326	  IF ((GetSpecial(0006) == #000b)) {
+032d	    ActiveEntity.SetMeshCoordsXZ(#001a, #0018)
+0334	    IF ((Bank0_16bit[0000] >= #04ad)) {
+033b	      ActiveEntity.SetCoordsInMeshXZ(#1a25, #18d8)
+0343	      ActiveEntity.SetCoordsInMeshXZ(#1bd7, #153b)
+
+0350	  IF ((GetSpecial(0006) == #000c)) {
+0357	    ActiveEntity.SetMeshCoordsXZ(#0021, #0011)
+035d	    ActiveEntity.SetCoordsInMeshXZ(#0f64, #05e8)
+
+036a	  IF ((GetSpecial(0006) == #000d)) {
+0380	    ActiveEntity.SetMeshCoordsXZ(#0011, #000f)
+0386	    ActiveEntity.SetCoordsInMeshXZ(#0607, #0cb2)
+
+0393	  IF ((GetSpecial(0006) == #000e)) {
+039a	    ActiveEntity.SetMeshCoordsXZ(#000d, #000e)
+03a0	    ActiveEntity.SetCoordsInMeshXZ(#1f1d, #1aa5)
+
+03ad	  IF ((GetSpecial(0006) == #000f)) {
+03b4	    ActiveEntity.SetMeshCoordsXZ(#000d, #000f)
+03ba	    ActiveEntity.SetCoordsInMeshXZ(#0a98, #0c93)
+
+03c7	  IF ((GetSpecial(0006) == #0010)) {
+03dd	    ActiveEntity.SetMeshCoordsXZ(#000e, #0012)
+03e3	    ActiveEntity.SetCoordsInMeshXZ(#1615, #1e6e)
+
+03f0	  IF ((GetSpecial(0006) == #0011)) {
+03f7	    ActiveEntity.SetMeshCoordsXZ(#000d, #0016)
+03fd	    ActiveEntity.SetCoordsInMeshXZ(#18dc, #117a)
+
+040a	  IF ((GetSpecial(0006) == #0012)) {
+0411	    ActiveEntity.SetMeshCoordsXZ(#000a, #0014)
+0417	    ActiveEntity.SetCoordsInMeshXZ(#14d9, #1c20)
+
+0424	  IF ((GetSpecial(0006) == #0013)) {
+042b	    ActiveEntity.SetMeshCoordsXZ(#000b, #0010)
+0431	    ActiveEntity.SetCoordsInMeshXZ(#09f1, #17f0)
+
+043e	  IF ((GetSpecial(0006) == #0014)) {
+0445	    ActiveEntity.SetMeshCoordsXZ(#000a, #000e)
+044b	    ActiveEntity.SetCoordsInMeshXZ(#0741, #1a88)
+
+0458	  IF ((GetSpecial(0006) == #0015)) {
+045f	    ActiveEntity.SetMeshCoordsXZ(#000c, #0011)
+0465	    ActiveEntity.SetCoordsInMeshXZ(#0e5d, #094a)
+
+0472	  IF ((GetSpecial(0006) == #0016)) {
+0479	    ActiveEntity.SetMeshCoordsXZ(#000e, #000d)
+047f	    ActiveEntity.SetCoordsInMeshXZ(#061c, #0ce0)
+
+048c	  IF ((GetSpecial(0006) == #0017)) {
+0493	    ActiveEntity.SetMeshCoordsXZ(#0004, #000a)
+0499	    ActiveEntity.SetCoordsInMeshXZ(#141b, #1c3f)
+
+04a6	  IF ((GetSpecial(0006) == #0018)) {
+04ad	    ActiveEntity.SetMeshCoordsXZ(#0006, #000f)
+04b3	    ActiveEntity.SetCoordsInMeshXZ(#0f9f, #14e9)
+
+04c0	  IF ((GetSpecial(0006) == #0019)) {
+04c7	    ActiveEntity.SetMeshCoordsXZ(#0013, #000a)
+04cd	    ActiveEntity.SetCoordsInMeshXZ(#03c0, #1f72)
+
+04da	  IF ((GetSpecial(0006) == #001a)) {
+04e1	    ActiveEntity.SetMeshCoordsXZ(#0013, #0008)
+04e7	    ActiveEntity.SetCoordsInMeshXZ(#0720, #171b)
+
+04f4	  IF ((GetSpecial(0006) == #001b)) {
+04fb	    ActiveEntity.SetMeshCoordsXZ(#000f, #0008)
+0501	    ActiveEntity.SetCoordsInMeshXZ(#1817, #1d0b)
+
+050e	  IF ((GetSpecial(0006) == #001c)) {
+0515	    ActiveEntity.SetMeshCoordsXZ(#0011, #0008)
+051b	    ActiveEntity.SetCoordsInMeshXZ(#1cf4, #10a9)
+
+0528	  IF ((GetSpecial(0006) == #001d)) {
+052f	    ActiveEntity.SetMeshCoordsXZ(#0020, #0001)
+0535	    ActiveEntity.SetCoordsInMeshXZ(#0477, #16ad)
+
+0542	  IF ((GetSpecial(0006) == #0020)) {
+058a	    ActiveEntity.SetMeshCoordsXZ(GetSpecial(0000), GetSpecial(0001))
+0590	    ActiveEntity.SetCoordsInMeshXZ(GetSpecial(0002), GetSpecial(0003))
+
+059d	  IF ((GetSpecial(0006) == #0021)) {
+05b3	    ActiveEntity.SetMeshCoordsXZ(GetSpecial(0000), GetSpecial(0001))
+05b9	    ActiveEntity.SetCoordsInMeshXZ(GetSpecial(0002), GetSpecial(0003))
+
+05c6	  IF ((GetSpecial(0006) == #0022)) {
+060e	    ActiveEntity.SetMeshCoordsXZ(GetSpecial(0000), GetSpecial(0001))
+0614	    ActiveEntity.SetCoordsInMeshXZ(GetSpecial(0002), GetSpecial(0003))
+
+0621	  IF ((GetSpecial(0006) == #0024)) {
+  }
+0630	  IF ((GetSpecial(0006) == #0025)) {
+  }
+063f	  IF ((GetSpecial(0006) == #0026)) {
+  }
+064e	  IF ((GetSpecial(0006) == #0027)) {
+  }
+065d	  IF ((GetSpecial(0006) == #0028)) {
+066e	    ActiveEntity.SetMeshCoordsXZ(#0006, #0013)
+0674	    ActiveEntity.SetCoordsInMeshXZ(#1c3b, #0268)
+
+0681	  IF ((GetSpecial(0006) == #0029)) {
+0692	    ActiveEntity.SetMeshCoordsXZ(#0014, #0011)
+0698	    ActiveEntity.SetCoordsInMeshXZ(#11d1, #18c9)
+
+06a1	  IF ((GetSpecial(0006) == #002b)) {
+06a8	    ActiveEntity.SetMeshCoordsXZ(#000b, #0010)
+06ae	    ActiveEntity.SetCoordsInMeshXZ(#095a, #1074)
+
+06bb	  IF ((GetSpecial(0006) == #002c)) {
+06c2	    ActiveEntity.SetMeshCoordsXZ(#000b, #000f)
+06c8	    ActiveEntity.SetCoordsInMeshXZ(#0f70, #0e98)
+
+06d5	  IF ((GetSpecial(0006) == #002d)) {
+06f3	        IF (Bank0[0385].Bit(6)) {
+06fa	          ActiveEntity.SetMeshCoordsXZ(#0010, #0004)
+0700	          ActiveEntity.SetCoordsInMeshXZ(#0033, #0f8b)
+
+070f	  IF ((GetSpecial(0006) == #002e)) {
+0716	    ActiveEntity.SetMeshCoordsXZ(#000a, #0010)
+071c	    ActiveEntity.SetCoordsInMeshXZ(#1707, #07e3)
+
+0729	  IF ((GetSpecial(0006) == #002f)) {
+0730	    ActiveEntity.SetMeshCoordsXZ(#000f, #0008)
+0736	    ActiveEntity.SetCoordsInMeshXZ(#182b, #161f)
+
+0743	  IF ((GetSpecial(0006) == #0030)) {
+074a	    ActiveEntity.SetMeshCoordsXZ(#0010, #0006)
+0750	    ActiveEntity.SetCoordsInMeshXZ(#13d9, #1420)
+
+075d	  IF ((GetSpecial(0006) == #0031)) {
+076e	    ActiveEntity.SetMeshCoordsXZ(#000a, #000e)
+0774	    ActiveEntity.SetCoordsInMeshXZ(#0a37, #0fc1)
+
+0781	  IF ((GetSpecial(0006) == #0033)) {
+
+0799	  IF ((GetSpecial(0006) == #0035)) {
+07a0	    ActiveEntity.SetMeshCoordsXZ(GetSpecial(0000), GetSpecial(0001))
+07a6	    ActiveEntity.SetCoordsInMeshXZ(GetSpecial(0002), GetSpecial(0003))
+
+07b3	  IF ((GetSpecial(0006) == #0036)) {
+07c4	    ActiveEntity.SetMeshCoordsXZ(#0014, #0011)
+07ca	    ActiveEntity.SetCoordsInMeshXZ(#0fe1, #1880)
+
+07d7	  IF ((GetSpecial(0006) == #0037)) {
+07de	    ActiveEntity.SetMeshCoordsXZ(#000b, #0016)
+07e4	    ActiveEntity.SetCoordsInMeshXZ(#0b50, #0247)
+
+07f1	  IF ((GetSpecial(0006) == #0039)) {
+07f8	    ActiveEntity.SetMeshCoordsXZ(#0013, #000a)
+07fe	    ActiveEntity.SetCoordsInMeshXZ(#1d13, #0f0c)
+
+080b	  IF ((GetSpecial(0006) == #003a)) {
+0812	    ActiveEntity.SetMeshCoordsXZ(#0013, #000a)
+0818	    ActiveEntity.SetCoordsInMeshXZ(#19f2, #00f9)
+
+0825	  IF ((GetSpecial(0006) == #003b)) {
+0836	      ActiveEntity.SetMeshCoordsXZ(#0010, #0004)
+083c	      ActiveEntity.SetCoordsInMeshXZ(#0033, #0f8b)

@@ -1,0 +1,260 @@
+{
+  "1": {
+    "meshX": 22,
+    "meshY": 15,
+    "coorX": 5412,
+    "coorY": 445
+  },
+  "2": {
+    "meshX": 24,
+    "meshY": 13,
+    "coorX": 5078,
+    "coorY": 6432
+  },
+  "3": {
+    "meshX": 29,
+    "meshY": 16,
+    "coorX": 1810,
+    "coorY": 7459
+  },
+  "4": {
+    "meshX": 26,
+    "meshY": 18,
+    "coorX": 1853,
+    "coorY": 5562
+  },
+  "5": {
+    "meshX": 25,
+    "meshY": 19,
+    "coorX": 4061,
+    "coorY": 2396
+  },
+  "6": {
+    "meshX": 24,
+    "meshY": 20,
+    "coorX": 6685,
+    "coorY": 6655
+  },
+  "7": {
+    "meshX": 20,
+    "meshY": 17,
+    "coorX": 5981,
+    "coorY": 7694
+  },
+  "8": {
+    "meshX": 20,
+    "meshY": 22,
+    "coorX": 6164,
+    "coorY": 3405
+  },
+  "9": {
+    "meshX": 24,
+    "meshY": 16,
+    "coorX": 2699,
+    "coorY": 2513
+  },
+  "10": {
+    "meshX": 15,
+    "meshY": 21,
+    "coorX": 6408,
+    "coorY": 2033
+  },
+  "11": {
+    "meshX": 26,
+    "meshY": 24,
+    "coorX": 7127,
+    "coorY": 5435
+  },
+  "12": {
+    "meshX": 33,
+    "meshY": 17,
+    "coorX": 3940,
+    "coorY": 1512
+  },
+  "13": {
+    "meshX": 17,
+    "meshY": 15,
+    "coorX": 1543,
+    "coorY": 3250
+  },
+  "14": {
+    "meshX": 13,
+    "meshY": 14,
+    "coorX": 7965,
+    "coorY": 6821
+  },
+  "15": {
+    "meshX": 13,
+    "meshY": 15,
+    "coorX": 2712,
+    "coorY": 3219
+  },
+  "16": {
+    "meshX": 14,
+    "meshY": 18,
+    "coorX": 5653,
+    "coorY": 7790
+  },
+  "17": {
+    "meshX": 13,
+    "meshY": 22,
+    "coorX": 6364,
+    "coorY": 4474
+  },
+  "18": {
+    "meshX": 10,
+    "meshY": 20,
+    "coorX": 5337,
+    "coorY": 7200
+  },
+  "19": {
+    "meshX": 11,
+    "meshY": 16,
+    "coorX": 2545,
+    "coorY": 6128
+  },
+  "20": {
+    "meshX": 10,
+    "meshY": 14,
+    "coorX": 1857,
+    "coorY": 6792
+  },
+  "21": {
+    "meshX": 12,
+    "meshY": 17,
+    "coorX": 3677,
+    "coorY": 2378
+  },
+  "22": {
+    "meshX": 14,
+    "meshY": 13,
+    "coorX": 1564,
+    "coorY": 3296
+  },
+  "23": {
+    "meshX": 4,
+    "meshY": 10,
+    "coorX": 5147,
+    "coorY": 7231
+  },
+  "24": {
+    "meshX": 6,
+    "meshY": 15,
+    "coorX": 3999,
+    "coorY": 5353
+  },
+  "25": {
+    "meshX": 19,
+    "meshY": 10,
+    "coorX": 960,
+    "coorY": 8050
+  },
+  "26": {
+    "meshX": 19,
+    "meshY": 8,
+    "coorX": 1824,
+    "coorY": 5915
+  },
+  "27": {
+    "meshX": 15,
+    "meshY": 8,
+    "coorX": 6167,
+    "coorY": 7435
+  },
+  "28": {
+    "meshX": 17,
+    "meshY": 8,
+    "coorX": 7412,
+    "coorY": 4265
+  },
+  "29": {
+    "meshX": 32,
+    "meshY": 1,
+    "coorX": 1143,
+    "coorY": 5805
+  },
+  "40": {
+    "meshX": 6,
+    "meshY": 19,
+    "coorX": 7227,
+    "coorY": 616
+  },
+  "41": {
+    "meshX": 20,
+    "meshY": 17,
+    "coorX": 4561,
+    "coorY": 6345
+  },
+  "43": {
+    "meshX": 11,
+    "meshY": 16,
+    "coorX": 2394,
+    "coorY": 4212
+  },
+  "44": {
+    "meshX": 11,
+    "meshY": 15,
+    "coorX": 3952,
+    "coorY": 3736
+  },
+  "45": {
+    "meshX": 16,
+    "meshY": 4,
+    "coorX": 51,
+    "coorY": 3979
+  },
+  "46": {
+    "meshX": 10,
+    "meshY": 16,
+    "coorX": 5895,
+    "coorY": 2019
+  },
+  "47": {
+    "meshX": 15,
+    "meshY": 8,
+    "coorX": 6187,
+    "coorY": 5663
+  },
+  "48": {
+    "meshX": 16,
+    "meshY": 6,
+    "coorX": 5081,
+    "coorY": 5152
+  },
+  "49": {
+    "meshX": 10,
+    "meshY": 14,
+    "coorX": 2615,
+    "coorY": 4033
+  },
+  "54": {
+    "meshX": 20,
+    "meshY": 17,
+    "coorX": 4065,
+    "coorY": 6272
+  },
+  "55": {
+    "meshX": 11,
+    "meshY": 22,
+    "coorX": 2896,
+    "coorY": 583
+  },
+  "57": {
+    "meshX": 19,
+    "meshY": 10,
+    "coorX": 7443,
+    "coorY": 3852
+  },
+  "58": {
+    "meshX": 19,
+    "meshY": 10,
+    "coorX": 6642,
+    "coorY": 249
+  },
+  "59": {
+    "meshX": 16,
+    "meshY": 4,
+    "coorX": 51,
+    "coorY": 3979
+  }
+}
