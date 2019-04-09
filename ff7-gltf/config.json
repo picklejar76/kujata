@@ -1,12 +1,18 @@
 {
 
-  "inputFieldDirectory": "/ff7-models",
+  "inputFieldDirectory": "/opt/ff7/unpacked/field/char.lgp",
   "inputFieldDirectoryDescription": "Location of input files like AAAA.HRC",
 
-  "outputGltfDirectory": "./output/gltf",
+  "outputGltfDirectory": "/opt/kujata-data/data/field/char.lgp",
   "outputGltfDirectoryDescription": "Where the translator will put output files like aaaa.hrc.gltf, aaaa.hrc.bin",
 
   "texturesDirectory": "textures",
-  "texturesDirectoryDescription": "Location of texture files like aabb.png, relative to outputGltfDirectory"
+  "texturesDirectoryDescription": "Location of texture files like aabb.png, relative to outputGltfDirectory",
+
+  "inputFLevelDirectory": "/opt/ff7/unpacked/field/flevel.lgp",
+  "inputFLevelDirectoryDescription": "Location of unpacked flevel files like maplist, md1stin, flevel.siz, c_eye2.tex",
+
+  "outputFLevelDirectory": "/opt/kujata-data/data/field/flevel.lgp",
+  "outputFLevelDirectoryDescription": "Where the translator will put output files like maplist.json, md1stin.json"
 
 }
