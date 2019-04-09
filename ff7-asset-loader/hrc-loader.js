@@ -23,7 +23,7 @@ module.exports = {
 
   loadHrc: function(config, hrcBaseFilename) {
 
-    let fileContents = fs.readFileSync(config.inputFieldDirectory + '/' + hrcBaseFilename + ".HRC", "utf-8");
+    let fileContents = fs.readFileSync(config.inputFieldCharDirectory + '/' + hrcBaseFilename + ".HRC", "utf-8");
     let lines = fileContents.split(/\r?\n/g).filter(line => !line.startsWith("#"));
     if (!lines[0].startsWith(this.FIRST_LINE))           { throw new Error("Expected first line to be: " + this.FIRST_LINE); }
     if (!lines[1].startsWith(this.SKELETON_LINE_PREFIX)) { throw new Error("Expected second line to start with: " + this.SKELETON_LINE_PREFIX); }

@@ -10,8 +10,6 @@ var ALoader = require("../ff7-asset-loader/a-loader.js");
 const fs = require("fs");
 const mkdirp = require('mkdirp');
 
-var IFALNA_DB = JSON.parse(fs.readFileSync('../ifalna-db/ifalna.json', 'utf-8'));
-
 module.exports = function() {
 
   // default animations used to create initial bone rotations
@@ -47,24 +45,25 @@ module.exports = function() {
   // config = configuration object, see config.json for example
   // hrcFileId = which skeleton to translate, e.g. "AAAA" for AAAA.HRC (Cloud)
   // baseAnimFileId = which animation to use for base structure, e.g. "AAFE" for AAFE.A (Cloud standing)
-  // animFileIds = which animation to include in the output gltf
-  //   null            = don't include any
-  //   []              = use ifalna
-  //   ["AAGA"]        = include AAGA.A animation in the output
-  //   ["AAFE, "AAGA"] = include multiple animations in the output
+  //   null            = use ifalna.json to decide
+  // animFileIds = which animation(s) to include in the output gltf
+  //   null            = don't include any animations
+  //   []              = include all animations from ifalna.json
+  //   ["AAFE, "AAGA"] = include only specific animations
   // includeTextures = whether to include textures in the translation (set to false to disable)
 
   this.translate_ff7_field_hrc_to_gltf = function(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures) {
 
-    if (!fs.existsSync(config.outputGltfDirectory)) {
-      console.log("Creating output directory: " + config.outputGltfDirectory);
-      mkdirp.sync(config.outputGltfDirectory);
+    var ifalnaDatabase = JSON.parse(fs.readFileSync(config.ifalnaJsonFile, 'utf-8'));
+
+    if (!fs.existsSync(config.outputFieldCharDirectory)) {
+      console.log("Creating output directory: " + config.outputFieldCharDirectory);
+      mkdirp.sync(config.outputFieldCharDirectory);
     }
 
     var ROOT_X_ROTATION_DEGREES = 180.0;
     var FRAMES_PER_SECOND = 30.0;
 
-    // let skeleton = require(config.inputJsonDirectory + "skeletons/" + hrcId + ".hrc.json");
     let skeleton = HrcLoader.loadHrc(config, hrcFileId);
     console.log("Translating: " + skeleton.name);
     let numBones = skeleton.bones.length;
@@ -76,7 +75,7 @@ module.exports = function() {
     } else {
       if (animFileIds.length == 0) {
         console.log("Will translate all animations from Ifalna database.");
-        let ifalnaEntry = IFALNA_DB[hrcFileId.toUpperCase()];
+        let ifalnaEntry = ifalnaDatabase[hrcFileId.toUpperCase()];
         if (ifalnaEntry) {
           if (ifalnaEntry["Anims"])  { animFileIds = animFileIds.concat(ifalnaEntry["Anims"]);  }
           if (ifalnaEntry["Anims2"]) { animFileIds = animFileIds.concat(ifalnaEntry["Anims2"]); }
@@ -84,7 +83,7 @@ module.exports = function() {
         }
       }
     }
-    console.log("Will translate the following animFileIds: ", animFileIds);
+    console.log("Will translate the following animFileIds: ", JSON.stringify(animFileIds, null, 0));
 
     var animationDataList = [];
     for (let animFileId of animFileIds) {
@@ -99,7 +98,7 @@ module.exports = function() {
       baseAnimationData = ALoader.loadA(config, baseAnimFileId);
     } else {
       let baseAnimFileId = null;
-      ifalnaEntry = IFALNA_DB[hrcFileId.toUpperCase()];
+      ifalnaEntry = ifalnaDatabase[hrcFileId.toUpperCase()];
       if (ifalnaEntry && ifalnaEntry["Anims"] && ifalnaEntry["Anims"].length > 0) {
         baseAnimFileId = ifalnaEntry["Anims"][0];
         //console.log("Ifalna entry found, using Anims[0]=" + baseAnimFileId + " for base.");
@@ -625,13 +624,13 @@ module.exports = function() {
       });
 
       // create *.bin file
-      let binFilenameFull = config.outputGltfDirectory + "/" + binFilename;
+      let binFilenameFull = config.outputFieldCharDirectory + "/" + binFilename;
       fs.writeFileSync(binFilenameFull, combinedBuffer);
       console.log("Wrote: " + binFilenameFull);
     }
 
     // create *.gltf file
-    let gltfFilenameFull = config.outputGltfDirectory + "/" + gltfFilename;
+    let gltfFilenameFull = config.outputFieldCharDirectory + "/" + gltfFilename;
     fs.writeFileSync(gltfFilenameFull, JSON.stringify(gltf, null, 2));
     console.log("Wrote: " + gltfFilenameFull);
 

@@ -15,7 +15,7 @@ module.exports = {
 
   loadRsd: function(config, rsdBaseFilename) {
 
-    let fileContents = fs.readFileSync(config.inputFieldDirectory + '/' + rsdBaseFilename + ".RSD", "utf-8");
+    let fileContents = fs.readFileSync(config.inputFieldCharDirectory + '/' + rsdBaseFilename + ".RSD", "utf-8");
     let lines = fileContents.split(/\r?\n/g).filter(line => !line.startsWith("#"));
     if (!lines[0].startsWith(this.FIRST_LINE))           { throw new Error("Expected: " + this.FIRST_LINE); }
     if (!lines[1].startsWith(this.PLY_LINE_PREFIX)) { throw new Error("Expected: " + this.PLY_LINE_PREFIX); }

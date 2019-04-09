@@ -4,7 +4,7 @@ module.exports = {
 
   loadA: function(config, aBaseFilename) {
 
-    var buffer = fs.readFileSync(config.inputFieldDirectory + '/' + aBaseFilename + ".A");
+    var buffer = fs.readFileSync(config.inputFieldCharDirectory + '/' + aBaseFilename + ".A");
     var offset = 0;
 
     var readInt   = function() { let i = buffer.readInt32LE(offset); offset += 4; return i; }
