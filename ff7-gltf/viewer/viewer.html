@@ -41,7 +41,7 @@
       var model, animations, animationMixer, clock;
       var gltfLoader = new THREE.GLTFLoader();
       var currentAnimationId = 0;
-      gltfLoader.load('../output/gltf/aaaa.hrc.gltf', function (gltf) {
+      gltfLoader.load('../../../kujata-data/data/field/char.lgp/aaaa.hrc.gltf', function (gltf) {
         model = gltf.scene;
         scene.add(model);
         model.rotation.y = 30 * Math.PI/180; // rotate model 30 degrees
