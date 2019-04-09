@@ -29,9 +29,10 @@ Translates Final Fantasy 7 models to glTF
 - qhimm community
 - Aali, for patching FF7, graphics work, lgp/unlgp utility, etc.
 - Borde, for authoring Kimera and TexTool_0.10
-- ficedula, for authoring Ifalna (model viewer)
+- ficedula, for authoring multiple tools, including lzs decompressor and Ifalna model viewer
 - Kaldarasha, for model editing experience and design advice, etc.
 - halkun, for evangelizing glTF, FF7 file spreadsheet, etc.
 - Sega Chief, for field model friendly names, etc.
 - quantumpencil, for sister-ray
+- Jusete, for finding a good kujata logo
 - others TBD; please let me know if I left out any person or acknowledgement!
