@@ -10,36 +10,38 @@ var ALoader = require("../ff7-asset-loader/a-loader.js");
 const fs = require("fs");
 const mkdirp = require('mkdirp');
 
-module.exports = function() {
+module.exports = class FF7GltfTranslator {
 
-  // default animations used to create initial bone rotations
-  const DEFAULT_BASE_ANIM_ID_MAP = {
-    "0": "atee",
-    "1": "atee",
-    "2": "avjd",
-    "3": "fgjc",
-    "4": "hoaa",
-    "5": "cace",
-    "6": "ehif",
-    "9": "geaf",
-    "11": "bdfe",
-    "12": "atdc",
-    "13": "bria",
-    "14": "fgad",
-    "15": "gcad",
-    "17": "fcac",
-    "18": "gsia",
-    "19": "dkic",
-    "20": "gmde",
-    "21": "aafe",
-    "23": "anhd",
-    "24": "abcd",
-    "25": "feaf",
-    //"26": "",
-    "27": "hxib",
-    "28": "hccb",
-    "29": "aeae"
-  };
+  constructor() {
+    // default animations used to create initial bone rotations, if Ifalna is not used
+    this.DEFAULT_BASE_ANIM_ID_MAP = {
+      "0": "atee",
+      "1": "atee",
+      "2": "avjd",
+      "3": "fgjc",
+      "4": "hoaa",
+      "5": "cace",
+      "6": "ehif",
+      "9": "geaf",
+      "11": "bdfe",
+      "12": "atdc",
+      "13": "bria",
+      "14": "fgad",
+      "15": "gcad",
+      "17": "fcac",
+      "18": "gsia",
+      "19": "dkic",
+      "20": "gmde",
+      "21": "aafe",
+      "23": "anhd",
+      "24": "abcd",
+      "25": "feaf",
+      //"26": "",
+      "27": "hxib",
+      "28": "hccb",
+      "29": "aeae"
+    };
+  }
 
   // Translate a FF7 FIELD.LGP's *.HRC file to glTF 2.0 format
   // config = configuration object, see config.json for example
@@ -52,7 +54,7 @@ module.exports = function() {
   //   ["AAFE, "AAGA"] = include only specific animations
   // includeTextures = whether to include textures in the translation (set to false to disable)
 
-  this.translate_ff7_field_hrc_to_gltf = function(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures) {
+  translate_ff7_field_hrc_to_gltf(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures) {
 
     var ifalnaDatabase = JSON.parse(fs.readFileSync(config.ifalnaJsonFile, 'utf-8'));
 
@@ -87,7 +89,7 @@ module.exports = function() {
 
     var animationDataList = [];
     for (let animFileId of animFileIds) {
-      animationData = ALoader.loadA(config, animFileId);
+      let animationData = ALoader.loadA(config, animFileId);
       animationDataList.push(animationData);
     }
 
@@ -98,12 +100,12 @@ module.exports = function() {
       baseAnimationData = ALoader.loadA(config, baseAnimFileId);
     } else {
       let baseAnimFileId = null;
-      ifalnaEntry = ifalnaDatabase[hrcFileId.toUpperCase()];
+      let ifalnaEntry = ifalnaDatabase[hrcFileId.toUpperCase()];
       if (ifalnaEntry && ifalnaEntry["Anims"] && ifalnaEntry["Anims"].length > 0) {
         baseAnimFileId = ifalnaEntry["Anims"][0];
         //console.log("Ifalna entry found, using Anims[0]=" + baseAnimFileId + " for base.");
       } else {
-        baseAnimFileId = DEFAULT_BASE_ANIM_ID_MAP["" + skeleton.bones.length];
+        baseAnimFileId = this.DEFAULT_BASE_ANIM_ID_MAP["" + skeleton.bones.length];
         console.log("Ifalna entry NOT found, using default=" + baseAnimFileId + " for base.");
       }
       if (baseAnimFileId) {
@@ -143,7 +145,7 @@ module.exports = function() {
       }
     }
 
-    firstFrame = baseAnimationData.animationFrames[0];
+    let firstFrame = baseAnimationData.animationFrames[0];
 
     let gltfFilename = hrcId + ".hrc.gltf";
     let binFilename = hrcId + ".hrc.bin";
@@ -291,16 +293,16 @@ module.exports = function() {
           flattenedNormals.length = numVerticesInGroup;
           for (let i=0; i<numPolysInGroup; i++) {
             let polygon = model.polygons[offsetPolyIndex + i];
-            normal3 = model.normals[polygon.normalIndex3];
-            normal2 = model.normals[polygon.normalIndex2];
-            normal1 = model.normals[polygon.normalIndex1];
+            let normal3 = model.normals[polygon.normalIndex3];
+            let normal2 = model.normals[polygon.normalIndex2];
+            let normal1 = model.normals[polygon.normalIndex1];
             flattenedNormals[polygon.vertexIndex3] = normal3;
             flattenedNormals[polygon.vertexIndex2] = normal2;
             flattenedNormals[polygon.vertexIndex1] = normal1;
           }
 
           // 1. create "polygon vertex index" js Buffer + gltf bufferView + gltf accessor
-          polygonVertexIndexBuffer = Buffer.alloc(numPolysInGroup * 3 * 2); // 3 vertexIndex per triangle, 2 bytes for vertexIndex(short)
+          let polygonVertexIndexBuffer = Buffer.alloc(numPolysInGroup * 3 * 2); // 3 vertexIndex per triangle, 2 bytes for vertexIndex(short)
           for (let i=0; i<numPolysInGroup; i++) {
             let polygon = model.polygons[offsetPolyIndex + i];
             polygonVertexIndexBuffer.writeUInt16LE(polygon.vertexIndex3, i*6);
@@ -325,7 +327,7 @@ module.exports = function() {
             });
 
           // 2. create "vertex" js Buffer + gltf bufferView + gltf accessor
-          vertexBuffer = Buffer.alloc(numVerticesInGroup * 3 * 4); // 3 floats per vertex, 4 bytes per float
+          let vertexBuffer = Buffer.alloc(numVerticesInGroup * 3 * 4); // 3 floats per vertex, 4 bytes per float
           for (let i=0; i<numVerticesInGroup; i++) {
             let vertex = model.vertices[offsetVertexIndex + i];
             vertexBuffer.writeFloatLE(vertex.x, i*12);
@@ -352,7 +354,7 @@ module.exports = function() {
 
           // 3. create "normal" js Buffer + gltf bufferView + gltf accessor
           let numNormals = flattenedNormals.length;
-          normalBuffer = Buffer.alloc(numNormals * 3 * 4); // 3 floats per normal, 4 bytes per float
+          let normalBuffer = Buffer.alloc(numNormals * 3 * 4); // 3 floats per normal, 4 bytes per float
           for (let i=0; i<numNormals; i++) {
             let normal = flattenedNormals[i];
             normalBuffer.writeFloatLE(normal.x, i*12);
@@ -378,7 +380,7 @@ module.exports = function() {
 
           // 4. create "vertex color" js Buffer + gltf bufferView + gltf accessor
           let numVertexColors = numVerticesInGroup;
-          vertexColorBuffer = Buffer.alloc(numVertexColors * 4 * 4); // 4 floats per vertex, 4 bytes per float
+          let vertexColorBuffer = Buffer.alloc(numVertexColors * 4 * 4); // 4 floats per vertex, 4 bytes per float
           for (let i=0; i<numVertexColors; i++) {
             let vertexColor = model.vertexColors[i];
             vertexColorBuffer.writeFloatLE(vertexColor.r/255.0, i*16);
@@ -409,7 +411,7 @@ module.exports = function() {
           if (includeTextures) {
             if (polygonGroup.isTextureUsed) {
               let numTextureCoords = numVerticesInGroup;
-              textureCoordBuffer = Buffer.alloc(numTextureCoords * 2 * 4); // 2 floats per texture coord, 4 bytes per float
+              let textureCoordBuffer = Buffer.alloc(numTextureCoords * 2 * 4); // 2 floats per texture coord, 4 bytes per float
               for (let i=0; i<numTextureCoords; i++) {
                 let textureCoord = model.textureCoordinates[offsetTextureCoordinateIndex + i];
                 let u = textureCoord.x;

@@ -1,8 +1,8 @@
 {
-  "name": "ff7-gltf",
+  "name": "kujata",
   "version": "1.0.0",
-  "description": "Translates graphics assets between Final Fantasy 7 format and glTF format",
-  "main": "index.js",
+  "description": "Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF",
+  "main": "test-ff7-to-gltf-translator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
