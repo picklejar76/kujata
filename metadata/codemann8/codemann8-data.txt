@@ -1,0 +1,101 @@
+# ref: http://forums.qhimm.com/index.php?topic=18560.msg261559#msg261559
+NULL	NULL	NULL	1	wm0	170	mds5_5	Slum Outskirts
+170	mds5_5	Slum Outskirts	1	wm0	170	mds5_5	Slum Outskirts
+335	elm	Kalm	2	wm1	335	elm	Kalm
+345	frcyo	Chocobo Ranch	3	wm2	343	farm	Chocobo farm
+343	farm	Chocobo farm	3	wm2	343	farm	Chocobo farm
+350	psdun_2	Mythril Mine	4	wm3	350	psdun_2	Mythril Mine
+349	psdun_1	Mythril Mine	5	wm4	349	psdun_1	Mythril Mine
+353	condor1	Base of Fort Condor	6	wm5	353	condor1	Base of Fort Condor
+370	junonl1	Lower Junon	7	wm6	428	ujunon1	Under Junon
+428	ujunon1	Under Junon	7	wm6	428	ujunon1	Under Junon
+600	jtempl	Temple of the Ancients	8	wm7	600	jtempl	Temple of the Ancients
+78	zz1	Old man's house	9	wm8	78	zz1	Old man's house
+79	zz2	Weapon seller	A	wm9	79	zz2	Weapon seller
+712	itown1a	Mideel	B	wm10	712	itown1a	Mideel
+712	itown1a	Mideel	B	wm10	714	itown1b	Mideel
+713	itown12	Mideel	B	wm10	712	itown1a	Mideel
+713	itown12	Mideel	B	wm10	714	itown1b	Mideel
+714	itown1b	Mideel	B	wm10	712	itown1a	Mideel
+714	itown1b	Mideel	B	wm10	714	itown1b	Mideel
+84	zz7	Materia Cave	C	wm11	84	zz7	Materia Cave
+443	del2	Costa del Sol	D	wm12	443	del2	Costa del Sol
+458	mtcrl_0	Mt. Corel	E	wm13	458	mtcrl_0	Mt. Corel
+450	ncorel	North Corel	F	wm14	450	ncorel	North Corel
+450	ncorel	North Corel	F	wm14	451	ncorel2	North Corel
+451	ncorel2	North Corel	F	wm14	450	ncorel	North Corel
+451	ncorel2	North Corel	F	wm14	451	ncorel2	North Corel
+452	ncorel3	North Corel	F	wm14	450	ncorel	North Corel
+452	ncorel3	North Corel	F	wm14	451	ncorel2	North Corel
+481	desert1		10	wm15	482	desert2	Corel Desert
+482	desert2	Corel Desert	10	wm15	482	desert2	Corel Desert
+512	crcin_2	Waiting Room	10	wm15	482	desert2	Corel Desert
+518	gongaga	Gongaga Village	11	wm16	515	gonjun2	Jungle
+514	gonjun1	Jungle	11	wm16	515	gonjun2	Jungle
+515	gonjun2	Jungle	11	wm16	515	gonjun2	Jungle
+525	cos_btm	Cosmo Canyon	12	wm17	525	cos_btm	Cosmo Canyon
+284	nivl_3	Nibelheim	13	wm18	284	nivl_3	Nibelheim
+285	nivl_4		13	wm18	284	nivl_3	Nibelheim
+551	rckt2	Rocket Town	14	wm19	551	rckt2	Rocket Town
+551	rckt2	Rocket Town	14	wm19	557	rckt	Rocket Town
+557	rckt	Rocket Town	14	wm19	551	rckt2	Rocket Town
+557	rckt	Rocket Town	14	wm19	557	rckt	Rocket Town
+81	zz4	Lucrecia's Cave	15	wm20	81	zz4	Lucrecia's Cave
+83	zz6	Materia Cave	16	wm21	83	zz6	Materia Cave
+574	yougan3	Plains	17	wm22	574	yougan3	Plains
+574	yougan3	Plains	17	wm22	579	uutai1	Wutai
+581	yufy1	Yuffie's House	17	wm22	574	yougan3	Plains
+581	yufy1	Yuffie's House	17	wm22	579	uutai1	Wutai
+579	uutai1	Wutai	17	wm22	574	yougan3	Plains
+579	uutai1	Wutai	17	wm22	579	uutai1	Wutai
+82	zz5	Materia Cave	18	wm23	82	zz5	Materia Cave
+617	bonevil	Bone Village	19	wm24	617	bonevil	Bone Village
+629	sandun_2	Corral Valley Cave	1A	wm25	629	sandun_2	Corral Valley Cave
+654	snow	Icicle Inn	1B	wm26	654	snow	Icicle Inn
+80	zz3	Mystery House	1C	wm27	80	zz3	Mystery House
+85	zz8	Materia Cave	1D	wm28	85	zz8	Materia Cave
+NULL	NULL	NULL	1E	wm29	425	semkin_5	Underwater Reactor
+88	q_1	Hallway	1F	wm30	88	q_1	Hallway
+348	sichi	Marshes	20	wm31	348	sichi	Marshes
+573	yougan2	Plains	21	wm32	573	yougan2	Plains
+572	yougan	Wilderness	22	wm33	572	yougan	Wilderness
+NULL	NULL	NULL	23	wm34	572	yougan	Wilderness
+382	jundoc1a	Junon Dock	24	wm35	439	shpin_2	Cargo Ship
+440	shpin_3	Cargo Ship	25	wm36	441	del1	Costa del Sol Harbor
+382	jundoc1a	Junon Dock	26	wm37	441	del1	Costa del Sol Harbor
+429	ujunon2	Dolphin Offing	26	wm37	441	del1	Costa del Sol Harbor
+441	del1	Costa del Sol Harbor	27	wm38	382	jundoc1a	Junon Dock
+86	sea		28	wm39	NULL	NULL	NULL
+70	fship_23	Highwind	29	wm40	NULL	NULL	NULL
+406	subin_1b	Submarine Bridge	2A	wm41	NULL	NULL	NULL
+284	nivl_3	Nibelheim	2B	wm42	284	nivl_3	Nibelheim
+285	nivl_4		2B	wm42	284	nivl_3	Nibelheim
+311	mtnvl2	Mt. Nibel	2C	wm43	311	mtnvl2	Mt. Nibel
+70	fship_23	Highwind	2D	wm44	NULL	NULL	NULL
+71	fship_24	Bridge	2D	wm44	NULL	NULL	NULL
+72	fship_25	Highwind	2D	wm44	NULL	NULL	NULL
+313	mtnvl4	Mt. Nibel	2E	wm45	313	mtnvl4	Mt. Nibel
+NULL	NULL	NULL	2F	wm46	654	snow	Icicle Inn
+658	hyou1		30	wm47	658	hyou1
+662	icedun_2	Frostbite Cave	30	wm47	658	hyou1
+NULL	NULL	NULL	31	wm48	NULL	NULL	NULL
+NULL	NULL	NULL	32	wm49	70	fship_23	Highwind
+NULL	NULL	NULL	32	wm49	72	fship_25	Highwind
+NULL	NULL	NULL	33	wm50	72	fship_25	Highwind
+NULL	NULL	NULL	34	wm51	71	fship_24	Bridge
+NULL	NULL	NULL	35	wm52	347	fr_e
+405	subin_1a		36	wm53	NULL	NULL	NULL
+622	anfrst_3	Ancient Forest	37	wm54	622	anfrst_3	Ancient Forest
+624	anfrst_5	Ancient Forest	37	wm54	622	anfrst_3	Ancient Forest
+405	subin_1a		38	wm55	405	subin_1a
+405	subin_1a		38	wm55	406	subin_1b	Submarine Bridge
+406	subin_1b	Submarine Bridge	38	wm55	405	subin_1a
+406	subin_1b	Submarine Bridge	38	wm55	406	subin_1b	Submarine Bridge
+626	sango2	Corral Valley	39	wm56	626	sango2	Corral Valley
+630	lost1	Forgotten Capital	3A	wm57	630	lost1	Forgotten Capital
+NULL	NULL	NULL	3B	wm58	744	las0_1	Highwind, On deck
+686	gaiafoot	Base of Gaea's Cliff	3C	wm59	686	gaiafoot	Base of Gaea's Cliff
+670	move_s		3D	wm60	670	move_s
+670	move_s		3E	wm61	670	move_s
+670	move_s		3F	wm62	670	move_s
+682	hyou12		40	wm63	682	hyou12

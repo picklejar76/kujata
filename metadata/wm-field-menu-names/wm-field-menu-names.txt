@@ -1,0 +1,66 @@
+# ref: http://wiki.ffrtt.ru/index.php/FF7/Field/Field_ID
+0x000	dummy	Dummy Room
+0x001	wm0	Midgar
+0x002	wm1	Kalm
+0x003	wm2	Chocobo Farm
+0x004	wm3	Mithryl Mine (Midgar side)
+0x005	wm4	Mithryl Mine (Junon side)
+0x006	wm5	Condor
+0x007	wm6	Junon
+0x008	wm7	Temple of the Ancients
+0x009	wm8	Old Man's House (Mythril)
+0x00A	wm9	Weapon Seller
+0x00B	wm10	Mideel
+0x00C	wm11	Materia Cave (Quadra Magic)
+0x00D	wm12	Costa Del Sol
+0x00E	wm13	Mt. Coral
+0x00F	wm14	North Coral
+0x010	wm15	Corel Prison/Desert
+0x011	wm16	Gongaga
+0x012	wm17	Cosmo Canyon
+0x013	wm18	Nibelheim (Town Side)
+0x014	wm19	Rocket Town (South Side)
+0x015	wm20	Lucrecia's Cave
+0x016	wm21	Materia Cave (HP<->MP Materia)
+0x017	wm22	Wutai
+0x018	wm23	Materia Cave (Mime Materia)
+0x019	wm24	Bone Village
+0x01A	wm25	Corel Valley Cave (Icicle Area)
+0x01B	wm26	Icicle Inn (South Side)
+0x01C	wm27	Chocobo Sage's House
+0x01D	wm28	Materia Cave (Knights of the Round Materia)
+0x01E	wm29	Underwater Reactor
+0x01F	wm30	Gelnika
+0x020	wm31	Midgar Zolom in Tree, between Marsh and Mythril mine*
+0x021	wm32	Mystery Ninja Encounter*
+0x022	wm33	Yuffie's Betrayal, South of Western Continent*
+0x023	wm34	Yuffie's Betrayal, South of Western Continent*
+0x024	wm35	Event - Ship leaves Junon
+0x025	wm36	Event - Ship enters Costa Del Sol
+0x026	wm37	Event - Ship travels from Junon to Costa Del Sol
+0x027	wm38	Event - Ship travels from Costa Del Sol to Junon
+0x028	wm39	Tiny Bronco Acquisition
+0x029	wm40	Highwind Acquisition
+0x02A	wm41	Underwater - North Area (unknown)
+0x02B	wm42	Nibelheim (Mt. Nibel Side)
+0x02C	wm43	Mt. Nibel (Nibelheim Side)
+0x02D	wm44	Leaving Highwind*
+0x02E	wm45	Mt. Nibel (West Side)
+0x02F	wm46	Icicle Inn (North Side)
+0x030	wm47	Great Glacier
+0x031	wm48	Rocket Town (North Side)
+0x032	wm49	Entering Highwind*
+0x033	wm50	Entering Highwind*
+0x034	wm51	Entering Highwind*
+0x035	wm52	Diamond Weapon Battle*
+0x036	wm53	Submarine Acquisition
+0x037	wm54	Ancient Forset
+0x038	wm55	Underwater Key of the Ancients
+0x039	wm56	Sleeping Forest
+0x03A	wm57	Valley, City of Ancients entrance
+0x03B	wm58	Northern Crater*
+0x03C	wm59	Snow Maze
+0x03D	wm60	Snow Maze
+0x03E	wm61	Snow Maze
+0x03F	wm62	Snow Maze
+0x040	wm63	Materia Cave (All)
