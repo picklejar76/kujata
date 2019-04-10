@@ -17,13 +17,13 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
 - "git clone" this repo
 - install NodeJS and run "npm install" to install dependencies
   - https://nodejs.org/en/download/
-- locate field\char.lgp from your Final Fantasy 7 PC installation
-- use unlgp 0.5b to extract files from field\char.lgp to a directory
-  - see ![unlgp.exe](lgp-0.5b/bin/unlgp.exe)
+- locate field/char.lgp and field/flevel.lgp from your Final Fantasy 7 PC installation
+- use unlgp 0.5b to extract lgp files to a directory
+  - see https://github.com/picklejar76/kujata/lgp-0.5b/bin/unlgp.exe
 - use TexTool_0.10 to translate TEX files to png (as needed)
-  - see ![TexTool.exe](tex-tool-0.10/TexTool.exe)
+  - see https://github.com/picklejar76/kujata/tex-tool-0.10/TexTool.exe
 - edit config.json to configure your input and output directories
-  - see ![config.json](config.json)
+  - see https://github.com/picklejar76/kujata/config.json
 
 ## How to translate field char data (field/char.lgp) to glTF
 - Run "node test-ff7-to-gltf-translator.js"
@@ -35,7 +35,7 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
 - For help, reach out to the author: picklejar76@gmail.com
 
 ## How to translate field flevel data (field/flevel.lgp) to JSON
-- Look at ff7-asset-loader/test-flevel-loader.js
+- Look at https://github.com/picklejar76/kujata/ff7-asset-loader/test-flevel-loader.js
 - Better instructions coming soon
 - For help, reach out to the author: picklejar76@gmail.com
 
