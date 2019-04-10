@@ -14,7 +14,7 @@ module.exports = class FLevelLoader {
 
     var charMap = require("./char-map.js");
 
-    var buffer = fs.readFileSync(config.inputFLevelDirectory + '/' + baseFilename);
+    var buffer = fs.readFileSync(config.inputFieldFLevelDirectory + '/' + baseFilename);
     if (!isDecompressed) {
       buffer = this.lzsDecompressor.decompress(buffer);
     }

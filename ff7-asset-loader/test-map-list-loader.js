@@ -1,3 +1,4 @@
+const fs = require("fs");
 const MapListLoader = require("./map-list-loader.js");
 
 let config = {
@@ -13,4 +14,4 @@ for (let i=0; i<mapList.length; i++) {
   console.log(i + "=" + mapList[i]);
 }
 
-fs.writeFileSync(config.outputFLevelDirectory + '/maplist.json', JSON.stringify(flevel, null, 2));
+fs.writeFileSync(config.outputFLevelDirectory + '/maplist.json', JSON.stringify(mapList, null, 2));
