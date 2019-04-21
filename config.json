@@ -16,6 +16,9 @@
   "outputFieldFLevelDirectoryDescription": "Where the translator will put output files like maplist.json, md1stin.json",
 
   "ifalnaJsonFile": "/opt/kujata/ifalna-db/ifalna.json",
-  "ifalnaJsonFileDescription": "Location of ifalna.json file containing animation metadata for each field model"
+  "ifalnaJsonFileDescription": "Location of ifalna.json file containing animation metadata for each field model",
+
+  "metadataDirectory": "/opt/kujata-data/metadata",
+  "metadataDirectoryDescription": "Where the translator will read and write metadata files like scene-graph.json, op-code-usages.json"
 
 }
