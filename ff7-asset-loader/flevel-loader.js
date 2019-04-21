@@ -71,7 +71,7 @@ module.exports = class FLevelLoader {
         entityScriptRoutines: []
       };
       for (let i=0; i<32; i++) {
-        entitySection.entityScriptRoutines.push(r.readShort());
+        entitySection.entityScriptRoutines.push(r.readUShort());
       }
       flevel.script.header.entitySections.push(entitySection);
     }
@@ -84,7 +84,7 @@ module.exports = class FLevelLoader {
     let numDialogs = r.readUShort();
     let dialogOffsets = [];
     for (let i=0; i<numDialogs; i++) {
-      dialogOffsets.push(r.readShort());
+      dialogOffsets.push(r.readUShort());
     }
     for (let i=0; i<numDialogs; i++) {
       let dialogOffset = dialogOffsets[i];
@@ -103,25 +103,36 @@ module.exports = class FLevelLoader {
       flevel.script.entities.push(entity);
       for (let j=0; j<31; j++) { // TODO: support entities with 32 scripts; will need different method of determining endOffset
         let startOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j];
-        let endOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j+1];
+        if (j > 0) {
+          let prevStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j-1];
+          if (startOffset == prevStartOffset) {
+            continue;
+          }
+        }
         r.offset = startOffset;
+        if (i==1 && j >= 9 && j <= 12) {
+          //console.log("index=" + j + ", startOffset=" + startOffset + ", endOffset=" + endOffset);
+          //r.printNextBufferDataAsHex();
+        }
         let entityScript = {
           index: j,
           ops: []
         };
         var op = {};
-        while (op.op != "RET" && r.offset < endOffset) {
+        while (op.op != "RET") {//} && r.offset < endOffset) {
           //let lineNumber = pad5(offset - sectionOffsetBase);
           let lineNumber = stringUtil.pad5(r.offset);
           try {
-            // op = readOp(reader); // attempt to use non-class-based modularity; TODO: remove this
-            op = r.readOp();
+            /////console.log("trying to read op...");
+            op = r.readOpAndIncludeRawBytes(); // r.readOp();
             entityScript.ops.push(op);
             //entityScript.ops.push(op.description);
           } catch (e) {
-            ////console.log("Error while reading op: " + e);
+            console.error("Error while reading op in " + baseFilename + ", entity " + entity.entityName + ", index " + j + ": ", e);
+            console.error("Previous ops: " + JSON.stringify(entityScript.ops, null, 2));
             op = {op:"ERROR", description: "" + e};
             entityScript.ops.push(op);
+            process.exit(0);
             break;
           }
         }
