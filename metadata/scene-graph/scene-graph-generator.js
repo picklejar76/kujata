@@ -33,15 +33,21 @@ for (let fieldId = 0; fieldId < mapList.length; fieldId++) {
                   node.mapNames.push(mapName);
                 }
               }
-              if (op.op == "MAPJUMP" || op.op == "PMJMP") {
-                if (op.i) {
-                  let link = {
-                    source: fieldId,
-                    target: op.i,
-                    type: op.op
-                  };
-                  links.push(link);
-                }
+              if (op.op == "MAPJUMP") {
+                let link = {
+                  source: fieldId,
+                  target: op.f,
+                  type: op.op
+                };
+                links.push(link);
+              }
+              if (op.op == "PMJMP") {
+                let link = {
+                  source: fieldId,
+                  target: op.i,
+                  type: op.op
+                };
+                links.push(link);
               }
             }
           }
