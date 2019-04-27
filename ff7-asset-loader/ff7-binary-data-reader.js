@@ -1388,9 +1388,13 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), v = $r.readShort();
       let aDesc = bd == 0 ? a : "Bank[" + bd + "][" + a + "]";
       let vDesc = bs == 0 ? v : "Bank[" + bs + "][" + v + "]";
+      if (bd==2 && a==0) {
+        aDesc = "$GameMoment";
+      }
       return {
         op: "SETWORD",
         bd: bd, bs: bs, a: a, v: v,
+        mr: aDesc + " = " + vDesc + " (16 bit)",
         js: aDesc + " = " + vDesc + ";"
       };
     }
