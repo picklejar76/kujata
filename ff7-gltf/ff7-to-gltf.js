@@ -253,7 +253,7 @@ module.exports = class FF7GltfTranslator {
           if (textureIds && textureIds.length > 0) {
             for (let i=0; i<textureIds.length; i++) {
               let textureId = textureIds[i].toLowerCase();
-              gltf.images.push({"uri": config.texturesDirectory + '/' + textureId + ".png"});
+              gltf.images.push({"uri": config.texturesDirectory + '/' + textureId + ".tex.png"});
               gltf.textures.push({
                 "source": (gltfTextureIndexOffset + i), // index to gltf.images[]
                 "sampler": 0,                           // index to gltf.samplers[]
