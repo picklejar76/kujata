@@ -102,40 +102,88 @@ module.exports = class FLevelLoader {
       };
       flevel.script.entities.push(entity);
       for (let j=0; j<31; j++) { // TODO: support entities with 32 scripts; will need different method of determining endOffset
+        let numReturnOpsProcessed = 0;
+        let numReturnOpsExpected = (j == 0 ? 2 : 1);
         let startOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j];
+        r.startOffset = startOffset;
+        r.offset = startOffset;
+        // if (i==5 && j==0) {
+        //   console.log("Entity " + i + ", Script " + j + ": Offset=" + startOffset + ", HexData:");
+        //   r.printNextBufferDataAsHex();
+        // }
         if (j > 0) {
           let prevStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j-1];
           if (startOffset == prevStartOffset) {
             continue;
           }
         }
-        r.offset = startOffset;
-        if (i==1 && j >= 9 && j <= 12) {
-          //console.log("index=" + j + ", startOffset=" + startOffset + ", endOffset=" + endOffset);
-          //r.printNextBufferDataAsHex();
-        }
         let entityScript = {
           index: j,
           ops: []
         };
         var op = {};
-        while (op.op != "RET") {//} && r.offset < endOffset) {
+        let done = false;
+        // Determine the startOffset for the "next" script (which is the endOffset for the "current" script)
+        let nextStartOffset = sectionOffsetBase + flevel.script.header.stringOffset; // default
+        if (j<31) {
+          // If this is not the last script for this entity, just look at the next script's offset
+          nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j+1];
+        }
+        let isLastScript = (j==31 || nextStartOffset == startOffset);
+        if (isLastScript) {
+          let isLastEntity = i == flevel.script.header.numEntities-1;
+          if (isLastEntity) {
+            // If this is the last entity (and last script), assume it's the end of the entire field section (beginning of string/dialog section)
+            nextStartOffset = sectionOffsetBase + flevel.script.header.stringOffset;
+          } else {
+            // If this is not the last entity, just look at the next entity's first script offset
+            nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i+1].entityScriptRoutines[0];
+          }
+        }
+        while (!done) {
           //let lineNumber = pad5(offset - sectionOffsetBase);
           let lineNumber = stringUtil.pad5(r.offset);
           try {
-            /////console.log("trying to read op...");
             op = r.readOpAndIncludeRawBytes(); // r.readOp();
             entityScript.ops.push(op);
-            //entityScript.ops.push(op.description);
+            ////console.log("read op=" + JSON.stringify(op, null, 0));
           } catch (e) {
             console.error("Error while reading op in " + baseFilename + ", entity " + entity.entityName + ", index " + j + ": ", e);
             console.error("Previous ops: " + JSON.stringify(entityScript.ops, null, 2));
-            op = {op:"ERROR", description: "" + e};
+            op = {op:"ERROR", js: "" + e};
             entityScript.ops.push(op);
             process.exit(0);
             break;
           }
-        }
+          ////console.log("offset=" + r.offset + " after adding op: " + JSON.stringify(op, null, 0));
+          if (op.op == "RET") {
+            if (j > 0) {
+              done = true;
+            } else {
+              // script 0 is divided into 2 scripts: Init and Main
+              numReturnOpsProcessed++;
+              if (numReturnOpsProcessed == 2) {
+                done = true;
+              } else {
+                if (numReturnOpsProcessed == 1) {
+                  // done with Init script, add to array and start Main script
+                  entity.scripts.push(entityScript);
+                  entityScript = {
+                    index: 0,
+                    isMain: true,
+                    ops: []
+                  };
+                  r.startOffset = r.offset; // fix Main gotos
+                  // keep going! done is still false
+                }
+              }
+            }
+          } // end of op.op == "RET"
+          if (r.offset >= nextStartOffset) {
+            done = true;
+          }
+        } // end while(!done)
+        ////console.log("End of entity " + i + " script " + j);
         if (entityScript.ops.length > 0) {
           entity.scripts.push(entityScript);
         }
@@ -253,8 +301,6 @@ module.exports = class FLevelLoader {
       if (k == "entitySections") { return undefined; }
       return v;
     };
-
-    //r.printNextBufferDataAsHex();
 
     return flevel;
   }; // end loadFLevel() function

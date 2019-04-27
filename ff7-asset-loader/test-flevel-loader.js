@@ -18,7 +18,7 @@ var replacer = function(k, v) {
 
 // translate just 1 map
 /*
-let fieldName = "ancnt1"; // md1stin, md1_1, md1_2, nrthmk, junon
+let fieldName = "md8_2"; // md1stin, md1_1, md1_2, nrthmk, junon
 let flevel = flevelLoader.loadFLevel(config, fieldName);
 let outputFilename = config.outputFieldFLevelDirectory + '/' + fieldName + '.json';
 fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
@@ -26,8 +26,6 @@ console.log("Wrote: " + outputFilename);
 */
 
 // translate all maps and create index
-let tempOpMetadata = {};
-
 let opCodeUsages = {};
 for (let fieldName of mapList) {
   if (fieldName && !fieldName.startsWith("wm")) {
@@ -55,10 +53,6 @@ for (let fieldName of mapList) {
                 opCodeUsages[opHex] = [];
               }
               opCodeUsages[opHex].push(usage);
-              tempOpMetadata[opHex] = {
-                hex: opHex,
-                shortName: op.op
-              };
             }
           }
         }
@@ -80,4 +74,3 @@ for (let opHex of Object.keys(opCodeUsages)) {
   fs.writeFileSync(filename, JSON.stringify(usages, null, 2));
   console.log("Wrote: " + filename);
 }
-console.log(JSON.stringify(tempOpMetadata, null, 2));

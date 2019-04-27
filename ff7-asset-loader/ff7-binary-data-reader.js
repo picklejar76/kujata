@@ -21,6 +21,8 @@ class FF7BinaryDataReader {
   readShort()  { let s = this.buffer.readInt16LE(this.offset);  this.offset += 2; return s; };
   readUShort() { let s = this.buffer.readUInt16LE(this.offset); this.offset += 2; return s; };
 
+  peekUByte()  { let b = this.buffer.readUInt8  (this.offset);                    return b; };
+
   readString(len) {
     let s = "";
     for (let i=0; i<len; i++) {
@@ -76,8 +78,8 @@ class FF7BinaryDataReader {
     if (c == 9) return "C.YoungCloud";
     if (c == 10) return "C.Sephiroth";
     if (c == 11) return "C.Chocobo";
-    if (c == 0xfe) return "C.None";
-    if (c == 0xff) { console.error("WARN: Found 0xFF value for Character"); return "C.NoneFF"; };
+    if (c == 0xfe) return "C.NoneFE";
+    if (c == 0xff) return "C.NoneFF";
     throw new Error("unexpected character id: " + c);
   }
 
@@ -118,7 +120,8 @@ class FF7BinaryDataReader {
     if (op == 0x00) {
       return {
         op: "RET",
-        description: "return;"
+        mr: "Return",
+        js: "return;"
       };
     }
 
@@ -126,8 +129,9 @@ class FF7BinaryDataReader {
       let e = $r.readUByte(), bpbf = $r.readUByte(), p = (bpbf & 0b11100000) >> 5, f = (bpbf & 0b00011111);
       return {
         op: "REQ", e: e, p: p, f: f,
-        description: "entityExecuteAsync({entity:" + e + ", priority:" + p + ", function:" + f + "});",
-        pres: "Tells <E> to <F>"
+        mr: "Execute script #%3 in extern group %1 (priority %2/6) - Only if the script is not already running|_script(groupID)|priority|scriptID",
+        js: "entityExecuteAsync({entity:" + e + ", priority:" + p + ", function:" + f + "});",
+        pres: "Tells <entityName> to <scriptName>"
       };
     }
 
@@ -135,8 +139,9 @@ class FF7BinaryDataReader {
       let e = $r.readUByte(), bpbf = $r.readUByte(), p = (bpbf & 0b11100000) >> 5, f = (bpbf & 0b00011111);
       return {
         op: "REQSW", e: e, p: p, f: f,
-        description: "entityExecuteAsyncGuaranteed({entity:" + e + ", priority:" + p + ", function:" + f + "});",
-        pres: "Tells <E> to <F>"
+        mr: "Execute script #%3 in extern group %1 (priority %2/6) - Only if the script is not already running|_script(groupID)|priority|scriptID",
+        js: "entityExecuteAsyncGuaranteed({entity:" + e + ", priority:" + p + ", function:" + f + "});",
+        pres: "Tells <entityName> to <scriptName>"
       };
     }
 
@@ -144,17 +149,17 @@ class FF7BinaryDataReader {
       let e = $r.readUByte(), bpbf = $r.readUByte(), p = (bpbf & 0b11100000) >> 5, f = (bpbf & 0b00011111);
       return {
         op: "REQEW", e: e, p: p, f: f,
-        description: "entityExecuteSync({entity:" + e + ", priority:" + p + ", function:" + f + "});",
-        pres: "Tells <E> to <F>"
+        js: "entityExecuteSync({entity:" + e + ", priority:" + p + ", function:" + f + "});",
+        pres: "Tells <entityName> to <scriptName>"
       };
     }
 
     if (op == 0x04) {
       let e = $r.readUByte(), bpbf = $r.readUByte(), p = (bpbf & 0b11100000) >> 5, f = (bpbf & 0b00011111);
       return {
-        op: "REQEW", e: e, p: p, f: f,
-        description: "entityExecuteAsyncNonguaranteed({entity:" + e + ", priority:" + p + ", function:" + f + "});",
-        pres: "Tells <E> to <F>"
+        op: "PREQ", e: e, p: p, f: f,
+        js: "partyMemberExecuteAsync({entity:" + e + ", priority:" + p + ", function:" + f + "});",
+        pres: "Tells <partyMemberName> to <scriptName>"
       };
     }
 
@@ -162,8 +167,8 @@ class FF7BinaryDataReader {
       let e = $r.readUByte(), bpbf = $r.readUByte(), p = (bpbf & 0b11100000) >> 5, f = (bpbf & 0b00011111);
       return {
         op: "PRQSW", e: e, p: p, f: f,
-        description: "partyMemberExecuteAsyncGuaranteed({partyMemberId:" + e + ", priority:" + p + ", function:" + f + "});",
-        pres: "Tells <P> to <F>"
+        js: "partyMemberExecuteAsyncGuaranteed({partyMemberId:" + e + ", priority:" + p + ", function:" + f + "});",
+        pres: "Tells <partyMemberName> to <scriptName>"
       };
     }
 
@@ -171,8 +176,8 @@ class FF7BinaryDataReader {
       let e = $r.readUByte(), bpbf = $r.readUByte(), p = (bpbf & 0b11100000) >> 5, f = (bpbf & 0b00011111);
       return {
         op: "PRQEW", e: e, p: p, f: f,
-        description: "partyMemberExecuteSyncGuaranteed({partyMemberId:" + e + ", priority:" + p + ", function:" + f + "});",
-        pres: "Tells <P> to <F>"
+        js: "partyMemberExecuteSync({partyMemberId:" + e + ", priority:" + p + ", function:" + f + "});",
+        pres: "Tells <partyMemberName> to <scriptName>"
       };
     }
 
@@ -180,7 +185,7 @@ class FF7BinaryDataReader {
       let bpbf = $r.readUByte(), p = (bpbf & 0b11100000) >> 5, f = (bpbf & 0b00011111);
       return {
         op: "RETTO", p: p, f: f,
-        description: "returnToFunction({priority:" + p + ", function:" + f + "});"
+        js: "returnToFunction({priority:" + p + ", function:" + f + "});"
       };
     }
 
@@ -188,7 +193,7 @@ class FF7BinaryDataReader {
       let s = $r.readUByte();
       return {
         op: "JOIN", s: s,
-        description: "joinParty({slowness:" + s + "});",
+        js: "joinParty({slowness:" + s + "});",
         pres: "The party gathers."
       };
     }
@@ -209,7 +214,7 @@ class FF7BinaryDataReader {
       return {
         op: "SPLIT",
         bx1: bx1, by1: by1, bd1: bd1, bx2: bx2, by2: by2, bd2: bd2, x1, y1, d1, x2, y2, d2, s,
-        description: "splitParty({c1: {x:" + x1Desc + ", y:" + y1Desc + ", d:" + d1Desc + "}, c2: {x:" + x2Desc + ", y:" + y2Desc + ", d:" + d2Desc + "}, slowness:" + s + "});",
+        js: "splitParty({c1: {x:" + x1Desc + ", y:" + y1Desc + ", d:" + d1Desc + "}, c2: {x:" + x2Desc + ", y:" + y2Desc + ", d:" + d2Desc + "}, slowness:" + s + "});",
         pres: "The party spreads out."
       };
     }
@@ -223,7 +228,7 @@ class FF7BinaryDataReader {
       let a3Desc = b3 == 0 ? a3 : "Bank[" + b3 + "][" + a3 + "]";
       return {
         op: "SPTYE", b1: b1, b2: b2, b3: b3, a1: a1, a2: a2, a3: a3,
-        description: "setParty({characterId1:" + a1Desc + ", characterId2:" + a2Desc + ", characterId3:" + a3Desc + "});",
+        js: "setParty({characterId1:" + a1Desc + ", characterId2:" + a2Desc + ", characterId3:" + a3Desc + "});",
         pres: "The party changes to <A1,A2,A3>"
       };
     }
@@ -237,7 +242,7 @@ class FF7BinaryDataReader {
       let a3Desc = b3 == 0 ? a3 : "Bank[" + b3 + "][" + a3 + "]";
       return {
         op: "GTPYE", b1: b1, b2: b2, b3: b3, a1: a1, a2: a2, a3: a3,
-        description: a1Desc + " = getParty({partyId:0}); " + a2Desc + " = getParty({partyId:1}); " + a3Desc + " = getParty({partyId:2});",
+        js: a1Desc + " = getParty({partyId:0}); " + a2Desc + " = getParty({partyId:1}); " + a3Desc + " = getParty({partyId:2});",
         pres: "The party prepares to switch up..."
       };
     }
@@ -252,7 +257,7 @@ class FF7BinaryDataReader {
       let d = $r.readUByte();
       return {
         op: "DSKCG", d: d,
-        description: "diskChangeScreen({diskId:"+ d + "});"
+        js: "diskChangeScreen({diskId:"+ d + "});"
       };
     }
 
@@ -267,43 +272,43 @@ class FF7BinaryDataReader {
       let subOpName = {0xf5:"ARROW", 0xf6:"PNAME", 0xf7:"GMSPD", 0xf8:"SMSPD", 0xf9:"FLMAT", 0xfa:"FLITM", 0xfb:"BTLCK", 0xfc:"MVLCK", 0xfd:"SPCNM", 0xfe:"RSGLB", 0xff:"CLITM"}[subOp];
       return {
         op: "SPECIAL", subOp: subOp,
-        description: "specialOp({subOpName:'"+ subOpName + "', params:" + JSON.stringify(params, null, 0) + "});"
+        js: "specialOp({subOpName:'"+ subOpName + "', params:" + JSON.stringify(params, null, 0) + "});"
       };
     }
 
     if (op == 0x10) {
-      let baseOffset = this.offset;
+      let baseOffset = this.offset - this.startOffset;
       let a = $r.readUByte();
       return {
         op: "JMPF", a: a,
-        description: "goto " + (baseOffset + a) + ";"
+        js: "goto " + (baseOffset + a) + ";"
       };
     }
 
     if (op == 0x11) {
-      let baseOffset = this.offset;
+      let baseOffset = this.offset - this.startOffset;
       let a = $r.readUShort();
       return {
         op: "JMPFL", a: a,
-        description: "goto " + (baseOffset + a) + ";"
+        js: "goto " + (baseOffset + a) + ";"
       };
     }
 
     if (op == 0x12) {
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       let a = $r.readUByte();
       return {
         op: "JMPB", a: a,
-        description: "goto " + (baseOffset - a) + ";"
+        js: "goto " + (baseOffset - a) + ";"
       };
     }
 
     if (op == 0x13) {
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       let a = $r.readUShort();
       return {
         op: "JMPBL", a: a,
-        description: "goto " + (baseOffset - a) + ";"
+        js: "goto " + (baseOffset - a) + ";"
       };
     }
 
@@ -313,7 +318,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       let vDesc = b2 == 0 ? v : "Bank[" + b2 + "][" + v + "]";
       let cDesc = this.getCmpDesc(aDesc, c, vDesc);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFUB",
         b1: b1,
@@ -322,7 +327,7 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        description: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
       };
     }
 
@@ -332,7 +337,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       let vDesc = b2 == 0 ? v : "Bank[" + b2 + "][" + v + "]";
       let cDesc = this.getCmpDesc(aDesc, c, vDesc);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFUBL",
         b1: b1,
@@ -341,7 +346,7 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        description: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
       };
     }
 
@@ -351,7 +356,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       let vDesc = b2 == 0 ? v : "Bank[" + b2 + "][" + v + "]";
       let cDesc = this.getCmpDesc(aDesc, c, vDesc);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFSW",
         b1: b1,
@@ -360,7 +365,7 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        description: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
       };
     }
 
@@ -370,7 +375,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       let vDesc = b2 == 0 ? v : "Bank[" + b2 + "][" + v + "]";
       let cDesc = this.getCmpDesc(aDesc, c, vDesc);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFSWL",
         b1: b1,
@@ -379,7 +384,7 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        description: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
       };
     }
 
@@ -389,7 +394,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       let vDesc = b2 == 0 ? v : "Bank[" + b2 + "][" + v + "]";
       let cDesc = this.getCmpDesc(aDesc, c, vDesc);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFUW",
         b1: b1,
@@ -398,7 +403,7 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        description: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
       };
     }
 
@@ -408,7 +413,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       let vDesc = b2 == 0 ? v : "Bank[" + b2 + "][" + v + "]";
       let cDesc = this.getCmpDesc(aDesc, c, vDesc);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFUWL",
         b1: b1,
@@ -417,7 +422,7 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        description: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
       };
     }
 
@@ -432,7 +437,7 @@ class FF7BinaryDataReader {
       let m = $r.readUShort(), x = $r.readShort(), y = $r.readShort(), z = $r.readShort(), g = $r.readUByte(), t = $r.readUByte();
       return {
         op: "MINIGAME", m: m, x: x, y: y, z: z, g: g, t: t,
-        description: "runMinigame({mapId:" + m + ", x:" + x + ", y:" + y + ", z:" + z + ", value:" + g + ", gameType:" + t + "});"
+        js: "runMinigame({mapId:" + m + ", x:" + x + ", y:" + y + ", z:" + z + ", value:" + g + ", gameType:" + t + "});"
       };
     }
 
@@ -440,7 +445,7 @@ class FF7BinaryDataReader {
       let t = $r.readUByte();
       return {
         op: "TUTORIAL", t: t,
-        description: "openMainMenuAndPlayTutorial({tutorialId:" + t + "});"
+        js: "openMainMenuAndPlayTutorial({tutorialId:" + t + "});"
       };
     }
 
@@ -449,7 +454,7 @@ class FF7BinaryDataReader {
       let bits = $r.readUInt();
       return {
         op: "BTMD2", bits: bits,
-        description: "setBattleModeProperties({bits:" + bits + "});"
+        js: "setBattleModeProperties({bits:" + bits + "});"
       };
     }
 
@@ -459,7 +464,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "BTRLD", b: b, a: a,
-        description: aDesc + " = getLastBattleResult();"
+        js: aDesc + " = getLastBattleResult();"
       };
     }
 
@@ -467,7 +472,7 @@ class FF7BinaryDataReader {
       let a = $r.readUShort();
       return {
         op: "WAIT", a: a,
-        description: "wait({numFrames:" + a + "});"
+        js: "wait({numFrames:" + a + "});"
       };
     }
 
@@ -484,7 +489,7 @@ class FF7BinaryDataReader {
         b1: b1,
         b2: b2,
         r: r, g: g, b: b, s: s, t: t, unused: unused,
-        description: "fadeScreen({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + "}); // unused=" + unused,
+        js: "fadeScreen({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + "}); // unused=" + unused,
         pres: "The screen fades..."
       };
     }
@@ -494,7 +499,7 @@ class FF7BinaryDataReader {
       let sFuncDesc = s == 0 ? "enableBlink" : "disableBlink";
       return {
         op: "BLINK", s: s,
-        description: sFuncDesc + "();"
+        js: sFuncDesc + "();"
       };
     }
 
@@ -503,7 +508,7 @@ class FF7BinaryDataReader {
       let sFuncDesc = s == 0 ? "bgMovieOn" : "bgMovieOff";
       return {
         op: "BGMOVIE", s: s,
-        description: sFuncDesc + "();"
+        js: sFuncDesc + "();"
       };
     }
 
@@ -515,14 +520,14 @@ class FF7BinaryDataReader {
       }
       return {
         op: "KAWAI", l: l, s: s, vars: vars,
-        description: "doCharacterGraphicsOp({length:" + l + ", kawaiOp:" + s + ", vars:" + vars + "});"
+        js: "doCharacterGraphicsOp({length:" + l + ", kawaiOp:" + s + ", vars:" + vars + "});"
       };
     }
 
     if (op == 0x29) {
       return {
         op: "KAWIW",
-        description: "waitForCharacterGraphicsOp();"
+        js: "waitForCharacterGraphicsOp();"
       };
     }
 
@@ -530,7 +535,7 @@ class FF7BinaryDataReader {
       let p = $r.readUByte();
       return {
         op: "PMOVA", p: p,
-        description: "moveToPartyMember({partyId:" + p + "});"
+        js: "moveToPartyMember({partyId:" + p + "});"
       };
     }
 
@@ -539,7 +544,7 @@ class FF7BinaryDataReader {
       let sFuncDesc = s == 0 ? "slipOn" : "slipOff";
       return {
         op: "SLIP", s: s,
-        description: sFuncDesc + "();"
+        js: sFuncDesc + "();"
       };
     }
 
@@ -549,7 +554,7 @@ class FF7BinaryDataReader {
       let zDesc = b1 == 0 ? z : "Bank[" + b1 + "][" + z + "]";
       return {
         op: "BGPDH", b1: b1, l: l, z: z,
-        description: "setBackgroundZDepth({layerId:" + l + ", z:" + zDesc + "});"
+        js: "setBackgroundZDepth({layerId:" + l + ", z:" + zDesc + "});"
       };
     }
 
@@ -560,7 +565,7 @@ class FF7BinaryDataReader {
       let yDesc = by == 0 ? y : "Bank[" + by + "][" + y + "]";
       return {
         op: "BGSCR", bx: bx, by: by, l: l, x: x, y: y,
-        description: "scrollBackgroundLayer({layerId:" + l + ", xSpeed:" + x + ", ySpeed:" + y + "});",
+        js: "scrollBackgroundLayer({layerId:" + l + ", xSpeed:" + x + ", ySpeed:" + y + "});",
         pres: "The background scrolls..."
       };
     }
@@ -569,7 +574,7 @@ class FF7BinaryDataReader {
       let w = $r.readUByte();
       return {
         op: "WCLS", w: w,
-        description: "closeWindow({windowId:" + w + "});"
+        js: "closeWindow({windowId:" + w + "});"
       };
     }
 
@@ -577,7 +582,7 @@ class FF7BinaryDataReader {
       let i = $r.readUByte(), x = $r.readUShort(), y = $r.readUShort(), w = $r.readUShort(), h = $r.readUShort();
       return {
         op: "WSIZW", i: i, x: x, y: y, w: w, h: h,
-        description: "resizeWindow({windowId:" + i + ", x:" + x + ", y:" + y + ", width:" + w + ", height:" + h + "});"
+        js: "resizeWindow({windowId:" + i + ", x:" + x + ", y:" + y + ", width:" + w + ", height:" + h + "});"
       };
     }
 
@@ -586,30 +591,30 @@ class FF7BinaryDataReader {
     if (op == 0x30) {
       let b = $r.readUShort();
       let a = $r.readUByte();
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEY", b: b, a: a,
-        description: "if keyPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
       };
     }
 
     if (op == 0x31) {
       let b = $r.readUShort();
       let a = $r.readUByte();
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEYON", b: b, a: a,
-        description: "if keyPressedJustPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressedJustPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
       };
     }
 
     if (op == 0x32) {
       let b = $r.readUShort();
       let a = $r.readUByte();
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEYOFF", b: b, a: a,
-        description: "if keyPressedJustReleased({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressedJustReleased({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
       };
     }
 
@@ -618,7 +623,7 @@ class FF7BinaryDataReader {
       let sDesc = s == 0 ? "M.Movable" : "M.Frozen";
       return {
         op: "UC", s: s,
-        description: "setPlayableCharacterMovability(" + sDesc + ");"
+        js: "setPlayableCharacterMovability(" + sDesc + ");"
       };
     }
 
@@ -627,7 +632,7 @@ class FF7BinaryDataReader {
       let cDesc = this.getCharacterDesc(c);
       return {
         op: "PDIRA", c: c,
-        description: "turnToCharacterOrLeaderInstant({character:" + cDesc + "});"
+        js: "turnToCharacterOrLeaderInstant({character:" + cDesc + "});"
       };
     }
 
@@ -635,7 +640,7 @@ class FF7BinaryDataReader {
       let p = $r.readUByte(), s = $r.readUByte(), a = $r.readUByte();
       return {
         op: "PTURA", p: p, s: s, a: a,
-        description: "turnToPartyMember({partyId:" + p + ", slowness:" + s + ", directionA:" + a + "});"
+        js: "turnToPartyMember({partyId:" + p + ", slowness:" + s + ", directionA:" + a + "});"
       };
     }
 
@@ -643,7 +648,7 @@ class FF7BinaryDataReader {
       let w = $r.readUByte(), t = $r.readUByte(), x = $r.readUByte(), y = $r.readUByte();
       return {
         op: "WSPCL", w: w, t: t, x: x, y: y,
-        description: "createNumericWindow({windowId:" + w + ", type:" + t + ", x:" + x + ", y:" + y + "});"
+        js: "createNumericWindow({windowId:" + w + ", type:" + t + ", x:" + x + ", y:" + y + "});"
       };
     }
 
@@ -654,7 +659,7 @@ class FF7BinaryDataReader {
       let nHighDesc = b2 == 0 ? nHigh : "Bank[" + b2 + "][" + nHigh + "]";
       return {
         op: "WNUMB", b1: b1, b2: b2, w: w, nLow: nLow, nHigh: nHigh, c: c,
-        description: "setNumericWindowDisplayValue({windowId:" + w + ", low:" + nLowDesc + ", high:" + nHighDesc + ", maxDigits:" + c + "});"
+        js: "setNumericWindowDisplayValue({windowId:" + w + ", low:" + nLowDesc + ", high:" + nHighDesc + ", maxDigits:" + c + "});"
       };
     }
 
@@ -667,7 +672,7 @@ class FF7BinaryDataReader {
       let sDesc = b3 == 0 ? s : "Bank[" + b3 + "][" + s + "]";
       return {
         op: "STTIM", b1: b1, b2: b2, b3: b3, h: h, m: m, s: s,
-        description: "setNumericWindowTimeValue({h:" + hDesc + ", m:" + mDesc + ", s:" + sDesc + "});"
+        js: "setNumericWindowTimeValue({h:" + hDesc + ", m:" + mDesc + ", s:" + sDesc + "});"
       };
     }
 
@@ -677,7 +682,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       return {
         op: "GOLDU", b1: b1, a: a,
-        description: "increaseGilBy({increment:" + aDesc + "});"
+        js: "increaseGilBy({increment:" + aDesc + "});"
       };
     }
 
@@ -687,7 +692,7 @@ class FF7BinaryDataReader {
       let aDesc = b1 == 0 ? a : "Bank[" + b1 + "][" + a + "]";
       return {
         op: "GOLDD", b1: b1, a: a,
-        description: "decreaseGilBy({decrement:" + aDesc + "});"
+        js: "decreaseGilBy({decrement:" + aDesc + "});"
       };
     }
 
@@ -698,35 +703,35 @@ class FF7BinaryDataReader {
       let nHighDesc = b2 == 0 ? nHigh : "Bank[" + b2 + "][" + nHigh + "]";
       return {
         op: "CHGLD", b1: b1, b2: b2, nLow: nLow, nHigh: nHigh,
-        description: nLowDesc + " = getGilLow(); " + nHighDesc + " = getGilHigh();"
+        js: nLowDesc + " = getGilLow(); " + nHighDesc + " = getGilHigh();"
       };
     }
 
     if (op == 0x3c) {
       return {
         op: "HMPMAX1",
-        description: "restoreHPMPMax({ver:0x3c});"
+        js: "restoreHPMPMax({ver:0x3c});"
       };
     }
 
     if (op == 0x3d) {
       return {
         op: "HMPMAX2",
-        description: "restoreHPMPMax({ver:0x3d});"
+        js: "restoreHPMPMax({ver:0x3d});"
       };
     }
 
     if (op == 0x3e) {
       return {
         op: "MHMMX",
-        description: "restoreHPMPMax({ver:0x3e});"
+        js: "restoreHPMPMax({ver:0x3e});"
       };
     }
 
     if (op == 0x3f) {
       return {
         op: "HMPMAX2",
-        description: "restoreHPMPMax({ver:0x3f});"
+        js: "restoreHPMPMax({ver:0x3f});"
       };
     }
 
@@ -734,7 +739,7 @@ class FF7BinaryDataReader {
       let n = $r.readUByte(), d = $r.readUByte();
       return {
         op: "MESSAGE", n: n, d: d,
-        description: "showWindowWithDialog({window:" + n + ", dialog:" + d + "}); // " + this.dialogStrings[d]
+        js: "showWindowWithDialog({window:" + n + ", dialog:" + d + "}); // " + this.dialogStrings[d]
       };
     }
 
@@ -743,7 +748,7 @@ class FF7BinaryDataReader {
       let vDesc = b == 0 ? v : "Bank[" + b + "][" + v + "]";
       return {
         op: "MPARA", b: b, w: w, i: i, v: v,
-        description: "setMessageParam({windowId:" + w + ", varId:" + i + ", value:" + vDesc + "});"
+        js: "setMessageParam({windowId:" + w + ", varId:" + i + ", value:" + vDesc + "});"
       };
     }
 
@@ -752,7 +757,7 @@ class FF7BinaryDataReader {
       let vDesc = b == 0 ? v : "Bank[" + b + "][" + v + "]";
       return {
         op: "MPRA2", b: b, w: w, i: i, v: v,
-        description: "setMessageParam({windowId:" + w + ", varId:" + i + ", value:" + vDesc + "});"
+        js: "setMessageParam({windowId:" + w + ", varId:" + i + ", value:" + vDesc + "});"
       };
     }
 
@@ -760,7 +765,7 @@ class FF7BinaryDataReader {
       let dialogId = $r.readUByte();
       return {
         op: "MPNAM", dialogId: dialogId,
-        description: "setMapName({dialog:" + dialogId + "});"
+        js: "setMapName({dialog:" + dialogId + "});"
       };
     }
 
@@ -771,7 +776,7 @@ class FF7BinaryDataReader {
       let vDesc = b == 0 ? v : "Bank[" + b + "][" + v + "]";
       return {
         op: "MPUP", b: b, p: p, v: v,
-        description: "increaseMP({partyId:" + p + ", increment:" + vDesc + "});"
+        js: "increaseMP({partyId:" + p + ", increment:" + vDesc + "});"
       };
     }
 
@@ -782,7 +787,7 @@ class FF7BinaryDataReader {
       let vDesc = b == 0 ? v : "Bank[" + b + "][" + v + "]";
       return {
         op: "MPDWN", b: b, p: p, v: v,
-        description: "decreaseMP({partyId:" + p + ", decrement:" + vDesc + "});"
+        js: "decreaseMP({partyId:" + p + ", decrement:" + vDesc + "});"
       };
     }
 
@@ -792,7 +797,7 @@ class FF7BinaryDataReader {
       let aDesc = ba == 0 ? a : "Bank[" + ba + "][" + a + "]";
       return {
         op: "ASK", ba: ba, w: w, d: d, f: f, l: l, a: a,
-        description: aDesc + " = askQuestion({window:" + w + ", dialog:" + d + ", firstChoice:" + f + ", lastChoice:" + l + "});"
+        js: aDesc + " = askQuestion({window:" + w + ", dialog:" + d + ", firstChoice:" + f + ", lastChoice:" + l + "});"
       };
     }
 
@@ -802,7 +807,7 @@ class FF7BinaryDataReader {
       let pDesc = b == 0 ? p : "Bank[" + b + "][" + p + "]";
       return {
         op: "MENU", b: b, t: t, p: p,
-        description: "callMenu({type:" + t + ", param:" + p + "});"
+        js: "callMenu({type:" + t + ", param:" + p + "});"
       };
     }
 
@@ -811,7 +816,7 @@ class FF7BinaryDataReader {
       let sDesc = s == 0 ? "MM.Accessible" : "MM.Inaccessible";
       return {
         op: "MENU2", s: s,
-        description: "setMainMenuAccessibility(" + sDesc + ");"
+        js: "setMainMenuAccessibility(" + sDesc + ");"
       };
     }
 
@@ -819,7 +824,7 @@ class FF7BinaryDataReader {
       let i = $r.readUByte();
       return {
         op: "BTLTB", i: i,
-        description: "setBattleEncounterTable({index:" + i + "});"
+        js: "setBattleEncounterTable({index:" + i + "});"
       };
     }
 
@@ -830,7 +835,7 @@ class FF7BinaryDataReader {
       let vDesc = b == 0 ? v : "Bank[" + b + "][" + v + "]";
       return {
         op: "HPUP", b: b, p: p, v: v,
-        description: "increaseHP({partyId:" + p + ", increment:" + vDesc + "});"
+        js: "increaseHP({partyId:" + p + ", increment:" + vDesc + "});"
       };
     }
 
@@ -841,7 +846,7 @@ class FF7BinaryDataReader {
       let vDesc = b == 0 ? v : "Bank[" + b + "][" + v + "]";
       return {
         op: "HPDWN", b: b, p: p, v: v,
-        description: "decreaseHP({partyId:" + p + ", decrement:" + vDesc + "});"
+        js: "decreaseHP({partyId:" + p + ", decrement:" + vDesc + "});"
       };
     }
 
@@ -849,7 +854,7 @@ class FF7BinaryDataReader {
       let n = $r.readUByte(), x = $r.readUShort(), y = $r.readUShort(), w = $r.readUShort(), h = $r.readUShort();
       return {
         op: "WINDOW", n: n, x: x, y: y, w: w, h: h,
-        description: "createWindow({window:" + n + ", x:" + x + ", y:" + y + ", width:" + w + ", height:" + h + "});"
+        js: "createWindow({window:" + n + ", x:" + x + ", y:" + y + ", width:" + w + ", height:" + h + "});"
       };
     }
 
@@ -857,7 +862,7 @@ class FF7BinaryDataReader {
       let w = $r.readUByte(), x = $r.readShort(), y = $r.readShort();
       return {
         op: "WMOVE", w: w, x: x, y: y,
-        description: "setWindowPosition({windowId:" + w + ", x:" + x + ", y:" + y + "});"
+        js: "setWindowPosition({windowId:" + w + ", x:" + x + ", y:" + y + "});"
       };
     }
 
@@ -867,7 +872,7 @@ class FF7BinaryDataReader {
       let pDesc = p == 0 ? "Closability.Closable" : p == 1 ? "Closability.NotClosable" : "Closability.UNKNOWN_" + p;
       return {
         op: "WMODE", w: w, m: m, p: p,
-        description: "setWindowModes({windowId:" + w + ", mode:" + m + ", closability:" + p + "});"
+        js: "setWindowModes({windowId:" + w + ", mode:" + m + ", closability:" + p + "});"
       };
     }
 
@@ -875,7 +880,7 @@ class FF7BinaryDataReader {
       let w = $r.readUByte();
       return {
         op: "WREST", w: w,
-        description: "resetWindow({windowId:" + w + "});"
+        js: "resetWindow({windowId:" + w + "});"
       };
     }
 
@@ -883,7 +888,7 @@ class FF7BinaryDataReader {
       let w = $r.readUByte();
       return {
         op: "WCLSE", w: w,
-        description: "closeWindow({windowId:" + w + "});"
+        js: "closeWindow({windowId:" + w + "});"
       };
     }
 
@@ -891,7 +896,7 @@ class FF7BinaryDataReader {
       let w = $r.readUByte(), r = $r.readUByte();
       return {
         op: "WROW", w: w, r: r,
-        description: "setWindowHeightByNumRows({windowId:" + w + ", numRows:" + r + "});"
+        js: "setWindowHeightByNumRows({windowId:" + w + ", numRows:" + r + "});"
       };
     }
 
@@ -905,7 +910,7 @@ class FF7BinaryDataReader {
       let bDesc = b4 == 0 ? b : "Bank[" + b4 + "][" + b + "]";
       return {
         op: "GWCOL", b1: b1, b2: b2, b3: b3, b4: b4, c: c, r: r, g: g, b: b,
-        description: "{ let color = getWindowColor({cornerId:" + cDesc + "}); " + rDesc + " = color.r; " + gDesc + " = color.g; " + bDesc + " = color.b; }"
+        js: "{ let color = getWindowColor({cornerId:" + cDesc + "}); " + rDesc + " = color.r; " + gDesc + " = color.g; " + bDesc + " = color.b; }"
       };
     }
 
@@ -918,8 +923,8 @@ class FF7BinaryDataReader {
       let gDesc = b3 == 0 ? g : "Bank[" + b3 + "][" + g + "]";
       let bDesc = b4 == 0 ? b : "Bank[" + b4 + "][" + b + "]";
       return {
-        op: "GWCOL", b1: b1, b2: b2, b3: b3, b4: b4, c: c, r: r, g: g, b: b,
-        description: "setWindowColor({cornerId:" + cDesc + ", color:{r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + "}});"
+        op: "SWCOL", b1: b1, b2: b2, b3: b3, b4: b4, c: c, r: r, g: g, b: b,
+        js: "setWindowColor({cornerId:" + cDesc + ", color:{r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + "}});"
       };
     }
 
@@ -934,7 +939,7 @@ class FF7BinaryDataReader {
         b2: b2,
         t: t,
         a: a,
-        description: "addItem({item:" + tDesc + ", amount:" + aDesc + "});"
+        js: "addItem({item:" + tDesc + ", amount:" + aDesc + "});"
       };
     }
 
@@ -949,7 +954,7 @@ class FF7BinaryDataReader {
         b2: b2,
         t: t,
         a: a,
-        description: "dropItem({item:" + tDesc + ", amount:" + aDesc + "});"
+        js: "dropItem({item:" + tDesc + ", amount:" + aDesc + "});"
       };
     }
 
@@ -958,7 +963,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "CKITM", b: b, i: i, a: a,
-        description: aDesc + " = getItemCount({itemId:" + i + "});"
+        js: aDesc + " = getItemCount({itemId:" + i + "});"
       };
     }
 
@@ -976,7 +981,7 @@ class FF7BinaryDataReader {
       }
       return {
         op: "SMTRA", b1: b1, b2: b2, b3: b3, b4: b4, t: t, apByte1: apByte1, apByte2: apByte2, apByte3: apByte3,
-        description: "addMateriaToInventory({materiaId:" + t + ", ap:" + apDesc + "});"
+        js: "addMateriaToInventory({materiaId:" + t + ", ap:" + apDesc + "});"
       };
     }
 
@@ -994,7 +999,7 @@ class FF7BinaryDataReader {
       }
       return {
         op: "DMTRA", b1: b1, b2: b2, b3: b3, b4: b4, t: t, apByte1: apByte1, apByte2: apByte2, apByte3: apByte3,
-        description: "deleteMateriaFromInventory({materiaId:" + t + ", ap:" + apDesc + ", amount:" + a + "});"
+        js: "deleteMateriaFromInventory({materiaId:" + t + ", ap:" + apDesc + ", amount:" + a + "});"
       };
     }
 
@@ -1010,14 +1015,14 @@ class FF7BinaryDataReader {
       let s = $r.readUByte();
       return {
         op: "SHAKE", u1: u1, u2: u2, c: c, u3: u3, u4: u4, a: a, s: s,
-        description: "shake({u1:" + u1 + ", u2:" + u2 + ", count:" + c + ", u3:" + u3 + ", u4:" + u4 + ", aplitude:" + a + ", speed:" + s + "});"
+        js: "shake({u1:" + u1 + ", u2:" + u2 + ", count:" + c + ", u3:" + u3 + ", u4:" + u4 + ", aplitude:" + a + ", speed:" + s + "});"
       };
     }
 
     if (op == 0x5f) {
       return {
         op: "NOP",
-        description: "noOp();"
+        js: "noOp();"
       };
     }
 
@@ -1025,15 +1030,15 @@ class FF7BinaryDataReader {
       let f = $r.readUShort(), x = $r.readShort(), y = $r.readShort(), i = $r.readShort(), d = $r.readUByte();
       return {
         op: "MAPJUMP", f: f, x: x, y: y, i: i, d: d,
-        description: "mapJump({fieldId:" + f + ", x:" + x + ", y:" + y + ", triangleId:" + i + ", direction:" + d + "});"
+        js: "mapJump({fieldId:" + f + ", x:" + x + ", y:" + y + ", triangleId:" + i + ", direction:" + d + "});"
       };
     }
 
     if (op == 0x61) {
       let p = $r.readUByte();
       return {
-        op: "SCRLO", u: u,
-        description: "scrollOp0x61({param:" + p + "});",
+        op: "SCRLO", p: p,
+        js: "scrollOp0x61({param:" + p + "});",
         pres: "The camera scrolls..."
       };
     }
@@ -1042,7 +1047,7 @@ class FF7BinaryDataReader {
       let p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte();
       return {
         op: "SCRLC", p1: p1, p2: p2, p3: p3, p4: p4,
-        description: "scrollOp0x62({param1:" + p1 + ", param2:" + p2 + ", param3:" + p3 + ", param4:" + p4 + "});",
+        js: "scrollOp0x62({param1:" + p1 + ", param2:" + p2 + ", param3:" + p3 + ", param4:" + p4 + "});",
         pres: "The camera scrolls..."
       };
     }
@@ -1052,7 +1057,7 @@ class FF7BinaryDataReader {
       let sDesc = b == 0 ? s : "Bank[" + b + "][" + s + "]";
       return {
         op: "SCRLA", b: b, s: s, e: e, t: t,
-        description: "scrollToEntity({speedInFrame:" + sDesc + ", entityId:" + e + ", scrollType:" + t + "});",
+        js: "scrollToEntity({speedInFrame:" + sDesc + ", entityId:" + e + ", scrollType:" + t + "});",
         pres: "The camera pans to <E" + e + ">."
       };
     }
@@ -1068,14 +1073,14 @@ class FF7BinaryDataReader {
         b2: b2,
         targetX: targetX,
         targetY: targetY,
-        description: "scroll({x:" + xDesc + ", y:" + yDesc + "});"
+        js: "scroll({x:" + xDesc + ", y:" + yDesc + "});"
       };
     }
 
     if (op == 0x65) {
       return {
         op: "SCRCC",
-        description: "scrollToCurrentPlayableCharacter();"
+        js: "scrollToCurrentPlayableCharacter();"
       };
     }
 
@@ -1088,14 +1093,14 @@ class FF7BinaryDataReader {
       let sDesc = b3 == 0 ? s : "Bank[" + b3 + "][" + s + "]";
       return {
         op: "SCR2DC", b1: b1, b2: b2, b3: b3, x: x, y: y, s: s,
-        description: "scrollSmooth({x:" + xDesc + ", y:" + yDesc + ", speed:" + sDesc + "});"
+        js: "scrollSmooth({x:" + xDesc + ", y:" + yDesc + ", speed:" + sDesc + "});"
       };
     }
 
     if (op == 0x67) {
       return {
         op: "SCRLW",
-        description: "waitForScroll();"
+        js: "waitForScroll();"
       };
     }
 
@@ -1107,8 +1112,8 @@ class FF7BinaryDataReader {
       let yDesc = b2 == 0 ? y : "Bank[" + b2 + "][" + y + "]";
       let sDesc = b3 == 0 ? s : "Bank[" + b3 + "][" + s + "]";
       return {
-        op: "SCR2DC", b1: b1, b2: b2, b3: b3, x: x, y: y, s: s,
-        description: "scrollToCoordsLinear({x:" + xDesc + ", y:" + yDesc + ", s:" + sDesc + ", speed:" + s + "});"
+        op: "SCR2DL", b1: b1, b2: b2, b3: b3, x: x, y: y, s: s,
+        js: "scrollToCoordsLinear({x:" + xDesc + ", y:" + yDesc + ", s:" + sDesc + ", speed:" + s + "});"
       };
     }
 
@@ -1116,7 +1121,7 @@ class FF7BinaryDataReader {
       let p = $r.readUByte();
       return {
         op: "MPDSP", p: p,
-        description: "MPDSPOp0x69({param:" + p + "});"
+        js: "MPDSPOp0x69({param:" + p + "});"
       };
     }
 
@@ -1127,7 +1132,7 @@ class FF7BinaryDataReader {
       let yDesc = b2 == 0 ? y : "Bank[" + b2 + "][" + y + "]";
       return {
         op: "VWOFT", b1: b1, b2: b2, x: x, y: y, s: s,
-        description: "VWOFTOp0x6a({x:" + xDesc + ", y:" + yDesc + ", s:" + s + "});"
+        js: "VWOFTOp0x6a({x:" + xDesc + ", y:" + yDesc + ", s:" + s + "});"
       };
     }
 
@@ -1144,7 +1149,7 @@ class FF7BinaryDataReader {
         b1: b1,
         b2: b2,
         r: r, g: g, b: b, s: s, t: t, a: a,
-        description: "fade({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + ", adjust:" + a + "});",
+        js: "fade({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + ", adjust:" + a + "});",
         pres: "The screen fades..."
       };
     }
@@ -1152,7 +1157,7 @@ class FF7BinaryDataReader {
     if (op == 0x6c) {
       return {
         op: "FADEW",
-        description: "waitForFade();",
+        js: "waitForFade();",
         pres: "..."
       };
     }
@@ -1162,7 +1167,7 @@ class FF7BinaryDataReader {
       let sFuncDesc = s == 0 ? "disableCollisionDetection" : "enableCollisionDetection";
       return {
         op: "IDLCK", i: i, s: s,
-        description: sFuncDesc + "({triangleId:" + i + "});",
+        js: sFuncDesc + "({triangleId:" + i + "});",
         pres: "The <I" + i + "> " + (s == 0 ? "no longer blocks" : "blocks")
       };
     }
@@ -1172,7 +1177,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "LSTMP", b: b, a: a,
-        description: aDesc + " = getLastFieldMapId(); // wm does not count"
+        js: aDesc + " = getLastFieldMapId(); // wm does not count"
       };
     }
 
@@ -1181,7 +1186,7 @@ class FF7BinaryDataReader {
       let sDesc = b == 0 ? s : "Bank[" + b + "][" + s + "]";
       return {
         op: "SCRLP", b: b, s: s, e: e, t: t,
-        description: "scrollToPartyMember({speedInFrame:" + sDesc + ", partyId:" + e + ", scrollType:" + t + "});",
+        js: "scrollToPartyMember({speedInFrame:" + sDesc + ", partyId:" + e + ", scrollType:" + t + "});",
         pres: "The camera focuses on <P" + e + ">."
       };
     }
@@ -1191,7 +1196,7 @@ class FF7BinaryDataReader {
       let nDesc = b == 0 ? n : "Bank[" + b + "][" + n + "]";
       return {
         op: "BATTLE", b: b, n: n,
-        description: "startBattle({battle:" + nDesc + "});"
+        js: "startBattle({battle:" + nDesc + "});"
       };
     }
 
@@ -1201,7 +1206,7 @@ class FF7BinaryDataReader {
       return {
         op: "BTLON",
         s: s,
-        description: func + "();",
+        js: func + "();",
         pres: s == 0 ? "Random monsters start showing up." : "Random monsters stop showing up."
       };
     }
@@ -1221,7 +1226,7 @@ class FF7BinaryDataReader {
       if (bits2 & 0b00000001) { descriptions.push("DisableGameOver"); }
       return {
         op: "BTLMD", bits1: bits1, bits2: bits2,
-        description: "setBattleModeOptions(" + descriptions.join(", ") + ");",
+        js: "setBattleModeOptions(" + descriptions.join(", ") + ");",
         pres: descriptions.join(", ")
       };
     }
@@ -1231,7 +1236,7 @@ class FF7BinaryDataReader {
       let dDesc = b == 0 ? d : "Bank[" + b + "][" + d + "]";
       return {
         op: "PGTDR", b: b, p: p, d: d,
-        description: dDesc + " = getPartyMemberDirection({partyId:" + p + "});"
+        js: dDesc + " = getPartyMemberDirection({partyId:" + p + "});"
       };
     }
 
@@ -1240,7 +1245,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "GETPC", b: b, p: p, a: a,
-        description: aDesc + " = getPartyMemberCharacterId({partyId:" + p + "});"
+        js: aDesc + " = getPartyMemberCharacterId({partyId:" + p + "});"
       };
     }
 
@@ -1254,7 +1259,7 @@ class FF7BinaryDataReader {
       let iDesc = b4 == 0 ? i : "Bank[" + b4 + "][" + i + "]";
       return {
         op: "PXYZI", b1: b1, b2: b2, b3: b3, b4: b4, p: p, x: x, y: y, z: z, i: i,
-        description: "{ let pos = getPartyMemberPosition({partyId:" + p + "}); "
+        js: "{ let pos = getPartyMemberPosition({partyId:" + p + "}); "
           + xDesc + " = pos.x; " + yDesc + " = pos.y; " + zDesc + " = pos.z; " + iDesc + " = pos.triangleId; }"
       };
     }
@@ -1267,7 +1272,7 @@ class FF7BinaryDataReader {
       return {
         op: "PLUS!",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = add8bitClamped(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = add8bitClamped(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1279,7 +1284,7 @@ class FF7BinaryDataReader {
       return {
         op: "PLUS2!",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = add16bitClamped(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = add16bitClamped(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1291,7 +1296,7 @@ class FF7BinaryDataReader {
       return {
         op: "MINUS!",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = subtract8bitClamped(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = subtract8bitClamped(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1303,7 +1308,7 @@ class FF7BinaryDataReader {
       return {
         op: "MINUS2!",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = subtract16bitClamped(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = subtract16bitClamped(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1313,7 +1318,7 @@ class FF7BinaryDataReader {
       return {
         op: "INC!",
         b: b, a: a,
-        description: "increment8bitClamped(" + aDesc + ");"
+        js: "increment8bitClamped(" + aDesc + ");"
       };
     }
 
@@ -1323,7 +1328,7 @@ class FF7BinaryDataReader {
       return {
         op: "INC2!",
         b: b, a: a,
-        description: "increment16bitClamped("+ aDesc + ");"
+        js: "increment16bitClamped("+ aDesc + ");"
       };
     }
 
@@ -1333,7 +1338,7 @@ class FF7BinaryDataReader {
       return {
         op: "DEC!",
         b: b, a: a,
-        description: "decrement8bitClamped(" + aDesc + ");"
+        js: "decrement8bitClamped(" + aDesc + ");"
       };
     }
 
@@ -1343,7 +1348,7 @@ class FF7BinaryDataReader {
       return {
         op: "DEC2!",
         b: b, a: a,
-        description: "decrement16bitClamped("+ aDesc + ");"
+        js: "decrement16bitClamped("+ aDesc + ");"
       };
     }
 
@@ -1353,7 +1358,7 @@ class FF7BinaryDataReader {
       return {
         op: "TLKON",
         s: s,
-        description: funcDesc + "();"
+        js: funcDesc + "();"
       };
     }
 
@@ -1362,7 +1367,7 @@ class FF7BinaryDataReader {
       let sDesc = b == 0 ? s : "Bank[" + b + "][" + s + "]";
       return {
         op: "RDMSD", b: b, s: s,
-        description: "setRandomSeed({tableOffset:" + sDesc + "});"
+        js: "setRandomSeed({tableOffset:" + sDesc + "});"
       };
     }
 
@@ -1374,7 +1379,7 @@ class FF7BinaryDataReader {
       return {
         op: "SETBYTE",
         bd: bd, bs: bs, a: a, v: v,
-        description: aDesc + " = " + vDesc + ";"
+        js: aDesc + " = " + vDesc + ";"
       };
     }
 
@@ -1386,7 +1391,7 @@ class FF7BinaryDataReader {
       return {
         op: "SETWORD",
         bd: bd, bs: bs, a: a, v: v,
-        description: aDesc + " = " + vDesc + ";"
+        js: aDesc + " = " + vDesc + ";"
       };
     }
 
@@ -1397,7 +1402,7 @@ class FF7BinaryDataReader {
       return {
         op: "BITON", // SETBIT seems better?
         bd: bd, bs: bs, d: d, bit: bit,
-        description: "setBit({destination:" + dDesc + ", bit:" + bit + "});"
+        js: "setBit({destination:" + dDesc + ", bit:" + bit + "});"
       };
     }
 
@@ -1408,7 +1413,7 @@ class FF7BinaryDataReader {
       return {
         op: "BITOFF", // UNSETBIT seems better?
         bd: bd, bs: bs, d: d, bit: bit,
-        description: "unsetBit({destination:" + dDesc + ", bit:" + bit + "});"
+        js: "unsetBit({destination:" + dDesc + ", bit:" + bit + "});"
       };
     }
 
@@ -1419,7 +1424,7 @@ class FF7BinaryDataReader {
       return {
         op: "BITXOR",
         bd: bd, bs: bs, d: d, bit: bit,
-        description: "toggleBit({destination:" + dDesc + ", bit:" + bit + "});"
+        js: "toggleBit({destination:" + dDesc + ", bit:" + bit + "});"
       };
     }
 
@@ -1431,7 +1436,7 @@ class FF7BinaryDataReader {
       return {
         op: "PLUS",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = add8bit(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = add8bit(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1443,7 +1448,7 @@ class FF7BinaryDataReader {
       return {
         op: "PLUS2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = add16bit(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = add16bit(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1455,7 +1460,7 @@ class FF7BinaryDataReader {
       return {
         op: "MINUS",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = subtract8bit(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = subtract8bit(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1467,7 +1472,7 @@ class FF7BinaryDataReader {
       return {
         op: "MINUS2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = subtract16bit(" + dDesc + ", " + sDesc + ");"
+        js: dDesc + " = subtract16bit(" + dDesc + ", " + sDesc + ");"
       };
     }
 
@@ -1479,7 +1484,7 @@ class FF7BinaryDataReader {
       return {
         op: "MUL",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " * " + sDesc + "; // TODO: cap at 255"
+        js: dDesc + " = " + dDesc + " * " + sDesc + "; // TODO: cap at 255"
       };
     }
 
@@ -1491,7 +1496,7 @@ class FF7BinaryDataReader {
       return {
         op: "MUL2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = "  + dDesc + " * " + sDesc + ";"
+        js: dDesc + " = "  + dDesc + " * " + sDesc + ";"
       };
     }
 
@@ -1503,7 +1508,7 @@ class FF7BinaryDataReader {
       return {
         op: "DIV",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = Math.floor(" + dDesc + " / " + sDesc + ");"
+        js: dDesc + " = Math.floor(" + dDesc + " / " + sDesc + ");"
       };
     }
 
@@ -1515,7 +1520,7 @@ class FF7BinaryDataReader {
       return {
         op: "DIV2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = Math.floor(" + dDesc + " / " + sDesc + ");"
+        js: dDesc + " = Math.floor(" + dDesc + " / " + sDesc + ");"
       };
     }
 
@@ -1527,7 +1532,7 @@ class FF7BinaryDataReader {
       return {
         op: "MOD",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " % " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " % " + sDesc + ";"
       };
     }
 
@@ -1539,7 +1544,7 @@ class FF7BinaryDataReader {
       return {
         op: "MOD2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " % " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " % " + sDesc + ";"
       };
     }
 
@@ -1551,7 +1556,7 @@ class FF7BinaryDataReader {
       return {
         op: "AND",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " & " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " & " + sDesc + ";"
       };
     }
 
@@ -1563,7 +1568,7 @@ class FF7BinaryDataReader {
       return {
         op: "AND2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " & " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " & " + sDesc + ";"
       };
     }
 
@@ -1575,7 +1580,7 @@ class FF7BinaryDataReader {
       return {
         op: "OR",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " | " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " | " + sDesc + ";"
       };
     }
 
@@ -1587,7 +1592,7 @@ class FF7BinaryDataReader {
       return {
         op: "OR2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " | " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " | " + sDesc + ";"
       };
     }
 
@@ -1599,7 +1604,7 @@ class FF7BinaryDataReader {
       return {
         op: "XOR",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " ^ " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " ^ " + sDesc + ";"
       };
     }
 
@@ -1611,7 +1616,7 @@ class FF7BinaryDataReader {
       return {
         op: "XOR2",
         bd: bd, bs: bs, d: d, s: s,
-        description: dDesc + " = " + dDesc + " ^ " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " ^ " + sDesc + ";"
       };
     }
 
@@ -1621,7 +1626,7 @@ class FF7BinaryDataReader {
       return {
         op: "INC",
         b: b, a: a,
-        description: "increment8bit(" + aDesc + ");"
+        js: "increment8bit(" + aDesc + ");"
       };
     }
 
@@ -1631,7 +1636,7 @@ class FF7BinaryDataReader {
       return {
         op: "INC2",
         b: b, a: a,
-        description: "increment16bit("+ aDesc + ");"
+        js: "increment16bit("+ aDesc + ");"
       };
     }
 
@@ -1641,7 +1646,7 @@ class FF7BinaryDataReader {
       return {
         op: "DEC",
         b: b, a: a,
-        description: "decrement8bit(" + aDesc + ");"
+        js: "decrement8bit(" + aDesc + ");"
       };
     }
 
@@ -1651,7 +1656,7 @@ class FF7BinaryDataReader {
       return {
         op: "DEC2",
         b: b, a: a,
-        description: "decrement16bit("+ aDesc + ");"
+        js: "decrement16bit("+ aDesc + ");"
       };
     }
 
@@ -1661,7 +1666,7 @@ class FF7BinaryDataReader {
       return {
         op: "RANDOM",
         b: b, a: a,
-        description: "set8bit(" + aDesc + ", Math.floor(Math.random() * 256));"
+        js: "set8bit(" + aDesc + ", Math.floor(Math.random() * 256));"
       };
     }
 
@@ -1673,7 +1678,7 @@ class FF7BinaryDataReader {
       return {
         op: "LBYTE",
         bd: bd, bs: bs, d: d, s: s,
-        description: "set8bit(" + dDesc + ", get8bit(" + sDesc + "));"
+        js: "set8bit(" + dDesc + ", get8bit(" + sDesc + "));"
       };
     }
 
@@ -1685,7 +1690,7 @@ class FF7BinaryDataReader {
       return {
         op: "HBYTE",
         bd: bd, bs: bs, d: d, s: s,
-        description: "set8bit(" + dDesc + ", getHighByte(" + sDesc + "));"
+        js: "set8bit(" + dDesc + ", getHighByte(" + sDesc + "));"
       };
     }
 
@@ -1699,7 +1704,7 @@ class FF7BinaryDataReader {
       return {
         op: "2BYTE",
         b1: b1, b2: b2, b3: b3, d: d, l: l, h: h,
-        description: "setTwoBytes(" + dDesc + ", " + lDesc + ", " + hDesc + ");"
+        js: "setTwoBytes(" + dDesc + ", " + lDesc + ", " + hDesc + ");"
       };
     }
 
@@ -1707,7 +1712,7 @@ class FF7BinaryDataReader {
       let p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte(), p5 = $r.readUByte(), p6 = $r.readUByte();
       return {
         op: "SETX", p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6,
-        description: "setX(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ");"
+        js: "setX(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ");"
       };
     }
 
@@ -1715,7 +1720,7 @@ class FF7BinaryDataReader {
       let p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte(), p5 = $r.readUByte(), p6 = $r.readUByte();
       return {
         op: "GETX", p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6,
-        description: "getX(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ");"
+        js: "getX(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ");"
       };
     }
 
@@ -1731,7 +1736,7 @@ class FF7BinaryDataReader {
       return {
         op: "SEARCHX",
         b1: b1, b2: b2, b3: b3, b4: b4, b6: b6, i: i, s: s, e: e, v: v, r: r,
-        description: rDesc + " = searchAndGetIndexOfValueInBank({bank: Bank[" + b1 + "], offset:" + i + ", startOffset:" + sDesc + ", endOffset:" + eDesc + ", value:" + vDesc + "});"
+        js: rDesc + " = searchAndGetIndexOfValueInBank({bank: Bank[" + b1 + "], offset:" + i + ", startOffset:" + sDesc + ", endOffset:" + eDesc + ", value:" + vDesc + "});"
       };
     }
 
@@ -1740,7 +1745,7 @@ class FF7BinaryDataReader {
       let cDesc = this.getCharacterDesc(c);
       return {
         op: "PC", c: c,
-        description: "thisIsAPlayableCharacter(" + cDesc + ");"
+        js: "thisIsAPlayableCharacter(" + cDesc + ");"
       };
     }
 
@@ -1748,7 +1753,7 @@ class FF7BinaryDataReader {
       let n = $r.readUByte();
       return {
         op: "CHAR", n: n,
-        description: "thisIsACharacterFieldModel(" + n + ");"
+        js: "thisIsAFieldModel(" + n + ");"
       };
     }
 
@@ -1756,7 +1761,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), s = $r.readUByte();
       return {
         op: "DFANM", a: a, s: s,
-        description: "playAnimationLoop({animation:" + a + ", slowness:" + s + "});"
+        js: "playAnimationLoop({animation:" + a + ", slowness:" + s + "});"
       };
     }
 
@@ -1764,7 +1769,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), s = $r.readUByte();
       return {
         op: "ANIME1", a: a, s: s,
-        description: "playAnimationSync({animation:" + a + ", slowness:" + s + "});"
+        js: "playAnimationSync({animation:" + a + ", slowness:" + s + "});"
       };
     }
 
@@ -1773,7 +1778,7 @@ class FF7BinaryDataReader {
       let sDesc = s == 0 ? "V.NotVisible" : "V.Visible";
       return {
         op: "VISI", s: s,
-        description: "setVisibilityMode(" + sDesc + ");"
+        js: "setVisibilityMode(" + sDesc + ");"
       };
     }
 
@@ -1787,7 +1792,7 @@ class FF7BinaryDataReader {
       let iDesc = b4 == 0 ? i : "Bank[" + b4 + "][" + i + "]";
       return {
         op: "XYZI", b1: b1, b2: b2, b3: b3, b4: b4, x, y, z, i,
-        description: "placeObject({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", walkmeshTriangle:" + iDesc + "});"
+        js: "placeObject({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", walkmeshTriangle:" + iDesc + "});"
       };
     }
 
@@ -1800,7 +1805,7 @@ class FF7BinaryDataReader {
       let iDesc = b3 == 0 ? i : "Bank[" + b3 + "][" + i + "]";
       return {
         op: "XYI", b1: b1, b2: b2, b3: b3, x, y, i,
-        description: "placeObject({x:" + xDesc + ", y:" + yDesc + ", walkmeshTriangle:" + iDesc + "});"
+        js: "placeObject({x:" + xDesc + ", y:" + yDesc + ", walkmeshTriangle:" + iDesc + "});"
       };
     }
 
@@ -1813,7 +1818,7 @@ class FF7BinaryDataReader {
       let zDesc = b3 == 0 ? z : "Bank[" + b3 + "][" + z + "]";
       return {
         op: "XYZ", b1: b1, b2: b2, b3: b3, x, y, z,
-        description: "placeObject({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + "});"
+        js: "placeObject({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + "});"
       };
     }
 
@@ -1824,7 +1829,7 @@ class FF7BinaryDataReader {
       let yDesc = b2 == 0 ? y : "Bank[" + b2 + "][" + y + "]";
       return {
         op: "MOVE", b1: b1, b2: b2, x, y,
-        description: "walkObjectTo({x:" + xDesc + ", y:" + yDesc + "});" // using standard walk animation, found with animation ID 1 in the field object
+        js: "walkObjectTo({x:" + xDesc + ", y:" + yDesc + "});" // using standard walk animation, found with animation ID 1 in the field object
       };
     }
 
@@ -1835,7 +1840,7 @@ class FF7BinaryDataReader {
       let yDesc = b2 == 0 ? y : "Bank[" + b2 + "][" + y + "]";
       return {
         op: "CMOVE", b1: b1, b2: b2, x, y,
-        description: "moveObjectTo({x:" + xDesc + ", y:" + yDesc + "});" // using no animation
+        js: "moveObjectTo({x:" + xDesc + ", y:" + yDesc + "});" // using no animation
       };
     }
 
@@ -1843,7 +1848,7 @@ class FF7BinaryDataReader {
       let e = $r.readUByte();
       return {
         op: "MOVA", e: e,
-        description: "moveObjectToEntity({entityId:" + e + "});"
+        js: "moveObjectToEntity({entityId:" + e + "});"
       };
     }
 
@@ -1851,14 +1856,14 @@ class FF7BinaryDataReader {
       let g = $r.readUByte(), d = $r.readUByte(), s = $r.readUByte();
       return {
         op: "TURA", g: g, d: d, s: s,
-        description: "turnToEntity({groupId:" + g + ", direction:" + d + ", speed:" + s + "});"
+        js: "turnToEntity({groupId:" + g + ", direction:" + d + ", speed:" + s + "});"
       };
     }
 
     if (op == 0xac) {
       return {
         op: "ANIMW",
-        description: "waitForLastAnimationToFinish();"
+        js: "waitForLastAnimationToFinish();"
       };
     }
 
@@ -1869,7 +1874,7 @@ class FF7BinaryDataReader {
       let yDesc = b2 == 0 ? y : "Bank[" + b2 + "][" + y + "]";
       return {
         op: "FMOVE", b1: b1, b2: b2, x, y,
-        description: "moveFieldObjectTo({x:" + xDesc + ", y:" + yDesc + "});" // using no animation
+        js: "moveFieldObjectTo({x:" + xDesc + ", y:" + yDesc + "});" // using no animation
       };
     }
 
@@ -1877,7 +1882,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), s = $r.readUByte();
       return {
         op: "ANIME1", a: a, s: s,
-        description: "playAnimationAsync({animation:" + a + ", slowness:" + s + "});"
+        js: "playAnimationAsync({animation:" + a + ", slowness:" + s + "});"
       };
     }
 
@@ -1885,7 +1890,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), s = $r.readUByte();
       return {
         op: "ANIM!1", a: a, s: s,
-        description: "playAnimationOnceAsync({animation:" + a + ", slowness:" + s + "});"
+        js: "playAnimationOnceAsync({animation:" + a + ", slowness:" + s + "});"
       };
     }
 
@@ -1893,7 +1898,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), f = $r.readUByte(), l = $r.readUByte(), s = $r.readUByte();
       return {
         op: "CANIM1", a: a, f: f, l: l, s: s,
-        description: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
+        js: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
       };
     }
 
@@ -1901,7 +1906,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), f = $r.readUByte(), l = $r.readUByte(), s = $r.readUByte();
       return {
         op: "CANM!1", a: a, f: f, l: l, s: s,
-        description: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
+        js: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
       };
     }
 
@@ -1910,7 +1915,7 @@ class FF7BinaryDataReader {
       let sDesc = b == 0 ? s : "Bank[" + b + "][" + s + "]";
       return {
         op: "MSPED", b: b, d: s,
-        description: "setMovementSpeed({speed:" + sDesc + "});"
+        js: "setMovementSpeed({speed:" + sDesc + "});"
       };
     }
 
@@ -1919,7 +1924,7 @@ class FF7BinaryDataReader {
       let dDesc = b == 0 ? d : "Bank[" + b + "][" + d + "]";
       return {
         op: "DIR", b: b, d: d,
-        description: "setFacingDirection({direction:" + dDesc + "});"
+        js: "setFacingDirection({direction:" + dDesc + "});"
       };
     }
 
@@ -1928,7 +1933,7 @@ class FF7BinaryDataReader {
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "TURNGEN", b: b, r: r, d: d, s: s, t: t,
-        description: "rotateModel({rotation:" + rDesc + ", direction:" + d + ", steps:" + s + ", stepType:" + t + "});"
+        js: "rotateModel({rotation:" + rDesc + ", direction:" + d + ", steps:" + s + ", stepType:" + t + "});"
       };
     }
 
@@ -1937,7 +1942,7 @@ class FF7BinaryDataReader {
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "TURN", b: b, r: r, d: d, s: s, t: t,
-        description: "rotateModelDeprecatedSync({rotation:" + rDesc + ", direction:" + d + ", steps:" + s + ", stepType:" + t + "});"
+        js: "rotateModelDeprecatedSync({rotation:" + rDesc + ", direction:" + d + ", steps:" + s + ", stepType:" + t + "});"
       };
     }
 
@@ -1945,7 +1950,7 @@ class FF7BinaryDataReader {
       let e = $r.readUByte();
       return {
         op: "DIRA", e: e,
-        description: "setModelDirectionToFaceEntity({entityIndex:" + e + "});"
+        js: "setModelDirectionToFaceEntity({entityIndex:" + e + "});"
       };
     }
 
@@ -1954,7 +1959,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "GETDIR", b: b, e: e, a: a,
-        description: aDesc + " = getEntityDirection({entityIndex:" + e + "});"
+        js: aDesc + " = getEntityDirection({entityIndex:" + e + "});"
       };
     }
 
@@ -1965,7 +1970,7 @@ class FF7BinaryDataReader {
       let yDesc = by == 0 ? y : "Bank[" + by + "][" + y + "]";
       return {
         op: "GETAXY", bx: bx, by: by, e, x, y,
-        description: xDesc + " = getEntityX({entityIndex:" + e + "}); " + yDesc + " = getEntityY({entityIndex:" + e + "})"
+        js: xDesc + " = getEntityX({entityIndex:" + e + "}); " + yDesc + " = getEntityY({entityIndex:" + e + "})"
       };
     }
 
@@ -1973,7 +1978,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), e = $r.readUByte(), a = $r.readUByte();
       return {
         op: "GETAI", b: b, e: e, a: a,
-        description: "Bank[" + b + "][" + a + "] = getTriangleIdUnderEntity({entity:" + e + "});"
+        js: "Bank[" + b + "][" + a + "] = getTriangleIdUnderEntity({entity:" + e + "});"
       };
     }
 
@@ -1981,7 +1986,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), s = $r.readUByte();
       return {
         op: "ANIM!2", a: a, s: s,
-        description: "playAnimationHoldLastFrameSync({animation:" + a + ", slowness:" + s + "});"
+        js: "playAnimationHoldLastFrameSync({animation:" + a + ", slowness:" + s + "});"
       };
     }
 
@@ -1989,7 +1994,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), f = $r.readUByte(), l = $r.readUByte(), s = $r.readUByte();
       return {
         op: "CANIM2", a: a, f: f, l: l, s: s,
-        description: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
+        js: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
       };
     }
 
@@ -1997,7 +2002,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), f = $r.readUByte(), l = $r.readUByte(), s = $r.readUByte();
       return {
         op: "CANM!2", a: a, f: f, l: l, s: s,
-        description: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
+        js: "playPartialAnimation({animation:" + a + ", firstFrame:" + f + ", lastFrame:" + l + ", slowness:" + s + "});"
       };
     }
 
@@ -2006,7 +2011,7 @@ class FF7BinaryDataReader {
       let sDesc = b == 0 ? s : "Bank[" + b + "][" + s + "]";
       return {
         op: "ASPED", b: b, s: s,
-        description: "setAnimationSpeed({speed:" + sDesc + "});"
+        js: "setAnimationSpeed({speed:" + sDesc + "});"
       };
     }
 
@@ -2016,7 +2021,7 @@ class FF7BinaryDataReader {
       let e = $r.readUByte();
       return {
         op: "CC", e: e,
-        description: "setControllableCharacter({entity:" + e + "});"
+        js: "setControllableCharacter({entity:" + e + "});"
       };
     }
 
@@ -2030,7 +2035,7 @@ class FF7BinaryDataReader {
       let hDesc = b4 == 0 ? h : "Bank[" + b4 + "][" + h + "]";
       return {
         op: "JUMP", b1: b1, b2: b2, b3: b3, b4: b4, x: x, y: y, i: i, h: h,
-        description: "makeObjectJump({x:" + xDesc + ", y:" + yDesc + ", triangleId:" + iDesc + ", height:" + hDesc + "});"
+        js: "makeObjectJump({x:" + xDesc + ", y:" + yDesc + ", triangleId:" + iDesc + ", height:" + hDesc + "});"
       };
     }
 
@@ -2044,7 +2049,7 @@ class FF7BinaryDataReader {
       let iDesc = b4 == 0 ? i : "Bank[" + b4 + "][" + i + "]";
       return {
         op: "AXYZI", b1: b1, b2: b2, b3: b3, b4: b4, a: a, x: x, y: y, z: z, i: i,
-        description: "{ let pos = getEntityPosition({entityId:" + a + "}); "
+        js: "{ let pos = getEntityPosition({entityId:" + a + "}); "
           + xDesc + " = pos.x; " + yDesc + " = pos.y; " + zDesc + " = pos.z; " + iDesc + " = pos.triangleId; }"
       };
     }
@@ -2062,7 +2067,7 @@ class FF7BinaryDataReader {
       let kDesc = advanceKeys[k];
       return {
         op: "LADER", b1: b1, b2: b2, b3: b3, b4: b4, x: x, y: y, z: z, i: i, k: k, a: a, d: d, s: s,
-        description: "climbLadder({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", triangleId:" + iDesc +
+        js: "climbLadder({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", triangleId:" + iDesc +
           ", advanceKey:" + kDesc + ", animationId:" + a + ", facingDirection:" + d + ", speed:" + s + "});"
       };
     }
@@ -2077,14 +2082,14 @@ class FF7BinaryDataReader {
       let sDesc = b4 == 0 ? s : "Bank[" + b4 + "][" + s + "]";
       return {
         op: "OFST", b1: b1, b2: b2, b3: b3, b4: b4, x: x, y: y, z: z, s: s,
-        description: "transposeObjectDisplayOnly({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", speed:" + sDesc + "});"
+        js: "transposeObjectDisplayOnly({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", speed:" + sDesc + "});"
       };
     }
 
     if (op == 0xc4) {
       return {
-        op: "OFST",
-        description: "waitForTransposeObjectDisplayOnly();"
+        op: "OFSTW",
+        js: "waitForTransposeObjectDisplayOnly();"
       };
     }
 
@@ -2093,7 +2098,7 @@ class FF7BinaryDataReader {
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "TALKR", b: b, r: r,
-        description: "setInteractibilityRadius({radius:" + r + "});"
+        js: "setInteractibilityRadius({radius:" + r + "});"
       };
     }
 
@@ -2102,7 +2107,7 @@ class FF7BinaryDataReader {
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "SLIDR", b: b, r: r,
-        description: "setCollisionRadius({radius:" + r + "});"
+        js: "setCollisionRadius({radius:" + r + "});"
       };
     }
 
@@ -2111,7 +2116,7 @@ class FF7BinaryDataReader {
       let sDesc = s == 0 ? "S.Solid" : "S.NonSolid";
       return {
         op: "SOLID", s: s,
-        description: "setSolidMode(" + sDesc + ");"
+        js: "setSolidMode(" + sDesc + ");"
       };
     }
 
@@ -2120,7 +2125,7 @@ class FF7BinaryDataReader {
       let cDesc = this.getCharacterDesc(c);
       return {
         op: "PRTYP", c: c,
-        description: "addToParty(" + cDesc + ");"
+        js: "addToParty(" + cDesc + ");"
       };
     }
 
@@ -2129,7 +2134,7 @@ class FF7BinaryDataReader {
       let cDesc = this.getCharacterDesc(c);
       return {
         op: "PRTYM", c: c,
-        description: "removeFromParty(" + cDesc + ");"
+        js: "removeFromParty(" + cDesc + ");"
       };
     }
 
@@ -2140,27 +2145,27 @@ class FF7BinaryDataReader {
       let c3Desc = this.getCharacterDesc(c3);
       return {
         op: "PRTYE", c1: c1, c2: c2, c3: c3,
-        description: "changePartyTo([" + c1Desc + ", " + c2Desc + ", " + c3Desc + "]);"
+        js: "changePartyTo([" + c1Desc + ", " + c2Desc + ", " + c3Desc + "]);"
       };
     }
 
     if (op == 0xcb) {
       let c = $r.readUByte(), a = $r.readUByte();
       let cDesc = this.getCharacterDesc(c);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFPRTYQ", c: c, a: a,
-        description: "if (isCharacterInParty(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
+        js: "if (isCharacterInParty(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
       };
     }
 
     if (op == 0xcc) {
       let c = $r.readUByte(), a = $r.readUByte();
       let cDesc = this.getCharacterDesc(c);
-      let baseOffset = this.offset - 1;
+      let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFMEMBQ", c: c, a: a,
-        description: "if (isCharacterAvailable(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
+        js: "if (isCharacterAvailable(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
       };
     }
 
@@ -2170,7 +2175,7 @@ class FF7BinaryDataReader {
       let cDesc = this.getCharacterDesc(c);
       return {
         op: "MMBud", s: s, c: c,
-        description: sFuncDesc + "(" + cDesc + ");"
+        js: sFuncDesc + "(" + cDesc + ");"
       };
     }
 
@@ -2179,7 +2184,7 @@ class FF7BinaryDataReader {
       let cDesc = this.getCharacterDesc(c);
       return {
         op: "MMBLK", c: c,
-        description: "lockPartyMember(" + cDesc + ");"
+        js: "lockPartyMember(" + cDesc + ");"
       };
     }
 
@@ -2188,7 +2193,7 @@ class FF7BinaryDataReader {
       let cDesc = this.getCharacterDesc(c);
       return {
         op: "MMBUK", c: c,
-        description: "unlockPartyMember(" + cDesc + ");"
+        js: "unlockPartyMember(" + cDesc + ");"
       };
     }
 
@@ -2197,7 +2202,7 @@ class FF7BinaryDataReader {
       let x2 = $r.readShort(), y2 = $r.readShort(), z2 = $r.readShort();
       return {
         op: "LINE", x1: x1, y1: y1, z1: z1, x2: x2, y2: y2, z2: z2,
-        description: "createLineTrigger({x1:" + x1 + ", y1:" + y1 + ", z1:" + z1 + ", x2:" + x2 + ", y2:" + y2 + ", z2:" + z2 + "});"
+        js: "createLineTrigger({x1:" + x1 + ", y1:" + y1 + ", z1:" + z1 + ", x2:" + x2 + ", y2:" + y2 + ", z2:" + z2 + "});"
       };
     }
 
@@ -2207,7 +2212,7 @@ class FF7BinaryDataReader {
       return {
         op: "LINON",
         s: s,
-        description: funcDesc + "();"
+        js: funcDesc + "();"
       };
     }
 
@@ -2217,7 +2222,7 @@ class FF7BinaryDataReader {
       return {
         op: "MPJPO",
         s: s,
-        description: funcDesc + "();"
+        js: funcDesc + "();"
       };
     }
 
@@ -2235,7 +2240,7 @@ class FF7BinaryDataReader {
       let z2Desc = bz2 == 0 ? z2 : "Bank[" + bz2 + "][" + z2 + "]";
       return {
         op: "SLINE", bx1: bx1, by1: by1, bz1: bz1, bx2: bx2, by2: by2, bz2: bz2, x1: x1, y1: y1, z1: z1, x2: x2, y2: y2, z2: z2,
-        description: "setLine({v1: {x:" + x1Desc + ", y:" + y1Desc + ", z:" + z1Desc + "}, v2: {x:" + x2Desc + ", y:" + y2Desc + ", z:" + z2Desc + "}});"
+        js: "setLine({v1: {x:" + x1Desc + ", y:" + y1Desc + ", z:" + z1Desc + "}, v2: {x:" + x2Desc + ", y:" + y2Desc + ", z:" + z2Desc + "}});"
       };
     }
 
@@ -2245,7 +2250,7 @@ class FF7BinaryDataReader {
       let v1 = $r.readUShort(), v2 = $r.readUShort(), v3 = $r.readUShort(), v4 = $r.readUByte();
       return {
         op: "SIN", b1: b1, b2: b2, b3: b3, b4: b4, v1: v1, v2: v2, v3: v3, v4: v4,
-        description: "doMathSinOp0xd4({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
+        js: "doMathSinOp0xd4({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
           ", v1:" + v1 + ", v2:" + v2 + ", v3:" + v3 + ", v4:" + v4 + "});"
       };
     }
@@ -2256,7 +2261,7 @@ class FF7BinaryDataReader {
       let v1 = $r.readUShort(), v2 = $r.readUShort(), v3 = $r.readUShort(), v4 = $r.readUByte();
       return {
         op: "COS", b1: b1, b2: b2, b3: b3, b4: b4, v1: v1, v2: v2, v3: v3, v4: v4,
-        description: "doMathCosOp0xd5({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
+        js: "doMathCosOp0xd5({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
           ", v1:" + v1 + ", v2:" + v2 + ", v3:" + v3 + ", v4:" + v4 + "});"
       };
     }
@@ -2266,7 +2271,7 @@ class FF7BinaryDataReader {
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "TALKR2", b: b, r: r,
-        description: "setInteractibilityRadius({radius:" + r + "});"
+        js: "setInteractibilityRadius({radius:" + r + "});"
       };
     }
 
@@ -2275,7 +2280,7 @@ class FF7BinaryDataReader {
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "SLIDR2", b: b, r: r,
-        description: "setCollisionRadius({radius:" + r + "});"
+        js: "setCollisionRadius({radius:" + r + "});"
       };
     }
 
@@ -2283,14 +2288,14 @@ class FF7BinaryDataReader {
       let i = $r.readUShort();
       return {
         op: "PMJMP", i: i,
-        description: "setFieldJumpId({fieldId:" + i + "});"
+        js: "setFieldJumpId({fieldId:" + i + "});"
       };
     }
 
     if (op == 0xd9) {
       return {
         op: "PMJMP2",
-        description: "doPMJMP2Op0xd9();"
+        js: "doPMJMP2Op0xd9();"
       };
     }
 
@@ -2308,7 +2313,7 @@ class FF7BinaryDataReader {
       return {
         op: "AKAO2",
         b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, akaoOp: akaoOp, p1: p1, p2: p2, p3: p3, p4: p4, p5: p5,
-        description: "musicOp_da_" + stringUtil.toHex2(akaoOp) + "({p1:" + p1Desc + ", p2:" + p2Desc + ", p3:" + p3Desc + ", p4:" + p4Desc + ", p5:" + p5Desc + "});",
+        js: "musicOp_da_" + stringUtil.toHex2(akaoOp) + "({p1:" + p1Desc + ", p2:" + p2Desc + ", p3:" + p3Desc + ", p4:" + p4Desc + ", p5:" + p5Desc + "});",
         pres: "Musical event..."
       };
     }
@@ -2318,7 +2323,7 @@ class FF7BinaryDataReader {
       let funcDesc = s == 0 ? "lockRotatability" : "unlockRotatability";
       return {
         op: "FCFIX", s: s,
-        description: funcDesc + "();",
+        js: funcDesc + "();",
         pres: "<This> is locked facing forward."
       };
     }
@@ -2329,7 +2334,7 @@ class FF7BinaryDataReader {
       let iDesc = actionNames[i];
       return {
         op: "CCANM", a: a, s: s, i: i,
-        description: "setAnimationId({animationId:" + a + ", speed:" + s + ", actionId:" + iDesc + "});",
+        js: "setAnimationId({animationId:" + a + ", speed:" + s + ", actionId:" + iDesc + "});",
         pres: "<This> <Animation>."
       };
     }
@@ -2337,7 +2342,7 @@ class FF7BinaryDataReader {
     if (op == 0xdd) {
       return {
         op: "ANIMB",
-        description: "stopAnimation();",
+        js: "stopAnimation();",
         pres: "<This> stops."
       };
     }
@@ -2345,7 +2350,7 @@ class FF7BinaryDataReader {
     if (op == 0xde) {
       return {
         op: "TURNW",
-        description: "waitForTurn();",
+        js: "waitForTurn();",
         pres: "..."
       };
     }
@@ -2363,8 +2368,8 @@ class FF7BinaryDataReader {
       let sizeDesc = b5 == 0 ? size : "Bank[" + b5 + "][" + size + "]";
       return {
         op: "MPPAL",
-        b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, s: s, d: d, i: i, b: b, g: g, r: r, m: m,
-        description: "multiplyPaletteColors({sourcePaletteId:" + s + ", targetPaletteId:" + d + ", startColor:" + iDesc +
+        b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, s: s, d: d, i: i, b: b, g: g, r: r, size: size,
+        js: "multiplyPaletteColors({sourcePaletteId:" + s + ", targetPaletteId:" + d + ", startColor:" + iDesc +
           ", r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", size:" + sizeDesc + "});",
         pres: "The colors change."
       };
@@ -2378,7 +2383,7 @@ class FF7BinaryDataReader {
       return {
         op: "BGON",
         b1: b1, b2: b2, a: a, l: l,
-        description: "backgroundOn({area:" + aDesc + ", layer:" + l + "});",
+        js: "backgroundOn({area:" + aDesc + ", layer:" + l + "});",
         pres: "<Area:" + aDesc + "> <Layer:" + l + "> appears."
       };
     }
@@ -2391,7 +2396,7 @@ class FF7BinaryDataReader {
       return {
         op: "BGOFF",
         b1: b1, b2: b2, a: a, l: l,
-        description: "backgroundOff({area:" + aDesc + ", layer:" + l + "});",
+        js: "backgroundOff({area:" + aDesc + ", layer:" + l + "});",
         pres: "<Area:" + aDesc + "> <Layer:" + l + "> disappears."
       };
     }
@@ -2401,7 +2406,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "BGROL", b: b, a: a,
-        description: "backgroundRollForward({area:" + aDesc + "});",
+        js: "backgroundRollForward({area:" + aDesc + "});",
         pres: "<Area:" + aDesc + "> rolls forward."
       };
     }
@@ -2411,7 +2416,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "BGROL2", b: b, a: a,
-        description: "backgroundRollBack({area:" + aDesc + "});",
+        js: "backgroundRollBack({area:" + aDesc + "});",
         pres: "<Area:" + aDesc + "> rolls back."
       };
     }
@@ -2421,7 +2426,7 @@ class FF7BinaryDataReader {
       let aDesc = b == 0 ? a : "Bank[" + b + "][" + a + "]";
       return {
         op: "BGCLR", b: b, a: a,
-        description: "clearBackground({area:" + aDesc + "});",
+        js: "clearBackground({area:" + aDesc + "});",
         pres: "<Area:" + aDesc + "> clears."
       };
     }
@@ -2433,7 +2438,7 @@ class FF7BinaryDataReader {
       let aDesc = b2 == 0 ? a : "Bank[" + b2 + "][" + a + "]";
       return {
         op: "STPAL", b1: b1, b2: b2, p: p, a: a,
-        description: "storePalette({paletteId:" + pDesc + ", paletteArrayId:" + aDesc + ", size:" + size + "});"
+        js: "storePalette({paletteId:" + pDesc + ", paletteArrayId:" + aDesc + ", size:" + size + "});"
       };
     }
 
@@ -2444,7 +2449,7 @@ class FF7BinaryDataReader {
       let aDesc = b2 == 0 ? a : "Bank[" + b2 + "][" + a + "]";
       return {
         op: "LDPAL", b1: b1, b2: b2, p: p, a: a,
-        description: "loadPalette({paletteId:" + pDesc + ", paletteArrayId:" + aDesc + ", size:" + size + "});"
+        js: "loadPalette({paletteId:" + pDesc + ", paletteArrayId:" + aDesc + ", size:" + size + "});"
       };
     }
 
@@ -2455,11 +2460,20 @@ class FF7BinaryDataReader {
       let dDesc = b2 == 0 ? d : "Bank[" + b2 + "][" + d + "]";
       return {
         op: "CPPAL", b1: b1, b2: b2, s: s, d: d,
-        description: "copyPalette({sourceArrayId:" + sDesc + ", targetArrayId:" + dDesc + ", size:" + size + "});"
+        js: "copyPalette({sourceArrayId:" + sDesc + ", targetArrayId:" + dDesc + ", size:" + size + "});"
       };
     }
 
-    // e8 MIGHT not be used
+    // quint8 banks[2], posSrc, posDst, start, end;
+    if (op == 0xe8) {
+      let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
+      let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
+      let posSrc = $r.readUByte(), posDst = $r.readUByte(), start = $r.readUByte(), end = $r.readUByte();
+      return {
+        op: "RTPAL", b1: b1, b2: b2, b3: b3, b4: b4, posSrc: posSrc, posDst: posDst, start: start, end: end,
+        js: "copyPalettePartial({posSrc:" + posSrc + ", posDst:" + posDst + ", start:" + start + ", end:" + end + "});"
+      };
+    }
 
     if (op == 0xe9) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
@@ -2474,7 +2488,7 @@ class FF7BinaryDataReader {
       return {
         op: "ADPAL",
         b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, s: s, d: d, b: b, g: g, r: r, size: size,
-        description: "addPaletteColors_0xe9({sourcePaletteId:" + s + ", targetPaletteId:" + d +
+        js: "addPaletteColors_0xe9({sourcePaletteId:" + s + ", targetPaletteId:" + d +
           ", r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", size:" + size + "});"
       };
     }
@@ -2492,18 +2506,32 @@ class FF7BinaryDataReader {
       return {
         op: "MPPAL2",
         b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, s: s, d: d, b: b, g: g, r: r, size: size,
-        description: "multiplyPaletteColors2({sourcePaletteId:" + s + ", targetPaletteId:" + d +
+        js: "multiplyPaletteColors2({sourcePaletteId:" + s + ", targetPaletteId:" + d +
           ", r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", size:" + size + "});"
       };
     }
 
-    // eb, ec not on Wiki
+    if (op == 0xeb) {
+      let p = $r.readUByte(), posSrc = $r.readUByte(), start = $r.readUByte(), size = $r.readUByte();
+      return {
+        op: "STPLS", p: p, posSrc: posSrc, start: start, size: size,
+        js: "storePalette({paletteId:" + p + ", posSrc:" + posSrc + ", start:" + start + ", size:" + size + "});"
+      };
+    }
+
+    if (op == 0xec) {
+      let p = $r.readUByte(), posSrc = $r.readUByte(), start = $r.readUByte(), size = $r.readUByte();
+      return {
+        op: "LDPLS", posSrc: posSrc, p: p, start: start, size: size,
+        js: "loadPalette({posSrc:" + posSrc + ", paletteId:" + p + ", start:" + start + ", size:" + size + "});"
+      };
+    }
 
     if (op == 0xed) {
       let p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte(), p5 = $r.readUByte(), p6 = $r.readUByte(), p7 = $r.readUByte();
       return {
         op: "CPPAL2", p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7,
-        description: "op0xed_CPPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", "+ p7 + ");"
+        js: "op0xed_CPPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", "+ p7 + ");"
       };
     }
 
@@ -2511,7 +2539,7 @@ class FF7BinaryDataReader {
       let p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte(), p5 = $r.readUByte(), p6 = $r.readUByte(), p7 = $r.readUByte();
       return {
         op: "RTPAL2", p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7,
-        description: "op0xee_RTPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", "+ p7 + ");"
+        js: "op0xee_RTPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", "+ p7 + ");"
       };
     }
 
@@ -2520,7 +2548,7 @@ class FF7BinaryDataReader {
       let p6 = $r.readUByte(), p7 = $r.readUByte(), p8 = $r.readUByte(), p9 = $r.readUByte(), p10 = $r.readUByte();
       return {
         op: "ADPAL2", p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7, p8: p8, p9: p9, p10: p10,
-        description: "op0xef_ADPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 +
+        js: "op0xef_ADPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 +
           ", " + p6 + ", " + p7 + ", " + p8 + ", " + p9 + ", " + p10 + ");"
       };
     }
@@ -2529,7 +2557,7 @@ class FF7BinaryDataReader {
       let id = $r.readUByte();
       return {
         op: "MUSIC", id: id,
-        description: "playMusic({song:" + id + "});",
+        js: "playMusic({song:" + id + "});",
         pres: "Song starts: <Song:" + id + ">"
       };
     }
@@ -2541,7 +2569,7 @@ class FF7BinaryDataReader {
       let dDesc = b2 == 0 ? d : "Bank[" + b2 + "][" + d + "]";
       return {
         op: "SOUND", b1: b1, b2: b2, i: i, d: d,
-        description: "playSound({sound:" + iDesc + ", direction:" + dDesc + "});"
+        js: "playSound({sound:" + iDesc + ", direction:" + dDesc + "});"
       };
     }
 
@@ -2559,7 +2587,7 @@ class FF7BinaryDataReader {
       return {
         op: "AKAO",
         b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, akaoOp: akaoOp, p1: p1, p2: p2, p3: p3, p4: p4, p5: p5,
-        description: "musicOp_F2_" + stringUtil.toHex2(akaoOp) + "({p1:" + p1Desc + ", p2:" + p2Desc + ", p3:" + p3Desc + ", p4:" + p4Desc + ", p5:" + p5Desc + "});",
+        js: "musicOp_F2_" + stringUtil.toHex2(akaoOp) + "({p1:" + p1Desc + ", p2:" + p2Desc + ", p3:" + p3Desc + ", p4:" + p4Desc + ", p5:" + p5Desc + "});",
         pres: "Music event."
       };
     }
@@ -2568,7 +2596,7 @@ class FF7BinaryDataReader {
       let id = $r.readUByte();
       return {
         op: "MUSVT", id: id,
-        description: "musicVTOp0xf3({song:" + id + "});"
+        js: "musicVTOp0xf3({song:" + id + "});"
       };
     }
 
@@ -2576,7 +2604,7 @@ class FF7BinaryDataReader {
       let id = $r.readUByte();
       return {
         op: "MUSVM", id: id,
-        description: "musicVMOp0xf4({song:" + id + "});"
+        js: "musicVMOp0xf4({song:" + id + "});"
       };
     }
 
@@ -2585,7 +2613,7 @@ class FF7BinaryDataReader {
       let sDesc = s == 0 ? "M.NotLocked" : "M.Locked";
       return {
         op: "MULCK", s: s,
-        description: "setMusicLockMode(" + sDesc + ");"
+        js: "setMusicLockMode(" + sDesc + ");"
       };
     }
 
@@ -2593,7 +2621,7 @@ class FF7BinaryDataReader {
       let id = $r.readUByte();
       return {
         op: "BMUSC", id: id,
-        description: "setBattleMusic({song:" + id + "});"
+        js: "setBattleMusic({song:" + id + "});"
       };
     }
 
@@ -2601,14 +2629,14 @@ class FF7BinaryDataReader {
       let m = $r.readUByte();
       return {
         op: "PMVIE", m: m,
-        description: "setCurrentMovie({movie:" + m + "});"
+        js: "setCurrentMovie({movie:" + m + "});"
       };
     }
 
     if (op == 0xf9) {
       return {
         op: "MOVIE",
-        description: "playMovie();"
+        js: "playMovie();"
       };
     }
 
@@ -2616,7 +2644,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), a = $r.readUByte();
       return {
         op: "MVIEF", b: b, a: a,
-        description: "Bank[" + b + "][" + a + "] = getCurrentMovieFrame();"
+        js: "Bank[" + b + "][" + a + "] = getCurrentMovieFrame();"
       };
     }
 
@@ -2625,7 +2653,7 @@ class FF7BinaryDataReader {
       let sFuncDesc = s == 0 ? "useMovieCamera" : "stopUsingMovieCamera";
       return {
         op: "MVCAM", s: s,
-        description: sFuncDesc + "();"
+        js: sFuncDesc + "();"
       };
     }
 
@@ -2633,7 +2661,7 @@ class FF7BinaryDataReader {
       let p = $r.readUByte();
       return {
         op: "FMUSC", p: p,
-        description: "musicF({p:" + p + "});"
+        js: "musicF({p:" + p + "});"
       };
     }
 
@@ -2641,7 +2669,7 @@ class FF7BinaryDataReader {
       let i = $r.readUByte(), p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte(), p5 = $r.readUByte(), p6 = $r.readUByte();
       return {
         op: "CMUSC", i: i, p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6,
-        description: "musicC(" + i + ", " + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ");"
+        js: "musicC(" + i + ", " + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ");"
       };
     }
 
@@ -2649,14 +2677,14 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), a = $r.readUByte();
       return {
         op: "CHMST", b: b, a: a,
-        description: "Bank[" + b + "][" + a + "] = isMusicPlaying();"
+        js: "Bank[" + b + "][" + a + "] = isMusicPlaying();"
       };
     }
 
     if (op == 0xff) {
       return {
         op: "GAMEOVER",
-        description: "gameOver();"
+        js: "gameOver();"
       };
     }
 
