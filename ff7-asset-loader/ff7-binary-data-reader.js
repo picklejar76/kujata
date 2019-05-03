@@ -7,6 +7,15 @@ class FF7BinaryDataReader {
     this.buffer = buffer;
     this.offset = 0;
     this.charMap = require("./char-map.js");
+    this.kernelVars = {
+      0xea: "CHAR",
+      0xeb: "ITEM",
+      0xec: "NUM",
+      0xed: "TARGET",
+      0xee: "ATTACK",
+      0xef: "ID",
+      0xf0: "ELEMENT"
+    };
   }
 
   setDialogStrings(dialogStrings) {
@@ -34,6 +43,43 @@ class FF7BinaryDataReader {
       }
     }
     this.offset += len;
+    return s;
+  }
+
+  readKernelString(maxLength) {
+    let s = "";
+    for (let i = 0; i < maxLength; i++) {
+      let c = this.buffer.readUInt8(this.offset + i);
+      if (c == 0xff) {
+        break;
+      } else if (c < 0xe7) {
+        s = s + this.charMap[c];
+      } else if (c >= 0xea && c <= 0xf0) {
+        let v1 = this.buffer.readUInt8(this.offset + i + 1);
+        let v2 = this.buffer.readUInt8(this.offset + i + 2);
+        i += 2;
+        //s = s + "{" + this.kernelVars[c] + "(" + v1 + "," + v2 + ")}";
+        s = s + "{" + this.kernelVars[c] + "}";
+      } else if (c == 0xf8) {
+        let v = this.buffer.readUInt8(this.offset + i + 1);
+        i += 1;
+        s = s + "{COLOR(" + v + ")}";
+      } else if (c == 0xf9) {
+        let v = this.buffer.readUInt8(this.offset + i + 1);
+        i += 1;
+        let v1 = ((v & 0b11000000) >> 6);
+        let v2 =  (v & 0b00111111);
+        let numBytes = v1 * 2 + 4;
+        let newOffset = this.offset + (i-1) - 1 - v2;
+        let oldOffset = this.offset;
+        this.offset = newOffset;
+        let fragment = this.readKernelString(numBytes);
+        this.offset = oldOffset;
+        s = s + fragment;
+      } else {
+        s = s + "<0x" + c.toString(16) + ">";
+      }
+    }
     return s;
   }
 
@@ -2698,14 +2744,14 @@ class FF7BinaryDataReader {
 
   }; // end of readOp()
 
-  printNextBufferDataAsHex() {
+  printNextBufferDataAsHex(numRows=30, numCols=8) {
     console.log();
-    let pad5 = stringUtil.pad5, toHex2 = stringUtil.toHex2;
+    let pad5 = stringUtil.pad5, toHex2 = stringUtil.toHex2, toHex5 = stringUtil.toHex5;
     let hex = "";
-    for (let i=0; i<4; i++) {
-      hex = pad5(this.offset) + " + " + pad5(i*10) + " = " + pad5(this.offset + i*10) + " : ";
-      for (let j=0; j<10; j++) {
-        let pos = this.offset + i*10 + j;
+    for (let i=0; i<numRows; i++) {
+      hex = toHex5(this.offset) + " + " + toHex5(i*numCols) + " = " + toHex5(this.offset + i*numCols) + " : ";
+      for (let j=0; j<numCols; j++) {
+        let pos = this.offset + i*numCols + j;
         if (pos >= this.buffer.length) {
           hex = hex + "EOF";
         } else {
@@ -2714,13 +2760,14 @@ class FF7BinaryDataReader {
         }
       }
       hex = hex + "    ";
-      for (let j=0; j<10; j++) {
-        let pos = this.offset + i*10 + j;
+      for (let j=0; j<numCols; j++) {
+        let pos = this.offset + i*numCols + j;
         if (pos >= this.buffer.length) {
           hex = hex + "";
         } else {
           let c = this.buffer[pos];
-          hex = hex + (c >= 0x20 && c <= 127 ? String.fromCharCode(c) : ".");
+          //hex = hex + (c >= 0x20 && c <= 127 ? String.fromCharCode(c) : ".");
+          hex = hex + (c < 0xd0 ? this.charMap[c] : ".");
         }
       }
       console.log(hex);

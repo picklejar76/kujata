@@ -18,6 +18,12 @@
   "ifalnaJsonFile": "/opt/kujata/ifalna-db/ifalna.json",
   "ifalnaJsonFileDescription": "Location of ifalna.json file containing animation metadata for each field model",
 
+  "inputKernelDirectory": "/opt/ff7/original-data/kernel",
+  "inputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
+
+  "outputKernelDirectory": "/opt/kujata-data/data/kernel",
+  "inputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
+
   "metadataDirectory": "/opt/kujata-data/metadata",
   "metadataDirectoryDescription": "Where the translator will read and write metadata files like scene-graph.json, op-code-usages.json"
 
