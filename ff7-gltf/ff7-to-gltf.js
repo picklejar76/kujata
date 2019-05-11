@@ -13,41 +13,13 @@ const mkdirp = require('mkdirp');
 module.exports = class FF7GltfTranslator {
 
   constructor() {
-    // default animations used to create initial bone rotations, if Ifalna is not used
-    this.DEFAULT_BASE_ANIM_ID_MAP = {
-      "0": "atee",
-      "1": "atee",
-      "2": "avjd",
-      "3": "fgjc",
-      "4": "hoaa",
-      "5": "cace",
-      "6": "ehif",
-      "9": "geaf",
-      "11": "bdfe",
-      "12": "atdc",
-      "13": "bria",
-      "14": "fgad",
-      "15": "gcad",
-      "17": "fcac",
-      "18": "gsia",
-      "19": "dkic",
-      "20": "gmde",
-      "21": "aafe",
-      "23": "anhd",
-      "24": "abcd",
-      "25": "feaf",
-      //"26": "",
-      "27": "hxib",
-      "28": "hccb",
-      "29": "aeae"
-    };
   }
 
   // Translate a FF7 FIELD.LGP's *.HRC file to glTF 2.0 format
   // config = configuration object, see config.json for example
   // hrcFileId = which skeleton to translate, e.g. "AAAA" for AAAA.HRC (Cloud)
   // baseAnimFileId = which animation to use for base structure, e.g. "AAFE" for AAFE.A (Cloud standing)
-  //   null            = use ifalna.json to decide
+  //   null            = use field-model-standing-animations.json to decide
   // animFileIds = which animation(s) to include in the output gltf
   //   null            = don't include any animations
   //   []              = include all animations from ifalna.json
@@ -57,6 +29,7 @@ module.exports = class FF7GltfTranslator {
   translate_ff7_field_hrc_to_gltf(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures) {
 
     var ifalnaDatabase = JSON.parse(fs.readFileSync(config.ifalnaJsonFile, 'utf-8'));
+    var standingAnimations = JSON.parse(fs.readFileSync(config.metadataDirectory + '/field-model-standing-animations.json', 'utf-8'));
 
     if (!fs.existsSync(config.outputFieldCharDirectory)) {
       console.log("Creating output directory: " + config.outputFieldCharDirectory);
@@ -95,21 +68,10 @@ module.exports = class FF7GltfTranslator {
 
     var baseAnimationData = null;
     if (baseAnimFileId) {
-      // let baseAnimId = baseAnimFileId.toLowerCase();
-      // baseAnimationData = require(config.inputJsonDirectory + "animations/" + baseAnimId + ".a.json");
       baseAnimationData = ALoader.loadA(config, baseAnimFileId);
     } else {
-      let baseAnimFileId = null;
-      let ifalnaEntry = ifalnaDatabase[hrcFileId.toUpperCase()];
-      if (ifalnaEntry && ifalnaEntry["Anims"] && ifalnaEntry["Anims"].length > 0) {
-        baseAnimFileId = ifalnaEntry["Anims"][0];
-        //console.log("Ifalna entry found, using Anims[0]=" + baseAnimFileId + " for base.");
-      } else {
-        baseAnimFileId = this.DEFAULT_BASE_ANIM_ID_MAP["" + skeleton.bones.length];
-        console.log("Ifalna entry NOT found, using default=" + baseAnimFileId + " for base.");
-      }
+      let baseAnimFileId = standingAnimations[hrcFileId.toLowerCase()];
       if (baseAnimFileId) {
-        // baseAnimationData = require(config.inputJsonDirectory + "animations/" + baseAnimId + ".a.json");
         baseAnimationData = ALoader.loadA(config, baseAnimFileId);
       } else {
         console.log("Warning: Not using base animation; model may look funny without bone rotations.");

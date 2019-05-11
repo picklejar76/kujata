@@ -1,17 +1,19 @@
 const fs = require("fs");
-const FF7GltfTranslator = require("./ff7-gltf/ff7-to-gltf.js");
+const FF7FieldAnimationTranslator = require("./ff7-field-animation-translator.js");
 
-var config = JSON.parse(require("fs").readFileSync("config.json"));
+var config = JSON.parse(fs.readFileSync("../config.json"));
 
-let gltfTranslator = new FF7GltfTranslator();
+var fieldAnimationMetadata = JSON.parse(fs.readFileSync(config.metadataDirectory + "/field-animation-metadata.json"));
 
-let hrcFileId = "AAAA";
-let baseAnimFileId = null;
-let animFileIds = [];
-let includeTextures = true;
+var animFileIds = Object.keys(fieldAnimationMetadata);
 
-//gltfTranslator.translate_ff7_field_hrc_to_gltf(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures);
+let translator = new FF7FieldAnimationTranslator();
 
+for (let animFileId of animFileIds) {
+  translator.translateFF7FieldAnimationToGLTF(config, animFileId);
+}
+
+/*
 // translate every *.hrc.json file in the skeletons directory
 let filenames = fs.readdirSync(config.inputFieldCharDirectory);
 for (let i=0; i<filenames.length; i++) {
@@ -26,3 +28,4 @@ for (let i=0; i<filenames.length; i++) {
     }
   }
 }
+*/

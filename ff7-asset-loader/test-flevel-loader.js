@@ -27,13 +27,42 @@ console.log("Wrote: " + outputFilename);
 
 // translate all maps and create index
 let opCodeUsages = {};
+let fieldModelMetadata = {};
+let fieldAnimationMetadata = {};
+var getMetadata = function(container, key1) {
+  let meta = container[key1];
+  if (!meta) {
+    meta = {
+      fieldStats: {},
+      animationStats: {
+        stand: {},
+        walk: {},
+        run: {},
+        other: {}
+      }
+    };
+    container[key1] = meta;
+  }
+  return meta;
+};
+var getFieldModelMetadata = function(hrcId) {
+  return getMetadata(fieldModelMetadata, hrcId);
+}
+var getFieldAnimationMetadata = function(animId) {
+  return getMetadata(fieldAnimationMetadata, animId);
+}
+var incrementStat = function(statsContainer, statName) {
+  let count = statsContainer[statName] || 0;
+  statsContainer[statName] = count + 1;
+};
+
 for (let fieldName of mapList) {
   if (fieldName && !fieldName.startsWith("wm")) {
     try {
       let flevel = flevelLoader.loadFLevel(config, fieldName);
       let outputFilename = config.outputFieldFLevelDirectory + '/' + fieldName + '.json';
-      fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
-      console.log("Wrote: " + fieldName + '.json');
+      ////fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
+      ////console.log("Wrote: " + fieldName + '.json');
       for (let entity of flevel.script.entities) {
         for (let script of entity.scripts) {
           for (let i=0; i<script.ops.length; i++) {
@@ -57,6 +86,22 @@ for (let fieldName of mapList) {
           }
         }
       }
+      for (let loader of flevel.model.modelLoaders) {
+        let hrcId = loader.hrcId.substring(0, 4).toLowerCase();
+        let meta1 = getFieldModelMetadata(hrcId);
+        incrementStat(meta1, "numFieldModelLoaders");
+        incrementStat(meta1.fieldStats, fieldName);
+        for (let a=0; a<loader.animations.length; a++) {
+          let animId = loader.animations[a].substring(0, 4).toLowerCase();
+          let meta2 = getFieldAnimationMetadata(animId);
+          if      (a==0) { incrementStat(meta1.animationStats.stand, animId); incrementStat(meta2.animationStats.stand, hrcId); }
+          else if (a==1) { incrementStat(meta1.animationStats.walk,  animId); incrementStat(meta2.animationStats.walk,  hrcId); }
+          else if (a==2) { incrementStat(meta1.animationStats.run,   animId); incrementStat(meta2.animationStats.run,   hrcId); }
+          else           { incrementStat(meta1.animationStats.other, animId); incrementStat(meta2.animationStats.other, hrcId); }
+          incrementStat(meta2, "numFieldModelLoaders");
+          incrementStat(meta2.fieldStats, fieldName);
+        }
+      }
     } catch(e) {
       let errorMessage = "" + e;
       if (errorMessage.includes("no such file or directory")) {
@@ -71,6 +116,8 @@ for (let fieldName of mapList) {
 for (let opHex of Object.keys(opCodeUsages)) {
   let usages = opCodeUsages[opHex];
   let filename = config.metadataDirectory + '/op-code-usages/' + opHex + '.json';
-  fs.writeFileSync(filename, JSON.stringify(usages, null, 2));
-  console.log("Wrote: " + filename);
+  ////fs.writeFileSync(filename, JSON.stringify(usages, null, 2));
+  ////console.log("Wrote: " + filename);
 }
+fs.writeFileSync(config.metadataDirectory + '/field-model-metadata.json', JSON.stringify(fieldModelMetadata, null, 2));
+fs.writeFileSync(config.metadataDirectory + '/field-animation-metadata.json', JSON.stringify(fieldAnimationMetadata, null, 2));
