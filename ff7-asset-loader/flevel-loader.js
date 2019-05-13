@@ -228,6 +228,59 @@ module.exports = class FLevelLoader {
       flevel.model.modelLoaders.push(modelLoader);
     }
 
+    // Section 1/2: Camera
+    r.offset = flevel.sectionOffsets[1];
+    var sectionOffset = r.offset;        // flevel.sectionOffsets[i]     // this offset is relative to the beginning of file
+    let cameraSectionLength = r.readUInt();
+    var sectionOffsetBase = r.offset;    // flevel.sectionOffsets[i] + 4 // offsets within section are relative to this offset
+    var readCameraVector = function() {
+      return {
+        x: r.readShort(),
+        y: r.readShort(),
+        z: r.readShort()
+      }
+    }
+    flevel.cameraSection = {
+      cameras: []
+    };
+    let camera = {
+      xAxis: readCameraVector(),
+      yAxis: readCameraVector(),
+      zAxis: readCameraVector(),
+      zz: r.readShort(),
+      position: { x: r.readInt(), y: r.readInt(), z: r.readInt() },
+      blank: r.readInt(),
+      zoom: r.readUShort(),
+      unknown: r.readUShort()
+    }
+    flevel.cameraSection.cameras.push(camera);
+
+    // Section 4/5: Walkmesh
+    r.offset = flevel.sectionOffsets[4];
+    var sectionOffset = r.offset;        // flevel.sectionOffsets[i]     // this offset is relative to the beginning of file
+    let walkmeshSectionLength = r.readUInt();
+    var sectionOffsetBase = r.offset;    // flevel.sectionOffsets[i] + 4 // offsets within section are relative to this offset
+    let numSectors = r.readUInt();
+    flevel.walkmeshSection = {
+      numSectors: numSectors,
+      triangles: [],
+      accessors: []
+    };
+    var readWalkmeshVertex = function() {
+      return {
+        x: r.readShort(),
+        y: r.readShort(),
+        z: r.readShort(),
+        res: r.readShort() // res = Triangle[0].z (padding)
+      }
+    }
+    for (let i=0; i<numSectors; i++) {
+      flevel.walkmeshSection.triangles.push({ vertices: [ readWalkmeshVertex(), readWalkmeshVertex(), readWalkmeshVertex() ] });
+    }
+    for (let i=0; i<numSectors; i++) {
+      flevel.walkmeshSection.accessors.push([r.readShort(), r.readShort(), r.readShort()]);
+    }
+
     // Section 7/8: Triggers
     r.offset = flevel.sectionOffsets[7];
     let sectionEndOffset = flevel.sectionOffsets[8];

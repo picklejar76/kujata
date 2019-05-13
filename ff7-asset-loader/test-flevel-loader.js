@@ -18,7 +18,7 @@ var replacer = function(k, v) {
 
 // translate just 1 map
 /*
-let fieldName = "md8_2"; // md1stin, md1_1, md1_2, nrthmk, junon
+let fieldName = "uutai1"; // md1stin, md1_1, md1_2, nrthmk, junon, uutai1
 let flevel = flevelLoader.loadFLevel(config, fieldName);
 let outputFilename = config.outputFieldFLevelDirectory + '/' + fieldName + '.json';
 fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
@@ -61,8 +61,8 @@ for (let fieldName of mapList) {
     try {
       let flevel = flevelLoader.loadFLevel(config, fieldName);
       let outputFilename = config.outputFieldFLevelDirectory + '/' + fieldName + '.json';
-      ////fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
-      ////console.log("Wrote: " + fieldName + '.json');
+      fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
+      console.log("Wrote: " + fieldName + '.json');
       for (let entity of flevel.script.entities) {
         for (let script of entity.scripts) {
           for (let i=0; i<script.ops.length; i++) {
