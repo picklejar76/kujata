@@ -2,9 +2,14 @@ const fs = require("fs");
 
 module.exports = {
 
-  loadP: function(config, pBaseFilename) {
+  loadP: function(config, pBaseFilename, isBattleModel) {
 
-    var buffer = fs.readFileSync(config.inputFieldCharDirectory + '/' + pBaseFilename + ".P");
+    var buffer = {};
+    if (isBattleModel) {
+      buffer = fs.readFileSync(config.inputBattleBattleDirectory + '/' + pBaseFilename); // e.g. "rtam"
+    } else {
+      buffer = fs.readFileSync(config.inputFieldCharDirectory + '/' + pBaseFilename + ".P");
+    }
     var offset = 0;
 
     var readInt   = function() { let i = buffer.readInt32LE(offset); offset += 4; return i; }

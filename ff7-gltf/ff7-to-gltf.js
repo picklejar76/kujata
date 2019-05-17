@@ -6,6 +6,8 @@ var HrcLoader = require("../ff7-asset-loader/hrc-loader.js");
 var RsdLoader = require("../ff7-asset-loader/rsd-loader.js");
 var PLoader = require("../ff7-asset-loader/p-loader.js");
 var ALoader = require("../ff7-asset-loader/a-loader.js");
+const BattleModelLoader = require("../ff7-asset-loader/battle-model-loader.js");
+const BattleAnimationLoader = require("../ff7-asset-loader/battle-animation-loader.js");
 
 const fs = require("fs");
 const mkdirp = require('mkdirp');
@@ -26,83 +28,131 @@ module.exports = class FF7GltfTranslator {
   //   ["AAFE, "AAGA"] = include only specific animations
   // includeTextures = whether to include textures in the translation (set to false to disable)
 
-  translate_ff7_field_hrc_to_gltf(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures) {
+  translate_ff7_field_hrc_to_gltf(config, hrcFileId, baseAnimFileId, animFileIds, includeTextures, isBattleModel) {
 
     var ifalnaDatabase = JSON.parse(fs.readFileSync(config.ifalnaJsonFile, 'utf-8'));
     var standingAnimations = JSON.parse(fs.readFileSync(config.metadataDirectory + '/field-model-standing-animations.json', 'utf-8'));
+    var outputDirectory = isBattleModel ? config.outputBattleBattleDirectory : config.outputFieldCharDirectory;
 
-    if (!fs.existsSync(config.outputFieldCharDirectory)) {
-      console.log("Creating output directory: " + config.outputFieldCharDirectory);
-      mkdirp.sync(config.outputFieldCharDirectory);
+    if (!fs.existsSync(outputDirectory)) {
+      console.log("Creating output directory: " + outputDirectory);
+      mkdirp.sync(outputDirectory);
     }
 
     var ROOT_X_ROTATION_DEGREES = 180.0;
-    var FRAMES_PER_SECOND = 30.0;
+    var FRAMES_PER_SECOND = null;
+    if (isBattleModel) {
+      FRAMES_PER_SECOND = 15.0;
+    } else {
+      FRAMES_PER_SECOND = 30.0;
+    }
 
-    let skeleton = HrcLoader.loadHrc(config, hrcFileId);
+    let hrcId = hrcFileId.toLowerCase();
+    let skeleton = {};
+
+    if (isBattleModel) {
+      let battleModelLoader = new BattleModelLoader();
+      skeleton = battleModelLoader.loadBattleModel(config, hrcId, true);
+    } else {
+      skeleton = HrcLoader.loadHrc(config, hrcFileId);
+    }
+
     console.log("Translating: " + skeleton.name);
     let numBones = skeleton.bones.length;
 
-    let hrcId = hrcFileId.toLowerCase();
-    if (animFileIds == null) {
-      console.log("Will not translate any animations.");
-      animFileIds = [];
+    // create list of animation files to translate (field only)
+    if (isBattleModel) {
+
     } else {
-      if (animFileIds.length == 0) {
-        console.log("Will translate all animations from Ifalna database.");
-        let ifalnaEntry = ifalnaDatabase[hrcFileId.toUpperCase()];
-        if (ifalnaEntry) {
-          if (ifalnaEntry["Anims"])  { animFileIds = animFileIds.concat(ifalnaEntry["Anims"]);  }
-          if (ifalnaEntry["Anims2"]) { animFileIds = animFileIds.concat(ifalnaEntry["Anims2"]); }
-          if (ifalnaEntry["Anims3"]) { animFileIds = animFileIds.concat(ifalnaEntry["Anims3"]); }
+      if (animFileIds == null) {
+        console.log("Will not translate any field animations.");
+        animFileIds = [];
+      } else {
+        if (animFileIds.length == 0) {
+          console.log("Will translate all field animations from Ifalna database.");
+          let ifalnaEntry = ifalnaDatabase[hrcFileId.toUpperCase()];
+          if (ifalnaEntry) {
+            if (ifalnaEntry["Anims"])  { animFileIds = animFileIds.concat(ifalnaEntry["Anims"]);  }
+            if (ifalnaEntry["Anims2"]) { animFileIds = animFileIds.concat(ifalnaEntry["Anims2"]); }
+            if (ifalnaEntry["Anims3"]) { animFileIds = animFileIds.concat(ifalnaEntry["Anims3"]); }
+          }
         }
       }
     }
-    console.log("Will translate the following animFileIds: ", JSON.stringify(animFileIds, null, 0));
 
     var animationDataList = [];
-    for (let animFileId of animFileIds) {
-      let animationData = ALoader.loadA(config, animFileId);
-      animationDataList.push(animationData);
+    var battleAnimationPack = null;
+    if (isBattleModel) {
+      let battleAnimationFilename = hrcId.substring(0, 2) + "da";
+      console.log("Will translate and include animations from pack: " + battleAnimationFilename);
+      let battleAnimationLoader = new BattleAnimationLoader();
+      let battleModel = skeleton;
+      battleAnimationPack = battleAnimationLoader.loadBattleAnimationPack(config, battleAnimationFilename, battleModel.numBones, battleModel.numBodyAnimations, battleModel.numWeaponAnimations);
+      animationDataList = battleAnimationPack.bodyAnimations;
+      baseAnimationData = battleAnimationPack.bodyAnimations[0];
+    } else {
+      console.log("Will translate the following field animFileIds: ", JSON.stringify(animFileIds, null, 0));
+      for (let animFileId of animFileIds) {
+        let animationData = ALoader.loadA(config, animFileId);
+        animationDataList.push(animationData);
+      }
     }
 
     var baseAnimationData = null;
-    if (baseAnimFileId) {
-      baseAnimationData = ALoader.loadA(config, baseAnimFileId);
+    if (isBattleModel) {
+      baseAnimationData = battleAnimationPack.bodyAnimations[0];
     } else {
-      let baseAnimFileId = standingAnimations[hrcFileId.toLowerCase()];
       if (baseAnimFileId) {
         baseAnimationData = ALoader.loadA(config, baseAnimFileId);
       } else {
-        console.log("Warning: Not using base animation; model may look funny without bone rotations.");
-        let defaultBoneRotations = [];
-        for (let i=0; i<numBones; i++) {
-          defaultBoneRotations.push({ x: 0, y: 0, z: 0 });
+        let baseAnimFileId = standingAnimations[hrcFileId.toLowerCase()];
+        if (baseAnimFileId && !isBattleModel) {
+          baseAnimationData = ALoader.loadA(config, baseAnimFileId);
+        } else {
+          console.log("Warning: Not using base animation; model may look funny without bone rotations.");
+          let defaultBoneRotations = [];
+          for (let i=0; i<numBones; i++) {
+            defaultBoneRotations.push({ x: 30 * Math.PI/180, y: 30 * Math.PI/180, z: 30 * Math.PI/180 });
+          }
+          baseAnimationData = {
+            numFrames: 1,
+            numBones: numBones,
+            rotationOrder1: 1,
+            rotationOrder2: 0,
+            rotationOrder3: 2,
+            animationFrames: [{
+              rootTranslation: { x: 0, y: 0, z: 0 },
+              rootRotation: { x: 0, y: 0, z: 0 },
+              boneRotations: defaultBoneRotations
+            }]
+          };
         }
-        baseAnimationData = {
-          numFrames: 1,
-          numBones: numBones,
-          rotationOrder1: 1,
-          rotationOrder2: 0,
-          rotationOrder3: 2,
-          animationFrames: [{
-            rootTranslation: { x: 0, y: 0, z: 0 },
-            rootRotation: { x: 0, y: 0, z: 0 },
-            boneRotations: defaultBoneRotations
-          }]
-        };
       }
     }
 
-    var rotationOrder = "YXZ"; // TODO: use animation data rotationOrder instead
+    var rotationOrder = null; // TODO: use animation data rotationOrder instead
+    if (isBattleModel) {
+      // TODO: determine if original data specifies rotation order
+      // if so, determine whether the ff7 game actually uses the rotation order specified in the battle model/anim file
+      // if so, use it here
+      rotationOrder = "YXZ";
+    } else {
+      // TODO: determine whether the ff7 game actually uses the rotation order specified in the field model/anim file
+      // if so, use it here
+      rotationOrder = "YXZ"; // TODO: use animation data rotationOrder instead
+    }
 
     if (baseAnimFileId) {
       if (baseAnimationData.numBones != skeleton.bones.length) {
         throw new Error("number of bones do not match between hrcId=" + hrcId + " and baseAnimId=" + baseAnimId);
       }
     }
-    for (let animationData of animationDataList) {
-      if (animationData.numBones != skeleton.bones.length) {
+    //for (let animationData of animationDataList) {
+    for (let i=0; i<animationDataList.length; i++) {
+      let animationData = animationDataList[i];
+      if (!animationData.numBones) {
+        console.log("WARN: animation #" + i + " is blank.");
+      } else if (animationData.numBones != skeleton.bones.length) {
         throw new Error("number of bones do not match between hrcId=" + hrcId + " and animationData=" + animationData);
       }
     }
@@ -115,7 +165,7 @@ module.exports = class FF7GltfTranslator {
     let gltf = {};
     gltf.asset = {
       "version": "2.0",
-      "generator": "ff7-gltf",
+      "generator": "kujata",
     };
     gltf.accessors = [];
     gltf.buffers = [];
@@ -188,19 +238,27 @@ module.exports = class FF7GltfTranslator {
     for (let bone of skeleton.bones) {
       let parentBone = boneMap[bone.parent];
       let meshIndex = undefined; // do not populate node.mesh if this bone does not have one
-      if (bone.rsdBaseFilenames.length > 0) {
+      if (bone.rsdBaseFilenames.length > 0 || (isBattleModel && bone.hasModel != 0)) {
         // this bone has a mesh
-        // TODO: support HRC files that have multiple meshes (rare, but bzhf.hrc is an example)
-        // For now, we just use the first mesh only.
-        let rsdFileId = bone.rsdBaseFilenames[0]; // aaaf.rsd = cloud's head, aaha.rsd = tifa's head
-        let rsdId = rsdFileId.toLowerCase();
-        // let boneMetadata = require(config.inputJsonDirectory + "bones/" + rsdId + ".rsd.json");
-        let boneMetadata = RsdLoader.loadRsd(config, rsdFileId);
+        let boneMetadata = {};
+
+        if (isBattleModel) {
+          boneMetadata = {
+            polygonFilename: bone.polygonFilename,
+            textureBaseFilenames: [] // TODO: add support for battle textures
+          }
+        } else {
+          // TODO: support HRC files that have multiple meshes (rare, but bzhf.hrc is an example)
+          // For now, we just use the first mesh only.
+          let rsdFileId = bone.rsdBaseFilenames[0]; // aaaf.rsd = cloud's head, aaha.rsd = tifa's head
+          let rsdId = rsdFileId.toLowerCase();
+          boneMetadata = RsdLoader.loadRsd(config, rsdFileId);
+        }
 
         let pFileId = boneMetadata.polygonFilename; // aaba.p = cloud's head model
         let pId = pFileId.toLowerCase();
         // let model = require(config.inputJsonDirectory + "models/" + pId + ".p.json");
-        let model = PLoader.loadP(config, pFileId);
+        let model = PLoader.loadP(config, pFileId, isBattleModel);
 
         let mesh = {
             "primitives": [],      // will add 1 primitive per polygonGroup
@@ -252,15 +310,17 @@ module.exports = class FF7GltfTranslator {
 
           // flatten the normal data so that each vertex index maps to 1 vertex normal as well
           let flattenedNormals = [];
-          flattenedNormals.length = numVerticesInGroup;
-          for (let i=0; i<numPolysInGroup; i++) {
-            let polygon = model.polygons[offsetPolyIndex + i];
-            let normal3 = model.normals[polygon.normalIndex3];
-            let normal2 = model.normals[polygon.normalIndex2];
-            let normal1 = model.normals[polygon.normalIndex1];
-            flattenedNormals[polygon.vertexIndex3] = normal3;
-            flattenedNormals[polygon.vertexIndex2] = normal2;
-            flattenedNormals[polygon.vertexIndex1] = normal1;
+          if (model.numNormals > 0) { // Note: it appears that field models have vertex normals, but battle models don't
+            flattenedNormals.length = numVerticesInGroup;
+            for (let i=0; i<numPolysInGroup; i++) {
+              let polygon = model.polygons[offsetPolyIndex + i];
+              let normal3 = model.normals[polygon.normalIndex3];
+              let normal2 = model.normals[polygon.normalIndex2];
+              let normal1 = model.normals[polygon.normalIndex1];
+              flattenedNormals[polygon.vertexIndex3] = normal3;
+              flattenedNormals[polygon.vertexIndex2] = normal2;
+              flattenedNormals[polygon.vertexIndex1] = normal1;
+            }
           }
 
           // 1. create "polygon vertex index" js Buffer + gltf bufferView + gltf accessor
@@ -315,30 +375,33 @@ module.exports = class FF7GltfTranslator {
             });
 
           // 3. create "normal" js Buffer + gltf bufferView + gltf accessor
-          let numNormals = flattenedNormals.length;
-          let normalBuffer = Buffer.alloc(numNormals * 3 * 4); // 3 floats per normal, 4 bytes per float
-          for (let i=0; i<numNormals; i++) {
-            let normal = flattenedNormals[i];
-            normalBuffer.writeFloatLE(normal.x, i*12);
-            normalBuffer.writeFloatLE(normal.y, i*12 + 4);
-            normalBuffer.writeFloatLE(normal.z, i*12 + 8);
-          }
-          allBuffers.push(normalBuffer);
-          numBuffersCreated++;
-          let normalAccessorIndex = numBuffersCreated-1;
-          gltf.accessors.push({
-              "bufferView": normalAccessorIndex,
-              "byteOffset": 0,
-              "type": "VEC3",
-              "componentType": COMPONENT_TYPE.FLOAT,
-              "count": numNormals,
-          });
-          gltf.bufferViews.push({
-              "buffer": 0,
-              "byteLength": normalBuffer.length,
-              "byteStride": 12, // 12 bytes per normal
-              "target": ARRAY_BUFFER
+          var normalAccessorIndex = -1;
+          if (model.numNormals > 0) {
+            let numNormals = flattenedNormals.length;
+            let normalBuffer = Buffer.alloc(numNormals * 3 * 4); // 3 floats per normal, 4 bytes per float
+            for (let i=0; i<numNormals; i++) {
+              let normal = flattenedNormals[i];
+              normalBuffer.writeFloatLE(normal.x, i*12);
+              normalBuffer.writeFloatLE(normal.y, i*12 + 4);
+              normalBuffer.writeFloatLE(normal.z, i*12 + 8);
+            }
+            allBuffers.push(normalBuffer);
+            numBuffersCreated++;
+            normalAccessorIndex = numBuffersCreated-1;
+            gltf.accessors.push({
+                "bufferView": normalAccessorIndex,
+                "byteOffset": 0,
+                "type": "VEC3",
+                "componentType": COMPONENT_TYPE.FLOAT,
+                "count": numNormals,
             });
+            gltf.bufferViews.push({
+                "buffer": 0,
+                "byteLength": normalBuffer.length,
+                "byteStride": 12, // 12 bytes per normal
+                "target": ARRAY_BUFFER
+              });
+          }
 
           // 4. create "vertex color" js Buffer + gltf bufferView + gltf accessor
           let numVertexColors = numVerticesInGroup;
@@ -413,7 +476,7 @@ module.exports = class FF7GltfTranslator {
           let primitive = {
               "attributes": {
                 "POSITION": vertexAccessorIndex,
-                "NORMAL": normalAccessorIndex,
+                // "NORMAL" will be set later below if appropriate
                 "COLOR_0": vertexColorAccessorIndex,
                 // "TEXCOORD_0" will be set later below if appropriate
               },
@@ -421,6 +484,9 @@ module.exports = class FF7GltfTranslator {
               "mode": 4, // triangles
               "material": materialIndex
           };
+          if (model.numNormals > 0) {
+            primitive.attributes["NORMAL"] = model.numNormals > 0 ? normalAccessorIndex : undefined;
+          }
           if (includeTextures) {
             primitive.attributes["TEXCOORD_0"] = polygonGroup.isTextureUsed ? textureCoordAccessorIndex : undefined;
           }
@@ -472,13 +538,19 @@ module.exports = class FF7GltfTranslator {
 
     // animations
     gltf.animations = [];
-    for (let animationData of animationDataList) {
-
+    for (let i=0; i<animationDataList.length; i++) {
+      let animationData = animationDataList[i];
+      if (!animationData.numBones) {
+        console.log("WARN: Skipping empty animation");
+        continue;
+      }
+      let animationName = "body-" + i;
       gltf.animations.push({
-        //"name": animId + "_animation", // TODO: name the animation
+        "name": animationName,
         "channels": [],
         "samplers": []
       });
+      console.log("DEBUG: animationName=" + animationName);
       let animationIndex = gltf.animations.length - 1;
 
       let numFrames = animationData.numFrames;
@@ -588,13 +660,13 @@ module.exports = class FF7GltfTranslator {
       });
 
       // create *.bin file
-      let binFilenameFull = config.outputFieldCharDirectory + "/" + binFilename;
+      let binFilenameFull = outputDirectory + "/" + binFilename;
       fs.writeFileSync(binFilenameFull, combinedBuffer);
       console.log("Wrote: " + binFilenameFull);
     }
 
     // create *.gltf file
-    let gltfFilenameFull = config.outputFieldCharDirectory + "/" + gltfFilename;
+    let gltfFilenameFull = outputDirectory + "/" + gltfFilename;
     fs.writeFileSync(gltfFilenameFull, JSON.stringify(gltf, null, 2));
     console.log("Wrote: " + gltfFilenameFull);
 

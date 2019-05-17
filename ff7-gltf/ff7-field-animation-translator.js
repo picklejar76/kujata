@@ -6,6 +6,8 @@ require("./ff7-gltf-common.js")();
 //var RsdLoader = require("../ff7-asset-loader/rsd-loader.js");
 //var PLoader = require("../ff7-asset-loader/p-loader.js");
 var ALoader = require("../ff7-asset-loader/a-loader.js");
+const BattleModelLoader = require("../ff7-asset-loader/battle-model-loader.js");
+const BattleAnimationLoader = require("../ff7-asset-loader/battle-animation-loader.js");
 
 const fs = require("fs");
 const mkdirp = require('mkdirp');
@@ -34,7 +36,7 @@ module.exports = class FF7FieldAnimationTranslator {
 
     console.log("Will translate the following animFileId: ", animFileId);
 
-    let animationData = ALoader.loadA(config, animFileId);
+    var animationData = ALoader.loadA(config, animFileId);
 
     var gltfFilename = animFileId.toLowerCase() + ".a.gltf";
     var binFilename = animFileId.toLowerCase() + ".a.bin";
@@ -42,7 +44,7 @@ module.exports = class FF7FieldAnimationTranslator {
     let gltf = {};
     gltf.asset = {
       "version": "2.0",
-      "generator": "ff7-gltf",
+      "generator": "kujata",
     };
     gltf.accessors = [];
     gltf.buffers = [];

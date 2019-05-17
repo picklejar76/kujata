@@ -15,6 +15,12 @@
   "outputFieldFLevelDirectory": "/opt/kujata-data/data/field/flevel.lgp",
   "outputFieldFLevelDirectoryDescription": "Where the translator will put output files like maplist.json, md1stin.json",
 
+  "inputBattleBattleDirectory": "/opt/ff7/unpacked/battle/battle.lgp",
+  "inputBattleBattleDirectoryDescription": "Location of files unpacked from battle/battle.lgp like rtaa",
+
+  "outputBattleBattleDirectory": "/opt/kujata-data/data/battle/battle.lgp",
+  "outputBattleBattleDirectoryDescription": "Where the translator will put output battle models",
+
   "ifalnaJsonFile": "/opt/kujata/ifalna-db/ifalna.json",
   "ifalnaJsonFileDescription": "Location of ifalna.json file containing animation metadata for each field model",
 

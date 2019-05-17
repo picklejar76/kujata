@@ -30,6 +30,14 @@ class FF7BinaryDataReader {
   readShort()  { let s = this.buffer.readInt16LE(this.offset);  this.offset += 2; return s; };
   readUShort() { let s = this.buffer.readUInt16LE(this.offset); this.offset += 2; return s; };
 
+  readUByteArray(length) {
+    let array = [];
+    for (let i=0; i<length; i++) {
+      array.push(this.readUByte());
+    }
+    return array;
+  };
+
   peekUByte()  { let b = this.buffer.readUInt8  (this.offset);                    return b; };
 
   readString(len) {
