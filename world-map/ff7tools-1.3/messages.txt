@@ -1,0 +1,62 @@
+00	Midgar Area
+01	Grasslands Area
+02	Junon Area
+03	Corel Area
+04	Gold Saucer Area
+05	Gongaga Area
+06	Cosmo Area
+07	Nibel Area
+08	Rocket Launch Pad Area
+09	Wutai Area
+0a	Woodlands Area
+0b	Icicle Area
+0c	Mideel Area
+0d	North Corel Area
+0e	Cactus Island
+0f	Goblin Island
+10	Round Island
+11	Sea
+12	Bottom of the Sea
+13	Glacier
+14	{CLOUD}{EOL}``We're moving!?''
+15	{CLOUD}{EOL}``This is bad!''
+16	{CLOUD}{EOL}``Hoo boy...There's no way{EOL}    we can walk across now.''
+17	{CLOUD}{EOL}``Not even a Chocobo could make it across...{EOL}    Isn't there a more powerful vehicle?''
+18	{TIFA}{EOL}``Huh? What!?''
+19	{TIFA}{EOL}``W, wait a minute!''
+1a	{TIFA}{EOL}``Whew...The sand flows almost like a river...{EOL}    I guess we can't get in.''
+1b	{TIFA}{EOL}``Not even a Chocobo could make it across...{EOL}    Let's not go in this way.''
+1c	{CID}{EOL}``Whoa, whoa, whoa!''
+1d	{CID}{EOL}``Damn...This's a problem!''
+1e	{CID}{EOL}``You gotta be kidding.''
+1f	{CID}{EOL}``Not even a Chocobo could make it across.''
+20	``Wark!?''
+21	``Wark! Waaaark!!''
+22	``!?''
+23	{CLOUD}{EOL}``Oh man...a breakdown? Now?''
+24	{TIFA}{EOL}``Hey...Why did it quit!?''
+25	{CID}{EOL}``*&$*&, what energy!{EOL}    Damn! You think I'm just gonna give up!?''
+26	{CLOUD}{EOL}``...I got the feeling{EOL}    I'm forgetting something...''
+27	{CLOUD}{EOL}``Hey, would you stay there{EOL}    just a minute?''
+28	{TIFA}{EOL}``...Let's see...where was I going...?''
+29	{TIFA}{EOL}``Please, Chocobo,{EOL}    would you wait just a minute?''
+2a	{CLOUD}{EOL}``...Snow...as far as you can see...{EOL}    Better watch where I walk.''
+2b	{CLOUD}{EOL}``Now for the Chocobo...''{EOL}          Send it back to the stables{EOL}          Turn it loose
+2c	{CLOUD}{EOL}``Watch out.''
+2d	{TIFA}{EOL}``Let's see...should I:''{EOL}          Send the Chocobo back to the stables{EOL}          Turn it loose
+2e	{TIFA}{EOL}``Bye. Take care.''
+2f	{CID}{EOL}``Ok, Chocobo, I'm gonna...''{EOL}          Send ya back to the stables{EOL}          Turn ya loose
+30	{CID}{EOL}``Take care, kid.''
+31	{CLOUD}{EOL}``...First, I gotta do something about her.''
+32	{TIFA}{EOL}``I can't just leave it there...''
+33	{CID}{EOL}``Damn kid! I'll get her no matter what!''
+34	{CLOUD}{EOL}``...I'll place a landmark, and start walking.{EOL}    (Place a landmark by pushing {CYAN}[OK]{WHITE} button)''
+35	[Saving on the World Map]{EOL}On the World Map,{EOL}access the menu anytime and select{EOL}{PURPLE}[SAVE]{WHITE} to save your game.
+36	{CID}{EOL}``Wh, what the hell was that!?{EOL}    That came buzzin' past here{EOL}    like a powerhouse!''
+37	{CLOUD}{EOL}``............?''
+38	{CLOUD}{EOL}``Wh, what the...!?''
+39	How to drive the buggy{EOL}Press the {CYAN}[OK]{WHITE} button to get on.{EOL}Press the {CYAN}[CANCEL]{WHITE} button to get off.{EOL}{EOL}Buggy's can cross{EOL}{PURPLE}shallow rivers and deserts.{WHITE}{EOL}You can even enter Costa del Sol and Junon by{EOL}buggy, by hitching a ride on the 'Cargo Ship'.
+3a	How to fly the Tiny Bronco{EOL}Press the {CYAN}[OK]{WHITE} button to get on.{EOL}Press the {CYAN}[CANCEL]{WHITE} button to get off.{EOL}{EOL}Tiny Bronco can cross{EOL}{PURPLE}shallow waters and rivers.{WHITE}{EOL}Players can get on and off it on the beach.
+3b	How to ride a Chocobo{EOL}Press the {CYAN}[CANCEL]{WHITE} button to get off.{EOL}{EOL}Chocobos will {PURPLE}escape{EOL}whenever a player dismounts.{WHITE}
+3c	{CID}{EOL}``Hey, HEY!{EOL}    What're ya tryin'to do?{EOL}    Break the Highwind?{EOL}    Let's fight on the ground!''
+3d	How to drive a Submarine{EOL}Press the {CYAN}[OK]{WHITE} button to get on{EOL}                                       /move forward.{EOL}Press the {CYAN}[CANCEL]{WHITE} button to get off{EOL}                                       /submerge/float.{EOL}{EOL}Players can get on and off{PURPLE}{EOL}in bays like this one.{WHITE}
