@@ -240,7 +240,7 @@ module.exports = class BattleAnimationLoader {
     return true;
   }
 
-  readBattleAnimation(r, startOffset, bonesVectorLength) {
+  readBattleAnimation(r, startOffset, bonesVectorLength, isWeaponAnim) {
     let animation = {};
     r.offset = startOffset;
 
@@ -323,12 +323,22 @@ module.exports = class BattleAnimationLoader {
 
     r.offset = startOffset + animation.blockLength + 12;
 
-    // final adjustment for bone rotations
-    animation.numBones--; // don't "count" the root bone
-    for (let frame of animation.animationFrames) {
-      frame.rootRotation = frame.boneRotations[0];
-      frame.boneRotations = frame.boneRotations.slice(1);
-    }
+    if (!isWeaponAnim)
+	  {
+	    // final adjustment for bone rotations
+      animation.numBones--; // don't "count" the root bone
+	
+      for (let frame of animation.animationFrames) {
+        frame.rootRotation = frame.boneRotations[0];
+        frame.boneRotations = frame.boneRotations.slice(1);   
+	    }
+	  }
+	  else
+	  {
+	    for (let frame of animation.animationFrames) {
+  		  frame.rootRotation = frame.boneRotations[0];		
+	    }
+	  }
 
     return animation;
   }
@@ -353,11 +363,12 @@ module.exports = class BattleAnimationLoader {
     pack.weaponAnimations = [];
 
     //console.log("DEBUG: pack=" + JSON.stringify(pack, null, 2));
+    let isWeaponAnim = true;
 
     for (let ai=0; ai<numBodyAnimations; ai++) {
       //console.log("DEBUG: reading body animation " + ai);
       let bonesPlusOne = (numBones > 1 ? numBones + 1 : 1);
-      let animation = this.readBattleAnimation(r, r.offset, bonesPlusOne);
+      let animation = this.readBattleAnimation(r, r.offset, bonesPlusOne, !isWeaponAnim);
       pack.bodyAnimations.push(animation);
       if (ai==0) {
         ////console.log("DEBUG: animation 0 first frame = " + JSON.stringify(animation.animationFrames[0], null, 2));
@@ -367,7 +378,7 @@ module.exports = class BattleAnimationLoader {
     //console.log("DEBUG: pack=" + JSON.stringify(pack, null, 2));
 
     for (let ai=0; ai<numWeaponAnimations; ai++) {
-      let animation = this.readBattleAnimation(r, r.offset, 1);
+      let animation = this.readBattleAnimation(r, r.offset, 1, isWeaponAnim);
       pack.weaponAnimations.push(animation);
     }
 
