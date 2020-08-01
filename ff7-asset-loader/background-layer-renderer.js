@@ -142,7 +142,7 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         fs.mkdirSync(folder)
     }
     sharp(
-        new Buffer(data.buffer),
+        Buffer.from(data.buffer),
         { raw: { width: sizeMeta.width, height: sizeMeta.height, channels: sizeMeta.channels } })
         .toFile(filePath)
 }
@@ -169,7 +169,7 @@ const organiseTilesByFeature = (groupedTiles) => {
     }
     return groupedTileLayers
 }
-const renderBackgroundLayers = (flevel, folder) => {
+const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     let tiles = allTiles(flevel)
 
     const sizeMeta = getSizeMetaData(tiles)
@@ -186,16 +186,16 @@ const renderBackgroundLayers = (flevel, folder) => {
     // Draw each grouped tile layer
     for (let i = 0; i < groupedTileLayers.length; i++) {
         const tileGroup = groupedTileLayers[i]
-        const name = `${flevel.script.header.name}_${tileGroup.z}_${tileGroup.layer}_${tileGroup.param}_${tileGroup.state}.png`
+        const name = `${baseFilename}_${tileGroup.z}_${tileGroup.layer}_${tileGroup.param}_${tileGroup.state}.png`
         saveTileGroupImage(flevel, folder, name, tileGroup.tiles, sizeMeta, false)
         tileGroup.fileName = name
         delete tileGroup.tiles
     }
 
-    saveTileGroupImage(flevel, folder, `${flevel.script.header.name}.png`, tiles, sizeMeta, true)
+    saveTileGroupImage(flevel, folder, `${baseFilename}.png`, tiles, sizeMeta, true)
 
     // Write layer metadata to json file
-    fs.writeFileSync(`${folder}/${flevel.script.header.name}.json`, JSON.stringify(groupedTileLayers, null, 2));
+    fs.writeFileSync(`${folder}/${baseFilename}.json`, JSON.stringify(groupedTileLayers, null, 2));
 }
 module.exports = {
     renderBackgroundLayers

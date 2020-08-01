@@ -511,7 +511,7 @@ module.exports = class FLevelLoader {
           width: r.readUShort(),
           height: r.readUShort(),
           tileCount: r.readUShort(),
-          unknown: r.readUByteArray(16),
+          unknown: r.readUByteArray(layerNo == 2 ? 16 : 10),
           tiles: []
         }
         flevel.background.tiles[`layer${layerNo}`].blank = r.readUShort()
@@ -550,7 +550,7 @@ module.exports = class FLevelLoader {
       } if (!fs.existsSync(thisBgFolder)) {
         fs.mkdirSync(thisBgFolder)
       }
-      backgroundLayerRenderer.renderBackgroundLayers(flevel, thisBgFolder)
+      backgroundLayerRenderer.renderBackgroundLayers(flevel, thisBgFolder, baseFilename)
     }
 
     // Clean up json object so it doesn't contain all pallette and texture data
