@@ -11,7 +11,8 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
   - reverse translation (glTF-to-ff7) coming soon
 
 - Translate FF7 field scene data (flevel.lgp) to JSON
-  - translates field scripts, gateways, etc., but not all sections yet
+  - translates field scripts, gateways, tiles, palettes, textures, etc., but not all sections yet
+  - renders separate layers for background images
 
 ## Pre-requisites and setup
 - "git clone" this repo

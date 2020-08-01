@@ -1,36 +1,25 @@
 {
-
   "inputFieldCharDirectory": "/opt/ff7/unpacked/field/char.lgp",
   "inputFieldCharDirectoryDescription": "Location of files unpacked from field/char.lgp like AAAA.HRC",
-
   "outputFieldCharDirectory": "/opt/kujata-data/data/field/char.lgp",
   "outputFieldCharDirectoryDescription": "Where the translator will put output files like aaaa.hrc.gltf, aaaa.hrc.bin",
-
   "texturesDirectory": "textures",
   "texturesDirectoryDescription": "Location of texture files like aabb.png, relative to outputGltfDirectory",
-
   "inputFieldFLevelDirectory": "/opt/ff7/unpacked/field/flevel.lgp",
   "inputFieldFLevelDirectoryDescription": "Location of files unpacked from field/flevel.lgp like maplist, md1stin, flevel.siz, c_eye2.tex",
-
   "outputFieldFLevelDirectory": "/opt/kujata-data/data/field/flevel.lgp",
   "outputFieldFLevelDirectoryDescription": "Where the translator will put output files like maplist.json, md1stin.json",
-
   "inputBattleBattleDirectory": "/opt/ff7/unpacked/battle/battle.lgp",
   "inputBattleBattleDirectoryDescription": "Location of files unpacked from battle/battle.lgp like rtaa",
-
   "outputBattleBattleDirectory": "/opt/kujata-data/data/battle/battle.lgp",
   "outputBattleBattleDirectoryDescription": "Where the translator will put output battle models",
-
   "ifalnaJsonFile": "/opt/kujata/ifalna-db/ifalna.json",
   "ifalnaJsonFileDescription": "Location of ifalna.json file containing animation metadata for each field model",
-
   "inputKernelDirectory": "/opt/ff7/original-data/kernel",
   "inputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
-
   "outputKernelDirectory": "/opt/kujata-data/data/kernel",
   "inputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
-
   "metadataDirectory": "/opt/kujata-data/metadata",
-  "metadataDirectoryDescription": "Where the translator will read and write metadata files like scene-graph.json, op-code-usages.json"
-
+  "metadataDirectoryDescription": "Where the translator will read and write metadata files like scene-graph.json, op-code-usages.json",
+  "renderBackgroundLayers": true
 }

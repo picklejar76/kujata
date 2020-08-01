@@ -9,6 +9,7 @@
   "author": "picklejar76@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "sharp": "^0.25.4"
   }
 }

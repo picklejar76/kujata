@@ -2,6 +2,7 @@ const fs = require("fs");
 const stringUtil = require("./string-util.js");
 const LzsDecompressor = require("../lzs/lzs-decompressor.js");
 const { FF7BinaryDataReader } = require("./ff7-binary-data-reader.js");
+const backgroundLayerRenderer = require("./background-layer-renderer.js");
 
 module.exports = class FLevelLoader {
 
@@ -31,7 +32,7 @@ module.exports = class FLevelLoader {
     flevel.blank = r.readShort(); // always 0x00
     flevel.numSections = r.readInt();
     flevel.sectionOffsets = [];
-    for (let s=0; s<flevel.numSections; s++) {
+    for (let s = 0; s < flevel.numSections; s++) {
       flevel.sectionOffsets.push(r.readInt());
     }
 
@@ -58,19 +59,19 @@ module.exports = class FLevelLoader {
       entitySections: [],
     };
 
-    for (let i=0; i<flevel.script.header.numEntities; i++) {
+    for (let i = 0; i < flevel.script.header.numEntities; i++) {
       flevel.script.header.entityNames.push(r.readString(8));
     }
-    for (let i=0; i<flevel.script.header.numAkaoOffsets; i++) {
+    for (let i = 0; i < flevel.script.header.numAkaoOffsets; i++) {
       flevel.script.header.akaoOffsets.push(r.readInt());
     }
 
-    for (let i=0; i<flevel.script.header.numEntities; i++) {
+    for (let i = 0; i < flevel.script.header.numEntities; i++) {
       let entitySection = {
         entityName: flevel.script.header.entityNames[i],
         entityScriptRoutines: []
       };
-      for (let i=0; i<32; i++) {
+      for (let i = 0; i < 32; i++) {
         entitySection.entityScriptRoutines.push(r.readUShort());
       }
       flevel.script.header.entitySections.push(entitySection);
@@ -83,10 +84,10 @@ module.exports = class FLevelLoader {
     r.offset = sectionOffsetBase + flevel.script.header.stringOffset;
     let numDialogs = r.readUShort();
     let dialogOffsets = [];
-    for (let i=0; i<numDialogs; i++) {
+    for (let i = 0; i < numDialogs; i++) {
       dialogOffsets.push(r.readUShort());
     }
-    for (let i=0; i<numDialogs; i++) {
+    for (let i = 0; i < numDialogs; i++) {
       let dialogOffset = dialogOffsets[i];
       r.offset = sectionOffsetBase + flevel.script.header.stringOffset + dialogOffset;
       let string = r.readDialogString(1000); // TODO: What's the longest dialog string?
@@ -95,13 +96,13 @@ module.exports = class FLevelLoader {
 
     r.setDialogStrings(flevel.script.dialogStrings);
 
-    for (let i=0; i<flevel.script.header.numEntities; i++) {
+    for (let i = 0; i < flevel.script.header.numEntities; i++) {
       let entity = {
         entityName: flevel.script.header.entityNames[i],
         scripts: []
       };
       flevel.script.entities.push(entity);
-      for (let j=0; j<31; j++) { // TODO: support entities with 32 scripts; will need different method of determining endOffset
+      for (let j = 0; j < 31; j++) { // TODO: support entities with 32 scripts; will need different method of determining endOffset
         let numReturnOpsProcessed = 0;
         let numReturnOpsExpected = (j == 0 ? 2 : 1);
         let startOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j];
@@ -112,7 +113,7 @@ module.exports = class FLevelLoader {
         //   r.printNextBufferDataAsHex();
         // }
         if (j > 0) {
-          let prevStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j-1];
+          let prevStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j - 1];
           if (startOffset == prevStartOffset) {
             continue;
           }
@@ -125,19 +126,19 @@ module.exports = class FLevelLoader {
         let done = false;
         // Determine the startOffset for the "next" script (which is the endOffset for the "current" script)
         let nextStartOffset = sectionOffsetBase + flevel.script.header.stringOffset; // default
-        if (j<31) {
+        if (j < 31) {
           // If this is not the last script for this entity, just look at the next script's offset
-          nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j+1];
+          nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j + 1];
         }
-        let isLastScript = (j==31 || nextStartOffset == startOffset);
+        let isLastScript = (j == 31 || nextStartOffset == startOffset);
         if (isLastScript) {
-          let isLastEntity = i == flevel.script.header.numEntities-1;
+          let isLastEntity = i == flevel.script.header.numEntities - 1;
           if (isLastEntity) {
             // If this is the last entity (and last script), assume it's the end of the entire field section (beginning of string/dialog section)
             nextStartOffset = sectionOffsetBase + flevel.script.header.stringOffset;
           } else {
             // If this is not the last entity, just look at the next entity's first script offset
-            nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i+1].entityScriptRoutines[0];
+            nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i + 1].entityScriptRoutines[0];
           }
         }
         while (!done) {
@@ -150,7 +151,7 @@ module.exports = class FLevelLoader {
           } catch (e) {
             console.error("Error while reading op in " + baseFilename + ", entity " + entity.entityName + ", index " + j + ": ", e);
             console.error("Previous ops: " + JSON.stringify(entityScript.ops, null, 2));
-            op = {op:"ERROR", js: "" + e};
+            op = { op: "ERROR", js: "" + e };
             entityScript.ops.push(op);
             process.exit(0);
             break;
@@ -190,6 +191,8 @@ module.exports = class FLevelLoader {
       }
     }
 
+
+
     // Section 2/3: Model Loaders
     r.offset = flevel.sectionOffsets[2];
     var sectionOffset = r.offset;        // flevel.sectionOffsets[i]     // this offset is relative to the beginning of file
@@ -203,7 +206,7 @@ module.exports = class FLevelLoader {
       },
       modelLoaders: []
     };
-    for (let i=0; i<numModels; i++) {
+    for (let i = 0; i < numModels; i++) {
       let modelLoader = {};
       let nameLength = r.readUShort();
       modelLoader.name = r.readString(nameLength);
@@ -211,13 +214,13 @@ module.exports = class FLevelLoader {
       modelLoader.hrcId = r.readString(8);
       modelLoader.scaleString = r.readString(4);
       modelLoader.numAnimations = r.readUShort();
-      modelLoader.light1 = {r: r.readUByte(), g: r.readUByte(), b: r.readUByte(), x: r.readShort(), y: r.readShort(), z: r.readShort()};
-      modelLoader.light2 = {r: r.readUByte(), g: r.readUByte(), b: r.readUByte(), x: r.readShort(), y: r.readShort(), z: r.readShort()};
-      modelLoader.light3 = {r: r.readUByte(), g: r.readUByte(), b: r.readUByte(), x: r.readShort(), y: r.readShort(), z: r.readShort()};
-      modelLoader.globalLight = {r: r.readUByte(), g: r.readUByte(), b: r.readUByte()};
+      modelLoader.light1 = { r: r.readUByte(), g: r.readUByte(), b: r.readUByte(), x: r.readShort(), y: r.readShort(), z: r.readShort() };
+      modelLoader.light2 = { r: r.readUByte(), g: r.readUByte(), b: r.readUByte(), x: r.readShort(), y: r.readShort(), z: r.readShort() };
+      modelLoader.light3 = { r: r.readUByte(), g: r.readUByte(), b: r.readUByte(), x: r.readShort(), y: r.readShort(), z: r.readShort() };
+      modelLoader.globalLight = { r: r.readUByte(), g: r.readUByte(), b: r.readUByte() };
       modelLoader.animations = [];
 
-      for (let j=0; j<modelLoader.numAnimations; j++) {
+      for (let j = 0; j < modelLoader.numAnimations; j++) {
         let animNameLength = r.readUShort();
         let animName = r.readString(animNameLength);
         let unknown = r.readShort();
@@ -233,7 +236,7 @@ module.exports = class FLevelLoader {
     var sectionOffset = r.offset;        // flevel.sectionOffsets[i]     // this offset is relative to the beginning of file
     let cameraSectionLength = r.readUInt();
     var sectionOffsetBase = r.offset;    // flevel.sectionOffsets[i] + 4 // offsets within section are relative to this offset
-    var readCameraVector = function() {
+    var readCameraVector = function () {
       return {
         x: r.readShort(),
         y: r.readShort(),
@@ -266,7 +269,7 @@ module.exports = class FLevelLoader {
       triangles: [],
       accessors: []
     };
-    var readWalkmeshVertex = function() {
+    var readWalkmeshVertex = function () {
       return {
         x: r.readShort(),
         y: r.readShort(),
@@ -274,10 +277,10 @@ module.exports = class FLevelLoader {
         res: r.readShort() // res = Triangle[0].z (padding)
       }
     }
-    for (let i=0; i<numSectors; i++) {
-      flevel.walkmeshSection.triangles.push({ vertices: [ readWalkmeshVertex(), readWalkmeshVertex(), readWalkmeshVertex() ] });
+    for (let i = 0; i < numSectors; i++) {
+      flevel.walkmeshSection.triangles.push({ vertices: [readWalkmeshVertex(), readWalkmeshVertex(), readWalkmeshVertex()] });
     }
-    for (let i=0; i<numSectors; i++) {
+    for (let i = 0; i < numSectors; i++) {
       flevel.walkmeshSection.accessors.push([r.readShort(), r.readShort(), r.readShort()]);
     }
 
@@ -300,24 +303,24 @@ module.exports = class FLevelLoader {
     };
     flevel.triggers.header.bgLayer3 = {};
     flevel.triggers.header.bgLayer4 = {};
-    let off0x20 = [ r.readByte(), r.readByte(), r.readByte(), r.readByte() ];
+    let off0x20 = [r.readByte(), r.readByte(), r.readByte(), r.readByte()];
     flevel.triggers.header.bgLayer3.animation = { width: r.readUShort(), height: r.readUShort() };
     flevel.triggers.header.bgLayer4.animation = { width: r.readUShort(), height: r.readUShort() };
     let off0x32 = [];
-    for (let i=0; i<24; i++) {
+    for (let i = 0; i < 24; i++) {
       off0x32.push(r.readByte());
     }
     //flevel.triggers.header.bgLayer34Unknown = {off0x20: off0x20, off0x32: off0x32}; // TODO: unknowns
 
     flevel.triggers.gateways = [];
-    for (let i=0; i<12; i++) {
+    for (let i = 0; i < 12; i++) {
       let gateway = {
         exitLineVertex1: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
         exitLineVertex2: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
         destinationVertex: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
         fieldId: r.readUShort()
       };
-      let unknown = [ r.readByte(), r.readByte(), r.readByte(), r.readByte() ];
+      let unknown = [r.readByte(), r.readByte(), r.readByte(), r.readByte()];
       if (gateway.fieldId != 32767) {
         if (gateway.fieldId < this.mapList.length) {
           gateway.fieldName = this.mapList[gateway.fieldId];
@@ -327,7 +330,7 @@ module.exports = class FLevelLoader {
     }
 
     flevel.triggers.triggers = [];
-    for (let i=0; i<12; i++) {
+    for (let i = 0; i < 12; i++) {
       let trigger = {
         cornerVertex1: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
         cornerVertex2: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
@@ -339,21 +342,230 @@ module.exports = class FLevelLoader {
       flevel.triggers.triggers.push(trigger);
     }
 
-    // TODO: interpret this data better, consider combining showArrows and gatewayArrows, consider reoving "empty" instances
+    // TODO: interpret this data better, consider combining showArrows and gatewayArrows, consider removing "empty" instances
     flevel.triggers.shownArrows = [];
-    for (let i=0; i<12; i++) {
+    for (let i = 0; i < 12; i++) {
       flevel.triggers.shownArrows.push(r.readByte());
     }
     flevel.triggers.gatewayArrows = [];
-    for (let i=0; i<12; i++) {
+    for (let i = 0; i < 12; i++) {
       let gatewayArrow = { x: r.readInt(), z: r.readInt(), y: r.readInt(), type: r.readInt() };
       flevel.triggers.gatewayArrows.push(gatewayArrow);
     }
 
-    var replacer = function(k, v) {
+    var replacer = function (k, v) {
       if (k == "entitySections") { return undefined; }
       return v;
     };
+
+
+
+    // Section 3/4: Palette
+    r.offset = flevel.sectionOffsets[3]
+    flevel.palette = {
+      length: r.readUInt(),
+      header: {
+        length: r.readUInt(),
+        palX: r.readUShort(),
+        palY: r.readUShort(),
+        colorsPerPage: r.readUShort(),
+        pageCount: r.readUShort()
+      },
+      pages: []
+    }
+    let COEFF_COLOR = 255 / 31 // eg translate 5 bit color to 8 bit
+    const getColor = (bytes) => {
+      const color = {
+        r: Math.round((bytes & 31) * COEFF_COLOR),
+        g: Math.round((bytes >> 5 & 31) * COEFF_COLOR),
+        b: Math.round((bytes >> 10 & 31) * COEFF_COLOR)
+      }
+      color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
+      return color
+    }
+    for (let i = 0; i < flevel.palette.header.pageCount; i++) {
+      let page = []
+      for (let j = 0; j < flevel.palette.header.colorsPerPage; j++) {
+        let bytes = r.readShort()
+        const color = getColor(bytes)
+        page.push(color)
+      }
+      flevel.palette.pages.push(page)
+    }
+
+    // Section 8/9: Background
+    r.offset = flevel.sectionOffsets[8]
+    const setLayerIDs = (tile) => {
+      switch (tile.id) { // id = z, where lower values are closer to the camera. 4095 = layer 0, 4096 = layer 2, 0 = layer 3
+        case 4095: tile.layerID = 0; break;
+        case 4096: tile.layerID = 2; break;
+        case 0: tile.layerID = 3; break;
+        default: tile.layerID = 1; break;
+      }
+      tile.z = tile.id
+      return tile
+    }
+    const readTile = (r) => {
+      const blank = r.readUShort()
+      const destinationX = r.readShort()
+      const destinationY = r.readShort()
+      const unknown1 = r.readUByteArray(4)
+      const sourceX = r.readUByte()
+      const unknown2 = r.readUByte()
+      const sourceY = r.readUByte()
+      const unknown3 = r.readUByte()
+      const sourceX2 = r.readUByte()
+      const unknown4 = r.readUByte()
+      const sourceY2 = r.readUByte()
+      const unknown5 = r.readUByte()
+      const width = r.readUShort()
+      const height = r.readUShort()
+      const paletteId = r.readUByte()
+      const unknown6 = r.readUByte()
+      const id = r.readUShort()
+      const param = r.readUByte()
+      const state = r.readUByte()
+      const blending = r.readUByte()
+      const unknown7 = r.readUByte()
+      const typeTrans = r.readUByte()
+      const unknown8 = r.readUByte()
+      const textureId = r.readUByte()
+      const unknown9 = r.readUByte()
+      const textureId2 = r.readUByte()
+      const unknown10 = r.readUByte()
+      const depth = r.readUByte()
+      const unknown11 = r.readUByte()
+      const idBig = r.readUInt()
+      const sourceXBig = r.readUInt()
+      const sourceYBig = r.readUInt()
+      const blank2 = r.readUShort()
+      return setLayerIDs({
+        destinationX,
+        destinationY,
+        sourceX,
+        sourceY,
+        sourceX2,
+        sourceY2,
+        width,
+        height,
+        paletteId,
+        id,
+        param,
+        state,
+        blending,
+        typeTrans,
+        textureId,
+        textureId2,
+        depth,
+        idBig,
+        sourceXBig,
+        sourceYBig,
+        // unknown: { // Uncomment should they wish to be used
+        //   blank, blank2, unknown1, unknown2, unknown3, unknown4, unknown5, unknown6, unknown7, unknown8,
+        //   unknown9, unknown10, unknown11
+        // }
+      })
+    }
+    flevel.background = {
+      length: r.readUInt(),
+      header: {
+        unknown1: r.readUShort(),
+        depth: r.readUShort(),
+        unknown2: r.readUByte()
+      },
+      palette: {
+        title: r.readString(7),
+        paletteSize: r.readUInt(),
+        palX: r.readUShort(),
+        palY: r.readUShort(),
+        width: r.readUShort(),
+        height: r.readUShort(),
+        colors: []
+      }
+    }
+    for (let i = 1; i <= 6; i++) {
+      let bytes = r.readShort()
+      const color = getColor(bytes)
+      flevel.background.palette.colors.push(color)
+    }
+    let layer1Back = r.readString(4)
+    flevel.background.tiles = {
+      layer1: {
+        width: r.readUShort(),
+        height: r.readUShort(),
+        tileCount: r.readUShort(),
+        depth: r.readUShort(),
+        tiles: []
+      }
+    }
+    flevel.background.tiles.layer1.blank = r.readUShort()
+    for (let i = 0; i < flevel.background.tiles.layer1.tileCount; i++) {
+      flevel.background.tiles.layer1.tiles.push(readTile(r))
+    }
+    flevel.background.tiles.layer1.blank2 = r.readUShort()
+
+    for (let layerNo = 2; layerNo <= 4; layerNo++) {
+      let layerFlag = r.readUByte()
+      if (layerFlag === 1) {
+        flevel.background.tiles[`layer${layerNo}`] = {
+          width: r.readUShort(),
+          height: r.readUShort(),
+          tileCount: r.readUShort(),
+          unknown: r.readUByteArray(16),
+          tiles: []
+        }
+        flevel.background.tiles[`layer${layerNo}`].blank = r.readUShort()
+        for (let i = 0; i < flevel.background.tiles[`layer${layerNo}`].tileCount; i++) {
+          let tile = readTile(r)
+          flevel.background.tiles[`layer${layerNo}`].tiles.push(tile)
+        }
+        flevel.background.tiles[`layer${layerNo}`].blank2 = r.readUShort()
+      }
+    }
+
+
+    let textureHeader = r.readString(7)
+    // console.log('TEXTURE ->', textureHeader) // Check that all has been read properly
+    flevel.background.textures = {}
+
+    for (let textureCount = 0; textureCount < 42; textureCount++) { // Max possible 42 - https://github.com/niemasd/PyFF7/wiki/Field-File-Section-9%3A-Background
+      let exists = r.readUShort()
+      if (exists) {
+        let size = r.readUShort()
+        let depth = r.readUShort()
+        let textureData = r.readUByteArray(256 * 256 * depth)
+        flevel.background.textures[`texture${textureCount}`] = { textureId: textureCount, size: size, depth: depth, data: textureData }
+      }
+    }
+    let end = r.readString(3)
+    let ff7 = r.readString(14)
+    // console.log('ff7 ->', ff7) // Check that all has been read properly
+
+    // Render Backgrounds
+    if (config.renderBackgroundLayers && config.renderBackgroundLayers === true) {
+      const bgFolder = `${config.metadataDirectory}/background-layers/`
+      const thisBgFolder = `${bgFolder}/${baseFilename}`
+      if (!fs.existsSync(bgFolder)) {
+        fs.mkdirSync(bgFolder)
+      } if (!fs.existsSync(thisBgFolder)) {
+        fs.mkdirSync(thisBgFolder)
+      }
+      backgroundLayerRenderer.renderBackgroundLayers(flevel, thisBgFolder)
+    }
+
+    // Clean up json object so it doesn't contain all pallette and texture data
+    const textureIDs = Object.keys(flevel.background.textures)
+    for (let i = 0; i < textureIDs.length; i++) {
+      const textureID = textureIDs[i]
+      flevel.background.textures[textureID].data = 'Omitted to reduce size'
+    }
+    const layerIDs = Object.keys(flevel.background.tiles)
+    for (let i = 0; i < layerIDs.length; i++) {
+      const layerID = layerIDs[i]
+      flevel.background.tiles[layerID].tiles = 'Omitted to reduce size'
+    }
+    flevel.palette.pages = 'Omitted to reduce size'
+
 
     return flevel;
   }; // end loadFLevel() function
