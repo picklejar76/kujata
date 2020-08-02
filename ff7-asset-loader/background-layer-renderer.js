@@ -1,3 +1,4 @@
+const stringUtil = require("./string-util.js")
 const sharp = require('sharp')
 const fs = require('fs')
 
@@ -14,6 +15,18 @@ with depths and configurations for graphic artists and developers etc
 TODO - I have not yet figured out light sources and the blending & transTrans properties.
 For the time being, they are simply filtered out so that there are no unwanted artefacts
 */
+
+let COEFF_COLOR = 255 / 31 // eg translate 5 bit color to 8 bit
+const getColor = (bytes) => {
+    const color = {
+        r: Math.round((bytes & 31) * COEFF_COLOR),
+        g: Math.round((bytes >> 5 & 31) * COEFF_COLOR),
+        b: Math.round((bytes >> 10 & 31) * COEFF_COLOR)
+    }
+    color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
+    // console.log('color', bytes, color)
+    return color
+}
 
 const allTiles = (flevel) => {
     let tiles = []
@@ -115,8 +128,16 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
 
             const textureByte = textureBytes[textureBytesOffset] // Get the byte for this pixel from the source image
 
-            let paletteItem = flevel.palette.pages[tile.paletteId][textureByte] // Using the byte as reference get the correct colour from the specified palette
-            let paletteColor = paletteItem.hex
+
+            let paletteItem
+            if (flevel.palette.pages.length > 0) { // Probably a better check would be to see if this is depth = 2 tile
+                paletteItem = flevel.palette.pages[tile.paletteId][textureByte] // Using the byte as reference get the correct colour from the specified palette
+            } else {
+                paletteItem = getColor(textureByte) // Get the colour directly, should be 2 bytes
+                // TODO - This still produces some strange results, not quite right, need to fix
+            }
+            const paletteColor = paletteItem.hex
+
             if (false) { // Just for logging
                 console.log(' - ',
                     'x', tile.sourceX, adjustX, '->', adjustX,
@@ -198,5 +219,6 @@ const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     fs.writeFileSync(`${folder}/${baseFilename}.json`, JSON.stringify(groupedTileLayers, null, 2));
 }
 module.exports = {
-    renderBackgroundLayers
+    renderBackgroundLayers,
+    getColor
 }

@@ -373,21 +373,11 @@ module.exports = class FLevelLoader {
       },
       pages: []
     }
-    let COEFF_COLOR = 255 / 31 // eg translate 5 bit color to 8 bit
-    const getColor = (bytes) => {
-      const color = {
-        r: Math.round((bytes & 31) * COEFF_COLOR),
-        g: Math.round((bytes >> 5 & 31) * COEFF_COLOR),
-        b: Math.round((bytes >> 10 & 31) * COEFF_COLOR)
-      }
-      color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
-      return color
-    }
     for (let i = 0; i < flevel.palette.header.pageCount; i++) {
       let page = []
       for (let j = 0; j < flevel.palette.header.colorsPerPage; j++) {
         let bytes = r.readShort()
-        const color = getColor(bytes)
+        const color = backgroundLayerRenderer.getColor(bytes)
         page.push(color)
       }
       flevel.palette.pages.push(page)
@@ -485,7 +475,7 @@ module.exports = class FLevelLoader {
     }
     for (let i = 1; i <= 6; i++) {
       let bytes = r.readShort()
-      const color = getColor(bytes)
+      const color = backgroundLayerRenderer.getColor(bytes)
       flevel.background.palette.colors.push(color)
     }
     let layer1Back = r.readString(4)
@@ -533,7 +523,12 @@ module.exports = class FLevelLoader {
       if (exists) {
         let size = r.readUShort()
         let depth = r.readUShort()
-        let textureData = r.readUByteArray(256 * 256 * depth)
+        let textureData
+        if (depth === 2) {
+          textureData = r.readUShortArray(256 * 256 * (depth / 2)) // Depth = 2 tiles don't seem to use palettes but instead have the colour directly, so it needs to be 2 bytes
+        } else {
+          textureData = r.readUByteArray(256 * 256 * depth)
+        }
         flevel.background.textures[`texture${textureCount}`] = { textureId: textureCount, size: size, depth: depth, data: textureData }
       }
     }
