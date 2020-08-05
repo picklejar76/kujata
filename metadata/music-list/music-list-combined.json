@@ -1,0 +1,502 @@
+[
+	{
+		"id": 0,
+		"name": "none",
+		"description": "none"
+	},
+	{
+		"id": 1,
+		"name": "none",
+		"description": "none"
+	},
+	{
+		"id": 2,
+		"name": "oa",
+		"description": "Opening - Bombing Mission"
+	},
+	{
+		"id": 3,
+		"name": "ob",
+		"description": "Bombing Mission"
+	},
+	{
+		"id": 4,
+		"name": "dun2",
+		"description": "Chasing The Black-Caped Man"
+	},
+	{
+		"id": 5,
+		"name": "guitar2",
+		"description": "On The Other Side Of The Mountain"
+	},
+	{
+		"id": 6,
+		"name": "fanfare",
+		"description": "Fanfare (intro)"
+	},
+	{
+		"id": 7,
+		"name": "makoro",
+		"description": "Mako Reactor"
+	},
+	{
+		"id": 8,
+		"name": "bat",
+		"description": "Fighting"
+	},
+	{
+		"id": 9,
+		"name": "fiddle",
+		"description": "Fiddle De Chocobo"
+	},
+	{
+		"id": 10,
+		"name": "kurai",
+		"description": "Anxious Heart"
+	},
+	{
+		"id": 11,
+		"name": "chu",
+		"description": "Still More Fighting"
+	},
+	{
+		"id": 12,
+		"name": "ketc",
+		"description": "Cait Sith's Theme"
+	},
+	{
+		"id": 13,
+		"name": "earis",
+		"description": "Aerith's Theme"
+	},
+	{
+		"id": 14,
+		"name": "ta",
+		"description": "Final Fantasy VII Main Theme"
+	},
+	{
+		"id": 15,
+		"name": "tb",
+		"description": "Final Fantasy VII Main Theme B"
+	},
+	{
+		"id": 16,
+		"name": "sato",
+		"description": "sato"
+	},
+	{
+		"id": 17,
+		"name": "parade",
+		"description": "Rufus' Welcoming Ceremony"
+	},
+	{
+		"id": 18,
+		"name": "comical",
+		"description": "J-E-N-O-V-A"
+	},
+	{
+		"id": 19,
+		"name": "yume",
+		"description": "Who Are You"
+	},
+	{
+		"id": 20,
+		"name": "mati",
+		"description": "Ahead on Our Way"
+	},
+	{
+		"id": 21,
+		"name": "sido",
+		"description": "It's Difficult to Stand on Both Feet, Isn't It"
+	},
+	{
+		"id": 22,
+		"name": "siera",
+		"description": "If You Open Your Heart"
+	},
+	{
+		"id": 23,
+		"name": "walz",
+		"description": "Waltz de Chocobo"
+	},
+	{
+		"id": 24,
+		"name": "corneo",
+		"description": "Don of the Slums"
+	},
+	{
+		"id": 25,
+		"name": "horror",
+		"description": "Trail Of Blood"
+	},
+	{
+		"id": 26,
+		"name": "canyon",
+		"description": "Cosmo Canyon"
+	},
+	{
+		"id": 27,
+		"name": "red",
+		"description": "Red XIII's Theme"
+	},
+	{
+		"id": 28,
+		"name": "seto",
+		"description": "Great Warrior"
+	},
+	{
+		"id": 29,
+		"name": "ayasi",
+		"description": "Lurking in the Darkness"
+	},
+	{
+		"id": 30,
+		"name": "sinra",
+		"description": "Shinra Company"
+	},
+	{
+		"id": 31,
+		"name": "sinraslo",
+		"description": "Infiltrating Shinra Tower"
+	},
+	{
+		"id": 32,
+		"name": "dokubo",
+		"description": "Underneath the Rotting Pizza"
+	},
+	{
+		"id": 33,
+		"name": "bokujo",
+		"description": "Farm Boy"
+	},
+	{
+		"id": 34,
+		"name": "tm",
+		"description": "On That Day, Five Years Ago"
+	},
+	{
+		"id": 35,
+		"name": "tifa",
+		"description": "Tifa's Theme"
+	},
+	{
+		"id": 36,
+		"name": "costa",
+		"description": "Costa Del Sol"
+	},
+	{
+		"id": 37,
+		"name": "rocket",
+		"description": "Oppressed People"
+	},
+	{
+		"id": 38,
+		"name": "earislo",
+		"description": "Flowers Blooming in the Church"
+	},
+	{
+		"id": 39,
+		"name": "chase",
+		"description": "Crazy Motorcycle"
+	},
+	{
+		"id": 40,
+		"name": "rukei",
+		"description": "Sandy Badlands"
+	},
+	{
+		"id": 41,
+		"name": "cephiros",
+		"description": "Those Chosen by the Planet"
+	},
+	{
+		"id": 42,
+		"name": "barret",
+		"description": "Barret's Theme"
+	},
+	{
+		"id": 43,
+		"name": "corel",
+		"description": "Mining Town"
+	},
+	{
+		"id": 44,
+		"name": "boo",
+		"description": "Life Stream"
+	},
+	{
+		"id": 45,
+		"name": "elec",
+		"description": "Electric de Chocobo"
+	},
+	{
+		"id": 46,
+		"name": "rhythm",
+		"description": "Turk's Theme"
+	},
+	{
+		"id": 47,
+		"name": "fan2",
+		"description": "Fanfare"
+	},
+	{
+		"id": 48,
+		"name": "hiku",
+		"description": "Highwind Takes To The Skies"
+	},
+	{
+		"id": 49,
+		"name": "cannon",
+		"description": "The Makou Cannon Is Fired ~ Shinra Explodes A"
+	},
+	{
+		"id": 50,
+		"name": "date",
+		"description": "Interrupted By Fireworks"
+	},
+	{
+		"id": 51,
+		"name": "cintro",
+		"description": "Those Chosen By The Planet (Intro)"
+	},
+	{
+		"id": 52,
+		"name": "cinco",
+		"description": "Cinco de Chocobo"
+	},
+	{
+		"id": 53,
+		"name": "chu2",
+		"description": "J-E-N-O-V-A (2)"
+	},
+	{
+		"id": 54,
+		"name": "yufi",
+		"description": "Descendant Of Shinobi"
+	},
+	{
+		"id": 55,
+		"name": "aseri",
+		"description": "Hurry!"
+	},
+	{
+		"id": 56,
+		"name": "gold1",
+		"description": "Gold Saucer"
+	},
+	{
+		"id": 57,
+		"name": "mura1",
+		"description": "Parochial Town"
+	},
+	{
+		"id": 58,
+		"name": "yado",
+		"description": "Good Night, Until Tomorrow"
+	},
+	{
+		"id": 59,
+		"name": "over2",
+		"description": "Continue"
+	},
+	{
+		"id": 60,
+		"name": "crwin",
+		"description": "A Great Success"
+	},
+	{
+		"id": 61,
+		"name": "crlost",
+		"description": "Tango Of Tears"
+	},
+	{
+		"id": 62,
+		"name": "odds",
+		"description": "Racing Chocobo ~ Place Your Bets"
+	},
+	{
+		"id": 63,
+		"name": "geki",
+		"description": "Debut"
+	},
+	{
+		"id": 64,
+		"name": "junon",
+		"description": "Off The Edge Of Despair"
+	},
+	{
+		"id": 65,
+		"name": "tender",
+		"description": "Holding My Thoughts In My Heart"
+	},
+	{
+		"id": 66,
+		"name": "wind",
+		"description": "wind"
+	},
+	{
+		"id": 67,
+		"name": "vincent",
+		"description": "The Nightmare's Beginning"
+	},
+	{
+		"id": 68,
+		"name": "bee",
+		"description": "Honeybee Manor"
+	},
+	{
+		"id": 69,
+		"name": "jukai",
+		"description": "Forest Temple"
+	},
+	{
+		"id": 70,
+		"name": "sadbar",
+		"description": "Mark of the Traitor"
+	},
+	{
+		"id": 71,
+		"name": "aseri2",
+		"description": "Hurry Faster!"
+	},
+	{
+		"id": 72,
+		"name": "kita",
+		"description": "The Great Northern Cave"
+	},
+	{
+		"id": 73,
+		"name": "sid2",
+		"description": "Cid's Theme"
+	},
+	{
+		"id": 74,
+		"name": "sadsid",
+		"description": "Sending a Dream Into the Universe"
+	},
+	{
+		"id": 75,
+		"name": "iseki",
+		"description": "You Can Hear the Cry of the Planet"
+	},
+	{
+		"id": 76,
+		"name": "hen",
+		"description": "Who Am I"
+	},
+	{
+		"id": 77,
+		"name": "utai",
+		"description": "Utai"
+	},
+	{
+		"id": 78,
+		"name": "snow",
+		"description": "Buried in the Snow"
+	},
+	{
+		"id": 79,
+		"name": "yufi2",
+		"description": "Stolen Materia"
+	},
+	{
+		"id": 80,
+		"name": "mekyu",
+		"description": "Reunion"
+	},
+	{
+		"id": 81,
+		"name": "condor",
+		"description": "Fortress Of The Condor"
+	},
+	{
+		"id": 82,
+		"name": "lb2",
+		"description": "One-Winged Angel"
+	},
+	{
+		"id": 83,
+		"name": "gun",
+		"description": "Shinra Army Wages A Full-Scale Attack"
+	},
+	{
+		"id": 84,
+		"name": "weapon",
+		"description": "Weapon Raid"
+	},
+	{
+		"id": 85,
+		"name": "pj",
+		"description": "Jenova Absolute"
+	},
+	{
+		"id": 86,
+		"name": "sea",
+		"description": "A Secret, Sleeping in the Deep Sea"
+	},
+	{
+		"id": 87,
+		"name": "ld",
+		"description": "Judgment Day"
+	},
+	{
+		"id": 88,
+		"name": "lb1",
+		"description": "The Birth of God"
+	},
+	{
+		"id": 89,
+		"name": "sensui",
+		"description": "sensui"
+	},
+	{
+		"id": 90,
+		"name": "ro",
+		"description": "The Countdown Begins"
+	},
+	{
+		"id": 91,
+		"name": "jyro",
+		"description": "Steal The Tiny Bronco!"
+	},
+	{
+		"id": 92,
+		"name": "nointro",
+		"description": "Those Chosen By The Planet (no intro)"
+	},
+	{
+		"id": 93,
+		"name": "riku",
+		"description": "The Makou Cannon Is Fired ~ Shinra Explodes B"
+	},
+	{
+		"id": 94,
+		"name": "si",
+		"description": "The Makou Cannon Is Fired ~ Shinra Explodes C"
+	},
+	{
+		"id": 95,
+		"name": "mogu",
+		"description": "Highwind Takes to the Skies"
+	},
+	{
+		"id": 96,
+		"name": "pre",
+		"description": "The Prelude"
+	},
+	{
+		"id": 97,
+		"name": "fin",
+		"description": "World Crisis"
+	},
+	{
+		"id": 98,
+		"name": "heart",
+		"description": "heart"
+	},
+	{
+		"id": 99,
+		"name": "roll",
+		"description": "Staff Roll"
+	}
+]

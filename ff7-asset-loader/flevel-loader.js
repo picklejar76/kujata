@@ -3,7 +3,7 @@ const stringUtil = require("./string-util.js");
 const LzsDecompressor = require("../lzs/lzs-decompressor.js");
 const { FF7BinaryDataReader } = require("./ff7-binary-data-reader.js");
 const backgroundLayerRenderer = require("./background-layer-renderer.js");
-
+const musicList = JSON.parse(fs.readFileSync('../metadata/music-list/music-list-combined.json', 'utf-8'));
 module.exports = class FLevelLoader {
 
   constructor(lzsDecompressor, mapList) {
@@ -191,6 +191,13 @@ module.exports = class FLevelLoader {
       }
     }
 
+    // AKAO - eg music (Note all are music, this could be a tutorial also) - This should be built upon
+    flevel.script.akao = []
+    for (let i = 0; i < flevel.script.header.akaoOffsets.length; i++) {
+      r.offset = flevel.script.header.akaoOffsets[i] + 50
+      const musicId = r.readUByte()
+      flevel.script.akao.push(musicList[musicId])
+    }
 
 
     // Section 2/3: Model Loaders
