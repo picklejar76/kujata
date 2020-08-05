@@ -293,7 +293,8 @@ module.exports = class FLevelLoader {
     flevel.triggers = {};
     flevel.triggers.header = {};
     flevel.triggers.header.fieldName = r.readString(9);
-    flevel.triggers.header.controlDirection = r.readByte();
+    flevel.triggers.header.controlDirection = r.readUByte();
+    flevel.triggers.header.controlDirectionDegrees = ((256 - flevel.triggers.header.controlDirection) * 360 / 256) - 180; // Relative to y axis
     flevel.triggers.header.cameraHeightAdjustment = r.readShort(); // could be negative
     flevel.triggers.header.cameraRange = {
       left: r.readShort(),
