@@ -3,8 +3,6 @@ const path = require('path')
 const util = require('util')
 const execFile = util.promisify(require('child_process').execFile)
 let config = JSON.parse(fs.readFileSync('../config.json', 'utf-8'))
-let musicList = JSON.parse(fs.readFileSync('../metadata/music-list.json', 'utf-8'))
-
 
 const extractSounds = async () => {
     console.log('Extract Sounds - START')
@@ -81,24 +79,24 @@ const extractMovies = async () => {
     // Ensure output folder exists and is empty
     await fs.emptyDir(outputMoviesDirectory)
 
-    // Move .avi files
+    // Convert files from .avi to .mp4
     for (let i = 0; i < oggs.length; i++) {
         const ogg = oggs[i]
         const originPath = path.join(inputMoviesDirectory, ogg)
-        const targetPath = path.join(outputMoviesDirectory, ogg)
-        await fs.copy(originPath, targetPath)
+        const targetPath = path.join(outputMoviesDirectory, ogg.replace('.avi', '.mp4'))
+        console.log('Converting movie', i + 1, 'of', oggs.length)
+        const { stdout, stderr } = await execFile('ffmpeg', ['-i', originPath, targetPath])
     }
 
     console.log('Extract Movies - END')
 }
 const extractMedias = async () => {
-
     await extractSounds()
     await extractMusic()
     await extractMovies()
 }
 const init = async () => {
-    extractAllMedias()
+    extractMedias()
 }
 init()
 module.exports = [
