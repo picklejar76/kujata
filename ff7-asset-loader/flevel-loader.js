@@ -422,7 +422,7 @@ module.exports = class FLevelLoader {
       const unknown6 = r.readUByte()
       const id = r.readUShort()
       const param = r.readUByte()
-      const state = r.readUByte()
+      const statePow2 = r.readUByte()
       const blending = r.readUByte()
       const unknown7 = r.readUByte()
       const typeTrans = r.readUByte()
@@ -449,7 +449,8 @@ module.exports = class FLevelLoader {
         paletteId,
         id,
         param,
-        state,
+        statePow2,
+        state: statePow2 > 0 ? Math.log2(statePow2) : 0,
         blending,
         typeTrans,
         textureId,

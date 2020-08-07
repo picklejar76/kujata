@@ -78,9 +78,36 @@ const getSizeMetaData = (tiles) => {
     return { minX, maxX, minY, maxY, height, width, channels }
 }
 
+const blendColors = (baseCol, topColor, typeTrans) => {
+    switch (typeTrans) {
+        case 1:
+            return {
+                r: Math.min(255, baseCol.r + topColor.r),
+                g: Math.min(255, baseCol.g + topColor.g),
+                b: Math.min(255, baseCol.b + topColor.b)
+            }
+        case 2:
+            return {
+                r: Math.max(0, baseCol.r - topColor.r),
+                g: Math.max(0, baseCol.g - topColor.g),
+                b: Math.max(0, baseCol.b - topColor.b)
+            }
+        case 3:
+            return {
+                r: Math.min(255, baseCol.r + (0.25 * topColor.r)),
+                g: Math.min(255, baseCol.g + (0.25 * topColor.g)),
+                b: Math.min(255, baseCol.b + (0.25 * topColor.b))
+            }
+        default:
+            return {
+                r: (baseCol.r + topColor.r) / 2,
+                g: (baseCol.g + topColor.g) / 2,
+                b: (baseCol.b + topColor.b) / 2,
+            }
+    }
+}
 
-
-const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackground) => {
+const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackground, ignoreNonZeroParams, baseData) => {
     let n = sizeMeta.height * sizeMeta.width * sizeMeta.channels
     let data = new Uint8Array(n)
     for (let i = 0; i < n; i++) {
@@ -116,8 +143,8 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
                 'layer', tile.layerID,
                 'z', tile.z,
                 'id', tile.id, tile.idBig,
-                "param", tile.param, tile.state,
-                "blend", tile.blending, tile.typeTrans
+                'param', tile.param, tile.state,
+                'blend', tile.blending, tile.typeTrans
             )
         }
 
@@ -149,7 +176,20 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
 
             let byteOffset = ((tileOverlayY + adjustY) * sizeMeta.width * sizeMeta.channels) + ((tileOverlayX + adjustX) * sizeMeta.channels) // Write this into an array so we can print the image (note, each channel, eg RGBA)
 
-            if (textureByte !== 0) { // First texture is transparent
+            if (tile.blending) {
+                const baseColor = { r: baseData[byteOffset + 0], g: baseData[byteOffset + 1], b: baseData[byteOffset + 2] }
+                let blendedPaletteItem = blendColors(baseColor, paletteItem, tile.typeTrans)
+                if (i === 0 && j === 200 && false) { // for debug
+                    console.log(
+                        'blending', i, j, name, tile.typeTrans,
+                        'colors', baseColor, paletteItem, '->', blendedPaletteItem,
+                        'palette.pages.length', flevel.palette.pages.length > 0
+                    )
+                }
+                paletteItem = blendedPaletteItem
+                paletteItem.trans = true // Can't seem to get blending tiles working, so just make them transparent for the time being
+            }
+            if (textureByte !== 0 && !paletteItem.trans) {
                 data[byteOffset + 0] = 0x00 + paletteItem.r
                 data[byteOffset + 1] = 0x00 + paletteItem.g
                 data[byteOffset + 2] = 0x00 + paletteItem.b
@@ -166,6 +206,7 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         Buffer.from(data.buffer),
         { raw: { width: sizeMeta.width, height: sizeMeta.height, channels: sizeMeta.channels } })
         .toFile(filePath)
+    return data
 }
 
 const organiseTilesByFeature = (groupedTiles) => {
@@ -184,18 +225,30 @@ const organiseTilesByFeature = (groupedTiles) => {
                     const stateNo = stateNos[l]
                     const t = groupedTiles[layerNo][zNo][paramNo][stateNo]
                     groupedTileLayers.push({ layer: parseInt(layerNo), z: parseInt(zNo), param: parseInt(paramNo), state: parseInt(stateNo), tileCount: t.length, tiles: t })
+                    // console.log('layer', layerNo, 'z', zNo, 'param', paramNo, 'state', stateNo)
                 }
             }
         }
     }
     return groupedTileLayers
 }
+const getBaseTiles = (groupedTiles) => {
+    let baseTiles = []
+    for (let i = 0; i < groupedTiles.length; i++) {
+        const groupedTile = groupedTiles[i]
+        if (groupedTile.param > 0) {
+
+        } else {
+            console.log('layer', groupedTile.layer, 'z', groupedTile.z, 'param', groupedTile.param, 'state', groupedTile.state)
+        }
+    }
+}
 const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     let tiles = allTiles(flevel)
 
     const sizeMeta = getSizeMetaData(tiles)
 
-    tiles = tiles.filter(t => t.blending === 0) // For now, just filter out tiles with blending (eg, light effects) Complete later
+    // tiles = tiles.filter(t => t.blending === 0) // For now, just filter out tiles with blending (eg, light effects) Complete later
     sortBy(['layerID', 'z', 'param', 'state'], tiles)
 
     // Group by
@@ -204,16 +257,18 @@ const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     // Organise into drawable distinct distance and settings layers - Should really encorporate into above groupBy
     const groupedTileLayers = organiseTilesByFeature(groupedTiles)
 
+    // Draw whole layer
+    const baseTiles = tiles.filter(t => t.param === 0 && !t.blending) // Without params etc, used for blending with params
+    let baseData = saveTileGroupImage(flevel, folder, `${baseFilename}.png`, baseTiles, sizeMeta, true, true)
+
     // Draw each grouped tile layer
     for (let i = 0; i < groupedTileLayers.length; i++) {
         const tileGroup = groupedTileLayers[i]
         const name = `${baseFilename}_${tileGroup.z}_${tileGroup.layer}_${tileGroup.param}_${tileGroup.state}.png`
-        saveTileGroupImage(flevel, folder, name, tileGroup.tiles, sizeMeta, false)
+        saveTileGroupImage(flevel, folder, name, tileGroup.tiles, sizeMeta, false, false, baseData)
         tileGroup.fileName = name
         delete tileGroup.tiles
     }
-
-    saveTileGroupImage(flevel, folder, `${baseFilename}.png`, tiles, sizeMeta, true)
 
     // Write layer metadata to json file
     fs.writeFileSync(`${folder}/${baseFilename}.json`, JSON.stringify(groupedTileLayers, null, 2));
