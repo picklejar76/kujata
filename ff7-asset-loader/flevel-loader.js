@@ -385,7 +385,7 @@ module.exports = class FLevelLoader {
       let page = []
       for (let j = 0; j < flevel.palette.header.colorsPerPage; j++) {
         let bytes = r.readShort()
-        const color = backgroundLayerRenderer.getColor(bytes)
+        const color = backgroundLayerRenderer.getColorForPalette(bytes)
         page.push(color)
       }
       flevel.palette.pages.push(page)
@@ -484,7 +484,7 @@ module.exports = class FLevelLoader {
     }
     for (let i = 1; i <= 6; i++) {
       let bytes = r.readShort()
-      const color = backgroundLayerRenderer.getColor(bytes)
+      const color = backgroundLayerRenderer.getColorForPalette(bytes)
       flevel.background.palette.colors.push(color)
     }
     let layer1Back = r.readString(4)

@@ -12,16 +12,28 @@ A layer is split out for every unique combination of:
 This is not the required format for palmer etc, but it does provide ALL possible layers
 with depths and configurations for graphic artists and developers etc
 
-TODO - I have not yet figured out light sources and the blending & transTrans properties.
+Problems still to resolve:
+- I have not yet figured out light sources and the blending & transTrans properties
 For the time being, they are simply filtered out so that there are no unwanted artefacts
+- Intermittent 'transparent' pixels on most fields, haven't look into why yet
 */
 
 let COEFF_COLOR = 255 / 31 // eg translate 5 bit color to 8 bit
-const getColor = (bytes) => {
+const getColorForPalette = (bytes) => { // abbbbbgggggrrrrr
     const color = {
         r: Math.round((bytes & 31) * COEFF_COLOR),
         g: Math.round((bytes >> 5 & 31) * COEFF_COLOR),
         b: Math.round((bytes >> 10 & 31) * COEFF_COLOR)
+    }
+    color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
+    // console.log('color', bytes, color)
+    return color
+}
+const getColorForDirect = (bytes) => { // rrrrrgggggabbbbb
+    const color = {
+        b: Math.round((bytes & 31) * COEFF_COLOR),
+        g: Math.round((bytes >> 6 & 31) * COEFF_COLOR),
+        r: Math.round((bytes >> 11 & 31) * COEFF_COLOR)
     }
     color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
     // console.log('color', bytes, color)
@@ -122,7 +134,12 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         let tileOverlayX = tile.destinationX + (sizeMeta.width / 2) // Get normalised coords for destination of top left of tile
         let tileOverlayY = tile.destinationY + (sizeMeta.height / 2)
 
-        let textureBytes = flevel.background.textures[`texture${tile.textureId}`].data // Get all bytes for texture
+        let texture = flevel.background.textures[`texture${tile.textureId}`]
+        if (texture === undefined) {
+            // TODO - Not sure exactly what to do here, try this for now, although it doesn't give any results
+            texture = flevel.background.textures[`texture${tile.textureId2}`]
+        }
+        let textureBytes = texture.data // Get all bytes for texture
 
         let sourceX = tile.sourceX
         let sourceY = tile.sourceY
@@ -155,13 +172,11 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
 
             const textureByte = textureBytes[textureBytesOffset] // Get the byte for this pixel from the source image
 
-
             let paletteItem
-            if (flevel.palette.pages.length > 0) { // Probably a better check would be to see if this is depth = 2 tile
+            if (flevel.palette.pages.length > 0 && flevel.palette.pages.length > tile.paletteId && tile.depth === 1) { // Check to see if we get the color from the palette or directly
                 paletteItem = flevel.palette.pages[tile.paletteId][textureByte] // Using the byte as reference get the correct colour from the specified palette
             } else {
-                paletteItem = getColor(textureByte) // Get the colour directly, should be 2 bytes
-                // TODO - This still produces some strange results, not quite right, need to fix
+                paletteItem = getColorForDirect(textureByte) // Get the colour directly, should be 2 bytes
             }
             const paletteColor = paletteItem.hex
 
@@ -178,7 +193,7 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
 
             if (tile.blending) {
                 const baseColor = { r: baseData[byteOffset + 0], g: baseData[byteOffset + 1], b: baseData[byteOffset + 2] }
-                let blendedPaletteItem = blendColors(baseColor, paletteItem, tile.typeTrans)
+                let blendedPaletteItem = blendColors(baseColor, paletteItem, tile.typeTrans) // TODO - Doesn't quite work properly yet
                 if (i === 0 && j === 200 && false) { // for debug
                     console.log(
                         'blending', i, j, name, tile.typeTrans,
@@ -275,5 +290,5 @@ const renderBackgroundLayers = (flevel, folder, baseFilename) => {
 }
 module.exports = {
     renderBackgroundLayers,
-    getColor
+    getColorForPalette
 }
