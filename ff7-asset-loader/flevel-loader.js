@@ -121,6 +121,7 @@ module.exports = class FLevelLoader {
         }
         let entityScript = {
           index: j,
+          scriptType: '',
           ops: []
         };
         var op = {};
@@ -172,6 +173,7 @@ module.exports = class FLevelLoader {
                   entity.scripts.push(entityScript);
                   entityScript = {
                     index: 0,
+                    scriptType: '',
                     isMain: true,
                     ops: []
                   };
@@ -213,10 +215,47 @@ module.exports = class FLevelLoader {
       }
       return 'Unknown'
     }
-
+    const getScriptType = (script, entityType) => {
+      switch (script.index) { // This is the adjusted index, rather than the array position
+        case 0:
+          if (script.isMain) {
+            return 'Main'
+          } else {
+            return 'Init'
+          }
+        case 1:
+          if (entityType === 'Model') { return 'Talk' }
+          if (entityType === 'Line') { return '[OK]' }
+          break
+        case 2:
+          if (entityType === 'Model') { return 'Contact' }
+          if (entityType === 'Line') { return 'Move' }
+          break
+        case 3:
+          if (entityType === 'Line') { return 'Move' }
+          break
+        case 4:
+          if (entityType === 'Line') { return 'Go' }
+          break
+        case 5:
+          if (entityType === 'Line') { return 'Go 1x' }
+          break
+        case 6:
+          if (entityType === 'Line') { return 'Go away' }
+          break
+        default:
+          break
+      }
+      return `Script ${script.index}`
+    }
     for (let i = 0; i < flevel.script.entities.length; i++) {
       const entity = flevel.script.entities[i]
       entity.entityType = getEntityType(entity) // Get the type of entity, it's really metadata, but useful
+      for (let j = 0; j < entity.scripts.length; j++) {
+        const script = entity.scripts[j]
+        script.scriptType = getScriptType(script, entity.entityType)
+        // console.log('getScriptType', script.index, script.isMain, entity.entityName, entity.entityType, '->', script.scriptType)
+      }
     }
 
     // AKAO - eg music (Note all are music, this could be a tutorial also) - This should be built upon

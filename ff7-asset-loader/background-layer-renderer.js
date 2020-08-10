@@ -247,23 +247,12 @@ const organiseTilesByFeature = (groupedTiles) => {
     }
     return groupedTileLayers
 }
-const getBaseTiles = (groupedTiles) => {
-    let baseTiles = []
-    for (let i = 0; i < groupedTiles.length; i++) {
-        const groupedTile = groupedTiles[i]
-        if (groupedTile.param > 0) {
 
-        } else {
-            console.log('layer', groupedTile.layer, 'z', groupedTile.z, 'param', groupedTile.param, 'state', groupedTile.state)
-        }
-    }
-}
 const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     let tiles = allTiles(flevel)
 
     const sizeMeta = getSizeMetaData(tiles)
 
-    // tiles = tiles.filter(t => t.blending === 0) // For now, just filter out tiles with blending (eg, light effects) Complete later
     sortBy(['layerID', 'z', 'param', 'state'], tiles)
 
     // Group by
