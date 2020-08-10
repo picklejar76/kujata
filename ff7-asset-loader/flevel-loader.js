@@ -99,6 +99,7 @@ module.exports = class FLevelLoader {
     for (let i = 0; i < flevel.script.header.numEntities; i++) {
       let entity = {
         entityName: flevel.script.header.entityNames[i],
+        entityType: '', // Purely added for positioning in JSON, updated delow
         scripts: []
       };
       flevel.script.entities.push(entity);
@@ -189,6 +190,33 @@ module.exports = class FLevelLoader {
           entity.scripts.push(entityScript);
         }
       }
+    }
+
+    const getEntityType = (entity) => {
+      if (entity.scripts.length === 0) { return 'Unknown' }
+
+      let ops0 = entity.scripts[0].ops.map(o => o.op)
+
+      if (ops0.includes('PC')) { return 'Playable Character' }
+      if (ops0.includes('CHAR')) { return 'Model' }
+      if (ops0.includes('LINE')) { return 'Line' }
+      if (
+        ops0.includes('BGPDH') || ops0.includes('BGSCR') || ops0.includes('BGON') ||
+        ops0.includes('BGOFF') || ops0.includes('BGROL') || ops0.includes('BGROL2') ||
+        ops0.includes('BGCLR')
+      ) { return 'Animation' }
+      if (ops0.includes('MPNAM')) { return 'Director' }
+
+      if (entity.scripts.length >= 2) {
+        let ops1 = entity.scripts[1].ops.map(o => o.op)
+        if (ops1.includes('MPNAM')) { return 'Director' }
+      }
+      return 'Unknown'
+    }
+
+    for (let i = 0; i < flevel.script.entities.length; i++) {
+      const entity = flevel.script.entities[i]
+      entity.entityType = getEntityType(entity) // Get the type of entity, it's really metadata, but useful
     }
 
     // AKAO - eg music (Note all are music, this could be a tutorial also) - This should be built upon

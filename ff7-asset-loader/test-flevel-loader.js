@@ -17,13 +17,50 @@ var replacer = function (k, v) {
 };
 
 // translate just 1 map
+// for (let fieldName of mapList) {
+//   if (fieldName && !fieldName.startsWith("wm")) {
+//   }
+// }
+const decodeOneMap = (fieldName) => {
+  let flevel = flevelLoader.loadFLevel(config, fieldName);
+  let outputFilename = config.outputFieldFLevelDirectory + '/' + fieldName + '.json';
+  fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
+  console.log("Wrote: " + outputFilename);
+}
 
-let fieldName = "uutai1"; // md1stin, md1_1, md1_2, nrthmk, junon, uutai1
-let flevel = flevelLoader.loadFLevel(config, fieldName);
-let outputFilename = config.outputFieldFLevelDirectory + '/' + fieldName + '.json';
-fs.writeFileSync(outputFilename, JSON.stringify(flevel, replacer, 2));
-console.log("Wrote: " + outputFilename);
+const decodeAllMaps = (maps) => {
+  let errors = []
+  for (let i = 0; i < maps.length; i++) {
+    const fieldName = maps[i]
 
+    const inputFile = config.inputFieldFLevelDirectory + '/' + fieldName
+    const exists = fs.existsSync(inputFile)
+    console.log(`Map ${i + 1} of ${maps.length} -> ${fieldName}`, exists)
+    if (exists && fieldName !== '') {
+      try {
+        decodeOneMap(fieldName)
+      } catch (error) {
+        console.log('error', error)
+        errors.push(fieldName)
+      }
+
+    }
+  }
+  return errors
+}
+
+const problemMaps = ['fr_e', 'lastmap']
+
+console.log('Decode all Maps -> All', decodeAllMaps(mapList))
+// console.log('Decode all Maps -> Errors All', decodeAllMaps(problemMaps))
+// console.log('Decode one', decodeOneMap('mds5_1'))
+// console.log('Decode one', decodeOneMap('junin2'))
+// console.log('Decode one', decodeOneMap('subin_3'))
+// console.log('Decode one', decodeOneMap('subin_2a'))
+// console.log('Decode one', decodeOneMap('blin66_1'))
+
+
+// decodeOneMap('uutai1') // md1stin, md1_1, md1_2, nrthmk, junon, uutai1
 
 // translate all maps and create index
 // let opCodeUsages = {};
