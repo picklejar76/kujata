@@ -5,6 +5,7 @@ class FF7BinaryDataReader {
 
   constructor(buffer) {
     this.buffer = buffer;
+    this.length = this.buffer.length
     this.offset = 0;
     this.charMap = require("./char-map.js");
     this.kernelVars = {
@@ -22,13 +23,13 @@ class FF7BinaryDataReader {
     this.dialogStrings = dialogStrings;
   }
 
-  readInt() { let i = this.buffer.readInt32LE(this.offset); this.offset += 4; return i; };
-  readUInt() { let i = this.buffer.readUInt32LE(this.offset); this.offset += 4; return i; };
-  readFloat() { let f = this.buffer.readFloatLE(this.offset); this.offset += 4; return f; };
   readByte() { let b = this.buffer.readInt8(this.offset); this.offset += 1; return b; };
   readUByte() { let b = this.buffer.readUInt8(this.offset); this.offset += 1; return b; };
   readShort() { let s = this.buffer.readInt16LE(this.offset); this.offset += 2; return s; };
   readUShort() { let s = this.buffer.readUInt16LE(this.offset); this.offset += 2; return s; };
+  readInt() { let i = this.buffer.readInt32LE(this.offset); this.offset += 4; return i; };
+  readUInt() { let i = this.buffer.readUInt32LE(this.offset); this.offset += 4; return i; };
+  readFloat() { let f = this.buffer.readFloatLE(this.offset); this.offset += 4; return f; };
 
   readUByteArray(length) {
     let array = [];

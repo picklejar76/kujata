@@ -15,7 +15,7 @@
   "outputBattleBattleDirectoryDescription": "Where the translator will put output battle models",
   "ifalnaJsonFile": "/code/ff7/kujata/ifalna-db/ifalna.json",
   "ifalnaJsonFileDescription": "Location of ifalna.json file containing animation metadata for each field model",
-  "inputKernelDirectory": "/code/ff7/ff7/original-data/kernel",
+  "inputKernelDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/kernel",
   "inputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
   "outputKernelDirectory": "/code/ff7/kujata-data-dg/data/kernel",
   "outputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
