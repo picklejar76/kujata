@@ -44,6 +44,11 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
 - Better instructions coming soon
 - For help, reach out to the author: picklejar76@gmail.com
 
+## How to translate kernel data (kernel/kernel.bin, kernel/kernel2.bin) to JSON
+- Look at https://github.com/picklejar76/kujata/ff7-asset-loader/test-kernel-extractor.js
+- Better instructions coming soon
+- For help, reach out to the author: https://github.com/dangarfield/kujata
+
 ## Thanks goes to...
 - qhimm community
 - Aali, for patching FF7, graphics work, lgp/unlgp utility, etc.
