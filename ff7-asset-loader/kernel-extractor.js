@@ -9,7 +9,8 @@ const { getTextSectionData,
     getWeaponSectionData,
     getArmorSectionData,
     getAccessorySectionData,
-    getMateriaSectionData } = require('./kernel-sections.js')
+    getMateriaSectionData,
+    extractWindowBinElements } = require('./kernel-sections.js')
 const { TimFile } = require('./tim-file.js')
 
 /*
@@ -123,23 +124,30 @@ const extractKernelKernel2Bin = async (inputKernelDirectory, outputKernelDirecto
     console.log('Extract kernel.bin and kernel2.bin: END')
 }
 
-const extractWindowBin = async (inputKernelDirectory, outputKernelDirectory) => {
+const extractWindowBin = async (inputKernelDirectory, outputKernelDirectory, metadataDirectory) => {
     console.log('Extract window.bin: START')
     const windowBinPath = path.join(inputKernelDirectory, 'WINDOW.BIN')
 
     let windowData = decompressBinGzip(windowBinPath, 3)
+    const outputDirMetaDataWindow = path.join(metadataDirectory, 'window-assets')
+    fs.emptyDirSync(outputDirMetaDataWindow)
     for (let i = 0; i < windowData.length; i++) {
         const windowSection = windowData[i]
         if (windowSection.type === 0) {
             const tim = new TimFile().loadTimFileFromBuffer(windowSection.buffer)
-            tim.saveAllPalettesAsPngs(path.join(outputKernelDirectory, `window.bin_${i}.png`))
-        } else {
+            await tim.saveAllPalettesAsPngs(path.join(outputKernelDirectory, `window.bin_${i}.png`))
+
+
             // Apparently we know nothing of the type 1 file, I imagine that it contains the references
             // to the x,y,w,h positions and palette colours for the assets to be used in the game
-            // TODO - Potentially add metadata
+            // In the mean time, lets build the paletted pngs and extract them one by one
+            await extractWindowBinElements(i, outputKernelDirectory, metadataDirectory)
+        } else if (windowSection.type === 1) {
+            // No idea what to do here in lieu of above
         }
 
     }
+
     console.log('Extract window.bin: END')
 }
 module.exports = {

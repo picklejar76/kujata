@@ -1,5 +1,8 @@
 const { FF7BinaryDataReader } = require("./ff7-binary-data-reader.js")
 const { Enums, parseKernelEnums, parseMateriaData } = require('./kernel-enums')
+const path = require('path')
+const fs = require('fs-extra')
+const sharp = require("sharp")
 
 const dec2bin = (dec) => { // For debug only
     return (dec >>> 0).toString(2)
@@ -326,11 +329,90 @@ const getMateriaSectionData = (sectionData, names, descriptions) => {
     return objects
 }
 
+const extractWindowBinElements = async (fileId, outputKernelDirectory, metadataDirectory) => {
+
+    // console.log('extractWindowBinElements: START', fileId)
+
+    const basePalette = 1
+    const baseFile = path.join(outputKernelDirectory, `window.bin_${fileId}_${basePalette}.png`)
+    let metadata = await (sharp(baseFile).metadata())
+    // console.log('metadata', metadata)
+    const outputDirMetaDataWindow = path.join(metadataDirectory, 'window-assets')
+
+    if (!fs.existsSync(outputDirMetaDataWindow)) {
+        fs.ensureDirSync(outputDirMetaDataWindow)
+    }
+    let img = sharp({
+        create: {
+            width: metadata.width,
+            height: metadata.height,
+            channels: 4,
+            background: { r: 0, g: 0, b: 0, alpha: 0 }
+        }
+    }).png()
+
+
+    const windowBinAssetMap = await fs.readJson(`../metadata/kernel/window.bin_${fileId}_asset-map.json`)
+    // console.log('windowBinAssetMap', windowBinAssetMap)
+
+    // console.log('created', metadata)
+    let overviewCompositionActions = []
+    for (var assetType in windowBinAssetMap) {
+        // I was going to simply loop, but need to deal with variable width fonts, plus having the metadata to get the correct widths
+        // I'll leave this in, but it's not triggered by the data as I pregenerated it
+        if (!Array.isArray(windowBinAssetMap[assetType]) && windowBinAssetMap[assetType].type && windowBinAssetMap[assetType].type === 'text') {
+            const textConfig = windowBinAssetMap[assetType]
+            let elements = []
+            let i = 0
+
+            for (let col = 0; col < textConfig.cols; col++) {
+                for (let row = 0; row < textConfig.rows; row++) {
+                    let x = textConfig.x + (row * textConfig.w)
+                    let y = textConfig.y + (col * textConfig.h)
+                    // console.log({ "id": 0, "description": "battle menu text 192", "x": 128, "y": 248, "w": 8, "h": 8, "palette": 8 })
+                    i++
+                }
+            }
+            windowBinAssetMap[assetType] = elements
+        }
+
+        for (let i = 0; i < windowBinAssetMap[assetType].length; i++) {
+            const element = windowBinAssetMap[assetType][i]
+
+            // console.log('element', element)
+            const elementFile = path.join(outputKernelDirectory, `window.bin_${fileId}_${element.palette}.png`)
+            const elementFileExtract = sharp(elementFile).extract({ left: element.x, top: element.y, width: element.w, height: element.h })
+            const elementFileBuffer = await elementFileExtract.toBuffer()
+            overviewCompositionActions.push({ input: elementFileBuffer, left: element.x, top: element.y })
+
+
+            const assetFolder = path.join(outputDirMetaDataWindow, assetType)
+            if (!fs.existsSync(assetFolder)) {
+                fs.ensureDirSync(assetFolder)
+            }
+            await elementFileExtract.toFile(path.join(assetFolder, `${element.description}.png`))
+
+            if (overviewCompositionActions.length === 100) { // For some reason 150+ layers is causing issues
+                img.composite(overviewCompositionActions)
+                let compositeAppliedImg = await img.toBuffer()
+                img = sharp(compositeAppliedImg)
+                overviewCompositionActions = []
+            }
+        }
+    }
+
+    // Some layers missing black textures
+    img.composite(overviewCompositionActions)
+
+    await img.toFile(path.join(outputDirMetaDataWindow, `window.bin_${fileId}_overview.png`))
+    // console.log('extractWindowBinElements: END')
+}
 module.exports = {
     getTextSectionData,
     getItemSectionData,
     getWeaponSectionData,
     getArmorSectionData,
     getAccessorySectionData,
-    getMateriaSectionData
+    getMateriaSectionData,
+    extractWindowBinElements
 }

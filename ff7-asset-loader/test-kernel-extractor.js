@@ -5,7 +5,8 @@ const { extractKernelKernel2Bin, extractWindowBin } = require('./kernel-extracto
 const init = async () => {
     const inputKernelDirectory = config.inputKernelDirectory
     const outputKernelDirectory = config.outputKernelDirectory
+    const metadataDirectory = config.metadataDirectory
     await extractKernelKernel2Bin(inputKernelDirectory, outputKernelDirectory)
-    await extractWindowBin(inputKernelDirectory, outputKernelDirectory)
+    await extractWindowBin(inputKernelDirectory, outputKernelDirectory, metadataDirectory)
 }
 init()

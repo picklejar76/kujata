@@ -111,14 +111,14 @@ class TimFile { // https://github.com/myst6re/makoureactor/blob/4645b4b0595626b0
         // console.log('tim.offset', r.offset, r.length, 'file processed completely', r.offset === r.length)
         return this
     }
-    saveAllPalettesAsPngs(outputPath) {
+    async saveAllPalettesAsPngs(outputPath) {
         for (let i = 0; i < this.tim.clut.noOfPalettes; i++) {
             const paletteOutputPath = outputPath.replace('.png', `_${i + 1}.png`)
             // console.log('paletteOutputPath', paletteOutputPath)
-            this.saveAsPngWithPalette(paletteOutputPath, i)
+            await this.saveAsPngWithPalette(paletteOutputPath, i)
         }
     }
-    saveAsPngWithPalette(outputPath, paletteId) {
+    async saveAsPngWithPalette(outputPath, paletteId) {
 
         const channels = 4
         let n = this.tim.imageData.width * this.tim.imageData.height * channels // Seems to require 2x width also
@@ -177,10 +177,10 @@ class TimFile { // https://github.com/myst6re/makoureactor/blob/4645b4b0595626b0
                 break
         }
 
-        sharp(
+        await sharp(
             Buffer.from(data.buffer),
             { raw: { width: this.tim.imageData.width, height: this.tim.imageData.height, channels: 4 } })
-            .toFile(outputPath) // Should probably make this sync or return buffer, for now, just leave it
+            .toFile(outputPath)
     }
     _getBPPType(bpp) {
         if (bpp === 0) { return '4bit' } // 00  4-bit (color indices)

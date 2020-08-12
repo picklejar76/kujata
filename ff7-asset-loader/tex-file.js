@@ -113,10 +113,10 @@ class TexFile {
     - http://wiki.ffrtt.ru/index.php?title=FF7/TEX_format
 
     */
-    saveAsPng(outputPath) {
-        this.saveAsPngWithPaletteOffset(outputPath, 0)
+    async saveAsPng(outputPath) {
+        await this.saveAsPngWithPaletteOffset(outputPath, 0)
     }
-    saveAsPngWithPaletteOffset(outputPath, paletteOffset) {
+    async saveAsPngWithPaletteOffset(outputPath, paletteOffset) {
         let n = this.tex.header.height * this.tex.header.width * 4
 
         let data = new Uint8Array(n)
@@ -137,10 +137,10 @@ class TexFile {
             }
         }
 
-        sharp(
+        await sharp(
             Buffer.from(data.buffer),
             { raw: { width: this.tex.header.width, height: this.tex.header.height, channels: 4 } })
-            .toFile(outputPath) // Should probably make this sync or return buffer, for now, just leave it
+            .toFile(outputPath)
     }
 
     _dec2hex(dec) { // For debug only
