@@ -21,6 +21,7 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
 - Translate FF7 window data (window.bin) to multiple per palette pngs
   - All window icons and colours
   - All text icons and colours
+  - Every asset with it's prefered palette colors in its own separate png
 
 - TIM and TEX file loaders and converts into per palette pngs
 
