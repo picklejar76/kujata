@@ -131,6 +131,7 @@ const extractWindowBin = async (inputKernelDirectory, outputKernelDirectory, met
     let windowData = decompressBinGzip(windowBinPath, 3)
     const outputDirMetaDataWindow = path.join(metadataDirectory, 'window-assets')
     fs.emptyDirSync(outputDirMetaDataWindow)
+    let windowBinMetaData = {}
     for (let i = 0; i < windowData.length; i++) {
         const windowSection = windowData[i]
         if (windowSection.type === 0) {
@@ -141,12 +142,17 @@ const extractWindowBin = async (inputKernelDirectory, outputKernelDirectory, met
             // Apparently we know nothing of the type 1 file, I imagine that it contains the references
             // to the x,y,w,h positions and palette colours for the assets to be used in the game
             // In the mean time, lets build the paletted pngs and extract them one by one
-            await extractWindowBinElements(i, outputKernelDirectory, metadataDirectory)
+            const windowBinSectionAssetMap = await extractWindowBinElements(i, outputKernelDirectory, metadataDirectory)
+            for (var assetType in windowBinSectionAssetMap) {
+                windowBinMetaData[assetType] = windowBinSectionAssetMap[assetType]
+            }
         } else if (windowSection.type === 1) {
             // No idea what to do here in lieu of above
         }
 
     }
+
+    await fs.writeJson(path.join(outputDirMetaDataWindow, 'window.bin.metadata.json'), windowBinMetaData)
 
     console.log('Extract window.bin: END')
 }

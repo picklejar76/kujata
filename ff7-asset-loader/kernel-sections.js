@@ -406,6 +406,7 @@ const extractWindowBinElements = async (fileId, outputKernelDirectory, metadataD
 
     await img.toFile(path.join(outputDirMetaDataWindow, `window.bin_${fileId}_overview.png`))
     // console.log('extractWindowBinElements: END')
+    return windowBinAssetMap
 }
 module.exports = {
     getTextSectionData,
