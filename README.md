@@ -18,6 +18,12 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
   - All sections except commandData, attackData, battleAndGrowthData, initData
   - Some improvements still to be made, mainly around consistent naming and materia data
 
+- Translate FF7 window data (window.bin) to multiple per palette pngs
+  - All window icons and colours
+  - All text icons and colours
+
+- TIM and TEX file loaders and converts into per palette pngs
+
 ## Pre-requisites and setup
 - "git clone" this repo
 - install NodeJS and run "npm install" to install dependencies
@@ -48,6 +54,13 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
 - Look at https://github.com/picklejar76/kujata/ff7-asset-loader/test-kernel-extractor.js
 - Better instructions coming soon
 - For help, reach out to the author: https://github.com/dangarfield/kujata
+
+## How to translate .TIM of .TEX files into PNGs
+- Look at https://github.com/picklejar76/kujata/ff7-asset-loader/test-kernel-extractor.js
+- ``` new TimFile().loadTimFileFromBuffer(file.buffer).saveAllPalettesAsPngs(outputFilePath)```
+- ``` new TimFile().loadTimFileFromPath(file.path).saveAllPalettesAsPngs(outputFilePath)```
+- ``` new TexFile().loadTexFileFromBuffer(file.buffer).saveAsPng(outputFilePath)```
+- ``` new TexFile().loadTexFileFromPath(file.path).saveAsPng(outputFilePath)```
 
 ## Thanks goes to...
 - qhimm community

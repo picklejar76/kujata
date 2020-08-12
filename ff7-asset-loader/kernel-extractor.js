@@ -10,6 +10,7 @@ const { getTextSectionData,
     getArmorSectionData,
     getAccessorySectionData,
     getMateriaSectionData } = require('./kernel-sections.js')
+const { TimFile } = require('./tim-file.js')
 
 /*
 
@@ -24,12 +25,12 @@ A few more details required for materiaData - as per http://wiki.ffrtt.ru/index.
 A little alignment required on status and elements, and some consistent naming convertions
 
 */
-const decompressKernel = (kernelPath) => {
-    let buffer = fs.readFileSync(kernelPath)
+const decompressBinGzip = (binPath, sectionCount) => {
+    let buffer = fs.readFileSync(binPath)
     let r = new FF7BinaryDataReader(buffer)
 
     let sections = []
-    for (let i = 0; i < 27; i++) { // should be 27 sections
+    for (let i = 0; i < sectionCount; i++) {
         const sectionCompressedLength = r.readUShort()
         const sectionDecompressedLength = r.readUShort()
         const fileType = r.readUShort()
@@ -43,8 +44,6 @@ const decompressKernel = (kernelPath) => {
         //     , sectionBuffer.length, decompressedSection.length)
         sections.push({ type: fileType, buffer: decompressedSection })
     }
-    // console.log('r.offset', r.offset)
-    // r.readUShort()
     return sections
 }
 const decompressKernel2 = (kernel2Path) => {
@@ -81,7 +80,7 @@ const extractKernelKernel2Bin = async (inputKernelDirectory, outputKernelDirecto
     const kernelBinPath = path.join(inputKernelDirectory, 'KERNEL.BIN')
     const kernel2BinPath = path.join(inputKernelDirectory, 'kernel2.bin')
 
-    let kernelData = decompressKernel(kernelBinPath)
+    let kernelData = decompressBinGzip(kernelBinPath, 27)
     let kernel2Data = decompressKernel2(kernel2BinPath)
     const data = {}
 
@@ -124,6 +123,26 @@ const extractKernelKernel2Bin = async (inputKernelDirectory, outputKernelDirecto
     console.log('Extract kernel.bin and kernel2.bin: END')
 }
 
+const extractWindowBin = async (inputKernelDirectory, outputKernelDirectory) => {
+    console.log('Extract window.bin: START')
+    const windowBinPath = path.join(inputKernelDirectory, 'WINDOW.BIN')
+
+    let windowData = decompressBinGzip(windowBinPath, 3)
+    for (let i = 0; i < windowData.length; i++) {
+        const windowSection = windowData[i]
+        if (windowSection.type === 0) {
+            const tim = new TimFile().loadTimFileFromBuffer(windowSection.buffer)
+            tim.saveAllPalettesAsPngs(path.join(outputKernelDirectory, `window.bin_${i}.png`))
+        } else {
+            // Apparently we know nothing of the type 1 file, I imagine that it contains the references
+            // to the x,y,w,h positions and palette colours for the assets to be used in the game
+            // TODO - Potentially add metadata
+        }
+
+    }
+    console.log('Extract window.bin: END')
+}
 module.exports = {
-    extractKernelKernel2Bin
+    extractKernelKernel2Bin,
+    extractWindowBin
 }

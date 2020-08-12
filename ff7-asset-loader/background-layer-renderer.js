@@ -25,6 +25,7 @@ const getColorForPalette = (bytes) => { // abbbbbgggggrrrrr
         g: Math.round((bytes >> 5 & 31) * COEFF_COLOR),
         b: Math.round((bytes >> 10 & 31) * COEFF_COLOR)
     }
+    color.a = color.r === 0 && color.g === 0 && color.b === 0 ? 0 : 255
     color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
     // console.log('color', bytes, color)
     return color
@@ -204,11 +205,14 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
                 paletteItem = blendedPaletteItem
                 paletteItem.trans = true // Can't seem to get blending tiles working, so just make them transparent for the time being
             }
+
+            // TODO - Pixel values of 0 may or may not be transparent, depending on the color key status, more on that later. This also applies to non-paletted formats.
+            // http://wiki.ffrtt.ru/index.php?title=FF7/TEX_format
             if (textureByte !== 0 && !paletteItem.trans) {
                 data[byteOffset + 0] = 0x00 + paletteItem.r
                 data[byteOffset + 1] = 0x00 + paletteItem.g
                 data[byteOffset + 2] = 0x00 + paletteItem.b
-                data[byteOffset + 3] = 0xff
+                data[byteOffset + 3] = 0x00 + paletteItem.a
             }
         }
     }
