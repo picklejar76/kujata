@@ -418,9 +418,11 @@ module.exports = class FLevelLoader {
     }
 
     // TODO: interpret this data better, consider combining showArrows and gatewayArrows, consider removing "empty" instances
-    flevel.triggers.shownArrows = [];
     for (let i = 0; i < 12; i++) {
-      flevel.triggers.shownArrows.push(r.readByte());
+      const showArrow = r.readByte()
+      if (flevel.triggers.gateways[i]) {
+        flevel.triggers.gateways[i].showArrow = showArrow
+      }
     }
     flevel.triggers.gatewayArrows = [];
     for (let i = 0; i < 12; i++) {
