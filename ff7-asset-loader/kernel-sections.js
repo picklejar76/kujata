@@ -409,9 +409,10 @@ const extractWindowBinElements = async (fileId, outputKernelDirectory, metadataD
             if (!fs.existsSync(assetFolder)) {
                 fs.ensureDirSync(assetFolder)
             }
+            elementFileExtract.resize({ width: element.w * 4, height: element.h * 4, kernel: sharp.kernel.nearest })
             await elementFileExtract.toFile(path.join(assetFolder, `${element.description}.png`))
 
-            if (overviewCompositionActions.length === 100) { // For some reason 150+ layers is causing issues
+            if (overviewCompositionActions.length === 100) { // For some reason 150+ layers is causing issues <- nope, just nodemon
                 img.composite(overviewCompositionActions)
                 let compositeAppliedImg = await img.toBuffer()
                 img = sharp(compositeAppliedImg)

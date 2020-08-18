@@ -224,6 +224,7 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
     sharp(
         Buffer.from(data.buffer),
         { raw: { width: sizeMeta.width, height: sizeMeta.height, channels: sizeMeta.channels } })
+        // .resize({ width: sizeMeta.width * 4, height: sizeMeta.height * 4, kernel: sharp.kernel.nearest })
         .toFile(filePath)
     return data
 }
