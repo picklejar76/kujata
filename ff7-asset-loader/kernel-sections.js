@@ -375,10 +375,29 @@ const extractWindowBinElements = async (fileId, outputKernelDirectory, metadataD
             }
             windowBinAssetMap[assetType] = elements
         }
+        if (assetType === 'battle-menu-text-large') {
+            console.log('battle-menu-text-large')
+            const colorElements = []
+            for (let i = 0; i < windowBinAssetMap[assetType].length; i++) {
+                const element = windowBinAssetMap[assetType][i]
+                // console.log('element for color', element)
+                for (let j = 0; j < element.colors.length; j++) {
+                    const color = element.colors[j][0]
+                    const palette = element.colors[j][1]
+                    const colorElement = { ...element }
+                    delete colorElement.colors
+                    colorElement.palette = palette
+                    colorElement.description = `${colorElement.description} ${color}`
+                    colorElement.color = color
+                    colorElements.push(colorElement)
+                    // console.log('colorElements', colorElements)
+                }
+            }
+            windowBinAssetMap[assetType] = colorElements
+        }
 
         for (let i = 0; i < windowBinAssetMap[assetType].length; i++) {
             const element = windowBinAssetMap[assetType][i]
-
             // console.log('element', element)
             const elementFile = path.join(outputKernelDirectory, `window.bin_${fileId}_${element.palette}.png`)
             const elementFileExtract = sharp(elementFile).extract({ left: element.x, top: element.y, width: element.w, height: element.h })
