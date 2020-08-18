@@ -13,9 +13,11 @@ This is not the required format for palmer etc, but it does provide ALL possible
 with depths and configurations for graphic artists and developers etc
 
 Problems still to resolve:
-- I have not yet figured out light sources and the blending & transTrans properties
-For the time being, they are simply filtered out so that there are no unwanted artefacts
+- Light sources and blending works, BUT it will only toggle between states. If you wanted to have
+multiple states of one param active, this wouldn't work. In that case, we'd have to render every
+combination of states for each param, maybe all params, I'll look at this another day
 - Intermittent 'transparent' pixels on most fields, haven't look into why yet
+- Haven't looked at layer 3 or parallax etc
 */
 
 let COEFF_COLOR = 255 / 31 // eg translate 5 bit color to 8 bit
@@ -97,25 +99,29 @@ const blendColors = (baseCol, topColor, typeTrans) => {
             return {
                 r: Math.min(255, baseCol.r + topColor.r),
                 g: Math.min(255, baseCol.g + topColor.g),
-                b: Math.min(255, baseCol.b + topColor.b)
+                b: Math.min(255, baseCol.b + topColor.b),
+                a: 255
             }
         case 2:
             return {
                 r: Math.max(0, baseCol.r - topColor.r),
                 g: Math.max(0, baseCol.g - topColor.g),
-                b: Math.max(0, baseCol.b - topColor.b)
+                b: Math.max(0, baseCol.b - topColor.b),
+                a: 255
             }
         case 3:
             return {
                 r: Math.min(255, baseCol.r + (0.25 * topColor.r)),
                 g: Math.min(255, baseCol.g + (0.25 * topColor.g)),
-                b: Math.min(255, baseCol.b + (0.25 * topColor.b))
+                b: Math.min(255, baseCol.b + (0.25 * topColor.b)),
+                a: 255
             }
         default:
             return {
                 r: (baseCol.r + topColor.r) / 2,
                 g: (baseCol.g + topColor.g) / 2,
                 b: (baseCol.b + topColor.b) / 2,
+                a: 255
             }
     }
 }
@@ -146,10 +152,12 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         let sourceY = tile.sourceY
         let textureId = tile.textureId
 
-        if (tile.layerID > 0 && tile.textureId2 > 0) { // Unsure about this, from makou reactor, will update
+        if (tile.layerID > 0 && tile.textureId2 > 0) { // This solves the blending tiles
             sourceX = tile.sourceX2
             sourceY = tile.sourceY2
             textureId = tile.textureId2
+            texture = flevel.background.textures[`texture${tile.textureId2}`]
+            textureBytes = texture.data
         }
         if (false) { // Just for logging
             console.log('Tile', i,
@@ -169,12 +177,13 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         for (let j = 0; j < 256; j++) { // Loop througheach tile's pixels, eg 16x16
             let adjustY = Math.floor(j / 16)
             let adjustX = j - (adjustY * 16) // Get normalised offset position, eg each new 
-            let textureBytesOffset = ((tile.sourceY + adjustY) * 256) + ((tile.sourceX + adjustX)) // Calculate offset based on pixel coords, eg, we have to skip to the next row every 16
+            let textureBytesOffset = ((sourceY + adjustY) * 256) + ((sourceX + adjustX)) // Calculate offset based on pixel coords, eg, we have to skip to the next row every 16
 
             const textureByte = textureBytes[textureBytesOffset] // Get the byte for this pixel from the source image
 
             let paletteItem
-            if (flevel.palette.pages.length > 0 && flevel.palette.pages.length > tile.paletteId && tile.depth === 1) { // Check to see if we get the color from the palette or directly
+            const usePalette = flevel.palette.pages.length > 0 && flevel.palette.pages.length > tile.paletteId && tile.depth === 1
+            if (usePalette) { // Check to see if we get the color from the palette or directly
                 paletteItem = flevel.palette.pages[tile.paletteId][textureByte] // Using the byte as reference get the correct colour from the specified palette
             } else {
                 paletteItem = getColorForDirect(textureByte) // Get the colour directly, should be 2 bytes
@@ -183,10 +192,10 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
 
             if (false) { // Just for logging
                 console.log(' - ',
-                    'x', tile.sourceX, adjustX, '->', adjustX,
-                    'y', tile.sourceY, adjustY, '->', adjustY,
+                    'x', sourceX, adjustX, '->', adjustX,
+                    'y', sourceY, adjustY, '->', adjustY,
                     'offset', textureBytesOffset, textureByte,
-                    'color', palettePage, paletteColorId, paletteColor
+                    'color', usePalette, paletteItem, paletteColor
                 )
             }
 
@@ -203,7 +212,6 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
                     )
                 }
                 paletteItem = blendedPaletteItem
-                paletteItem.trans = true // Can't seem to get blending tiles working, so just make them transparent for the time being
             }
 
             // TODO - Pixel values of 0 may or may not be transparent, depending on the color key status, more on that later. This also applies to non-paletted formats.
@@ -273,6 +281,8 @@ const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     // Draw each grouped tile layer
     for (let i = 0; i < groupedTileLayers.length; i++) {
         const tileGroup = groupedTileLayers[i]
+        // Note: This works, BUT it will only toggle between states. If you wanted to have multiple states of one param active, this wouldn't work.
+        // In that case, we'd have to render every combination of states for each param, maybe all params
         const name = `${baseFilename}_${tileGroup.z}_${tileGroup.layer}_${tileGroup.param}_${tileGroup.state}.png`
         saveTileGroupImage(flevel, folder, name, tileGroup.tiles, sizeMeta, false, false, baseData)
         tileGroup.fileName = name

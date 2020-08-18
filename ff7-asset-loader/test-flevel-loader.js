@@ -51,10 +51,10 @@ const decodeAllMaps = (maps) => {
 
 const problemMaps = ['fr_e', 'lastmap']
 
-// console.log('Decode all Maps -> All', decodeAllMaps(mapList))
+console.log('Decode all Maps -> All', decodeAllMaps(mapList))
 // console.log('Decode all Maps -> Errors All', decodeAllMaps(problemMaps))
-// console.log('Decode one', decodeOneMap('coloss'))
-console.log('Decode one', decodeOneMap('mds5_1'))
+// console.log('Decode one', decodeOneMap('md1_2'))
+// console.log('Decode one', decodeOneMap('mds5_1'))
 // console.log('Decode one', decodeOneMap('nrthmk'))
 // console.log('Decode one', decodeOneMap('mrkt2'))
 // console.log('Decode one', decodeOneMap('subin_2a'))
