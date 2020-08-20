@@ -17,8 +17,8 @@ with depths and configurations for graphic artists and developers etc
 Problems still to resolve:
 - Layer 0 - COMPLETE
 - Layer 1 - COMPLETE apart from typeTrans=2 doesn't seem to display perfectly
-- Layer 2 - Haven't look at yet
-- Layer 3 - Haven't look at yet
+- Layer 2 - COMPLETE, eg woa_3
+- Layer 3 - COMPLETE, eg anfrst_1
 */
 
 let COEFF_COLOR = 255 / 31 // eg translate 5 bit color to 8 bit
@@ -141,24 +141,14 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         }
         let textureBytes = texture.data // Get all bytes for texture
 
-        if (false) { // Just for logging
-            console.log('Tile', i,
-                'x', tile.destinationX, '->', tileOverlayX,
-                'y', tile.destinationY, '->', tileOverlayY,
-                'depth', tile.depth, 'z', tile.id,
-                'palette', tile.paletteId,
-                'texture', tile.sourceX, tile.sourceY, textureBytes.length,
-                'layer', tile.layerID,
-                'z', tile.z,
-                'id', tile.id, tile.idBig,
-                'param', tile.param, tile.state,
-                'blend', tile.blending, tile.typeTrans
-            )
+        let tileSize = 16
+        if (tile.layerID >= 2) { // Layer 2 & 3 have 32 pixel tiles
+            tileSize = 32
         }
 
-        for (let j = 0; j < 256; j++) { // Loop througheach tile's pixels, eg 16x16
-            let adjustY = Math.floor(j / 16)
-            let adjustX = j - (adjustY * 16) // Get normalised offset position, eg each new 
+        for (let j = 0; j < (tileSize * tileSize); j++) { // Loop througheach tile's pixels, eg 16x16
+            let adjustY = Math.floor(j / tileSize)
+            let adjustX = j - (adjustY * tileSize) // Get normalised offset position, eg each new 
             const posX = tileOverlayX + adjustX
             const posY = tileOverlayY + adjustY
 
@@ -175,8 +165,8 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
                     return false
                 }
                 const debugPixels = [
-                    [166, 175],
-                    [166, 176],
+                    [10, 10],
+                    [10, 30],
                 ]
                 for (let i = 0; i < debugPixels.length; i++) {
                     if (debugPixels[i][0] === x && debugPixels[i][1] === y) {
@@ -235,7 +225,7 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
 
 
             if (shallPrintDebug(posX, posY, setBlackBackground)) { // Just for logging
-                console.log('Tile', i,
+                console.log('Tile', i, tile,
                     'x', tile.destinationX, '->', tileOverlayX,
                     'y', tile.destinationY, '->', tileOverlayY,
                     'depth', tile.depth, 'z', tile.id,
@@ -267,7 +257,7 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
 
             let byteOffset = ((tileOverlayY + adjustY) * sizeMeta.width * sizeMeta.channels) + ((tileOverlayX + adjustX) * sizeMeta.channels) // Write this into an array so we can print the image (note, each channel, eg RGBA)
 
-            if (tile.blending) {
+            if (tile.blending) { // Most blending should happen with webgl in browser
                 if (tile.typeTrans === 3) { // Blending 3 is 25%, set colours to 25%
                     paletteItem.r = Math.round(0.25 * paletteItem.r)
                     paletteItem.g = Math.round(0.25 * paletteItem.g)
