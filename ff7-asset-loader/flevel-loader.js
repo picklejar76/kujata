@@ -464,7 +464,7 @@ module.exports = class FLevelLoader {
     r.offset = flevel.sectionOffsets[8]
     const setLayerIDs = (tile) => {
       switch (tile.id) { // id = z, where lower values are closer to the camera. 4095 = layer 0, 4096 = layer 2, 0 = layer 3
-        case 4095: tile.layerID = 0; break;
+        case 4095: tile.layerID = 0; tile.param = 0; tile.state = 0; break; // Reset params for layer 0, shouldn't really be set
         case 4096: tile.layerID = 2; break;
         case 0: tile.layerID = 3; break;
         default: tile.layerID = 1; break;
@@ -537,26 +537,18 @@ module.exports = class FLevelLoader {
     flevel.background = {
       length: r.readUInt(),
       header: {
-        unknown1: r.readUShort(),
-        depth: r.readUShort(),
-        unknown2: r.readUByte()
+        zero1: r.readUShort(),
+        usePaddles: r.readUShort(),
+        activated: r.readUByte()
       },
-      palette: {
-        title: r.readString(7),
-        paletteSize: r.readUInt(),
-        palX: r.readUShort(),
-        palY: r.readUShort(),
-        width: r.readUShort(),
-        height: r.readUShort(),
-        colors: []
-      }
+      palette: {}
     }
-    for (let i = 1; i <= 6; i++) {
-      let bytes = r.readShort()
-      const color = backgroundLayerRenderer.getColorForPalette(bytes)
-      flevel.background.palette.colors.push(color)
-    }
-    let layer1Back = r.readString(4)
+
+    let paletteTitle = r.readString(7)
+    flevel.background.palette.ignoreFirstPixel = r.readUByteArray(20)
+    let paletteZero2 = r.readUInt()
+    let paletteBack = r.readString(4)
+
     flevel.background.tiles = {
       layer1: {
         width: r.readUShort(),

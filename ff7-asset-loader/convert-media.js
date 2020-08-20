@@ -9,9 +9,6 @@ const extractSounds = async () => {
     // Extract .wav from audio.dat & audio.fmt
     // D:\code\ff7\sfxedit_0.3\sfxdump.exe 'D:\Steam\steamapps\common\FINAL FANTASY VII\data\sound\audio.fmt' 'D:\Steam\steamapps\common\FINAL FANTASY VII\data\sound\audio.dat' D:\code\ff7\kujata-data-dg\data\media\sounds\
 
-
-    let inputDir = config.inputSoundsDirectory
-
     // Check directories
     const sfxDumpPath = path.join('..', 'sfxedit-0.3', 'sfxdump.exe')
     const audioFmtPath = path.join(config.inputSoundsDirectory, 'audio.fmt')

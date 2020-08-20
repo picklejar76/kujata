@@ -49,16 +49,37 @@ const decodeAllMaps = (maps) => {
   return errors
 }
 
-const problemMaps = ['fr_e', 'lastmap']
+const problemMaps = ['blin67_4',
+  'nivgate2',
+  'nivgate3',
+  'nivl_e3',
+  'fr_e',
+  'junair',
+  'gldst',
+  'gldinfo',
+  'cosmo',
+  'cosmo2',
+  'rckt3',
+  'kuro_11',
+  'hyoumap',
+  'gaiin_6',
+  'gaiin_7',
+  'trnad_52',
+  'md_e1',
+  'lastmap',
+  'junone22',
+  'rckt32',
+  'jtemplc']
 
-console.log('Decode all Maps -> All', decodeAllMaps(mapList))
+// console.log('Decode all Maps -> All', decodeAllMaps(mapList))
 // console.log('Decode all Maps -> Errors All', decodeAllMaps(problemMaps))
 // console.log('Decode one', decodeOneMap('md1_2'))
-// console.log('Decode one', decodeOneMap('mds5_1'))
-// console.log('Decode one', decodeOneMap('nrthmk'))
+// console.log('Decode one', decodeOneMap('nmkin_1'))
+// console.log('Decode one', decodeOneMap('blin67_2'))
 // console.log('Decode one', decodeOneMap('mrkt2'))
-// console.log('Decode one', decodeOneMap('subin_2a'))
-// console.log('Decode one', decodeOneMap('blin66_1'))
+// console.log('Decode one', decodeOneMap('rckt3'))
+// console.log('Decode one', decodeOneMap('nrthmk'))
+// console.log('Decode one', decodeOneMap('ancnt3'))
 
 
 // decodeOneMap('uutai1') // md1stin, md1_1, md1_2, nrthmk, junon, uutai1

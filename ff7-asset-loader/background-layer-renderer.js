@@ -1,6 +1,7 @@
 const stringUtil = require("./string-util.js")
 const sharp = require('sharp')
 const fs = require('fs')
+const { timeEnd } = require("console")
 
 /*
 A layer is split out for every unique combination of:
@@ -8,16 +9,16 @@ A layer is split out for every unique combination of:
 - Z index (eg distance from camera for occlusion culling)
 - Param (eg moveable effect group)
 - State (eg moveable effect layer)
+- transType (eg blending mode)
 
 This is not the required format for palmer etc, but it does provide ALL possible layers
 with depths and configurations for graphic artists and developers etc
 
 Problems still to resolve:
-- Light sources and blending works, BUT it will only toggle between states. If you wanted to have
-multiple states of one param active, this wouldn't work. In that case, we'd have to render every
-combination of states for each param, maybe all params, I'll look at this another day
-- Intermittent 'transparent' pixels on most fields, haven't look into why yet
-- Haven't looked at layer 3 or parallax etc
+- Layer 0 - COMPLETE
+- Layer 1 - COMPLETE apart from typeTrans=2 doesn't seem to display perfectly
+- Layer 2 - Haven't look at yet
+- Layer 3 - Haven't look at yet
 */
 
 let COEFF_COLOR = 255 / 31 // eg translate 5 bit color to 8 bit
@@ -25,18 +26,20 @@ const getColorForPalette = (bytes) => { // abbbbbgggggrrrrr
     const color = {
         r: Math.round((bytes & 31) * COEFF_COLOR),
         g: Math.round((bytes >> 5 & 31) * COEFF_COLOR),
-        b: Math.round((bytes >> 10 & 31) * COEFF_COLOR)
+        b: Math.round((bytes >> 10 & 31) * COEFF_COLOR),
+        m: (bytes >> 15 & 1) === 1 ? 0 : 255
     }
-    color.a = color.r === 0 && color.g === 0 && color.b === 0 ? 0 : 255
+    color.a = 255 //color.r === 0 && color.g === 0 && color.b === 0 ? 0 : 255
     color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
     // console.log('color', bytes, color)
     return color
 }
 const getColorForDirect = (bytes) => { // rrrrrgggggabbbbb
     const color = {
+        r: Math.round((bytes >> 11 & 31) * COEFF_COLOR),
         b: Math.round((bytes & 31) * COEFF_COLOR),
         g: Math.round((bytes >> 6 & 31) * COEFF_COLOR),
-        r: Math.round((bytes >> 11 & 31) * COEFF_COLOR)
+        a: 255
     }
     color.hex = `${stringUtil.toHex2(color.r)}${stringUtil.toHex2(color.g)}${stringUtil.toHex2(color.b)}`
     // console.log('color', bytes, color)
@@ -55,22 +58,6 @@ const allTiles = (flevel) => {
 
 const sortBy = (p, a) => a.sort((i, j) => p.map(v => i[v] - j[v]).find(r => r))
 
-const groupBy = (arr, param1, param2, param3, param4) => {
-    let grouped = {}
-    for (var i = 0, len = arr.length, a; i < len; i++) {
-        a = arr[i]
-        if (grouped[a[param1]] === undefined)
-            grouped[a[param1]] = {}
-        if (grouped[a[param1]][a[param2]] === undefined)
-            grouped[a[param1]][a[param2]] = {}
-        if (grouped[a[param1]][a[param2]][a[param3]] === undefined)
-            grouped[a[param1]][a[param2]][a[param3]] = {}
-        if (grouped[a[param1]][a[param2]][a[param3]][a[param4]] === undefined)
-            grouped[a[param1]][a[param2]][a[param3]][a[param4]] = []
-        grouped[a[param1]][a[param2]][a[param3]][a[param4]].push(a)
-    }
-    return grouped
-}
 const getSizeMetaData = (tiles) => {
     let minX = 0
     let maxX = 0
@@ -93,47 +80,46 @@ const getSizeMetaData = (tiles) => {
     return { minX, maxX, minY, maxY, height, width, channels }
 }
 
-const blendColors = (baseCol, topColor, typeTrans) => {
-    switch (typeTrans) {
-        case 1:
-            return {
-                r: Math.min(255, baseCol.r + topColor.r),
-                g: Math.min(255, baseCol.g + topColor.g),
-                b: Math.min(255, baseCol.b + topColor.b),
-                a: 255
-            }
-        case 2:
-            return {
-                r: Math.max(0, baseCol.r - topColor.r),
-                g: Math.max(0, baseCol.g - topColor.g),
-                b: Math.max(0, baseCol.b - topColor.b),
-                a: 255
-            }
-        case 3:
-            return {
-                r: Math.min(255, baseCol.r + (0.25 * topColor.r)),
-                g: Math.min(255, baseCol.g + (0.25 * topColor.g)),
-                b: Math.min(255, baseCol.b + (0.25 * topColor.b)),
-                a: 255
-            }
-        default:
-            return {
-                r: (baseCol.r + topColor.r) / 2,
-                g: (baseCol.g + topColor.g) / 2,
-                b: (baseCol.b + topColor.b) / 2,
-                a: 255
-            }
-    }
-}
+// const blendColors = (baseCol, topColor, typeTrans) => {
+//     switch (typeTrans) {
+//         case 1:
+//             return {
+//                 r: Math.min(255, baseCol.r + topColor.r),
+//                 g: Math.min(255, baseCol.g + topColor.g),
+//                 b: Math.min(255, baseCol.b + topColor.b),
+//                 a: 255
+//             }
+//         case 2:
+//             return {
+//                 r: Math.max(0, baseCol.r - topColor.r),
+//                 g: Math.max(0, baseCol.g - topColor.g),
+//                 b: Math.max(0, baseCol.b - topColor.b),
+//                 a: 255
+//             }
+//         case 3:
+//             return {
+//                 r: Math.min(255, baseCol.r + (0.25 * topColor.r)),
+//                 g: Math.min(255, baseCol.g + (0.25 * topColor.g)),
+//                 b: Math.min(255, baseCol.b + (0.25 * topColor.b)),
+//                 a: 255
+//             }
+//         default:
+//             return {
+//                 r: (baseCol.r + topColor.r) / 2,
+//                 g: (baseCol.g + topColor.g) / 2,
+//                 b: (baseCol.b + topColor.b) / 2,
+//                 a: 255
+//             }
+//     }
+// }
 
-const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackground, ignoreNonZeroParams, baseData) => {
+const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackground) => {
     let n = sizeMeta.height * sizeMeta.width * sizeMeta.channels
     let data = new Uint8Array(n)
     for (let i = 0; i < n; i++) {
+        data[i] = 0x00 // Fill with either black or transparent
         if (setBlackBackground && (i + 1) % sizeMeta.channels === 0) {
-            data[i] = 0xFF // Fill with either black or transparent
-        } else {
-            data[i] = 0x00
+            data[i] = 0xFF
         }
     }
     for (let i = 0; i < tiles.length; i++) { // Loop through each tile
@@ -142,23 +128,19 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         let tileOverlayY = tile.destinationY + (sizeMeta.height / 2)
 
         let texture = flevel.background.textures[`texture${tile.textureId}`]
-        if (texture === undefined) {
-            // TODO - Not sure exactly what to do here, try this for now, although it doesn't give any results
-            texture = flevel.background.textures[`texture${tile.textureId2}`]
-        }
-        let textureBytes = texture.data // Get all bytes for texture
 
         let sourceX = tile.sourceX
         let sourceY = tile.sourceY
         let textureId = tile.textureId
 
-        if (tile.layerID > 0 && tile.textureId2 > 0) { // This solves the blending tiles
+        if (tile.layerID > 0 && tile.textureId2 > 0 && tile.depth !== 0) { // This solves the blending tiles
             sourceX = tile.sourceX2
             sourceY = tile.sourceY2
             textureId = tile.textureId2
             texture = flevel.background.textures[`texture${tile.textureId2}`]
-            textureBytes = texture.data
         }
+        let textureBytes = texture.data // Get all bytes for texture
+
         if (false) { // Just for logging
             console.log('Tile', i,
                 'x', tile.destinationX, '->', tileOverlayX,
@@ -177,50 +159,130 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         for (let j = 0; j < 256; j++) { // Loop througheach tile's pixels, eg 16x16
             let adjustY = Math.floor(j / 16)
             let adjustX = j - (adjustY * 16) // Get normalised offset position, eg each new 
+            const posX = tileOverlayX + adjustX
+            const posY = tileOverlayY + adjustY
+
             let textureBytesOffset = ((sourceY + adjustY) * 256) + ((sourceX + adjustX)) // Calculate offset based on pixel coords, eg, we have to skip to the next row every 16
 
             const textureByte = textureBytes[textureBytesOffset] // Get the byte for this pixel from the source image
 
-            let paletteItem
-            const usePalette = flevel.palette.pages.length > 0 && flevel.palette.pages.length > tile.paletteId && tile.depth === 1
-            if (usePalette) { // Check to see if we get the color from the palette or directly
-                paletteItem = flevel.palette.pages[tile.paletteId][textureByte] // Using the byte as reference get the correct colour from the specified palette
-            } else {
-                paletteItem = getColorForDirect(textureByte) // Get the colour directly, should be 2 bytes
-            }
-            const paletteColor = paletteItem.hex
 
-            if (false) { // Just for logging
+
+
+            const shallPrintDebug = (x, y, setBlackBackground) => {
+                return false // disable debug logging
+                if (setBlackBackground) {
+                    return false
+                }
+                const debugPixels = [
+                    [166, 175],
+                    [166, 176],
+                ]
+                for (let i = 0; i < debugPixels.length; i++) {
+                    if (debugPixels[i][0] === x && debugPixels[i][1] === y) {
+                        return true
+                    }
+                }
+                return false
+            }
+
+            const isBlack = (paletteItem) => {
+                // return paletteItem.r === 0 && paletteItem.g === 0 && paletteItem.b === 0
+                const colorBlack = paletteItem.r === 0 && paletteItem.g === 0 && paletteItem.b === 0
+                if (!colorBlack) {
+                    return false
+                }
+                if (paletteItem.m === 0) {
+                    return false
+                } else {
+                    return true
+                }
+            }
+
+            const usePalette = flevel.palette.pages.length > 0 && flevel.palette.pages.length > tile.paletteId && tile.depth === 1
+            const ignoreFirstPixel = flevel.background.palette.ignoreFirstPixel[tile.paletteId] === 1 && textureByte === 0
+
+            let paletteItem
+
+            if (usePalette) {
+                const paletteColor = Object.assign({}, flevel.palette.pages[tile.paletteId][textureByte])
+                paletteColor.isBlack = isBlack(paletteColor)
+                paletteColor.type = 'palette'
+                paletteItem = paletteColor
+            } else {
+                const directColor = getColorForDirect(textureByte)
+                directColor.isBlack = isBlack(directColor)
+                directColor.type = 'direct'
+                paletteItem = directColor
+            }
+
+            if (paletteItem.isBlack && flevel.palette.pages[tile.paletteId] && flevel.palette.pages[tile.paletteId][0]) {
+                const paletteFirstColor = Object.assign({}, flevel.palette.pages[tile.paletteId][0])
+                paletteFirstColor.isBlack = isBlack(paletteFirstColor)
+                paletteFirstColor.type = 'first'
+                paletteItem = paletteFirstColor
+            }
+            if (ignoreFirstPixel) {
+                if (shallPrintDebug(posX, posY, setBlackBackground)) {
+                    console.log('ignoreFirstPixel', paletteItem)
+                }
+                paletteItem.noRender = 1 // eg, don't render show
+            }
+
+            if (!usePalette && paletteItem.isBlack) {
+                paletteItem.noRender = 1
+            }
+
+
+            if (shallPrintDebug(posX, posY, setBlackBackground)) { // Just for logging
+                console.log('Tile', i,
+                    'x', tile.destinationX, '->', tileOverlayX,
+                    'y', tile.destinationY, '->', tileOverlayY,
+                    'depth', tile.depth, 'z', tile.id,
+                    'palette', tile.paletteId,
+                    'texture', tile.sourceX, tile.sourceY, textureBytes.length,
+                    'layer', tile.layerID,
+                    'z', tile.z,
+                    'id', tile.id, tile.idBig,
+                    'param', tile.param, tile.state,
+                    'blend', tile.blending, tile.typeTrans
+                )
+
                 console.log(' - ',
                     'x', sourceX, adjustX, '->', adjustX,
-                    'y', sourceY, adjustY, '->', adjustY,
-                    'offset', textureBytesOffset, textureByte,
-                    'color', usePalette, paletteItem, paletteColor
+                    'y', sourceY, adjustY, '->', adjustY, '\n',
+                    'pos', posX, posY, '\n',
+                    'palette', tile.paletteId, flevel.background.palette.ignoreFirstPixel[tile.paletteId], '\n',
+                    'bytes', textureByte, textureByte === 0, '\n',
+                    'selection', usePalette, ignoreFirstPixel, paletteItem.isBlack === true, '\n',
+                    // 'potential\n',
+                    // JSON.stringify(directColor), '\n',
+                    // JSON.stringify(paletteColor), '\n',
+                    // JSON.stringify(paletteFirstColor), '\n',
+                    'chosen', JSON.stringify(paletteItem)
                 )
+
+
             }
 
             let byteOffset = ((tileOverlayY + adjustY) * sizeMeta.width * sizeMeta.channels) + ((tileOverlayX + adjustX) * sizeMeta.channels) // Write this into an array so we can print the image (note, each channel, eg RGBA)
 
             if (tile.blending) {
-                const baseColor = { r: baseData[byteOffset + 0], g: baseData[byteOffset + 1], b: baseData[byteOffset + 2] }
-                let blendedPaletteItem = blendColors(baseColor, paletteItem, tile.typeTrans) // TODO - Doesn't quite work properly yet
-                if (i === 0 && j === 200 && false) { // for debug
-                    console.log(
-                        'blending', i, j, name, tile.typeTrans,
-                        'colors', baseColor, paletteItem, '->', blendedPaletteItem,
-                        'palette.pages.length', flevel.palette.pages.length > 0
-                    )
+                if (tile.typeTrans === 3) { // Blending 3 is 25%, set colours to 25%
+                    paletteItem.r = Math.round(0.25 * paletteItem.r)
+                    paletteItem.g = Math.round(0.25 * paletteItem.g)
+                    paletteItem.b = Math.round(0.25 * paletteItem.b)
                 }
-                paletteItem = blendedPaletteItem
             }
 
-            // TODO - Pixel values of 0 may or may not be transparent, depending on the color key status, more on that later. This also applies to non-paletted formats.
-            // http://wiki.ffrtt.ru/index.php?title=FF7/TEX_format
-            if (textureByte !== 0 && !paletteItem.trans) {
+            if (!paletteItem.noRender) {
                 data[byteOffset + 0] = 0x00 + paletteItem.r
                 data[byteOffset + 1] = 0x00 + paletteItem.g
                 data[byteOffset + 2] = 0x00 + paletteItem.b
                 data[byteOffset + 3] = 0x00 + paletteItem.a
+                if (shallPrintDebug(posX, posY, setBlackBackground)) {
+                    console.log('rendering', JSON.stringify(paletteItem), data[byteOffset + 0], byteOffset, '\n')
+                }
             }
         }
     }
@@ -237,60 +299,69 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
     return data
 }
 
-const organiseTilesByFeature = (groupedTiles) => {
-    let groupedTileLayers = []
-    let layers = Object.keys(groupedTiles)
-    for (let i = 0; i < layers.length; i++) {
-        const layerNo = layers[i]
-        let zNos = Object.keys(groupedTiles[layerNo])
-        for (let j = 0; j < zNos.length; j++) {
-            const zNo = zNos[j]
-            let paramNos = Object.keys(groupedTiles[layerNo][zNo])
-            for (let k = 0; k < paramNos.length; k++) {
-                const paramNo = paramNos[k]
-                let stateNos = Object.keys(groupedTiles[layerNo][zNo][paramNo])
-                for (let l = 0; l < stateNos.length; l++) {
-                    const stateNo = stateNos[l]
-                    const t = groupedTiles[layerNo][zNo][paramNo][stateNo]
-                    groupedTileLayers.push({ layer: parseInt(layerNo), z: parseInt(zNo), param: parseInt(paramNo), state: parseInt(stateNo), tileCount: t.length, tiles: t })
-                    // console.log('layer', layerNo, 'z', zNo, 'param', paramNo, 'state', stateNo)
-                }
-            }
+
+const getExistingArrangedLayer = (tile, arrangedLayers) => {
+    for (let i = 0; i < arrangedLayers.length; i++) {
+        const arrangedLayer = arrangedLayers[i]
+        if (tile.layerID === arrangedLayer.layerID &&
+            tile.z === arrangedLayer.z &&
+            tile.param === arrangedLayer.param &&
+            tile.state === arrangedLayer.state &&
+            tile.typeTrans === arrangedLayer.typeTrans) {
+            return arrangedLayer
         }
     }
-    return groupedTileLayers
+    return null
 }
+const arrangeLayers = (tiles) => {
+    const arrangedLayers = []
 
+    for (let i = 0; i < tiles.length; i++) {
+        const tile = tiles[i]
+        // get existing arranged layer if exists
+        let arrangedLayer = getExistingArrangedLayer(tile, arrangedLayers)
+
+        // if doesn't exist, create it
+        if (arrangedLayer === null) {
+            arrangedLayer = { layerID: tile.layerID, z: tile.z, param: tile.param, state: tile.state, typeTrans: tile.typeTrans, tiles: [], tileCount: 0 }
+            arrangedLayers.push(arrangedLayer)
+        }
+        // add tile to layer
+        arrangedLayer.tiles.push(tile)
+        arrangedLayer.tileCount = arrangedLayer.tiles.length
+    }
+    return arrangedLayers
+}
 const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     let tiles = allTiles(flevel)
 
     const sizeMeta = getSizeMetaData(tiles)
 
-    sortBy(['layerID', 'z', 'param', 'state'], tiles)
+    sortBy(['layerID', 'z', 'param', 'state', 'typeTrans'], tiles)
 
     // Group by
-    const groupedTiles = groupBy(tiles, 'layerID', 'z', 'param', 'state')
+    const arrangedLayers = arrangeLayers(tiles)
 
-    // Organise into drawable distinct distance and settings layers - Should really encorporate into above groupBy
-    const groupedTileLayers = organiseTilesByFeature(groupedTiles)
+    // console.log('arrangedLayers', arrangedLayers)
+    // console.log('arrangedLayer', arrangedLayers[0])
 
-    // Draw whole layer
-    const baseTiles = tiles.filter(t => t.param === 0 && !t.blending) // Without params etc, used for blending with params
-    let baseData = saveTileGroupImage(flevel, folder, `${baseFilename}.png`, baseTiles, sizeMeta, true, true)
+    // Draw all bg layers
+    saveTileGroupImage(flevel, folder, `${baseFilename}.png`, tiles, sizeMeta, true)
 
     // Draw each grouped tile layer
-    for (let i = 0; i < groupedTileLayers.length; i++) {
-        const tileGroup = groupedTileLayers[i]
+    for (let i = 0; i < arrangedLayers.length; i++) {
+        const arrangedLayer = arrangedLayers[i]
         // Note: This works, BUT it will only toggle between states. If you wanted to have multiple states of one param active, this wouldn't work.
         // In that case, we'd have to render every combination of states for each param, maybe all params
-        const name = `${baseFilename}_${tileGroup.z}_${tileGroup.layer}_${tileGroup.param}_${tileGroup.state}.png`
-        saveTileGroupImage(flevel, folder, name, tileGroup.tiles, sizeMeta, false, false, baseData)
-        tileGroup.fileName = name
-        delete tileGroup.tiles
+        const name = `${baseFilename}-${arrangedLayer.z}-${arrangedLayer.layerID}-${arrangedLayer.typeTrans}-${arrangedLayer.param}-${arrangedLayer.state}.png`
+        // console.log('name', arrangedLayer.typeTrans, name)
+        saveTileGroupImage(flevel, folder, name, arrangedLayer.tiles, sizeMeta, false)
+        arrangedLayer.fileName = name
+        delete arrangedLayer.tiles
     }
 
-    // Write layer metadata to json file
-    fs.writeFileSync(`${folder}/${baseFilename}.json`, JSON.stringify(groupedTileLayers, null, 2));
+    // Write layer metadata to json filea
+    fs.writeFileSync(`${folder}/${baseFilename}.json`, JSON.stringify(arrangedLayers, null, 2));
 }
 module.exports = {
     renderBackgroundLayers,
