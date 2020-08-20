@@ -142,8 +142,10 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
         let textureBytes = texture.data // Get all bytes for texture
 
         let tileSize = 16
-        if (tile.layerID >= 2) { // Layer 2 & 3 have 32 pixel tiles
-            tileSize = 32
+        if (tile.layerID >= 2) { // Layer 2 & 3 can have 32 pixel tiles 
+            if (tile.width !== 16 && tile.height !== 16) {
+                tileSize = 32
+            }
         }
 
         for (let j = 0; j < (tileSize * tileSize); j++) { // Loop througheach tile's pixels, eg 16x16
