@@ -343,7 +343,8 @@ class FF7BinaryDataReader {
       let a = $r.readUByte();
       return {
         op: "JMPF", a: a,
-        js: "goto " + (baseOffset + a) + ";"
+        js: "goto " + (baseOffset + a) + ";",
+        goto: baseOffset + a
       };
     }
 
@@ -352,7 +353,8 @@ class FF7BinaryDataReader {
       let a = $r.readUShort();
       return {
         op: "JMPFL", a: a,
-        js: "goto " + (baseOffset + a) + ";"
+        js: "goto " + (baseOffset + a) + ";",
+        goto: baseOffset + a
       };
     }
 
@@ -361,7 +363,8 @@ class FF7BinaryDataReader {
       let a = $r.readUByte();
       return {
         op: "JMPB", a: a,
-        js: "goto " + (baseOffset - a) + ";"
+        js: "goto " + (baseOffset - a) + ";",
+        goto: baseOffset + a
       };
     }
 
@@ -370,7 +373,8 @@ class FF7BinaryDataReader {
       let a = $r.readUShort();
       return {
         op: "JMPBL", a: a,
-        js: "goto " + (baseOffset - a) + ";"
+        js: "goto " + (baseOffset - a) + ";",
+        goto: baseOffset + a
       };
     }
 
@@ -389,7 +393,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -408,7 +413,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -427,7 +433,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -446,7 +453,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -465,7 +473,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -484,7 +493,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -656,7 +666,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEY", b: b, a: a,
-        js: "if keyPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -666,7 +677,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEYON", b: b, a: a,
-        js: "if keyPressedJustPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressedJustPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -676,7 +688,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEYOFF", b: b, a: a,
-        js: "if keyPressedJustReleased({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressedJustReleased({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -2221,7 +2234,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFPRTYQ", c: c, a: a,
-        js: "if (isCharacterInParty(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
+        js: "if (isCharacterInParty(" + cDesc + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -2231,7 +2245,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFMEMBQ", c: c, a: a,
-        js: "if (isCharacterAvailable(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
+        js: "if (isCharacterAvailable(" + cDesc + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 

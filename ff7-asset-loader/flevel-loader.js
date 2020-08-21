@@ -145,9 +145,11 @@ module.exports = class FLevelLoader {
         }
         while (!done) {
           //let lineNumber = pad5(offset - sectionOffsetBase);
-          let lineNumber = stringUtil.pad5(r.offset);
+          // let lineNumber = stringUtil.pad5(r.offset);
+          let lineNumber = r.offset
           try {
             op = r.readOpAndIncludeRawBytes(); // r.readOp();
+            op.byteIndex = lineNumber - startOffset
             entityScript.ops.push(op);
             ////console.log("read op=" + JSON.stringify(op, null, 0));
           } catch (e) {
