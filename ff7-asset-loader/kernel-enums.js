@@ -198,6 +198,25 @@ const Enums = {
         Magic: 'Magic',
         Summon: 'Summon',
         Command: 'Command'
+    },
+    Character: {
+        Flags: {
+            Sadness: 0x10,
+            Fury: 0x20
+        },
+        Order: {
+            BackRow: 0xFE,
+            Normal: 0xFF
+        },
+        LearnedLimits: {
+            Limit_1_1: 0x0001,
+            Limit_1_2: 0x0002,
+            Limit_2_1: 0x0008,
+            Limit_2_2: 0x0010,
+            Limit_3_1: 0x0040,
+            Limit_3_2: 0x0080,
+            Limit_4: 0x0200
+        }
     }
 }
 
@@ -234,7 +253,9 @@ const parseMateriaData = (materiaType, materiaAttribute, equipEffect) => {
 }
 const parseKernelEnums = (type, val) => {
 
-    const singleResultTypes = [Enums.GrowthRate, Enums.MateriaSlot, Enums.CharacterStat, Enums.ConditionSubMenu, Enums.Elements, Enums.MateriaElements, Enums.DamageModifier, Enums.AccessoryEffect]
+    const singleResultTypes = [
+        Enums.GrowthRate, Enums.MateriaSlot, Enums.CharacterStat, Enums.ConditionSubMenu, Enums.Elements,
+        Enums.MateriaElements, Enums.DamageModifier, Enums.AccessoryEffect, Enums.CharacterFlags, Enums.CharacterOrder]
     const inverseBitTypes = [Enums.SpecialEffects, Enums.Restrictions]
 
     if (type === Enums.MateriaType) {

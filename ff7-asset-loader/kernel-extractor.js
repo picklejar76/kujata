@@ -11,6 +11,7 @@ const { getTextSectionData,
     getAccessorySectionData,
     getMateriaSectionData,
     extractWindowBinElements } = require('./kernel-sections.js')
+const { getInitSectionData } = require('./kernel-section-init-data')
 const { TimFile } = require('./tim-file.js')
 
 /*
@@ -19,7 +20,7 @@ All but 4 sections from kernel.bin and kernel2.bin complete
 - commandData
 - attackData
 - battleAndGrowthData
-- initData
+- initData - COMPLETE
 
 A few more details required for materiaData - as per http://wiki.ffrtt.ru/index.php?title=FF7/Materia_data
 
@@ -93,7 +94,7 @@ const extractKernelKernel2Bin = async (inputKernelDirectory, outputKernelDirecto
     data.armorDescriptions = getTextSectionData(kernel2Data[13])
     data.accessoryDescriptions = getTextSectionData(kernel2Data[14])
     data.materiaDescriptions = getTextSectionData(kernel2Data[15])
-    data.KeyitemDescriptions = getTextSectionData(kernel2Data[16])
+    data.keyitemDescriptions = getTextSectionData(kernel2Data[16])
     data.commandNames = getTextSectionData(kernel2Data[17])
     data.magicNames = getTextSectionData(kernel2Data[18])
     data.itemNames = getTextSectionData(kernel2Data[19])
@@ -117,10 +118,13 @@ const extractKernelKernel2Bin = async (inputKernelDirectory, outputKernelDirecto
     // data.commandData = getTextSectionData(kernelData[0])
     // data.attackData = getTextSectionData(kernelData[1])
     // data.battleAndGrowthData = getTextSectionData(kernelData[2])
-    // data.initData = getTextSectionData(kernelData[3])
+    data.initData = getInitSectionData(kernelData[3],
+        data.itemNames, data.itemDescriptions,
+        data.materiaNames, data.materiaDescriptions
+    )
 
     await saveKernelData(outputKernelDirectory, data)
-    // console.log('Final data', data.materiaData)
+    // console.log('Final data', data.initData)
     console.log('Extract kernel.bin and kernel2.bin: END')
 }
 

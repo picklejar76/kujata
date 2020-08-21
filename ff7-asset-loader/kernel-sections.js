@@ -435,5 +435,7 @@ module.exports = {
     getArmorSectionData,
     getAccessorySectionData,
     getMateriaSectionData,
-    extractWindowBinElements
+    extractWindowBinElements,
+    dec2bin,
+    dec2hex
 }

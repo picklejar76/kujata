@@ -27,6 +27,7 @@ class FF7BinaryDataReader {
   readUByte() { let b = this.buffer.readUInt8(this.offset); this.offset += 1; return b; };
   readShort() { let s = this.buffer.readInt16LE(this.offset); this.offset += 2; return s; };
   readUShort() { let s = this.buffer.readUInt16LE(this.offset); this.offset += 2; return s; };
+  read24bitInteger() { let b = this.buffer.readUIntBE(this.offset, 3); this.offset += 3; return b; };
   readInt() { let i = this.buffer.readInt32LE(this.offset); this.offset += 4; return i; };
   readUInt() { let i = this.buffer.readUInt32LE(this.offset); this.offset += 4; return i; };
   readFloat() { let f = this.buffer.readFloatLE(this.offset); this.offset += 4; return f; };
