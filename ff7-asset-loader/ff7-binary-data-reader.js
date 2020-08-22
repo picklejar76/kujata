@@ -365,7 +365,7 @@ class FF7BinaryDataReader {
       return {
         op: "JMPB", a: a,
         js: "goto " + (baseOffset - a) + ";",
-        goto: baseOffset + a
+        goto: baseOffset - a
       };
     }
 
@@ -375,7 +375,7 @@ class FF7BinaryDataReader {
       return {
         op: "JMPBL", a: a,
         js: "goto " + (baseOffset - a) + ";",
-        goto: baseOffset + a
+        goto: baseOffset - a
       };
     }
 

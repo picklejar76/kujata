@@ -143,13 +143,18 @@ module.exports = class FLevelLoader {
             nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i + 1].entityScriptRoutines[0];
           }
         }
+        let byteIndexOffset = 0
         while (!done) {
           //let lineNumber = pad5(offset - sectionOffsetBase);
-          // let lineNumber = stringUtil.pad5(r.offset);
-          let lineNumber = r.offset
+          let lineNumber = stringUtil.pad5(r.offset);
+          let byteIndex = r.offset - startOffset
           try {
             op = r.readOpAndIncludeRawBytes(); // r.readOp();
-            op.byteIndex = lineNumber - startOffset
+            if (entityScript.ops.length === 0) {
+              byteIndexOffset = byteIndex
+            }
+            op.byteIndex = byteIndex - byteIndexOffset
+
             entityScript.ops.push(op);
             ////console.log("read op=" + JSON.stringify(op, null, 0));
           } catch (e) {

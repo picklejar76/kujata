@@ -259,11 +259,11 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
 
     // Lots of field script memory 0x0BA4 -> 0x0FA4
     const banks = { // Need to think how we should initialise these / access it with bytes and shorts in the same data structure
-        bank1: new Array(256).fill(0), //  1/2
-        bank2: new Array(256).fill(0), //  3/4
-        bank3: new Array(256).fill(0), //  B/C
-        bank4: new Array(256).fill(0), //  D/E
-        bank5: new Array(256).fill(0) //  7/F
+        bank1: new Uint8Array(256).fill(0), //  1/2
+        bank2: new Uint8Array(256).fill(0), //  3/4
+        bank3: new Uint8Array(256).fill(0), //  B/C
+        bank4: new Uint8Array(256).fill(0), //  D/E
+        bank5: new Uint8Array(256).fill(0) //  7/F
     }
 
     // Then 0x10A4 - These can all be done in a better way
