@@ -4,7 +4,7 @@ const { FF7BinaryDataReader } = require("./ff7-binary-data-reader.js")
 const { Enums, parseKernelEnums } = require('./kernel-enums')
 const { dec2hex, dec2bin } = require('./kernel-sections')
 
-const getCharacterRecord = (r) => {
+const getCharacterRecord = (r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions) => {
     const id = r.readUByte()
 
     const currentLevel = r.readUByte()
@@ -26,9 +26,9 @@ const getCharacterRecord = (r) => {
     const currentLimitBar = r.readUByte()
     const name = r.readKernelString(12)
     r.offset = r.offset + 12 // readKernelString doesn't move the buffer position
-    const weapon = r.readUByte()
-    const armor = r.readUByte()
-    const accessory = r.readUByte()
+    const weapon = getWeapon(r, weaponNames, weaponDescriptions)
+    const armor = getWeapon(r, armorNames, armorDescriptions)
+    const accessory = getWeapon(r, accessoryNames, accessoryDescriptions)
 
     const statusFlags = parseKernelEnums(Enums.Character.Flags, r.readUByte()) // 0x10-Sadness 0x20-Fury 
     const battleOrderRaw = r.readUByte() // 0xFF-Normal 0xFE-Back row
@@ -49,23 +49,23 @@ const getCharacterRecord = (r) => {
     const maximumMP = r.readUShort()
     const currentEXP = r.readUInt()
 
-    const weaponMateria1 = r.readUInt()
-    const weaponMateria2 = r.readUInt()
-    const weaponMateria3 = r.readUInt()
-    const weaponMateria4 = r.readUInt()
-    const weaponMateria5 = r.readUInt()
-    const weaponMateria6 = r.readUInt()
-    const weaponMateria7 = r.readUInt()
-    const weaponMateria8 = r.readUInt()
+    const weaponMateria1 = getMateria(r, materiaNames, materiaDescriptions)
+    const weaponMateria2 = getMateria(r, materiaNames, materiaDescriptions)
+    const weaponMateria3 = getMateria(r, materiaNames, materiaDescriptions)
+    const weaponMateria4 = getMateria(r, materiaNames, materiaDescriptions)
+    const weaponMateria5 = getMateria(r, materiaNames, materiaDescriptions)
+    const weaponMateria6 = getMateria(r, materiaNames, materiaDescriptions)
+    const weaponMateria7 = getMateria(r, materiaNames, materiaDescriptions)
+    const weaponMateria8 = getMateria(r, materiaNames, materiaDescriptions)
 
-    const armorMateria1 = r.readUInt()
-    const armorMateria2 = r.readUInt()
-    const armorMateria3 = r.readUInt()
-    const armorMateria4 = r.readUInt()
-    const armorMateria5 = r.readUInt()
-    const armorMateria6 = r.readUInt()
-    const armorMateria7 = r.readUInt()
-    const armorMateria8 = r.readUInt()
+    const armorMateria1 = getMateria(r, materiaNames, materiaDescriptions)
+    const armorMateria2 = getMateria(r, materiaNames, materiaDescriptions)
+    const armorMateria3 = getMateria(r, materiaNames, materiaDescriptions)
+    const armorMateria4 = getMateria(r, materiaNames, materiaDescriptions)
+    const armorMateria5 = getMateria(r, materiaNames, materiaDescriptions)
+    const armorMateria6 = getMateria(r, materiaNames, materiaDescriptions)
+    const armorMateria7 = getMateria(r, materiaNames, materiaDescriptions)
+    const armorMateria8 = getMateria(r, materiaNames, materiaDescriptions)
 
     const nextLevelEXP = r.readUInt()
 
@@ -142,18 +142,47 @@ const getCharacterRecord = (r) => {
     // console.log('characterRecord', characterRecord)
     return characterRecord
 }
+
+const getWeapon = (r, weaponNames, weaponDescriptions) => {
+    const id = r.readUByte()
+    return {
+        id,
+        name: weaponNames[id],
+        description: weaponDescriptions[id]
+    }
+}
+const getArmor = (r, armorNames, armorDescriptions) => {
+    const id = r.readUByte()
+    return {
+        id,
+        name: armorNames[id],
+        description: armorDescriptions[id]
+    }
+}
+const getAccessory = (r, accessoryNames, accessoryDescriptions) => {
+    const id = r.readUByte()
+    return {
+        id,
+        name: accessoryNames[id],
+        description: accessoryDescriptions[id]
+    }
+}
+const getItem = (r, itemNames, itemDescriptions) => {
+    const itemBinary = r.readUShort()
+    const id = itemBinary & 0b1111111
+    const quantity = itemBinary >> 9
+    const item = {
+        id,
+        quantity,
+        name: itemNames[id],
+        description: itemDescriptions[id]
+    }
+    return item
+}
 const getItemStock = (r, itemNames, itemDescriptions) => { // 320 x 2 bytes
     let items = []
     for (let i = 0; i < 320; i++) {
-        const itemBinary = r.readUShort()
-        const id = itemBinary & 0b1111111
-        const quantity = itemBinary >> 9
-        const item = {
-            id,
-            quantity,
-            name: itemNames[id],
-            description: itemDescriptions[id]
-        }
+        const item = getItem(r, itemNames, itemDescriptions)
         items.push(item)
     }
     return items
@@ -184,7 +213,7 @@ const getMateriaStock = (r, count, materiaNames, materiaDescriptions) => { // 20
     }
     return materias
 }
-const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNames, materiaDescriptions) => {
+const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions) => {
     // Output the raw kernel data as the different consumers might want the data stored differently as this will be opinionated
     // 2876 bytes, although, I believe it should be 0x0BA4 - 0x0054 (2896 bytes), investigate when putting the data together
     const raw = sectionData.buffer.toString('base64')
@@ -210,15 +239,15 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
     const windowColorBL = [0, 0, 128]
     const windowColorBR = [0, 0, 32]
 
-    const cloud = getCharacterRecord(r)
-    const barret = getCharacterRecord(r)
-    const tifa = getCharacterRecord(r)
-    const aeris = getCharacterRecord(r)
-    const redxiii = getCharacterRecord(r)
-    const yuffie = getCharacterRecord(r)
-    const caitsith = getCharacterRecord(r)
-    const vincent = getCharacterRecord(r)
-    const cid = getCharacterRecord(r)
+    const cloud = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const barret = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const tifa = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const aeris = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const redxiii = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const yuffie = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const caitsith = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const vincent = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
+    const cid = getCharacterRecord(r, materiaNames, materiaDescriptions, weaponNames, weaponDescriptions, armorNames, armorDescriptions, accessoryNames, accessoryDescriptions)
 
     // Not sure why, but this initially this says Barret, Tifa and Cloud
     let partySlot1 = parseKernelEnums(Enums.Character.PartyMember, r.readUByte())
@@ -229,9 +258,9 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
     // console.log('items', r.offset, dec2hex(r.offset + 84))
     const items = getItemStock(r, itemNames, itemDescriptions)
     // console.log('materia', r.offset, dec2hex(r.offset + 84))
-    const materia = getMateriaStock(r, 200, materiaNames, materiaDescriptions)
+    const materias = getMateriaStock(r, 200, materiaNames, materiaDescriptions)
     // console.log('stolenMateria', r.offset, dec2hex(r.offset + 84))
-    const stolenMateria = getMateriaStock(r, 48, materiaNames, materiaDescriptions)
+    const stolenMaterias = getMateriaStock(r, 48, materiaNames, materiaDescriptions)
 
     // console.log('z_3', r.offset, dec2hex(r.offset + 84))
     const z_3 = r.readUByteArray(32)
@@ -295,21 +324,22 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
 
     const data = {
         savePreview,
-        characterRecords: {
-            cloud,
-            barret,
-            tifa,
-            aeris,
-            redxiii,
-            yuffie,
-            caitsith,
-            vincent,
-            cid
+        characters: {
+            Cloud: cloud,
+            Barret: barret,
+            Tifa: tifa,
+            Aeris: aeris,
+            RedXIII: redxiii,
+            Yuffie: yuffie,
+            CaitSith: caitsith,
+            Vincent: vincent,
+            Cid: cid
         },
         party: {
-            // Not 100% sure, but assuming slot1 is always the leader, need to hold the menu order separately
+            // Not 100% sure, but need to hold the menu order separately
+            // or assume this is also the menu order and the leader is assumed from a list of current members
+            // or that there is somewhere specifying the current leader
             members: [partySlot1, partySlot2, partySlot3],
-            membersMenuOrder: [0, 1, 2],
             phsLocked: { // eg MMBLK,MMBUK
                 Cloud: PHSLockingMask[0], // Should really be enabled by default, cant see where in md1stin
                 Barret: PHSLockingMask[1],
@@ -346,8 +376,8 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
         },
         gil,
         items,
-        materia,
-        stolenMateria,
+        materias,
+        stolenMaterias,
         time: {
             secondsPlayed,
             countdownSeconds,

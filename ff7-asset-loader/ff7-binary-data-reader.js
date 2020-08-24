@@ -806,7 +806,7 @@ class FF7BinaryDataReader {
 
     if (op == 0x3f) {
       return {
-        op: "HMPMAX2",
+        op: "HMPMAX3",
         js: "restoreHPMPMax({ver:0x3f});"
       };
     }

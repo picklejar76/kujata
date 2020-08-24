@@ -120,7 +120,10 @@ const extractKernelKernel2Bin = async (inputKernelDirectory, outputKernelDirecto
     // data.battleAndGrowthData = getTextSectionData(kernelData[2])
     data.initData = getInitSectionData(kernelData[3],
         data.itemNames, data.itemDescriptions,
-        data.materiaNames, data.materiaDescriptions
+        data.materiaNames, data.materiaDescriptions,
+        data.weaponNames, data.weaponDescriptions,
+        data.armorNames, data.armorDescriptions,
+        data.accessoryNames, data.accessoryDescriptions
     )
 
     await saveKernelData(outputKernelDirectory, data)
