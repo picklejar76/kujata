@@ -216,6 +216,22 @@ const Enums = {
             Limit_3_1: 0x0040,
             Limit_3_2: 0x0080,
             Limit_4: 0x0200
+        },
+        PartyMember: {
+            Cloud: 0x00,
+            Barret: 0x01,
+            Tifa: 0x02,
+            Aeris: 0x03,
+            RedXIII: 0x04,
+            Yuffie: 0x05,
+            CaitSith: 0x06,
+            Vincent: 0x07,
+            Cid: 0x08,
+            YoungCloud: 0x09,
+            Sephiroth: 0x0A,
+            Chocobo: 0x0B,
+            None: 0xFE,
+            None: 0xFF
         }
     }
 }
@@ -255,7 +271,8 @@ const parseKernelEnums = (type, val) => {
 
     const singleResultTypes = [
         Enums.GrowthRate, Enums.MateriaSlot, Enums.CharacterStat, Enums.ConditionSubMenu, Enums.Elements,
-        Enums.MateriaElements, Enums.DamageModifier, Enums.AccessoryEffect, Enums.CharacterFlags, Enums.CharacterOrder]
+        Enums.MateriaElements, Enums.DamageModifier, Enums.AccessoryEffect,
+        Enums.Character.Flags, Enums.Character.Order, Enums.Character.PartyMember]
     const inverseBitTypes = [Enums.SpecialEffects, Enums.Restrictions]
 
     if (type === Enums.MateriaType) {

@@ -5,68 +5,69 @@ const { Enums, parseKernelEnums } = require('./kernel-enums')
 const { dec2hex, dec2bin } = require('./kernel-sections')
 
 const getCharacterRecord = (r) => {
-    const id = r.readByte()
+    const id = r.readUByte()
 
-    const currentLevel = r.readByte()
-    const strength = r.readByte()
-    const vitality = r.readByte()
-    const magic = r.readByte()
-    const spirit = r.readByte()
-    const dexterity = r.readByte()
-    const luck = r.readByte()
+    const currentLevel = r.readUByte()
+    const strength = r.readUByte()
+    const vitality = r.readUByte()
+    const magic = r.readUByte()
+    const spirit = r.readUByte()
+    const dexterity = r.readUByte()
+    const luck = r.readUByte()
 
-    const strengthBonus = r.readByte()
-    const vitalityBonus = r.readByte()
-    const magicBonus = r.readByte()
-    const spiritBonus = r.readByte()
-    const dexterityBonus = r.readByte()
-    const luckBonus = r.readByte()
+    const strengthBonus = r.readUByte()
+    const vitalityBonus = r.readUByte()
+    const magicBonus = r.readUByte()
+    const spiritBonus = r.readUByte()
+    const dexterityBonus = r.readUByte()
+    const luckBonus = r.readUByte()
 
-    const currentLimitLevel = r.readByte() //1-4
-    const currentLimitBar = r.readByte()
+    const currentLimitLevel = r.readUByte() //1-4
+    const currentLimitBar = r.readUByte()
     const name = r.readKernelString(12)
     r.offset = r.offset + 12 // readKernelString doesn't move the buffer position
-    const weapon = r.readByte()
-    const armor = r.readByte()
-    const accessory = r.readByte()
+    const weapon = r.readUByte()
+    const armor = r.readUByte()
+    const accessory = r.readUByte()
 
-    const statusFlags = parseKernelEnums(Enums.Character.Flags, r.readByte()) // 0x10-Sadness 0x20-Fury 
-    const battleOrder = parseKernelEnums(Enums.Character.Order, r.readByte()) // 0xFF-Normal 0xFE-Back row 
-    const levelProgressBar = r.readByte() // (0-63) Games Gui Hides Values <4 4-63 are visible as "progress"
-    const learnedLimitSkils = parseKernelEnums(Enums.Character.LearnedLimits, r.readShort())
-    const noOfKills = r.readShort()
-    const limit11Used = r.readShort()
-    const limit21Used = r.readShort()
-    const limit31Used = r.readShort()
+    const statusFlags = parseKernelEnums(Enums.Character.Flags, r.readUByte()) // 0x10-Sadness 0x20-Fury 
+    const battleOrderRaw = r.readUByte() // 0xFF-Normal 0xFE-Back row
+    const battleOrder = parseKernelEnums(Enums.Character.Order, battleOrderRaw) // 0xFF-Normal 0xFE-Back row 
+    const levelProgressBar = r.readUByte() // (0-63) Games Gui Hides Values <4 4-63 are visible as "progress"
+    const learnedLimitSkils = parseKernelEnums(Enums.Character.LearnedLimits, r.readUShort())
+    const noOfKills = r.readUShort()
+    const limit11Used = r.readUShort()
+    const limit21Used = r.readUShort()
+    const limit31Used = r.readUShort()
 
-    const currentHP = r.readShort()
-    const baseHP = r.readShort()
-    const currentMP = r.readShort()
-    const baseMP = r.readShort()
-    const unknown1 = r.readInt()
-    const maximumHP = r.readShort()
-    const maximumMP = r.readShort()
-    const currentEXP = r.readInt()
+    const currentHP = r.readUShort()
+    const baseHP = r.readUShort()
+    const currentMP = r.readUShort()
+    const baseMP = r.readUShort()
+    const unknown1 = r.readUInt()
+    const maximumHP = r.readUShort()
+    const maximumMP = r.readUShort()
+    const currentEXP = r.readUInt()
 
-    const weaponMateria1 = r.readInt()
-    const weaponMateria2 = r.readInt()
-    const weaponMateria3 = r.readInt()
-    const weaponMateria4 = r.readInt()
-    const weaponMateria5 = r.readInt()
-    const weaponMateria6 = r.readInt()
-    const weaponMateria7 = r.readInt()
-    const weaponMateria8 = r.readInt()
+    const weaponMateria1 = r.readUInt()
+    const weaponMateria2 = r.readUInt()
+    const weaponMateria3 = r.readUInt()
+    const weaponMateria4 = r.readUInt()
+    const weaponMateria5 = r.readUInt()
+    const weaponMateria6 = r.readUInt()
+    const weaponMateria7 = r.readUInt()
+    const weaponMateria8 = r.readUInt()
 
-    const armorMateria1 = r.readInt()
-    const armorMateria2 = r.readInt()
-    const armorMateria3 = r.readInt()
-    const armorMateria4 = r.readInt()
-    const armorMateria5 = r.readInt()
-    const armorMateria6 = r.readInt()
-    const armorMateria7 = r.readInt()
-    const armorMateria8 = r.readInt()
+    const armorMateria1 = r.readUInt()
+    const armorMateria2 = r.readUInt()
+    const armorMateria3 = r.readUInt()
+    const armorMateria4 = r.readUInt()
+    const armorMateria5 = r.readUInt()
+    const armorMateria6 = r.readUInt()
+    const armorMateria7 = r.readUInt()
+    const armorMateria8 = r.readUInt()
 
-    const nextLevelEXP = r.readInt()
+    const nextLevelEXP = r.readUInt()
 
     const characterRecord = {
         id: id,
@@ -144,7 +145,7 @@ const getCharacterRecord = (r) => {
 const getItemStock = (r, itemNames, itemDescriptions) => { // 320 x 2 bytes
     let items = []
     for (let i = 0; i < 320; i++) {
-        const itemBinary = r.readShort()
+        const itemBinary = r.readUShort()
         const id = itemBinary & 0b1111111
         const quantity = itemBinary >> 9
         const item = {
@@ -219,9 +220,10 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
     const vincent = getCharacterRecord(r)
     const cid = getCharacterRecord(r)
 
-    const partySlot1 = r.readUByte()
-    const partySlot2 = r.readUByte()
-    const partySlot3 = r.readUByte()
+    // Not sure why, but this initially this says Barret, Tifa and Cloud
+    let partySlot1 = parseKernelEnums(Enums.Character.PartyMember, r.readUByte())
+    let partySlot2 = parseKernelEnums(Enums.Character.PartyMember, r.readUByte())
+    let partySlot3 = parseKernelEnums(Enums.Character.PartyMember, r.readUByte())
     const alignment = r.readUByte()
 
     // console.log('items', r.offset, dec2hex(r.offset + 84))
@@ -267,8 +269,8 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
     }
 
     // Then 0x10A4 - These can all be done in a better way
-    const PHSLockingMask = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    const PHSVisibilityMask = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    const PHSLockingMask = [1, 0, 0, 0, 0, 0, 0, 0, 0]
+    const PHSVisibilityMask = [1, 0, 0, 0, 0, 0, 0, 0, 0]
     const z_39 = 0
 
     const battleSpeed = 0x7E
@@ -305,11 +307,42 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
             cid
         },
         party: {
-            slot1: partySlot1,
-            slot2: partySlot2,
-            slot3: partySlot3,
-            PHSLockingMask,
-            PHSVisibilityMask
+            // Not 100% sure, but assuming slot1 is always the leader, need to hold the menu order separately
+            members: [partySlot1, partySlot2, partySlot3],
+            membersMenuOrder: [0, 1, 2],
+            phsLocked: { // eg MMBLK,MMBUK
+                Cloud: PHSLockingMask[0], // Should really be enabled by default, cant see where in md1stin
+                Barret: PHSLockingMask[1],
+                Tifa: PHSLockingMask[2],
+                Aeris: PHSLockingMask[3],
+                RedXIII: PHSLockingMask[4],
+                Yuffie: PHSLockingMask[5],
+                CaitSith: PHSLockingMask[6],
+                Vincent: PHSLockingMask[7],
+                Cid: PHSLockingMask[8]
+            },
+            phsVisibility: { // not sure what op code changes this
+                Cloud: PHSVisibilityMask[0], // Should really be enabled by default, cant see where in md1stin
+                Barret: PHSVisibilityMask[1],
+                Tifa: PHSVisibilityMask[2],
+                Aeris: PHSVisibilityMask[3],
+                RedXIII: PHSVisibilityMask[4],
+                Yuffie: PHSVisibilityMask[5],
+                CaitSith: PHSVisibilityMask[6],
+                Vincent: PHSVisibilityMask[7],
+                Cid: PHSVisibilityMask[8]
+            },
+            characterAvailability: {  // eg MMBud, although, I can't see a memory location for this
+                Cloud: 1, // Can't see that MMBud is ever called for cloud, setting it to 1 by default
+                Barret: 0,
+                Tifa: 0,
+                Aeris: 0,
+                RedXIII: 0,
+                Yuffie: 0,
+                CaitSith: 0,
+                Vincent: 0,
+                Cid: 0,
+            },
         },
         gil,
         items,
