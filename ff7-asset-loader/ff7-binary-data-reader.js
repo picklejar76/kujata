@@ -552,8 +552,8 @@ class FF7BinaryDataReader {
     if (op == 0x25) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let bxb3 = $r.readUByte(), b3 = (bxb3 & 0x0F);
-      let r = $r.readUByte(), g = $r.readUByte(), b = $r.readUByte();
-      let s = $r.readUByte(), t = $r.readUByte(), unused = $r.readUByte();
+      let t = $r.readUByte(), r = $r.readUByte(), g = $r.readUByte();
+      let b = $r.readUByte(), s = $r.readUByte(), unused = $r.readUByte();
       let rDesc = b1 == 0 ? r : "Bank[" + b1 + "][" + r + "]";
       let gDesc = b2 == 0 ? g : "Bank[" + b2 + "][" + g + "]";
       let bDesc = b3 == 0 ? b : "Bank[" + b3 + "][" + b + "]";
