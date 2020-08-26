@@ -14,6 +14,7 @@ const extractSounds = async () => {
     const audioFmtPath = path.join(config.inputSoundsDirectory, 'audio.fmt')
     const audioDatPath = path.join(config.inputSoundsDirectory, 'audio.dat')
     const soundsOutputPath = path.join(config.outputSoundsDirectory)
+    const soundsMetadataPath = path.join(config.outputSoundsDirectory, 'sounds-metadata.json')
 
     if (!fs.existsSync(sfxDumpPath)) { throw new Error('Unable to locate sfxdump.exe - ' + sfxDumpPath) }
     if (!fs.existsSync(audioFmtPath)) { throw new Error('Unable to locate audio.fmt - ' + audioFmtPath) }
@@ -27,6 +28,7 @@ const extractSounds = async () => {
     // console.log(stdout)
     let wavs = (await fs.readdir(soundsOutputPath)).filter(f => f.includes('.wav'))
 
+    const soundStats = []
     // Convert .wav into .ogg
     for (let i = 0; i < wavs.length; i++) {
         const wav = wavs[i]
@@ -34,10 +36,32 @@ const extractSounds = async () => {
         const oggPath = path.join(soundsOutputPath, wav.replace('.wav', '.ogg'))
 
         console.log('Converting sounds', i + 1, 'of', wavs.length)
+
+        // Extract looping data
+        const stats = fs.statSync(wavPath)
+        // console.log('stats', wav, stats.size)
+        const fd = fs.openSync(wavPath, 'r')
+        const bytesToRead = 16
+        const buf = Buffer.alloc(bytesToRead)
+        fs.readSync(fd, buf, 0, bytesToRead, stats.size - bytesToRead)
+        const fflpFlag = buf.slice(0, 4).toString() === 'fflp'
+        const start = buf.readUInt32BE(5)
+        const end = buf.readUInt32BE(9)
+        // console.log('buf', wav, buf, fflpFlag, start, end)
+        const soundFile = { name: parseInt(wav.replace('.wav', '')), loop: fflpFlag }
+        if (fflpFlag) {
+            soundFile.start = start
+            soundFile.end = end
+        }
+        soundStats.push(soundFile)
+        // Convert sound
         const { stdout, stderr } = await execFile('ffmpeg', ['-i', wavPath, '-acodec', 'libvorbis', oggPath])
         // console.log('wav', wav, ogg, stdout, stderr)
         await fs.remove(wavPath)
     }
+
+    console.log('soundStats', soundStats)
+    await fs.writeJson(soundsMetadataPath, soundStats, { spaces: '\t' })
     console.log('Extract Sounds - END')
 }
 const extractMusic = async () => {
