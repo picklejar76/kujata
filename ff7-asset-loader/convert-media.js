@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const util = require('util')
+const { statSync } = require('fs-extra')
 const execFile = util.promisify(require('child_process').execFile)
 let config = JSON.parse(fs.readFileSync('../config.json', 'utf-8'))
 
@@ -49,9 +50,11 @@ const extractSounds = async () => {
         const end = buf.readUInt32BE(9)
         // console.log('buf', wav, buf, fflpFlag, start, end)
         const soundFile = { name: parseInt(wav.replace('.wav', '')), loop: fflpFlag }
-        if (fflpFlag) {
+        soundFile.size = stats.size
+        if (fflpFlag) { // TODO: This designates decompressed memory space, need to find a way to turns this in milliseconds
             soundFile.start = start
             soundFile.end = end
+            soundFile.comp = end / stats.size
         }
         soundStats.push(soundFile)
         // Convert sound
