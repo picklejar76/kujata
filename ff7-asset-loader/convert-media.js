@@ -1,7 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
 const util = require('util')
-const { statSync } = require('fs-extra')
 const execFile = util.promisify(require('child_process').execFile)
 let config = JSON.parse(fs.readFileSync('../config.json', 'utf-8'))
 
@@ -70,24 +69,62 @@ const extractSounds = async () => {
 const extractMusic = async () => {
     console.log('Extract Music - START')
     const inputMusicDirectory = path.join(config.inputMusicDirectory)
+    const inputMusicOggDirectory = path.join(config.inputMusicOggDirectory)
     const outputMusicDirectory = path.join(config.outputMusicDirectory)
+    const musicMetadataPath = path.join(config.outputMusicDirectory, 'music-metadata.json')
 
     // Check directories
     if (!fs.existsSync(inputMusicDirectory)) { throw new Error('Unable to locate inputMusicDirectory - ' + config.inputMusicDirectory) }
-    let oggs = (await fs.readdir(inputMusicDirectory)).filter(f => f.includes('.ogg'))
-    if (oggs.length === 0) { throw new Error('No music files in inputMusicDirectory - ' + config.inputMusicDirectory) }
+    if (!fs.existsSync(inputMusicOggDirectory)) { throw new Error('Unable to locate inputMusicDirectory - ' + config.inputMusicOggDirectory) }
 
-    // Ensure output folder exists and is empty
     await fs.emptyDir(outputMusicDirectory)
 
-    // Move .ogg files
-    for (let i = 0; i < oggs.length; i++) {
-        const ogg = oggs[i]
-        const originPath = path.join(inputMusicDirectory, ogg)
-        const targetPath = path.join(outputMusicDirectory, ogg)
-        await fs.copy(originPath, targetPath)
-    }
+    let musicIdx = await fs.readFile(path.join(inputMusicDirectory, 'music.idx'), 'utf-8')
+    let musicList = musicIdx.split('\r\n').filter(m => m !== '')
+    // console.log('musicList', musicList)
 
+    const musicStats = []
+
+    for (let i = 0; i < musicList.length; i++) {
+        const music = musicList[i]
+        const oggPath = path.join(inputMusicOggDirectory, `${music}.ogg`)
+        const wavPath = path.join(inputMusicDirectory, `${music}.wav`)
+        const targetPath = path.join(outputMusicDirectory, `${music}.ogg`)
+
+        // console.log('music', music, fs.existsSync(oggPath), fs.existsSync(wavPath))
+
+        const statPath = fs.existsSync(oggPath) ? oggPath : wavPath
+
+        const stats = fs.statSync(statPath)
+        // console.log('stats', wav, stats.size)
+        const fd = fs.openSync(statPath, 'r')
+        const bytesToRead = 16
+        const buf = Buffer.alloc(bytesToRead)
+        fs.readSync(fd, buf, 0, bytesToRead, stats.size - bytesToRead)
+        const fflpFlag = buf.slice(0, 4).toString() === 'fflp'
+        const start = buf.readUInt32BE(5)
+        const end = buf.readUInt32BE(9)
+        // console.log('buf', wav, buf, fflpFlag, start, end)
+        const musicFile = { name: music, loop: fflpFlag }
+        musicFile.size = stats.size
+        if (fflpFlag) { // TODO: This designates decompressed memory space, need to find a way to turns this in milliseconds
+            soundFile.start = start
+            soundFile.end = end
+            soundFile.comp = end / stats.size
+        }
+        // There are no fflp flags on any music...
+        musicStats.push(musicFile)
+
+        if (fs.existsSync(oggPath)) {
+            await fs.copy(oggPath, targetPath)
+        }
+        if (fs.existsSync(wavPath)) {
+            const { stdout, stderr } = await execFile('ffmpeg', ['-i', wavPath, '-acodec', 'libvorbis', targetPath])
+        }
+
+    }
+    // console.log('musicStats', musicStats)
+    await fs.writeJson(musicMetadataPath, musicStats, { spaces: '\t' })
     console.log('Extract Music - END')
 }
 const extractMovies = async () => {
