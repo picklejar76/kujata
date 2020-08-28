@@ -322,6 +322,8 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
 
     const z_40 = 0
 
+    // Note: https://github.com/sithlord48/blackchocobo/blob/master/ff7tk/data/FF7Save_Types.h#L78
+
     const data = {
         savePreview,
         characters: {

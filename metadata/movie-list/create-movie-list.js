@@ -5,20 +5,20 @@ let config = JSON.parse(fs.readFileSync('../../config.json', 'utf-8'));
 const createCombinedMoviesList = async () => {
     const allMovies = await fs.readJson('./movie-list-combined.json')
     console.log('allMovies', allMovies)
-    const movies = { disk1: [], disk2: [], disk3: [] }
+    const movies = { disc1: [], disc2: [], disc3: [] }
 
     for (let i = 0; i < allMovies.length; i++) {
         const movie = allMovies[i]
         if (i < 20) { // Common movies
-            movies.disk1.push(movie)
-            movies.disk2.push(movie)
-            movies.disk3.push(movie)
+            movies.disc1.push(movie)
+            movies.disc2.push(movie)
+            movies.disc3.push(movie)
         } else if (i < 54) { // Disk 1
-            movies.disk1.push(movie)
+            movies.disc1.push(movie)
         } else if (i < 96) { // Disk 2
-            movies.disk2.push(movie)
+            movies.disc2.push(movie)
         } else if (i < 106) { // Disk 3
-            movies.disk3.push(movie)
+            movies.disc3.push(movie)
         }
     }
 
