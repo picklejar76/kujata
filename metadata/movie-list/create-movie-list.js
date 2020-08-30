@@ -22,7 +22,7 @@ const createCombinedMoviesList = async () => {
         }
     }
 
-    await fs.writeJson(path.join(config.outputMoviesDirectory, 'movies.json'), movies, { spaces: '\t' })
+    await fs.writeJson(path.join(config.outputMoviesDirectory, 'movies-metadata.json'), movies, { spaces: '\t' })
     console.log('movies', movies)
 
     // config.outputMoviesDirectory

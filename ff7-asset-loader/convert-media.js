@@ -52,8 +52,9 @@ const extractSounds = async () => {
         soundFile.size = stats.size
         if (fflpFlag) { // TODO: This designates decompressed memory space, need to find a way to turns this in milliseconds
             soundFile.start = start
+            soundFile.startMs = Math.round(start / 44.1)
             soundFile.end = end
-            soundFile.comp = end / stats.size
+            soundFile.endMs = Math.round(end / 44.1)
         }
         soundStats.push(soundFile)
         // Convert sound
@@ -82,7 +83,7 @@ const extractMusic = async () => {
     let musicIdx = await fs.readFile(path.join(inputMusicDirectory, 'music.idx'), 'utf-8')
     let musicList = musicIdx.split('\r\n').filter(m => m !== '')
     // console.log('musicList', musicList)
-
+    // musicList = musicList.filter(m => m === 'oa')
     const musicStats = []
 
     for (let i = 0; i < musicList.length; i++) {
@@ -98,21 +99,22 @@ const extractMusic = async () => {
         const stats = fs.statSync(statPath)
         // console.log('stats', wav, stats.size)
         const fd = fs.openSync(statPath, 'r')
-        const bytesToRead = 16
+        const bytesToRead = 120
         const buf = Buffer.alloc(bytesToRead)
-        fs.readSync(fd, buf, 0, bytesToRead, stats.size - bytesToRead)
-        const fflpFlag = buf.slice(0, 4).toString() === 'fflp'
-        const start = buf.readUInt32BE(5)
-        const end = buf.readUInt32BE(9)
-        // console.log('buf', wav, buf, fflpFlag, start, end)
-        const musicFile = { name: music, loop: fflpFlag }
+        fs.readSync(fd, buf, 0, bytesToRead, bytesToRead)
+
+        const metadata = buf.toString('utf-8')
+        const metaSplit = metadata.split('LOOPSTART=')
+        const musicFile = { name: music, loop: false }
         musicFile.size = stats.size
-        if (fflpFlag) { // TODO: This designates decompressed memory space, need to find a way to turns this in milliseconds
-            soundFile.start = start
-            soundFile.end = end
-            soundFile.comp = end / stats.size
+
+        if (metaSplit.length > 1) {
+            // console.log('metaSplit', music, metaSplit, metaSplit.length)
+            const start = parseInt(metaSplit[1].split('\u0001')[0])
+            musicFile.loop = true
+            musicFile.start = start
+            musicFile.startMs = Math.round(start / 44.1)
         }
-        // There are no fflp flags on any music...
         musicStats.push(musicFile)
 
         if (fs.existsSync(oggPath)) {
