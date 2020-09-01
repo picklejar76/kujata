@@ -106,7 +106,8 @@
         {"id": 0, "description": "clock 8", "x": 224, "y": 104, "w": 16, "h": 21, "palette": 13},
         {"id": 0, "description": "clock 9", "x": 240, "y": 104, "w": 16, "h": 21, "palette": 13},
 
-        {"id": 0, "description": "clock colon", "x": 160, "y": 80, "w": 16, "h": 21, "palette": 13},
+        {"id": 0, "description": "clock colon on", "x": 160, "y": 80, "w": 8, "h": 21, "palette": 13},
+        {"id": 0, "description": "clock colon off", "x": 168, "y": 80, "w": 8, "h": 21, "palette": 13},
         {"id": 0, "description": "clock hyphen", "x": 160, "y": 104, "w": 16, "h": 21, "palette": 13},
         {"id": 0, "description": "clock empty", "x": 144, "y": 104, "w": 16, "h": 21, "palette": 13}
     ],

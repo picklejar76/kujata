@@ -7,6 +7,6 @@ const init = async () => {
     const outputKernelDirectory = config.outputKernelDirectory
     const metadataDirectory = config.metadataDirectory
     await extractKernelKernel2Bin(inputKernelDirectory, outputKernelDirectory)
-    // await extractWindowBin(inputKernelDirectory, outputKernelDirectory, metadataDirectory)
+    await extractWindowBin(inputKernelDirectory, outputKernelDirectory, metadataDirectory)
 }
 init()
