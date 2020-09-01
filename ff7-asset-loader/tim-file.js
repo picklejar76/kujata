@@ -140,11 +140,11 @@ class TimFile { // https://github.com/myst6re/makoureactor/blob/4645b4b0595626b0
                     data[(i * 8) + 0] = palette[pixelIdA].r
                     data[(i * 8) + 1] = palette[pixelIdA].g
                     data[(i * 8) + 2] = palette[pixelIdA].b
-                    data[(i * 8) + 3] = palette[pixelIdA].a
+                    data[(i * 8) + 3] = palette[pixelIdA].r === 0 && palette[pixelIdA].g === 0 && palette[pixelIdA].b === 0 ? 0x00 : palette[pixelIdA].a
                     data[(i * 8) + 4] = palette[pixelIdB].r
                     data[(i * 8) + 5] = palette[pixelIdB].g
                     data[(i * 8) + 6] = palette[pixelIdB].b
-                    data[(i * 8) + 7] = palette[pixelIdB].a
+                    data[(i * 8) + 7] = palette[pixelIdB].r === 0 && palette[pixelIdB].g === 0 && palette[pixelIdB].b === 0 ? 0x00 : palette[pixelIdB].a
                 }
                 break
             case '8bit': // Untested
@@ -153,7 +153,7 @@ class TimFile { // https://github.com/myst6re/makoureactor/blob/4645b4b0595626b0
                     data[(i * 4) + 0] = palette[pixelId].r
                     data[(i * 4) + 1] = palette[pixelId].g
                     data[(i * 4) + 2] = palette[pixelId].b
-                    data[(i * 4) + 3] = palette[pixelId].a
+                    data[(i * 4) + 3] = palette[pixelId].r === 0 && palette[pixelId].g === 0 && palette[pixelId].b === 0 ? 0x00 : palette[pixelId].a
                 }
                 break
             case '16bit': // Untested
@@ -163,7 +163,7 @@ class TimFile { // https://github.com/myst6re/makoureactor/blob/4645b4b0595626b0
                     data[(i * 4) + 0] = color.r
                     data[(i * 4) + 1] = color.g
                     data[(i * 4) + 2] = color.b
-                    data[(i * 4) + 3] = color.a
+                    data[(i * 4) + 3] = color.r === 0 && color.g === 0 && color.b === 0 ? 0x00 : color.a
                 }
                 break
             case '24bit': // Untested
@@ -172,7 +172,7 @@ class TimFile { // https://github.com/myst6re/makoureactor/blob/4645b4b0595626b0
                     data[(i * 4) + 0] = color.r
                     data[(i * 4) + 1] = color.g
                     data[(i * 4) + 2] = color.b
-                    data[(i * 4) + 3] = color.a
+                    data[(i * 4) + 3] = color.r === 0 && color.g === 0 && color.b === 0 ? 0x00 : color.a
                 }
                 break
         }
