@@ -334,7 +334,7 @@ class FF7BinaryDataReader {
       }
       let subOpName = { 0xf5: "ARROW", 0xf6: "PNAME", 0xf7: "GMSPD", 0xf8: "SMSPD", 0xf9: "FLMAT", 0xfa: "FLITM", 0xfb: "BTLCK", 0xfc: "MVLCK", 0xfd: "SPCNM", 0xfe: "RSGLB", 0xff: "CLITM" }[subOp];
       return {
-        op: "SPECIAL", subOp: subOp,
+        op: "SPECIAL", subOp: subOp, params: params,
         js: "specialOp({subOpName:'" + subOpName + "', params:" + JSON.stringify(params, null, 0) + "});"
       };
     }
