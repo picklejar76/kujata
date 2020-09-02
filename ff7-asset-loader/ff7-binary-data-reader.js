@@ -523,11 +523,23 @@ class FF7BinaryDataReader {
     }
 
     if (op == 0x22) {
-      // TODO: Battle Mode variables
-      let bits = $r.readUInt();
+      let bits1 = $r.readUByte(), bits2 = $r.readUByte(), bits3 = $r.readUByte(), bits4 = $r.readUByte();
+      let descriptions = [];
+      if (bits1 & 0b10000000) { descriptions.push("DisableRewardScreens"); }
+      if (bits1 & 0b01000000) { descriptions.push("ActivateArenaMode"); }
+      if (bits1 & 0b00100000) { descriptions.push("DisableVictoryMusic"); }
+      if (bits1 & 0b00010000) { descriptions.push("Unknown0b00010000"); }
+      if (bits1 & 0b00001000) { descriptions.push("CanNotEscape"); }
+      if (bits1 & 0b00000100) { descriptions.push("PreEmptiveAttack"); }
+      if (bits1 & 0b00000010) { descriptions.push("TimedBattleWithoutRewardScreen"); }
+      if (bits1 & 0b00000001) { descriptions.push("Unknown0b00000001"); }
+      if (bits2 & 0b00000001) { descriptions.push("NoCelebrations"); }
+      if (bits3 & 0b10000000) { descriptions.push("DisableGameOver"); }
+      if (bits3 & 0b00000001) { descriptions.push("DisableGameOver"); }
       return {
-        op: "BTMD2", bits: bits,
-        js: "setBattleModeProperties({bits:" + bits + "});"
+        op: "BTMD2", bits1: bits1, bits2: bits2, bits3: bits3, bits4: bits4,
+        js: "setBattleModeOptions(" + descriptions.join(", ") + ");",
+        pres: descriptions.join(", ")
       };
     }
 
