@@ -399,10 +399,11 @@ module.exports = class FLevelLoader {
       let gateway = {
         exitLineVertex1: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
         exitLineVertex2: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
-        destinationVertex: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
+        destinationVertex: { x: r.readShort(), y: r.readShort(), triangleId: r.readShort() },
         fieldId: r.readUShort()
       };
-      let unknown = [r.readByte(), r.readByte(), r.readByte(), r.readByte()];
+      gateway.destinationVertex.direction = r.readByte()
+      let unknown = [r.readByte(), r.readByte(), r.readByte()];
       if (gateway.fieldId != 32767) {
         if (gateway.fieldId < this.mapList.length) {
           gateway.fieldName = this.mapList[gateway.fieldId];
