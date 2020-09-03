@@ -2364,7 +2364,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), r = $r.readUShort();
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
-        op: "TALKR2", b: b, r: r,
+        op: "TLKR2", b: b, r: r,
         js: "setInteractibilityRadius({radius:" + r + "});"
       };
     }
@@ -2373,7 +2373,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), r = $r.readUShort();
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
-        op: "SLIDR2", b: b, r: r,
+        op: "SLDR2", b: b, r: r,
         js: "setCollisionRadius({radius:" + r + "});"
       };
     }
