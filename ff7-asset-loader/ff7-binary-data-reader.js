@@ -2006,7 +2006,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), s = $r.readUShort();
       let sDesc = b == 0 ? s : "Bank[" + b + "][" + s + "]";
       return {
-        op: "MSPED", b: b, d: s,
+        op: "MSPED", b: b, s: s,
         js: "setMovementSpeed({speed:" + sDesc + "});"
       };
     }
