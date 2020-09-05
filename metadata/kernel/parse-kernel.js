@@ -99,7 +99,7 @@ function readSection(i, sectionBuffer) {
 
 let kernelData = {};
 
-for (let i=1; i<=27; i++) {
+for (let i = 1; i <= 27; i++) {
   let sectionName = sectionNames[i];
   let sectionLength = r.readUShort();
   let gunzippedLength = r.readUShort();
@@ -112,4 +112,5 @@ for (let i=1; i<=27; i++) {
   r.offset = r.offset + sectionLength;
 }
 
-fs.writeFileSync(config.outputKernelDirectory + '/kernel.bin.json', JSON.stringify(kernelData, null, 2));
+// Note: I've renamed this bin in favour of the more complete version in 'kernel-extractor'
+fs.writeFileSync(config.outputKernelDirectory + '/kernel.bin.legacy.json', JSON.stringify(kernelData, null, 2));

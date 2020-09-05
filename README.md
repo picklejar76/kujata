@@ -11,7 +11,19 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
   - reverse translation (glTF-to-ff7) coming soon
 
 - Translate FF7 field scene data (flevel.lgp) to JSON
-  - translates field scripts, gateways, etc., but not all sections yet
+  - translates field scripts, gateways, tiles, palettes, textures, etc., but not all sections yet (only encounters is missing)
+  - renders separate layers for background images
+
+- Translate FF7 kernel data (kernel.bin, kernel2.bin) to JSON
+  - All sections except commandData, attackData, battleAndGrowthData, initData
+  - Some improvements still to be made, mainly around consistent naming and materia data
+
+- Translate FF7 window data (window.bin) to multiple per palette pngs
+  - All window icons and colours
+  - All text icons and colours
+  - Every asset with it's prefered palette colors in its own separate png
+
+- TIM and TEX file loaders and converts into per palette pngs
 
 ## Pre-requisites and setup
 - "git clone" this repo
@@ -38,6 +50,18 @@ Translates Final Fantasy 7 assets to web-friendly formats like JSON and glTF
 - Look at https://github.com/picklejar76/kujata/ff7-asset-loader/test-flevel-loader.js
 - Better instructions coming soon
 - For help, reach out to the author: picklejar76@gmail.com
+
+## How to translate kernel data (kernel/kernel.bin, kernel/kernel2.bin) to JSON
+- Look at https://github.com/picklejar76/kujata/ff7-asset-loader/test-kernel-extractor.js
+- Better instructions coming soon
+- For help, reach out to the author: https://github.com/dangarfield/kujata
+
+## How to translate .TIM of .TEX files into PNGs
+- Look at https://github.com/picklejar76/kujata/ff7-asset-loader/test-kernel-extractor.js
+- ``` new TimFile().loadTimFileFromBuffer(file.buffer).saveAllPalettesAsPngs(outputFilePath)```
+- ``` new TimFile().loadTimFileFromPath(file.path).saveAllPalettesAsPngs(outputFilePath)```
+- ``` new TexFile().loadTexFileFromBuffer(file.buffer).saveAsPng(outputFilePath)```
+- ``` new TexFile().loadTexFileFromPath(file.path).saveAsPng(outputFilePath)```
 
 ## Thanks goes to...
 - qhimm community

@@ -5,6 +5,7 @@ class FF7BinaryDataReader {
 
   constructor(buffer) {
     this.buffer = buffer;
+    this.length = this.buffer.length
     this.offset = 0;
     this.charMap = require("./char-map.js");
     this.kernelVars = {
@@ -22,27 +23,35 @@ class FF7BinaryDataReader {
     this.dialogStrings = dialogStrings;
   }
 
-  readInt()    { let i = this.buffer.readInt32LE(this.offset);  this.offset += 4; return i; };
-  readUInt()   { let i = this.buffer.readUInt32LE(this.offset); this.offset += 4; return i; };
-  readFloat()  { let f = this.buffer.readFloatLE(this.offset);  this.offset += 4; return f; };
-  readByte()   { let b = this.buffer.readInt8   (this.offset);  this.offset += 1; return b; };
-  readUByte()  { let b = this.buffer.readUInt8  (this.offset);  this.offset += 1; return b; };
-  readShort()  { let s = this.buffer.readInt16LE(this.offset);  this.offset += 2; return s; };
+  readByte() { let b = this.buffer.readInt8(this.offset); this.offset += 1; return b; };
+  readUByte() { let b = this.buffer.readUInt8(this.offset); this.offset += 1; return b; };
+  readShort() { let s = this.buffer.readInt16LE(this.offset); this.offset += 2; return s; };
   readUShort() { let s = this.buffer.readUInt16LE(this.offset); this.offset += 2; return s; };
+  read24bitInteger() { let b = this.buffer.readUIntBE(this.offset, 3); this.offset += 3; return b; };
+  readInt() { let i = this.buffer.readInt32LE(this.offset); this.offset += 4; return i; };
+  readUInt() { let i = this.buffer.readUInt32LE(this.offset); this.offset += 4; return i; };
+  readFloat() { let f = this.buffer.readFloatLE(this.offset); this.offset += 4; return f; };
 
   readUByteArray(length) {
     let array = [];
-    for (let i=0; i<length; i++) {
+    for (let i = 0; i < length; i++) {
       array.push(this.readUByte());
     }
     return array;
   };
+  readUShortArray(length) {
+    let array = [];
+    for (let i = 0; i < length; i++) {
+      array.push(this.readUShort());
+    }
+    return array;
+  };
 
-  peekUByte()  { let b = this.buffer.readUInt8  (this.offset);                    return b; };
+  peekUByte() { let b = this.buffer.readUInt8(this.offset); return b; };
 
   readString(len) {
     let s = "";
-    for (let i=0; i<len; i++) {
+    for (let i = 0; i < len; i++) {
       let c = this.buffer.readUInt8(this.offset + i);
       if (c > 0) {
         s = s + String.fromCharCode(c);
@@ -76,9 +85,9 @@ class FF7BinaryDataReader {
         let v = this.buffer.readUInt8(this.offset + i + 1);
         i += 1;
         let v1 = ((v & 0b11000000) >> 6);
-        let v2 =  (v & 0b00111111);
+        let v2 = (v & 0b00111111);
         let numBytes = v1 * 2 + 4;
-        let newOffset = this.offset + (i-1) - 1 - v2;
+        let newOffset = this.offset + (i - 1) - 1 - v2;
         let oldOffset = this.offset;
         this.offset = newOffset;
         let fragment = this.readKernelString(numBytes);
@@ -140,7 +149,7 @@ class FF7BinaryDataReader {
   getNextBytes(n) {
     let $r = this; // in case we want to split this class into two classes, one for readUByte() etc. and one for readOp()+getCmpDesc()+getCharacterDesc()
     let bytes = [];
-    for (let i=0; i<n; i++) {
+    for (let i = 0; i < n; i++) {
       let byte = $r.readUByte();
       bytes.push(byte);
     }
@@ -154,7 +163,7 @@ class FF7BinaryDataReader {
     let offset2 = $r.offset;
     let raw = [];
     $r.offset = offset1;
-    for (let i=offset1; i<offset2; i++) {
+    for (let i = offset1; i < offset2; i++) {
       let byte = $r.readUByte();
       let hex = stringUtil.toHex2(byte);
       raw.push(hex);
@@ -311,22 +320,22 @@ class FF7BinaryDataReader {
       let d = $r.readUByte();
       return {
         op: "DSKCG", d: d,
-        js: "diskChangeScreen({diskId:"+ d + "});"
+        js: "diskChangeScreen({diskId:" + d + "});"
       };
     }
 
     if (op == 0x0f) {
       let subOp = $r.readUByte();
       let params = [];
-      let numBytes = {0xf5:1, 0xf6:1, 0xf7:1, 0xf8:2, 0xf9:0, 0xfa:0, 0xfb:1, 0xfc:1, 0xfd:2, 0xfe:0, 0xff:0}[subOp];
-      for (let i=0; i<numBytes; i++) {
+      let numBytes = { 0xf5: 1, 0xf6: 1, 0xf7: 1, 0xf8: 2, 0xf9: 0, 0xfa: 0, 0xfb: 1, 0xfc: 1, 0xfd: 2, 0xfe: 0, 0xff: 0 }[subOp];
+      for (let i = 0; i < numBytes; i++) {
         let byte = $r.readUByte();
         params.push(byte);
       }
-      let subOpName = {0xf5:"ARROW", 0xf6:"PNAME", 0xf7:"GMSPD", 0xf8:"SMSPD", 0xf9:"FLMAT", 0xfa:"FLITM", 0xfb:"BTLCK", 0xfc:"MVLCK", 0xfd:"SPCNM", 0xfe:"RSGLB", 0xff:"CLITM"}[subOp];
+      let subOpName = { 0xf5: "ARROW", 0xf6: "PNAME", 0xf7: "GMSPD", 0xf8: "SMSPD", 0xf9: "FLMAT", 0xfa: "FLITM", 0xfb: "BTLCK", 0xfc: "MVLCK", 0xfd: "SPCNM", 0xfe: "RSGLB", 0xff: "CLITM" }[subOp];
       return {
-        op: "SPECIAL", subOp: subOp,
-        js: "specialOp({subOpName:'"+ subOpName + "', params:" + JSON.stringify(params, null, 0) + "});"
+        op: "SPECIAL", subOp: subOp, params: params,
+        js: "specialOp({subOpName:'" + subOpName + "', params:" + JSON.stringify(params, null, 0) + "});"
       };
     }
 
@@ -335,7 +344,8 @@ class FF7BinaryDataReader {
       let a = $r.readUByte();
       return {
         op: "JMPF", a: a,
-        js: "goto " + (baseOffset + a) + ";"
+        js: "goto " + (baseOffset + a) + ";",
+        goto: baseOffset + a
       };
     }
 
@@ -344,7 +354,8 @@ class FF7BinaryDataReader {
       let a = $r.readUShort();
       return {
         op: "JMPFL", a: a,
-        js: "goto " + (baseOffset + a) + ";"
+        js: "goto " + (baseOffset + a) + ";",
+        goto: baseOffset + a
       };
     }
 
@@ -353,7 +364,8 @@ class FF7BinaryDataReader {
       let a = $r.readUByte();
       return {
         op: "JMPB", a: a,
-        js: "goto " + (baseOffset - a) + ";"
+        js: "goto " + (baseOffset - a) + ";",
+        goto: baseOffset - a
       };
     }
 
@@ -362,7 +374,8 @@ class FF7BinaryDataReader {
       let a = $r.readUShort();
       return {
         op: "JMPBL", a: a,
-        js: "goto " + (baseOffset - a) + ";"
+        js: "goto " + (baseOffset - a) + ";",
+        goto: baseOffset - a
       };
     }
 
@@ -381,7 +394,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -400,7 +414,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -419,7 +434,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -438,7 +454,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -457,7 +474,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -476,7 +494,8 @@ class FF7BinaryDataReader {
         v: v,
         c: c,
         e: e,
-        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");"
+        js: "if (" + cDesc + ") (else goto " + (baseOffset + e) + ");",
+        goto: baseOffset + e
       };
     }
 
@@ -504,11 +523,23 @@ class FF7BinaryDataReader {
     }
 
     if (op == 0x22) {
-      // TODO: Battle Mode variables
-      let bits = $r.readUInt();
+      let bits1 = $r.readUByte(), bits2 = $r.readUByte(), bits3 = $r.readUByte(), bits4 = $r.readUByte();
+      let descriptions = [];
+      if (bits1 & 0b10000000) { descriptions.push("DisableRewardScreens"); }
+      if (bits1 & 0b01000000) { descriptions.push("ActivateArenaMode"); }
+      if (bits1 & 0b00100000) { descriptions.push("DisableVictoryMusic"); }
+      if (bits1 & 0b00010000) { descriptions.push("Unknown0b00010000"); }
+      if (bits1 & 0b00001000) { descriptions.push("CanNotEscape"); }
+      if (bits1 & 0b00000100) { descriptions.push("PreEmptiveAttack"); }
+      if (bits1 & 0b00000010) { descriptions.push("TimedBattleWithoutRewardScreen"); }
+      if (bits1 & 0b00000001) { descriptions.push("Unknown0b00000001"); }
+      if (bits2 & 0b00000001) { descriptions.push("NoCelebrations"); }
+      if (bits3 & 0b10000000) { descriptions.push("DisableGameOver"); }
+      if (bits3 & 0b00000001) { descriptions.push("DisableGameOver"); }
       return {
-        op: "BTMD2", bits: bits,
-        js: "setBattleModeProperties({bits:" + bits + "});"
+        op: "BTMD2", bits1: bits1, bits2: bits2, bits3: bits3, bits4: bits4,
+        js: "setBattleModeOptions(" + descriptions.join(", ") + ");",
+        pres: descriptions.join(", ")
       };
     }
 
@@ -532,9 +563,9 @@ class FF7BinaryDataReader {
 
     if (op == 0x25) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
-      let bxb3 = $r.readUByte(),                          b3 = (bxb3 & 0x0F);
-      let r = $r.readUByte(), g = $r.readUByte(), b = $r.readUByte();
-      let s = $r.readUByte(), t = $r.readUByte(), unused = $r.readUByte();
+      let bxb3 = $r.readUByte(), b3 = (bxb3 & 0x0F);
+      let t = $r.readUByte(), r = $r.readUByte(), g = $r.readUByte();
+      let b = $r.readUByte(), s = $r.readUByte(), unused = $r.readUByte();
       let rDesc = b1 == 0 ? r : "Bank[" + b1 + "][" + r + "]";
       let gDesc = b2 == 0 ? g : "Bank[" + b2 + "][" + g + "]";
       let bDesc = b3 == 0 ? b : "Bank[" + b3 + "][" + b + "]";
@@ -569,7 +600,7 @@ class FF7BinaryDataReader {
     if (op == 0x28) {
       let l = $r.readUByte(), s = $r.readUByte();
       let vars = [];
-      for (let i=0; i<l-3; i++) {
+      for (let i = 0; i < l - 3; i++) {
         vars.push($r.readUByte());
       }
       return {
@@ -648,7 +679,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEY", b: b, a: a,
-        js: "if keyPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -658,7 +690,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEYON", b: b, a: a,
-        js: "if keyPressedJustPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressedJustPressed({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -668,7 +701,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFKEYOFF", b: b, a: a,
-        js: "if keyPressedJustReleased({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");"
+        js: "if keyPressedJustReleased({inputKeyBitField:" + b + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -719,7 +753,7 @@ class FF7BinaryDataReader {
 
     if (op == 0x38) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
-      let bxb3 = $r.readUByte(),                          b3 = (bxb3 & 0x0F);
+      let bxb3 = $r.readUByte(), b3 = (bxb3 & 0x0F);
       let h = $r.readUByte(), m = $r.readUByte(), s = $r.readUByte();
       let hDesc = b1 == 0 ? h : "Bank[" + b1 + "][" + h + "]";
       let mDesc = b2 == 0 ? m : "Bank[" + b2 + "][" + m + "]";
@@ -784,7 +818,7 @@ class FF7BinaryDataReader {
 
     if (op == 0x3f) {
       return {
-        op: "HMPMAX2",
+        op: "HMPMAX3",
         js: "restoreHPMPMax({ver:0x3f});"
       };
     }
@@ -1140,7 +1174,7 @@ class FF7BinaryDataReader {
 
     if (op == 0x66) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
-      let bxb3 = $r.readUByte(),                          b3 = (bxb3 & 0x0F);
+      let bxb3 = $r.readUByte(), b3 = (bxb3 & 0x0F);
       let x = $r.readShort(), y = $r.readShort(), s = $r.readUShort();
       let xDesc = b1 == 0 ? x : "Bank[" + b1 + "][" + x + "]";
       let yDesc = b2 == 0 ? y : "Bank[" + b2 + "][" + y + "]";
@@ -1160,7 +1194,7 @@ class FF7BinaryDataReader {
 
     if (op == 0x68) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
-      let bxb3 = $r.readUByte(),                          b3 = (bxb3 & 0x0F);
+      let bxb3 = $r.readUByte(), b3 = (bxb3 & 0x0F);
       let x = $r.readShort(), y = $r.readShort(), s = $r.readUShort();
       let xDesc = b1 == 0 ? x : "Bank[" + b1 + "][" + x + "]";
       let yDesc = b2 == 0 ? y : "Bank[" + b2 + "][" + y + "]";
@@ -1192,7 +1226,7 @@ class FF7BinaryDataReader {
 
     if (op == 0x6b) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
-      let bxb3 = $r.readUByte(),                          b3 = (bxb3 & 0x0F);
+      let bxb3 = $r.readUByte(), b3 = (bxb3 & 0x0F);
       let r = $r.readUByte(), g = $r.readUByte(), b = $r.readUByte();
       let s = $r.readUByte(), t = $r.readUByte(), a = $r.readUByte();
       let rDesc = b1 == 0 ? r : "Bank[" + b1 + "][" + r + "]";
@@ -1382,7 +1416,7 @@ class FF7BinaryDataReader {
       return {
         op: "INC2!",
         b: b, a: a,
-        js: "increment16bitClamped("+ aDesc + ");"
+        js: "increment16bitClamped(" + aDesc + ");"
       };
     }
 
@@ -1402,7 +1436,7 @@ class FF7BinaryDataReader {
       return {
         op: "DEC2!",
         b: b, a: a,
-        js: "decrement16bitClamped("+ aDesc + ");"
+        js: "decrement16bitClamped(" + aDesc + ");"
       };
     }
 
@@ -1442,7 +1476,7 @@ class FF7BinaryDataReader {
       let a = $r.readUByte(), v = $r.readShort();
       let aDesc = bd == 0 ? a : "Bank[" + bd + "][" + a + "]";
       let vDesc = bs == 0 ? v : "Bank[" + bs + "][" + v + "]";
-      if (bd==2 && a==0) {
+      if (bd == 2 && a == 0) {
         aDesc = "$GameMoment";
       }
       return {
@@ -1554,7 +1588,7 @@ class FF7BinaryDataReader {
       return {
         op: "MUL2",
         bd: bd, bs: bs, d: d, s: s,
-        js: dDesc + " = "  + dDesc + " * " + sDesc + ";"
+        js: dDesc + " = " + dDesc + " * " + sDesc + ";"
       };
     }
 
@@ -1694,7 +1728,7 @@ class FF7BinaryDataReader {
       return {
         op: "INC2",
         b: b, a: a,
-        js: "increment16bit("+ aDesc + ");"
+        js: "increment16bit(" + aDesc + ");"
       };
     }
 
@@ -1714,7 +1748,7 @@ class FF7BinaryDataReader {
       return {
         op: "DEC2",
         b: b, a: a,
-        js: "decrement16bit("+ aDesc + ");"
+        js: "decrement16bit(" + aDesc + ");"
       };
     }
 
@@ -1754,7 +1788,7 @@ class FF7BinaryDataReader {
 
     if (op == 0x9c) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
-      let bxb3 = $r.readUByte(),                          b3 = (bxb3 & 0x0F);
+      let bxb3 = $r.readUByte(), b3 = (bxb3 & 0x0F);
       let d = $r.readUByte(), l = $r.readUByte(), h = $r.readUByte();
       let dDesc = b1 == 0 ? d : "Bank[" + b1 + "][" + d + "]";
       let lDesc = b2 == 0 ? l : "Bank[" + b2 + "][" + l + "]";
@@ -1972,7 +2006,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), s = $r.readUShort();
       let sDesc = b == 0 ? s : "Bank[" + b + "][" + s + "]";
       return {
-        op: "MSPED", b: b, d: s,
+        op: "MSPED", b: b, s: s,
         js: "setMovementSpeed({speed:" + sDesc + "});"
       };
     }
@@ -2213,7 +2247,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFPRTYQ", c: c, a: a,
-        js: "if (isCharacterInParty(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
+        js: "if (isCharacterInParty(" + cDesc + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -2223,7 +2258,8 @@ class FF7BinaryDataReader {
       let baseOffset = this.offset - 1 - this.startOffset;
       return {
         op: "IFMEMBQ", c: c, a: a,
-        js: "if (isCharacterAvailable(" + cDesc + ") (else goto " + (baseOffset + a) + ");"
+        js: "if (isCharacterAvailable(" + cDesc + ") (else goto " + (baseOffset + a) + ");",
+        goto: baseOffset + a
       };
     }
 
@@ -2328,7 +2364,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), r = $r.readUShort();
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
-        op: "TALKR2", b: b, r: r,
+        op: "TLKR2", b: b, r: r,
         js: "setInteractibilityRadius({radius:" + r + "});"
       };
     }
@@ -2337,7 +2373,7 @@ class FF7BinaryDataReader {
       let b = $r.readUByte(), r = $r.readUShort();
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
-        op: "SLIDR2", b: b, r: r,
+        op: "SLDR2", b: b, r: r,
         js: "setCollisionRadius({radius:" + r + "});"
       };
     }
@@ -2360,7 +2396,7 @@ class FF7BinaryDataReader {
     if (op == 0xda) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let bxb5 = $r.readUByte(),                          b5 = (bxb5 & 0x0F);
+      let bxb5 = $r.readUByte(), b5 = (bxb5 & 0x0F);
       let akaoOp = $r.readUByte();
       let p1 = $r.readUShort(), p2 = $r.readUShort(), p3 = $r.readUShort(), p4 = $r.readUShort(), p5 = $r.readUShort();
       let p1Desc = b1 == 0 ? p1 : "Bank[" + b1 + "][" + p1 + "]";
@@ -2417,7 +2453,7 @@ class FF7BinaryDataReader {
     if (op == 0xdf) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let bxb5 = $r.readUByte(),                          b5 = (bxb5 & 0x0F);
+      let bxb5 = $r.readUByte(), b5 = (bxb5 & 0x0F);
       let s = $r.readUByte(), d = $r.readUByte(), i = $r.readUByte(), b = $r.readUByte(), g = $r.readUByte(), r = $r.readUByte(), size = $r.readUByte();
       let iDesc = b1 == 0 ? i : "Bank[" + b1 + "][" + i + "]";
       let bDesc = b2 == 0 ? b : "Bank[" + b2 + "][" + b + "]";
@@ -2536,7 +2572,7 @@ class FF7BinaryDataReader {
     if (op == 0xe9) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let bxb5 = $r.readUByte(),                          b5 = (bxb5 & 0x0F);
+      let bxb5 = $r.readUByte(), b5 = (bxb5 & 0x0F);
       let s = $r.readUByte(), d = $r.readUByte(), b = $r.readUByte(), g = $r.readUByte(), r = $r.readUByte(), size = $r.readUByte();
       let sDesc = b1 == 0 ? s : "Bank[" + b1 + "][" + s + "]";
       let dDesc = b2 == 0 ? d : "Bank[" + b2 + "][" + d + "]";
@@ -2554,7 +2590,7 @@ class FF7BinaryDataReader {
     if (op == 0xea) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let bxb5 = $r.readUByte(),                          b5 = (bxb5 & 0x0F);
+      let bxb5 = $r.readUByte(), b5 = (bxb5 & 0x0F);
       let s = $r.readUByte(), d = $r.readUByte(), b = $r.readUByte(), g = $r.readUByte(), r = $r.readUByte(), size = $r.readUByte();
       let sDesc = b1 == 0 ? s : "Bank[" + b1 + "][" + s + "]";
       let dDesc = b2 == 0 ? d : "Bank[" + b2 + "][" + d + "]";
@@ -2589,7 +2625,7 @@ class FF7BinaryDataReader {
       let p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte(), p5 = $r.readUByte(), p6 = $r.readUByte(), p7 = $r.readUByte();
       return {
         op: "CPPAL2", p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7,
-        js: "op0xed_CPPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", "+ p7 + ");"
+        js: "op0xed_CPPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", " + p7 + ");"
       };
     }
 
@@ -2597,7 +2633,7 @@ class FF7BinaryDataReader {
       let p1 = $r.readUByte(), p2 = $r.readUByte(), p3 = $r.readUByte(), p4 = $r.readUByte(), p5 = $r.readUByte(), p6 = $r.readUByte(), p7 = $r.readUByte();
       return {
         op: "RTPAL2", p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7,
-        js: "op0xee_RTPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", "+ p7 + ");"
+        js: "op0xee_RTPAL2(" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + ", " + p5 + ", " + p6 + ", " + p7 + ");"
       };
     }
 
@@ -2634,7 +2670,7 @@ class FF7BinaryDataReader {
     if (op == 0xf2) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let bxb5 = $r.readUByte(),                          b5 = (bxb5 & 0x0F);
+      let bxb5 = $r.readUByte(), b5 = (bxb5 & 0x0F);
       let akaoOp = $r.readUByte(), p1 = $r.readUByte();
       let p2 = $r.readUShort(), p3 = $r.readUShort(), p4 = $r.readUShort(), p5 = $r.readUShort();
       let p1Desc = b1 == 0 ? p1 : "Bank[" + b1 + "][" + p1 + "]";
@@ -2752,14 +2788,14 @@ class FF7BinaryDataReader {
 
   }; // end of readOp()
 
-  printNextBufferDataAsHex(numRows=30, numCols=8) {
+  printNextBufferDataAsHex(numRows = 30, numCols = 8) {
     console.log();
     let pad5 = stringUtil.pad5, toHex2 = stringUtil.toHex2, toHex5 = stringUtil.toHex5;
     let hex = "";
-    for (let i=0; i<numRows; i++) {
-      hex = toHex5(this.offset) + " + " + toHex5(i*numCols) + " = " + toHex5(this.offset + i*numCols) + " : ";
-      for (let j=0; j<numCols; j++) {
-        let pos = this.offset + i*numCols + j;
+    for (let i = 0; i < numRows; i++) {
+      hex = toHex5(this.offset) + " + " + toHex5(i * numCols) + " = " + toHex5(this.offset + i * numCols) + " : ";
+      for (let j = 0; j < numCols; j++) {
+        let pos = this.offset + i * numCols + j;
         if (pos >= this.buffer.length) {
           hex = hex + "EOF";
         } else {
@@ -2768,8 +2804,8 @@ class FF7BinaryDataReader {
         }
       }
       hex = hex + "    ";
-      for (let j=0; j<numCols; j++) {
-        let pos = this.offset + i*numCols + j;
+      for (let j = 0; j < numCols; j++) {
+        let pos = this.offset + i * numCols + j;
         if (pos >= this.buffer.length) {
           hex = hex + "";
         } else {
