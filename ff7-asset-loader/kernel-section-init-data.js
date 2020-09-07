@@ -223,13 +223,13 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
         portrait1: 0,
         portrait2: 0,
         portrait3: 0,
-        name: '',
+        leader: '',
         currentHP: 0,
         maximumHP: 0,
         currentMP: 0,
         maximumMP: 0,
         gil: 0,
-        seconds: 0,
+        time: 0,
         location: ''
     }
     const r = new FF7BinaryDataReader(sectionData.buffer)
@@ -277,7 +277,9 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
     const countdownSecondsFractions = 0xFFFFFFFF
     const currentMapValue = 2 // Field 2, world map 0
     const currentModule = 1 // Field 1, world map 2
+    const _currentFieldName = ''
     const currentLocation = ''
+
     const alignment2 = 0
     const fieldXPos = 0
     const fieldYPos = 0
@@ -390,6 +392,7 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
             currentMapValue,
             currentModule,
             currentLocation,
+            _currentFieldName,
             fieldXPos,
             fieldYPos,
             fieldTriangle,

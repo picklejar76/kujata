@@ -376,7 +376,7 @@ const extractWindowBinElements = async (fileId, outputKernelDirectory, metadataD
             windowBinAssetMap[assetType] = elements
         }
         if (assetType === 'battle-menu-text-large') {
-            console.log('battle-menu-text-large')
+            // console.log('battle-menu-text-large')
             const colorElements = []
             for (let i = 0; i < windowBinAssetMap[assetType].length; i++) {
                 const element = windowBinAssetMap[assetType][i]
