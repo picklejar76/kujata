@@ -98,6 +98,7 @@ module.exports = class FLevelLoader {
 
     for (let i = 0; i < flevel.script.header.numEntities; i++) {
       let entity = {
+        entityId: i,
         entityName: flevel.script.header.entityNames[i],
         entityType: '', // Purely added for positioning in JSON, updated delow
         scripts: []
