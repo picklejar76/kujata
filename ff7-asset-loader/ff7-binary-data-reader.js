@@ -1236,6 +1236,7 @@ class FF7BinaryDataReader {
         op: "FADE",
         b1: b1,
         b2: b2,
+        b3: b3,
         r: r, g: g, b: b, s: s, t: t, a: a,
         js: "fade({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + ", adjust:" + a + "});",
         pres: "The screen fades..."
