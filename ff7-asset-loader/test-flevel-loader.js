@@ -74,7 +74,7 @@ const problemMaps = ['blin67_4',
 // console.log('Decode all Maps -> All', decodeAllMaps(mapList))
 // console.log('Decode all Maps -> Errors All', decodeAllMaps(problemMaps))
 // console.log('Decode one', decodeOneMap('fship_4'))
-console.log('Decode one', decodeOneMap('mds7st3'))
+console.log('Decode one', decodeOneMap('kuro_4'))
 // console.log('Decode one', decodeOneMap('anfrst_1'))
 // console.log('Decode one', decodeOneMap('eleout'))
 // console.log('Decode one', decodeOneMap('rckt3'))

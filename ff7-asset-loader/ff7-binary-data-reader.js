@@ -2342,23 +2342,29 @@ class FF7BinaryDataReader {
     if (op == 0xd4) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let v1 = $r.readUShort(), v2 = $r.readUShort(), v3 = $r.readUShort(), v4 = $r.readUByte();
+      let d = $r.readUShort(), m = $r.readUShort(), a = $r.readUShort(), s = $r.readUByte();
+      let dDesc = b1 == 0 ? d : "Bank[" + b1 + "][" + d + "]"
+      let mDesc = b2 == 0 ? m : "Bank[" + b2 + "][" + m + "]"
+      let aDesc = b3 == 0 ? a : "Bank[" + b3 + "][" + a + "]"
+      let sDesc = b4 == 0 ? s : "Bank[" + b4 + "][" + s + "]"
       return {
-        op: "SIN", b1: b1, b2: b2, b3: b3, b4: b4, v1: v1, v2: v2, v3: v3, v4: v4,
-        js: "doMathSinOp0xd4({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
-          ", v1:" + v1 + ", v2:" + v2 + ", v3:" + v3 + ", v4:" + v4 + "});"
-      };
+        op: "SIN", b1: b1, b2: b2, b3: b3, b4: b4, d: d, m: m, a: a, s: s,
+        js: `calculateSin({desination: ${dDesc}, sourceAngle: ${sDesc}, multiplicand: ${mDesc}, addition: ${aDesc}});`
+      }
     }
 
     if (op == 0xd5) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let v1 = $r.readUShort(), v2 = $r.readUShort(), v3 = $r.readUShort(), v4 = $r.readUByte();
+      let d = $r.readUShort(), m = $r.readUShort(), a = $r.readUShort(), c = $r.readUByte();
+      let dDesc = b1 == 0 ? d : "Bank[" + b1 + "][" + d + "]"
+      let mDesc = b2 == 0 ? m : "Bank[" + b2 + "][" + m + "]"
+      let aDesc = b3 == 0 ? a : "Bank[" + b3 + "][" + a + "]"
+      let sDesc = b4 == 0 ? s : "Bank[" + b4 + "][" + s + "]"
       return {
-        op: "COS", b1: b1, b2: b2, b3: b3, b4: b4, v1: v1, v2: v2, v3: v3, v4: v4,
-        js: "doMathCosOp0xd5({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
-          ", v1:" + v1 + ", v2:" + v2 + ", v3:" + v3 + ", v4:" + v4 + "});"
-      };
+        op: "COS", b1: b1, b2: b2, b3: b3, b4: b4, d: d, m: m, a: a, s: s,
+        js: `calculateCos({desination: ${dDesc}, sourceAngle: ${sDesc}, multiplicand: ${mDesc}, addition: ${aDesc}});`
+      }
     }
 
     if (op == 0xd6) {
