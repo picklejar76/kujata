@@ -1,5 +1,5 @@
 {
-  "inputFieldCharDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/field/char.lgp",
+  "inputFieldCharDirectory": "/code/ff7/ff7-fenrir/workings-out/unlgp/unlgp-char.lgp",
   "inputFieldCharDirectoryDescription": "Location of files unpacked from field/char.lgp like AAAA.HRC",
   "outputFieldCharDirectory": "/code/ff7/kujata-data-dg/data/field/char.lgp",
   "outputFieldCharDirectoryDescription": "Where the translator will put output files like aaaa.hrc.gltf, aaaa.hrc.bin",
