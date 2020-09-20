@@ -8,8 +8,12 @@ var fieldAnimationMetadata = JSON.parse(fs.readFileSync(config.metadataDirectory
 var animFileIds = Object.keys(fieldAnimationMetadata);
 
 let translator = new FF7FieldAnimationTranslator();
+// animFileIds = animFileIds.filter(a => a === 'bxbb')
+// animFileIds = animFileIds.filter(a => a === 'acfe')
+// animFileIds = animFileIds.filter(a => a === 'bvjf')
 
 for (let animFileId of animFileIds) {
+  console.log('anim', animFileId)
   translator.translateFF7FieldAnimationToGLTF(config, animFileId);
 }
 
