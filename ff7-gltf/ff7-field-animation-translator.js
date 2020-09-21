@@ -148,18 +148,28 @@ module.exports = class FF7FieldAnimationTranslator {
     let frameRootRotationBuffer = Buffer.alloc(numFrames * 2 * 4 * 4);
     let zList = []
     for (let f = 0; f < numFrames; f++) {
-      // Root translation
+      let nodeIndex = 1; // node0=RootContainer, node1=BoneRoot, node2=Bone0, node3=Bone1, etc.
+
+      // console.log('frame', animationData.animationFrames[f])
+      // // Root translation
       let rootTranslation = animationData.animationFrames[f].rootTranslation
       // console.log('rootTranslation', rootTranslation)
 
-      zList.push(rootTranslation)
+      zList.push({
+        rootTranslation: animationData.animationFrames[f].rootTranslation,
+        rootRotation: animationData.animationFrames[f].rootRotation
+      })
       frameRootTranslationBuffer.writeFloatLE(rootTranslation.x, f * 24 + 0);
-      frameRootTranslationBuffer.writeFloatLE(rootTranslation.y - 13.535284042358398, f * 24 + 4);
-      frameRootTranslationBuffer.writeFloatLE(-rootTranslation.z - 0.07706927508115768, f * 24 + 8);
+      // frameRootTranslationBuffer.writeFloatLE(rootTranslation.y - 13.535284042358398, f * 24 + 4);
+      // frameRootTranslationBuffer.writeFloatLE(-rootTranslation.z - 0.07706927508115768, f * 24 + 8);
+      frameRootTranslationBuffer.writeFloatLE(rootTranslation.y, f * 24 + 4);
+      frameRootTranslationBuffer.writeFloatLE(-rootTranslation.z, f * 24 + 8);
 
       frameRootTranslationBuffer.writeFloatLE(rootTranslation.x, f * 24 + 12);
-      frameRootTranslationBuffer.writeFloatLE(rootTranslation.y - 13.535284042358398, f * 24 + 16);
-      frameRootTranslationBuffer.writeFloatLE(-rootTranslation.z - 0.07706927508115768, f * 24 + 20);
+      // frameRootTranslationBuffer.writeFloatLE(rootTranslation.y - 13.535284042358398, f * 24 + 16);
+      // frameRootTranslationBuffer.writeFloatLE(-rootTranslation.z - 0.07706927508115768, f * 24 + 20);
+      frameRootTranslationBuffer.writeFloatLE(rootTranslation.y, f * 24 + 16);
+      frameRootTranslationBuffer.writeFloatLE(-rootTranslation.z, f * 24 + 20);
 
       allBuffers.push(frameRootTranslationBuffer)
       numBuffersCreated++
@@ -182,10 +192,10 @@ module.exports = class FF7FieldAnimationTranslator {
         "interpolation": "LINEAR",
         "output": rootTranslationFrameDataAccessorIndex
       });
-      let nodeIndex = 0; // node0=RootContainer, node1=BoneRoot, node2=Bone0, node3=Bone1, etc.
-      let samplerIndex = gltf.animations[animationIndex].samplers.length - 1;
+
+      const samplerIndexRootTranslation = gltf.animations[animationIndex].samplers.length - 1;
       gltf.animations[animationIndex].channels.push({
-        "sampler": samplerIndex,
+        "sampler": samplerIndexRootTranslation,
         "target": {
           "node": nodeIndex,
           "path": "translation"
@@ -196,11 +206,11 @@ module.exports = class FF7FieldAnimationTranslator {
       let rootRotation = animationData.animationFrames[f].rootRotation
       // console.log('rootRotation', rootRotation)
       let quat = rotationToQuaternion(
-        toRadians(rootRotation.x),
-        toRadians(-rootRotation.y),
-        toRadians(-rootRotation.z),
+        toRadians(rootRotation.x - 180),
+        toRadians(360 - rootRotation.y),
+        toRadians(rootRotation.z),
         rotationOrder
-      );
+      )
       // write rotation value for "start of frame"
       frameRootRotationBuffer.writeFloatLE(quat.x, f * 32 + 0)
       frameRootRotationBuffer.writeFloatLE(quat.y, f * 32 + 4)
@@ -233,9 +243,9 @@ module.exports = class FF7FieldAnimationTranslator {
         "output": rootRotationFrameDataAccessorIndex
       });
       // nodeIndex = 0; // node0=RootContainer, node1=BoneRoot, node2=Bone0, node3=Bone1, etc.
-      samplerIndex = gltf.animations[animationIndex].samplers.length - 1;
+      const samplerIndexRootRotation = gltf.animations[animationIndex].samplers.length - 1;
       gltf.animations[animationIndex].channels.push({
-        "sampler": samplerIndex,
+        "sampler": samplerIndexRootRotation,
         "target": {
           "node": nodeIndex,
           "path": "rotation"
