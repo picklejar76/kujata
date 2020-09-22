@@ -314,33 +314,33 @@ module.exports = class FF7GltfTranslator {
               let textureId = textureIds[i].toLowerCase();
 
               gltf.images.push({ "uri": config.texturesDirectory + '/' + textureId + ".tex.png" });
+              //gltf.images.push({config.texturesDirectory + '/' + textureId + ".tex.png"});
               gltf.textures.push({
                 "source": (gltfTextureIndexOffset + i), // index to gltf.images[]
                 "sampler": 0,                           // index to gltf.samplers[]
                 "name": textureId + "Texture"
               });
               // TODO: Figure out why materials look reddish
-              // let roughnessFactor = isBattleModel ? 1.0 : 0.5;
+              let roughnessFactor = isBattleModel ? 1.0 : 0.5;
               //let alphaMode = isBattleModel ? "OPAQUE" : "BLEND";
-              // let alphaMode = "BLEND";
               gltf.materials.push({
                 "pbrMetallicRoughness": {
                   "baseColorFactor": [1, 1, 1, 1],
                   "baseColorTexture": {
                     "index": (gltfTextureIndexOffset + i) // index to gltf.textures[]
                   },
-                  // "metallicFactor": 0.0,
-                  // "roughnessFactor": 0.0
+                  "metallicFactor": 0.0,
+                  "roughnessFactor": 0.0
                 },
                 "alphaMode": "OPAQUE",
                 "name": textureId + "Material",
-                "extensions": {
-                  "KHR_materials_unlit": {}
-                }
+                // "extensions": { // Uncomment to ensure gltf model does not respond to lights
+                //   "KHR_materials_unlit": {}
+                // }
               });
-              gltf.extensionsUsed = [
-                "KHR_materials_unlit"
-              ]
+              // gltf.extensionsUsed = [ // Uncomment to ensure gltf model does not respond to lights
+              //   "KHR_materials_unlit"
+              // ]
             }
           }
         }
@@ -541,6 +541,10 @@ module.exports = class FF7GltfTranslator {
           if (includeTextures) {
             primitive.attributes["TEXCOORD_0"] = polygonGroup.isTextureUsed ? textureCoordAccessorIndex : undefined;
           }
+          if (includeTextures && polygonGroup.isTextureUsed) {
+            delete primitive.attributes["COLOR_0"]
+          }
+
           mesh.primitives.push(primitive);
 
         } // end looping through polygonGroups for this bone
