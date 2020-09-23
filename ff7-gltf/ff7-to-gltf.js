@@ -321,7 +321,7 @@ module.exports = class FF7GltfTranslator {
                 "name": textureId + "Texture"
               });
               // TODO: Figure out why materials look reddish
-              let roughnessFactor = isBattleModel ? 1.0 : 0.5;
+              // let roughnessFactor = isBattleModel ? 1.0 : 0.5;
               //let alphaMode = isBattleModel ? "OPAQUE" : "BLEND";
               gltf.materials.push({
                 "pbrMetallicRoughness": {
@@ -332,7 +332,7 @@ module.exports = class FF7GltfTranslator {
                   "metallicFactor": 0.0,
                   "roughnessFactor": 0.0
                 },
-                "alphaMode": "OPAQUE",
+                "alphaMode": "BLEND", // Has to be blend so that textures colors can both apply
                 "name": textureId + "Material",
                 // "extensions": { // Uncomment to ensure gltf model does not respond to lights
                 //   "KHR_materials_unlit": {}
