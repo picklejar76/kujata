@@ -44,10 +44,12 @@ const extractSounds = async () => {
         const bytesToRead = 16
         const buf = Buffer.alloc(bytesToRead)
         fs.readSync(fd, buf, 0, bytesToRead, stats.size - bytesToRead)
-        const fflpFlag = buf.slice(0, 4).toString() === 'fflp'
-        const start = buf.readUInt32BE(5)
-        const end = buf.readUInt32BE(9)
-        // console.log('buf', wav, buf, fflpFlag, start, end)
+        const fflp = buf.slice(0, 4)
+        const fflpFlag = fflp.toString() === 'fflp'
+        const size = buf.readInt32LE(4)
+        const start = buf.readUInt32LE(8) / 2
+        const end = buf.readUInt32LE(12) / 2
+        // console.log('buf', wav, buf, fflpFlag, fflp.toString(), size.toString(), start.toString(), end.toString())
         const soundFile = { name: parseInt(wav.replace('.wav', '')), loop: fflpFlag }
         soundFile.size = stats.size
         if (fflpFlag) { // TODO: This designates decompressed memory space, need to find a way to turns this in milliseconds
