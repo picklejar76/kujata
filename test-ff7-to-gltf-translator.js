@@ -21,15 +21,21 @@ for (let prefix of ["rt", "ru", "rv", "rw", "rx", "ry", "rz"]) {
 
 // translate every *.hrc.json file in the skeletons directory
 
-// let filenames = fs.readdirSync(config.inputFieldCharDirectory);
+// let filenames = fs.readdirSync(config.inputFieldCharDirectory)
+// filenames = [
+//   // 'bybf.hrc',
+//   // 'aaaa.hrc',
+//   // 'auda.hrc',
+//   'avhe.hrc'
+// ]
 // for (let i = 0; i < filenames.length; i++) {
-//   let filename = filenames[i];
+//   let filename = filenames[i]
 //   if (filename.toLowerCase().endsWith(".hrc")) {
-//     let hrcFileId = filename.slice(0, 4);
+//     let hrcFileId = filename.slice(0, 4)
 //     try {
-//       gltfTranslator.translate_ff7_field_hrc_to_gltf(config, hrcFileId, null, null, includeTextures);
+//       gltfTranslator.translate_ff7_field_hrc_to_gltf(config, hrcFileId, null, null, includeTextures)
 //     } catch (err) {
-//       console.log('Error while trying to translate: ' + filename + ':', err);
+//       console.log('Error while trying to translate: ' + filename + ':', err)
 //       //break; // uncomment this line to stop on failure
 //     }
 //   }

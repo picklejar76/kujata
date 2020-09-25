@@ -33,6 +33,8 @@
   "outputMusicDirectoryDescription": "Output location of the music audio files",
   "inputMoviesDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/movies",
   "inputMoviesDirectoryDescription": "Location of .avi movie files",
+  "inputMoviecamDirectory": "/code/ff7/ff7-fenrir/workings-out/unlgp/unlgp-moviecam.lgp",
+  "inputMoviecamDirectoryDescription": "Location of files unpacked from movies/moviecam.lgp like biglight.cam",
   "outputMoviesDirectory": "/code/ff7/kujata-data-dg/media/movies",
   "outputMoviesDirectoryDescription": "Output location of the movie files",
   "renderBackgroundLayers": true
