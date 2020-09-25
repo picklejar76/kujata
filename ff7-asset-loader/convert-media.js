@@ -283,9 +283,9 @@ const extractMoviecamData = async () => {
     console.log('extractMoviecamData: END')
 }
 const extractMedias = async () => {
-    // await extractSounds()
-    // await extractMusic()
-    // await extractMovies()
+    await extractSounds()
+    await extractMusic()
+    await extractMovies()
     await extractMoviecamData()
 }
 const init = async () => {
