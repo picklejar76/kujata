@@ -263,7 +263,7 @@ const extractMoviecamData = async () => {
                 unknown1: r.readShort(), // dupe of zAxis.z
                 position: { x: r.readInt(), y: r.readInt(), z: r.readInt() },
                 unknown2: r.readInt(),
-                zoom: r.readShort(),
+                zoom: r.readUShort(),
                 unknown3: r.readShort(),
             }
             delete camera.unknown1
@@ -283,9 +283,9 @@ const extractMoviecamData = async () => {
     console.log('extractMoviecamData: END')
 }
 const extractMedias = async () => {
-    await extractSounds()
-    await extractMusic()
-    await extractMovies()
+    // await extractSounds()
+    // await extractMusic()
+    // await extractMovies()
     await extractMoviecamData()
 }
 const init = async () => {
