@@ -248,11 +248,11 @@ module.exports = class FLevelLoader {
             return 'Init'
           }
         case 1:
-          if (entityType === 'Model') { return 'Talk' }
+          if (entityType === 'Model' || entityType === 'Playable Character') { return 'Talk' }
           if (entityType === 'Line') { return '[OK]' }
           break
         case 2:
-          if (entityType === 'Model') { return 'Contact' }
+          if (entityType === 'Model' || entityType === 'Playable Character') { return 'Contact' }
           if (entityType === 'Line') { return 'Move' }
           break
         case 3:
