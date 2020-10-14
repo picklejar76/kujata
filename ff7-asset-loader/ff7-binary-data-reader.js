@@ -2303,7 +2303,7 @@ class FF7BinaryDataReader {
 
     if (op == 0xd1) {
       let s = $r.readUByte();
-      let funcDesc = s == 0 ? "disableAllLineTriggers" : "enableAllLineTriggers";
+      let funcDesc = s == 0 ? "disableThisLineTrigger" : "enableThisLineTrigger";
       return {
         op: "LINON",
         s: s,
