@@ -2174,7 +2174,7 @@ class FF7BinaryDataReader {
       let zDesc = b3 == 0 ? z : "Bank[" + b3 + "][" + z + "]";
       let sDesc = b4 == 0 ? s : "Bank[" + b4 + "][" + s + "]";
       return {
-        op: "OFST", b1: b1, b2: b2, b3: b3, b4: b4, x: x, y: y, z: z, s: s,
+        op: "OFST", b1: b1, b2: b2, b3: b3, b4: b4, x: x, y: y, z: z, s: s, t: t,
         js: "transposeObjectDisplayOnly({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", speed:" + sDesc + "});"
       };
     }
