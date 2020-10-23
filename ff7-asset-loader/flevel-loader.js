@@ -131,28 +131,31 @@ module.exports = class FLevelLoader {
         let done = false;
         // Determine the startOffset for the "next" script (which is the endOffset for the "current" script)
         let nextStartOffset = sectionOffsetBase + flevel.script.header.stringOffset; // default
-        // if (i === 14) { console.log('-----------  default', j, nextStartOffset) } // Debug
+        // if (i === 2) { console.log('-----------  default', j, nextStartOffset) } // Debug
         if (j < 31) {
           // If this is not the last script for this entity, just look at the next script's offset
-          nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j + 1];
-          // if (i === 14) { console.log('  j < 31', startOffset, nextStartOffset) } //Debug
+          nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j + 1]
+          if (startOffset === nextStartOffset) { // Next offset is empty, skip one
+            nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j + 2]
+          }
+          // if (i === 2) { console.log('  j < 31', startOffset, nextStartOffset) } //Debug
         }
         const lastScriptOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[flevel.script.header.entitySections[i].entityScriptRoutines.length - 1]
         let isLastScript = (j == 31 || lastScriptOffset == startOffset);
-        // if (i === 14) { console.log('  isLastScript', isLastScript, j, nextStartOffset, startOffset, lastScriptOffset) } // Debug
+        // if (i === 2) { console.log('  isLastScript', isLastScript, j, nextStartOffset, startOffset, lastScriptOffset) } // Debug
         if (isLastScript) {
           let isLastEntity = i == flevel.script.header.numEntities - 1;
           if (isLastEntity) {
             // If this is the last entity (and last script), assume it's the end of the entire field section (beginning of string/dialog section)
             nextStartOffset = sectionOffsetBase + flevel.script.header.stringOffset;
-            // if (i === 14) { console.log('last script last entity', j, r.offset, nextStartOffset) } // Debug
+            // if (i === 2) { console.log('last script last entity', j, r.offset, nextStartOffset) } // Debug
           } else {
             // If this is not the last entity, just look at the next entity's first script offset
             nextStartOffset = sectionOffsetBase + flevel.script.header.entitySections[i + 1].entityScriptRoutines[0];
-            // if (i === 14) { console.log('last script not last entity', j, r.offset, nextStartOffset) } // Debug
+            // if (i === 2) { console.log('last script not last entity', j, r.offset, nextStartOffset) } // Debug
           }
         }
-        // if (i === 14) { console.log(' nextStartOffset', j, r.offset, nextStartOffset) } // Debug
+        // if (i === 2) { console.log(' nextStartOffset', j, r.offset, nextStartOffset) } // Debug
 
         let byteIndexOffset = 0
         while (!done) {
@@ -205,7 +208,7 @@ module.exports = class FLevelLoader {
             }
           } // end of op.op == "RET"
           if (r.offset >= nextStartOffset) {
-            // if (i === 14) { console.log('  done', j, r.offset, nextStartOffset) } // Debug
+            // if (i === 2 && j === 2) { console.log('  done', j, r.offset, nextStartOffset) } // Debug
             done = true;
           } else {
             // if (i === 14) { console.log('  continue', j, r.offset, nextStartOffset) } // Debug
@@ -215,6 +218,9 @@ module.exports = class FLevelLoader {
         if (entityScript.ops.length > 0) {
           entity.scripts.push(entityScript);
         }
+        // if (entity.entityName === 'line2' && j >= 2) {
+        //   console.log('entityScript', entity.entityName, j, i, entityScript.ops, entityScript.ops.length)
+        // }
       }
     }
 
