@@ -517,7 +517,7 @@ class FF7BinaryDataReader {
     if (op == 0x21) {
       let t = $r.readUByte();
       return {
-        op: "TUTORIAL", t: t,
+        op: "TUTOR", t: t,
         js: "openMainMenuAndPlayTutorial({tutorialId:" + t + "});"
       };
     }
