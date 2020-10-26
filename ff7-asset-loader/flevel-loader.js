@@ -82,7 +82,10 @@ module.exports = class FLevelLoader {
 
     // read dialog offsets, then dialog strings
     r.offset = sectionOffsetBase + flevel.script.header.stringOffset;
-    let numDialogs = r.readUShort();
+    let numDialogs = r.readUShort()// + 255;
+    if (numDialogs === 0) {
+      numDialogs = 255
+    }
     let dialogOffsets = [];
     for (let i = 0; i < numDialogs; i++) {
       dialogOffsets.push(r.readUShort());
