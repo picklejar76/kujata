@@ -301,6 +301,17 @@ module.exports = class FLevelLoader {
 
 
     // Section 2/3: Model Loaders
+    const replaceBrokenAnimations = (modelName, animName) => { // I really didn't want to do this, but this anim seems just plain broken
+      switch (animName) {
+        case 'BZAC.chi':
+          if (modelName.includes('ballet')) {
+            return 'AQAD.chi' // southmk2 -> ACGD.HRC (model) -> BZAC.chi
+          }
+          return animName
+
+        default: return animName
+      }
+    }
     r.offset = flevel.sectionOffsets[2];
     var sectionOffset = r.offset;        // flevel.sectionOffsets[i]     // this offset is relative to the beginning of file
     flevel.script.length = r.readInt();
@@ -329,11 +340,13 @@ module.exports = class FLevelLoader {
 
       for (let j = 0; j < modelLoader.numAnimations; j++) {
         let animNameLength = r.readUShort();
-        let animName = r.readString(animNameLength);
+        let animName = replaceBrokenAnimations(modelLoader.name, r.readString(animNameLength))
         let unknown = r.readShort();
         modelLoader.animations.push(animName);
         //modelLoader.animations.push({name: animName, unknown: unknown}); // TODO: see if anyone figured out what unknown is
+        // console.log('animName', modelLoader.name, animName)
       }
+
 
       flevel.model.modelLoaders.push(modelLoader);
     }
