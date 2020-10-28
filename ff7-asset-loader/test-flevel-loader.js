@@ -71,11 +71,11 @@ const problemMaps = ['blin67_4',
   'rckt32',
   'jtemplc']
 
-// console.log('Decode all Maps -> All', decodeAllMaps(mapList))
+console.log('Decode all Maps -> All', decodeAllMaps(mapList))
 // console.log('Decode all Maps -> Errors All', decodeAllMaps(problemMaps))
 // console.log('Decode one', decodeOneMap('nmkin_1'))
-console.log('Decode one', decodeOneMap('mds5_dk'))
-console.log('Decode one', decodeOneMap('ancnt1'))
+// console.log('Decode one', decodeOneMap('mds5_1'))
+// console.log('Decode one', decodeOneMap('ancnt1'))
 // console.log('Decode one', decodeOneMap('midgal'))
 // console.log('Decode one', decodeOneMap('rckt3'))
 // console.log('Decode one', decodeOneMap('nrthmk'))

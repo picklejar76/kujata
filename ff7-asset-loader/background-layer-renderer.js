@@ -123,7 +123,7 @@ const getSizeMetaData = (tiles) => {
 const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackground) => {
     // console.log('sizeMeta', name, JSON.stringify(sizeMeta))
     let n = sizeMeta.height * sizeMeta.width * sizeMeta.channels
-    let data = new Uint8Array(n)
+    let data = new Uint8ClampedArray(n)
     for (let i = 0; i < n; i++) {
         data[i] = 0x00 // Fill with either black or transparent
         if (setBlackBackground && (i + 1) % sizeMeta.channels === 0) {
@@ -155,8 +155,8 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
                 tileSize = 32
             }
         }
-        // const DEBUG_NAME = 'mds5_4-4095-0-0-0-0.pngs'
-        // if (name === DEBUG_NAME) {
+        // const DEBUG_NAME = 'mds5_1-0-3-1-0-0.png'
+        // if (name === DEBUG_NAME && tile.destinationX === sizeMeta.maxX && tile.destinationY === -48) {
         //     console.log('name:', name,
         //         'size:', tileSize,
         //         'sourceX:', sourceX,
@@ -183,8 +183,8 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
                     return false
                 }
                 const debugPixels = [
-                    [10, 10],
-                    [10, 30],
+                    [508, 211],
+                    [508, 211],
                 ]
                 for (let i = 0; i < debugPixels.length; i++) {
                     if (debugPixels[i][0] === x && debugPixels[i][1] === y) {
@@ -284,12 +284,12 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
             }
 
             if (!paletteItem.noRender) {
-                data[byteOffset + 0] = 0x00 + paletteItem.r
-                data[byteOffset + 1] = 0x00 + paletteItem.g
-                data[byteOffset + 2] = 0x00 + paletteItem.b
-                data[byteOffset + 3] = 0x00 + paletteItem.a
+                data[byteOffset + 0] = data[byteOffset + 0] + 0x00 + paletteItem.r
+                data[byteOffset + 1] = data[byteOffset + 1] + 0x00 + paletteItem.g
+                data[byteOffset + 2] = data[byteOffset + 2] + 0x00 + paletteItem.b
+                data[byteOffset + 3] = data[byteOffset + 3] + 0x00 + paletteItem.a
                 if (shallPrintDebug(posX, posY, setBlackBackground)) {
-                    console.log('rendering', JSON.stringify(paletteItem), data[byteOffset + 0], byteOffset, '\n')
+                    console.log('rendering', JSON.stringify(paletteItem), '-', data[byteOffset + 0], data[byteOffset + 1], data[byteOffset + 2], data[byteOffset + 3], '-', byteOffset, '\n')
                 }
             }
         }
