@@ -109,13 +109,12 @@ module.exports = class FLevelLoader {
         entityType: '', // Purely added for positioning in JSON, updated delow
         scripts: []
       }
-      const LOG_I = 99999 // Change fr debugging
+      const LOG_I = 9999 // Change fr debugging
       if (i === LOG_I) { console.log('entity', entity, flevel.script.header.entitySections[i].entityScriptRoutines) } // DEBUG
 
       flevel.script.entities.push(entity);
       for (let j = 0; j < 31; j++) { // TODO: support entities with 32 scripts; will need different method of determining endOffset
-        let numReturnOpsProcessed = 0;
-        let numReturnOpsExpected = (j == 0 ? 2 : 1);
+
         let startOffset = sectionOffsetBase + flevel.script.header.entitySections[i].entityScriptRoutines[j];
         r.startOffset = startOffset;
         r.offset = startOffset;
@@ -196,32 +195,7 @@ module.exports = class FLevelLoader {
             // It says the value should be +46, but it isn't. Catching this single error anyway
             break
           }
-          // console.log(`offset=${r.offset} max=${nextStartOffset} after adding op: ${JSON.stringify(op, null, 0)}`)
-          if (op.op === "RET") {
-            if (j > 0) {
-              // done = true; // Not required anymore, presence of a RET doesn't mean end of the script
-            } else {
-              // script 0 is divided into 2 scripts: Init and Main
-              numReturnOpsProcessed++;
-              if (numReturnOpsProcessed == 2) {
-                // done = true; // No longer needed as we now find the correct nextStartOffset
-                if (i === LOG_I) { console.log("numReturnOpsProcessed 2" + i + " script " + j) }
-              } else {
-                if (numReturnOpsProcessed == 1) {
-                  // done with Init script, add to array and start Main script
-                  entity.scripts.push(entityScript);
-                  entityScript = {
-                    index: 0,
-                    scriptType: '',
-                    isMain: true,
-                    ops: []
-                  };
-                  r.startOffset = r.offset; // fix Main gotos
-                  // keep going! done is still false
-                }
-              }
-            }
-          } // end of op.op == "RET"
+
           if (r.offset >= nextStartOffset) {
             if (i === LOG_I) { console.log('  done', j, r.offset, nextStartOffset) } // Debug
             done = true;
@@ -231,9 +205,46 @@ module.exports = class FLevelLoader {
           if (i === LOG_I) { console.log("End op while " + i + " script " + j) }
         } // end while(!done)
         if (i === LOG_I) { console.log("End of entity " + i + " script " + j) }
-        if (entityScript.ops.length > 0) {
-          entity.scripts.push(entityScript);
+
+        if (j === 0) { // Split init script into init and main
+          let initReturn = false
+          let opIndex = 0
+          let gotoIndex = 0
+          while (!initReturn) {
+            const returnFound = entityScript.ops[opIndex].op === 'RET'
+            const gotoFound = entityScript.ops[opIndex].goto !== undefined
+            if (gotoFound) {
+              gotoIndex = entityScript.ops[opIndex].goto
+              // if (i === LOG_I) { console.log('splitInit', 'gotoIndex', gotoIndex, opIndex, returnFound, gotoFound, entityScript.ops[opIndex].op, entityScript.ops[opIndex].byteIndex) }
+            }
+            if (returnFound && entityScript.ops[opIndex].byteIndex >= gotoIndex) {
+              // if (i === LOG_I) { console.log('splitInit', 'initReturn', gotoIndex, opIndex, returnFound, gotoFound, entityScript.ops[opIndex].op, entityScript.ops[opIndex].byteIndex) }
+              initReturn = true
+            } else {
+              // if (i === LOG_I) { console.log('splitInit', 'next', gotoIndex, opIndex, returnFound, gotoFound, entityScript.ops[opIndex].op, entityScript.ops[opIndex].byteIndex) }
+              opIndex++
+            }
+          }
+          let initOps = entityScript.ops
+          let mainOps = initOps.splice(opIndex + 1)
+          entityScript.ops = initOps
+          entity.scripts.push(entityScript)
+
+          const mainEntityScript = {
+            index: 0,
+            scriptType: '',
+            isMain: true,
+            ops: mainOps
+          }
+          entity.scripts.push(mainEntityScript)
+          // if (i === LOG_I) { console.log('INIT/MAIN', i, entityScript, mainEntityScript, opIndex) }
+
+        } else {
+          if (entityScript.ops.length > 0) {
+            entity.scripts.push(entityScript);
+          }
         }
+
         // if (entity.entityName === 'line2' && j >= 2) {
         //   console.log('entityScript', entity.entityName, j, i, entityScript.ops, entityScript.ops.length)
         // }
