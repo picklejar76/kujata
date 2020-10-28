@@ -70,8 +70,15 @@ const getSizeMetaData = (tiles) => {
         if (tile.destinationY < minY) { minY = tile.destinationY }
         if (tile.destinationY > maxY) { maxY = tile.destinationY }
     }
-    let height = maxY - minY + 16
-    let width = maxX - minX + 16
+    let tileSize = 16
+    const tile = tiles[0]
+    if (tile.layerID >= 2) { // Layer 2 & 3 can have 32 pixel tiles 
+        if (tile.width !== 16 && tile.height !== 16) {
+            tileSize = 32
+        }
+    }
+    let height = maxY - minY + tileSize
+    let width = maxX - minX + tileSize
     // console.log('SIZE',
     //     'x', minX, maxX, '->', width,
     //     'y', minY, maxY, '->', height)
@@ -114,6 +121,7 @@ const getSizeMetaData = (tiles) => {
 // }
 
 const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackground) => {
+    // console.log('sizeMeta', name, JSON.stringify(sizeMeta))
     let n = sizeMeta.height * sizeMeta.width * sizeMeta.channels
     let data = new Uint8Array(n)
     for (let i = 0; i < n; i++) {
@@ -124,8 +132,8 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
     }
     for (let i = 0; i < tiles.length; i++) { // Loop through each tile
         const tile = tiles[i]
-        let tileOverlayX = tile.destinationX + (sizeMeta.width / 2) // Get normalised coords for destination of top left of tile
-        let tileOverlayY = tile.destinationY + (sizeMeta.height / 2)
+        let tileOverlayX = tile.destinationX - sizeMeta.minX // Get normalised coords for destination of top left of tile
+        let tileOverlayY = tile.destinationY - sizeMeta.minY
 
         let texture = flevel.background.textures[`texture${tile.textureId}`]
 
@@ -147,7 +155,15 @@ const saveTileGroupImage = (flevel, folder, name, tiles, sizeMeta, setBlackBackg
                 tileSize = 32
             }
         }
-
+        // const DEBUG_NAME = 'mds5_4-4095-0-0-0-0.pngs'
+        // if (name === DEBUG_NAME) {
+        //     console.log('name:', name,
+        //         'size:', tileSize,
+        //         'sourceX:', sourceX,
+        //         'sourceY:', sourceY,
+        //         'destinationX:', tile.destinationX, tileOverlayX,
+        //         'destinationY:', tile.destinationY, tileOverlayY)
+        // }
         for (let j = 0; j < (tileSize * tileSize); j++) { // Loop througheach tile's pixels, eg 16x16
             let adjustY = Math.floor(j / tileSize)
             let adjustX = j - (adjustY * tileSize) // Get normalised offset position, eg each new 
@@ -328,6 +344,7 @@ const renderBackgroundLayers = (flevel, folder, baseFilename) => {
     let tiles = allTiles(flevel)
 
     const sizeMeta = getSizeMetaData(tiles)
+    // console.log('sizeMeta', JSON.stringify(sizeMeta))
 
     sortBy(['layerID', 'z', 'param', 'state', 'typeTrans'], tiles)
 
@@ -347,15 +364,41 @@ const renderBackgroundLayers = (flevel, folder, baseFilename) => {
         // In that case, we'd have to render every combination of states for each param, maybe all params
         const name = `${baseFilename}-${arrangedLayer.z}-${arrangedLayer.layerID}-${arrangedLayer.typeTrans}-${arrangedLayer.param}-${arrangedLayer.state}.png`
         // console.log('name', arrangedLayer.typeTrans, name)
-        saveTileGroupImage(flevel, folder, name, arrangedLayer.tiles, sizeMeta, false)
+        let layerSizeMeta = sizeMeta
+        if (arrangedLayer.layerID && arrangedLayer.layerID === 2) {
+            layerSizeMeta = getSizeMetaData(arrangedLayer.tiles)
+        }
+
+        saveTileGroupImage(flevel, folder, name, arrangedLayer.tiles, layerSizeMeta, false, arrangedLayer.layerID)
         arrangedLayer.fileName = name
+        if (arrangedLayer.layerID === 2) {
+            arrangedLayer.parallaxDirection = Math.abs(sizeMeta.height - layerSizeMeta.height) <= 16 ? 'horizontal' : 'vertical'
+            if (arrangedLayer.parallaxDirection === 'horizontal') {
+                arrangedLayer.parallaxRatio = layerSizeMeta.width / sizeMeta.width
+                arrangedLayer.parallaxMax = sizeMeta.width
+            } else {
+                arrangedLayer.parallaxRatio = layerSizeMeta.height / sizeMeta.height
+                arrangedLayer.parallaxMax = sizeMeta.height
+            }
+        }
         delete arrangedLayer.tiles
     }
 
     // Write layer metadata to json filea
     fs.writeFileSync(`${folder}/${baseFilename}.json`, JSON.stringify(arrangedLayers, null, 2));
 }
+const getAllLayersSizeMeta = (flevel) => {
+    let tiles = allTiles(flevel)
+    const sizeMeta = getSizeMetaData(tiles)
+    return sizeMeta
+}
+const getLayerSizeMeta = (tiles) => {
+    const sizeMeta = getSizeMetaData(tiles)
+    return sizeMeta
+}
 module.exports = {
     renderBackgroundLayers,
-    getColorForPalette
+    getColorForPalette,
+    getAllLayersSizeMeta,
+    getLayerSizeMeta
 }
