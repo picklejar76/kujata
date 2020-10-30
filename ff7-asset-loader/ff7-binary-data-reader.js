@@ -573,8 +573,9 @@ class FF7BinaryDataReader {
         op: "NFADE",
         b1: b1,
         b2: b2,
+        b3: b3,
         r: r, g: g, b: b, s: s, t: t, unused: unused,
-        js: "fadeScreen({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + "}); // unused=" + unused,
+        js: "fadeScreenN({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + "}); // unused=" + unused,
         pres: "The screen fades..."
       };
     }
