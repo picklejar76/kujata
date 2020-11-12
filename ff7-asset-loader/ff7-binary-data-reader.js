@@ -179,6 +179,9 @@ class FF7BinaryDataReader {
     let offset1 = $r.offset;
 
     let op = $r.readUByte();
+    // if (offset1 >= 3080 && offset1 <= 3133) {
+    //   console.log('op code byte', op, op.toString(16), offset1)
+    // }
 
     if (op == 0x00) {
       return {
@@ -2032,7 +2035,7 @@ class FF7BinaryDataReader {
     }
 
     if (op == 0xb5) {
-      let b = $r.readUByte(), r = $r.readUByte(), d = $r.readShort(), s = $r.readShort(), t = $r.readUByte();
+      let b = $r.readUByte(), r = $r.readUByte(), d = $r.readShort(), s = $r.readShort(), t = $r.readUShort();
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "TURN", b: b, r: r, d: d, s: s, t: t,

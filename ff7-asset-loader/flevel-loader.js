@@ -109,7 +109,7 @@ module.exports = class FLevelLoader {
         entityType: '', // Purely added for positioning in JSON, updated delow
         scripts: []
       }
-      const LOG_I = 9999 // Change fr debugging
+      const LOG_I = 9999 // Change for debugging
       if (i === LOG_I) { console.log('entity', entity, flevel.script.header.entitySections[i].entityScriptRoutines) } // DEBUG
 
       flevel.script.entities.push(entity);
