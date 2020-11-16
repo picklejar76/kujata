@@ -71,9 +71,9 @@ const problemMaps = ['blin67_4',
   'rckt32',
   'jtemplc']
 
-console.log('Decode all Maps -> All', decodeAllMaps(mapList))
+// console.log('Decode all Maps -> All', decodeAllMaps(mapList))
 // console.log('Decode all Maps -> Errors All', decodeAllMaps(problemMaps))
-// console.log('Decode one', decodeOneMap('mds7st3'))
+console.log('Decode one', decodeOneMap('blinst_2'))
 // console.log('Decode one', decodeOneMap('mds5_1'))
 // console.log('Decode one', decodeOneMap('ancnt1'))
 // console.log('Decode one', decodeOneMap('midgal'))

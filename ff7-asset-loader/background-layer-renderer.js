@@ -66,7 +66,8 @@ const getSizeMetaData = (tiles) => {
     for (let i = 0; i < tiles.length; i++) {
         const tile = tiles[i]
         if (tile.destinationX < minX) { minX = tile.destinationX }
-        if (tile.destinationX > maxX) { maxX = tile.destinationX }
+        // TODO: There is a strange tile.destinationX=10000 on layer0 tiles 640 & 641 in blinst_2. Need to investigate
+        if (tile.destinationX > maxX && tile.destinationX < 10000) { maxX = tile.destinationX }
         if (tile.destinationY < minY) { minY = tile.destinationY }
         if (tile.destinationY > maxY) { maxY = tile.destinationY }
     }

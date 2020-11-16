@@ -631,7 +631,8 @@ module.exports = class FLevelLoader {
     }
     flevel.background.tiles.layer1.blank = r.readUShort()
     for (let i = 0; i < flevel.background.tiles.layer1.tileCount; i++) {
-      flevel.background.tiles.layer1.tiles.push(readTile(r))
+      let tile = readTile(r)
+      flevel.background.tiles.layer1.tiles.push(tile)
     }
     flevel.background.tiles.layer1.blank2 = r.readUShort()
 
