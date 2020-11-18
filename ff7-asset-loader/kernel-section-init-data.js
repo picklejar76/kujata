@@ -27,8 +27,8 @@ const getCharacterRecord = (r, materiaNames, materiaDescriptions, weaponNames, w
     const name = r.readKernelString(12)
     r.offset = r.offset + 12 // readKernelString doesn't move the buffer position
     const weapon = getWeapon(r, weaponNames, weaponDescriptions)
-    const armor = getWeapon(r, armorNames, armorDescriptions)
-    const accessory = getWeapon(r, accessoryNames, accessoryDescriptions)
+    const armor = getArmor(r, armorNames, armorDescriptions)
+    const accessory = getAccessory(r, accessoryNames, accessoryDescriptions)
 
     const statusFlags = parseKernelEnums(Enums.Character.Flags, r.readUByte()) // 0x10-Sadness 0x20-Fury 
     const battleOrderRaw = r.readUByte() // 0xFF-Normal 0xFE-Back row
@@ -146,7 +146,8 @@ const getCharacterRecord = (r, materiaNames, materiaDescriptions, weaponNames, w
 const getWeapon = (r, weaponNames, weaponDescriptions) => {
     const id = r.readUByte()
     return {
-        id,
+        index: id,
+        itemId: id + 128,
         name: weaponNames[id],
         description: weaponDescriptions[id]
     }
@@ -154,7 +155,8 @@ const getWeapon = (r, weaponNames, weaponDescriptions) => {
 const getArmor = (r, armorNames, armorDescriptions) => {
     const id = r.readUByte()
     return {
-        id,
+        index: id,
+        itemId: id + 256,
         name: armorNames[id],
         description: armorDescriptions[id]
     }
@@ -162,7 +164,8 @@ const getArmor = (r, armorNames, armorDescriptions) => {
 const getAccessory = (r, accessoryNames, accessoryDescriptions) => {
     const id = r.readUByte()
     return {
-        id,
+        index: id,
+        itemId: id + 288,
         name: accessoryNames[id],
         description: accessoryDescriptions[id]
     }
@@ -172,7 +175,8 @@ const getItem = (r, itemNames, itemDescriptions) => {
     const id = itemBinary & 0b1111111
     const quantity = itemBinary >> 9
     const item = {
-        id,
+        index: id,
+        itemId: id,
         quantity,
         name: itemNames[id],
         description: itemDescriptions[id]
