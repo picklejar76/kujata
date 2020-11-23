@@ -1098,16 +1098,17 @@ class FF7BinaryDataReader {
     // 0x5d is supposedly not used in the game
 
     if (op == 0x5e) {
-      let u1 = $r.readUByte();
-      let u2 = $r.readUByte();
-      let c = $r.readUByte();
-      let u3 = $r.readUByte();
-      let u4 = $r.readUByte();
-      let a = $r.readUByte();
-      let s = $r.readUByte();
+      const u1 = $r.readUByte()
+      const u2 = $r.readUByte()
+      const t = $r.readUByte()
+      const xA = $r.readUByte()
+      const xF = $r.readUByte()
+      const yA = $r.readUByte()
+      const yF = $r.readUByte()
+      const typeStrings = ['"Reset"', '"Horizontal"', '"Vertical"', '"BothAxes"']
       return {
-        op: "SHAKE", u1: u1, u2: u2, c: c, u3: u3, u4: u4, a: a, s: s,
-        js: "shake({u1:" + u1 + ", u2:" + u2 + ", count:" + c + ", u3:" + u3 + ", u4:" + u4 + ", aplitude:" + a + ", speed:" + s + "});"
+        op: "SHAKE", u1: u1, u2: u2, t, xA, xF, yA, yF,
+        js: `shake({type: ${typeStrings[t]}, xAmplitude: ${xA}, xFrames: ${xF}, yAmplitude: ${xA}, yFrames: ${xF} });`
       };
     }
 
