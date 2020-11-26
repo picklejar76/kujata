@@ -359,8 +359,8 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
                 Vincent: PHSLockingMask[7],
                 Cid: PHSLockingMask[8]
             },
-            phsVisibility: { // not sure what op code changes this
-                Cloud: PHSVisibilityMask[0], // Should really be enabled by default, cant see where in md1stin
+            phsVisibility: { // MMBud
+                Cloud: PHSVisibilityMask[0],
                 Barret: PHSVisibilityMask[1],
                 Tifa: PHSVisibilityMask[2],
                 Aeris: PHSVisibilityMask[3],
@@ -369,18 +369,7 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
                 CaitSith: PHSVisibilityMask[6],
                 Vincent: PHSVisibilityMask[7],
                 Cid: PHSVisibilityMask[8]
-            },
-            characterAvailability: {  // eg MMBud, although, I can't see a memory location for this
-                Cloud: 1, // Can't see that MMBud is ever called for cloud, setting it to 1 by default
-                Barret: 0,
-                Tifa: 0,
-                Aeris: 0,
-                RedXIII: 0,
-                Yuffie: 0,
-                CaitSith: 0,
-                Vincent: 0,
-                Cid: 0,
-            },
+            }
         },
         gil,
         items,
