@@ -2036,7 +2036,7 @@ class FF7BinaryDataReader {
     }
 
     if (op == 0xb5) {
-      let b = $r.readUByte(), r = $r.readUByte(), d = $r.readShort(), s = $r.readShort(), t = $r.readUShort();
+      let b = $r.readUByte(), r = $r.readUByte(), d = $r.readUByte(), s = $r.readUByte(), t = $r.readUByte();
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "TURN", b: b, r: r, d: d, s: s, t: t,
