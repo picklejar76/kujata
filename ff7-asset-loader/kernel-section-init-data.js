@@ -27,8 +27,8 @@ const getCharacterRecord = (r, materiaNames, materiaDescriptions, weaponNames, w
     const name = r.readKernelString(12)
     r.offset = r.offset + 12 // readKernelString doesn't move the buffer position
     const weapon = getWeapon(r, weaponNames, weaponDescriptions)
-    const armor = getWeapon(r, armorNames, armorDescriptions)
-    const accessory = getWeapon(r, accessoryNames, accessoryDescriptions)
+    const armor = getArmor(r, armorNames, armorDescriptions)
+    const accessory = getAccessory(r, accessoryNames, accessoryDescriptions)
 
     const statusFlags = parseKernelEnums(Enums.Character.Flags, r.readUByte()) // 0x10-Sadness 0x20-Fury 
     const battleOrderRaw = r.readUByte() // 0xFF-Normal 0xFE-Back row
@@ -146,7 +146,8 @@ const getCharacterRecord = (r, materiaNames, materiaDescriptions, weaponNames, w
 const getWeapon = (r, weaponNames, weaponDescriptions) => {
     const id = r.readUByte()
     return {
-        id,
+        index: id,
+        itemId: id + 128,
         name: weaponNames[id],
         description: weaponDescriptions[id]
     }
@@ -154,7 +155,8 @@ const getWeapon = (r, weaponNames, weaponDescriptions) => {
 const getArmor = (r, armorNames, armorDescriptions) => {
     const id = r.readUByte()
     return {
-        id,
+        index: id,
+        itemId: id + 256,
         name: armorNames[id],
         description: armorDescriptions[id]
     }
@@ -162,7 +164,8 @@ const getArmor = (r, armorNames, armorDescriptions) => {
 const getAccessory = (r, accessoryNames, accessoryDescriptions) => {
     const id = r.readUByte()
     return {
-        id,
+        index: id,
+        itemId: id + 288,
         name: accessoryNames[id],
         description: accessoryDescriptions[id]
     }
@@ -172,7 +175,8 @@ const getItem = (r, itemNames, itemDescriptions) => {
     const id = itemBinary & 0b1111111
     const quantity = itemBinary >> 9
     const item = {
-        id,
+        index: id,
+        itemId: id,
         quantity,
         name: itemNames[id],
         description: itemDescriptions[id]
@@ -223,13 +227,13 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
         portrait1: 0,
         portrait2: 0,
         portrait3: 0,
-        name: '',
+        leader: '',
         currentHP: 0,
         maximumHP: 0,
         currentMP: 0,
         maximumMP: 0,
         gil: 0,
-        seconds: 0,
+        time: 0,
         location: ''
     }
     const r = new FF7BinaryDataReader(sectionData.buffer)
@@ -277,7 +281,9 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
     const countdownSecondsFractions = 0xFFFFFFFF
     const currentMapValue = 2 // Field 2, world map 0
     const currentModule = 1 // Field 1, world map 2
+    const _currentFieldName = ''
     const currentLocation = ''
+
     const alignment2 = 0
     const fieldXPos = 0
     const fieldYPos = 0
@@ -353,8 +359,8 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
                 Vincent: PHSLockingMask[7],
                 Cid: PHSLockingMask[8]
             },
-            phsVisibility: { // not sure what op code changes this
-                Cloud: PHSVisibilityMask[0], // Should really be enabled by default, cant see where in md1stin
+            phsVisibility: { // MMBud
+                Cloud: PHSVisibilityMask[0],
                 Barret: PHSVisibilityMask[1],
                 Tifa: PHSVisibilityMask[2],
                 Aeris: PHSVisibilityMask[3],
@@ -363,18 +369,7 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
                 CaitSith: PHSVisibilityMask[6],
                 Vincent: PHSVisibilityMask[7],
                 Cid: PHSVisibilityMask[8]
-            },
-            characterAvailability: {  // eg MMBud, although, I can't see a memory location for this
-                Cloud: 1, // Can't see that MMBud is ever called for cloud, setting it to 1 by default
-                Barret: 0,
-                Tifa: 0,
-                Aeris: 0,
-                RedXIII: 0,
-                Yuffie: 0,
-                CaitSith: 0,
-                Vincent: 0,
-                Cid: 0,
-            },
+            }
         },
         gil,
         items,
@@ -390,6 +385,7 @@ const getInitSectionData = (sectionData, itemNames, itemDescriptions, materiaNam
             currentMapValue,
             currentModule,
             currentLocation,
+            _currentFieldName,
             fieldXPos,
             fieldYPos,
             fieldTriangle,

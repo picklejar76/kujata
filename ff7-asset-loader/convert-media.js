@@ -3,6 +3,7 @@ const path = require('path')
 const util = require('util')
 const execFile = util.promisify(require('child_process').execFile)
 let config = JSON.parse(fs.readFileSync('../config.json', 'utf-8'))
+const { FF7BinaryDataReader } = require("./ff7-binary-data-reader.js")
 
 const extractSounds = async () => {
     console.log('Extract Sounds - START')
@@ -44,10 +45,12 @@ const extractSounds = async () => {
         const bytesToRead = 16
         const buf = Buffer.alloc(bytesToRead)
         fs.readSync(fd, buf, 0, bytesToRead, stats.size - bytesToRead)
-        const fflpFlag = buf.slice(0, 4).toString() === 'fflp'
-        const start = buf.readUInt32BE(5)
-        const end = buf.readUInt32BE(9)
-        // console.log('buf', wav, buf, fflpFlag, start, end)
+        const fflp = buf.slice(0, 4)
+        const fflpFlag = fflp.toString() === 'fflp'
+        const size = buf.readInt32LE(4)
+        const start = buf.readUInt32LE(8) / 2
+        const end = buf.readUInt32LE(12) / 2
+        // console.log('buf', wav, buf, fflpFlag, fflp.toString(), size.toString(), start.toString(), end.toString())
         const soundFile = { name: parseInt(wav.replace('.wav', '')), loop: fflpFlag }
         soundFile.size = stats.size
         if (fflpFlag) { // TODO: This designates decompressed memory space, need to find a way to turns this in milliseconds
@@ -153,10 +156,137 @@ const extractMovies = async () => {
 
     console.log('Extract Movies - END')
 }
+const adjustMoviecamFileName = (camFile) => {
+    /*
+        Files with cam but no movie
+        - bikeget.cam.json
+        - canonht3.cam.json
+        - car1209.cam.json (dupe?, there is a valid car_1209.cam)
+        - corel_c1.cam.json
+        - corel_c2.cam.json
+        - corelmt.cam.json
+        - junair.cam.json
+        - junon_e1.cam.json
+        - loslake2.cam.json
+        - lskey.cam.json
+        - name.cam.json
+        - nivljnv.cam.json
+        - plrexp2.cam.json
+        - seto.cam.json
+        - ss1c1_c6.cam.json
+        - ss2c1_c7.cam.json
+        - ss2c1_c7b.cam.json
+        - ss3c1_19.cam.json
+        - ss4c1_c6.cam.json
+        - ss5c1_c9.cam.json
+        - ss6c1_17.cam.json
+        - ss7c1_c7.cam.json
+        - ss8c1_c23.cam.json
+        - ss9c1_c1.cam.json
+        - ss10c1_c4.cam.json
+        - zzz.cam.json
+
+        Files with movie but no cam
+        - eidoslogo.mp4
+        - Explode.mp4
+        - jenova_e.mp4
+        - last4_2.mp4
+        - last4_3.mp4
+        - lastmap.mp4
+        - white2.mp4
+
+        Files with movie and incorrectly named cam
+        - cscene1.cam.json -> c_scene1.cam.json
+        - cscene2.cam.json -> c_scene2.cam.json
+        - cscene3.cam.json -> c_scene3.cam.json
+        - dropego.cam.json -> d_ropego.cam.json
+        - dropein.cam.json -> d_ropein.cam.json
+        - junaird.cam.json -> junair_d.cam.json
+        - junairu.cam.json -> junair_u.cam.json
+        - nrcrlb.cam.json -> nrcrl_b.cam.json
+        - rckthit.cam.json -> rckethit0.cam.json ??
+        - rckthit2.cam.json -> rckethit1.cam.json ??
+        - rcktoff.cam.json -> rcketoff.cam.json
+        - uropego.cam.json -> u_ropego.cam.json
+        - uropegin.cam.json -> u_ropein.cam.json
+        - zmind11.cam.json -> zmind01.cam.json
+        - zmind21.cam.json -> zmind02.cam.json
+        - zmind31.cam.json -> zmind03.cam.json
+    */
+
+    switch (camFile) {
+        case 'cscene1.cam': return 'c_scene1.cam.json'
+        case 'cscene2.cam': return 'c_scene2.cam.json'
+        case 'cscene3.cam': return 'c_scene3.cam.json'
+        case 'dropego.cam': return 'd_ropego.cam.json'
+        case 'dropein.cam': return 'd_ropein.cam.json'
+        case 'junaird.cam': return 'junair_d.cam.json'
+        case 'junairu.cam': return 'junair_u.cam.json'
+        case 'nrcrlb.cam': return 'nrcrl_b.cam.json'
+        case 'rckthit.cam': return 'rckethit0.cam.json'
+        case 'rckthit2.cam': return 'rckethit1.cam.json'
+        case 'rcktoff.cam': return 'rcketoff.cam.json'
+        case 'uropego.cam': return 'u_ropego.cam.json'
+        case 'uropegin.cam': return 'u_ropein.cam.json'
+        case 'zmind11.cam': return 'zmind01.cam.json'
+        case 'zmind21.cam': return 'zmind02.cam.json'
+        case 'zmind31.cam': return 'zmind03.cam.json'
+        default: return `${camFile}.json`
+    }
+}
+const extractMoviecamData = async () => {
+    console.log('extractMoviecamData: START')
+    const inputMoviecamDirectory = path.join(config.inputMoviecamDirectory)
+    if (!fs.existsSync(inputMoviecamDirectory)) { throw new Error('Unable to locate inputMoviecamDirectory - ' + config.inputMoviecamDirectory) }
+    let camFilesJsons = (await fs.readdir(config.outputMoviesDirectory)).filter(f => f.includes('.cam.json'))
+    // console.log('camFilesJsons', camFilesJsons)
+    camFilesJsons.map(f => fs.removeSync(path.join(config.outputMoviesDirectory, f)))
+
+    const moviecamMetaData = []
+    let camFiles = (await fs.readdir(inputMoviecamDirectory)).filter(f => f.includes('.cam'))
+    for (let i = 0; i < camFiles.length; i++) {
+        const camFile = camFiles[i]
+        const camFileJson = adjustMoviecamFileName(camFile)
+        // console.log('adjustMoviecamFileName', camFile, camFileJson)
+        const camFilePath = path.join(config.inputMoviecamDirectory, camFile)
+        const r = new FF7BinaryDataReader(fs.readFileSync(camFilePath))
+
+        const totalCameraPositions = r.length / 40
+        // console.log(camFile, '-> size', r.length, '->', totalCameraPositions, 'cam positions -> ', camFileJson)
+
+        const cameraPositions = []
+        for (let j = 0; j < totalCameraPositions; j++) {
+            const camera = {
+                xAxis: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
+                yAxis: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
+                zAxis: { x: r.readShort(), y: r.readShort(), z: r.readShort() },
+                unknown1: r.readShort(), // dupe of zAxis.z
+                position: { x: r.readInt(), y: r.readInt(), z: r.readInt() },
+                unknown2: r.readInt(),
+                zoom: r.readUShort(),
+                unknown3: r.readShort(),
+            }
+            delete camera.unknown1
+            delete camera.unknown2
+            delete camera.unknown3
+            cameraPositions.push(camera)
+        }
+        const camFileJsonPath = path.join(config.outputMoviesDirectory, camFileJson)
+        await fs.writeJson(camFileJsonPath, cameraPositions)
+        // console.log('cameraPositions', cameraPositions)
+        moviecamMetaData.push(camFileJson.replace('.cam.json', ''))
+
+    }
+    const moviecamMetadataJsonPath = path.join(config.outputMoviesDirectory, 'moviecam-metadata.json')
+    await fs.writeJson(moviecamMetadataJsonPath, moviecamMetaData)
+
+    console.log('extractMoviecamData: END')
+}
 const extractMedias = async () => {
     await extractSounds()
     await extractMusic()
     await extractMovies()
+    await extractMoviecamData()
 }
 const init = async () => {
     extractMedias()

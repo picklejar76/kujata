@@ -179,6 +179,9 @@ class FF7BinaryDataReader {
     let offset1 = $r.offset;
 
     let op = $r.readUByte();
+    // if (offset1 >= 3080 && offset1 <= 3133) {
+    //   console.log('op code byte', op, op.toString(16), offset1)
+    // }
 
     if (op == 0x00) {
       return {
@@ -517,7 +520,7 @@ class FF7BinaryDataReader {
     if (op == 0x21) {
       let t = $r.readUByte();
       return {
-        op: "TUTORIAL", t: t,
+        op: "TUTOR", t: t,
         js: "openMainMenuAndPlayTutorial({tutorialId:" + t + "});"
       };
     }
@@ -573,8 +576,9 @@ class FF7BinaryDataReader {
         op: "NFADE",
         b1: b1,
         b2: b2,
+        b3: b3,
         r: r, g: g, b: b, s: s, t: t, unused: unused,
-        js: "fadeScreen({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + "}); // unused=" + unused,
+        js: "fadeScreenN({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + "}); // unused=" + unused,
         pres: "The screen fades..."
       };
     }
@@ -1094,16 +1098,17 @@ class FF7BinaryDataReader {
     // 0x5d is supposedly not used in the game
 
     if (op == 0x5e) {
-      let u1 = $r.readUByte();
-      let u2 = $r.readUByte();
-      let c = $r.readUByte();
-      let u3 = $r.readUByte();
-      let u4 = $r.readUByte();
-      let a = $r.readUByte();
-      let s = $r.readUByte();
+      const u1 = $r.readUByte()
+      const u2 = $r.readUByte()
+      const t = $r.readUByte()
+      const xA = $r.readUByte()
+      const xF = $r.readUByte()
+      const yA = $r.readUByte()
+      const yF = $r.readUByte()
+      const typeStrings = ['"Reset"', '"Horizontal"', '"Vertical"', '"BothAxes"']
       return {
-        op: "SHAKE", u1: u1, u2: u2, c: c, u3: u3, u4: u4, a: a, s: s,
-        js: "shake({u1:" + u1 + ", u2:" + u2 + ", count:" + c + ", u3:" + u3 + ", u4:" + u4 + ", aplitude:" + a + ", speed:" + s + "});"
+        op: "SHAKE", u1: u1, u2: u2, t, xA, xF, yA, yF,
+        js: `shake({type: ${typeStrings[t]}, xAmplitude: ${xA}, xFrames: ${xF}, yAmplitude: ${xA}, yFrames: ${xF} });`
       };
     }
 
@@ -1236,6 +1241,7 @@ class FF7BinaryDataReader {
         op: "FADE",
         b1: b1,
         b2: b2,
+        b3: b3,
         r: r, g: g, b: b, s: s, t: t, a: a,
         js: "fade({r:" + rDesc + ", g:" + gDesc + ", b:" + bDesc + ", speed:" + s + ", type:" + t + ", adjust:" + a + "});",
         pres: "The screen fades..."
@@ -2030,7 +2036,7 @@ class FF7BinaryDataReader {
     }
 
     if (op == 0xb5) {
-      let b = $r.readUByte(), r = $r.readUByte(), d = $r.readShort(), s = $r.readShort(), t = $r.readUByte();
+      let b = $r.readUByte(), r = $r.readUByte(), d = $r.readUByte(), s = $r.readUByte(), t = $r.readUByte();
       let rDesc = b == 0 ? r : "Bank[" + b + "][" + r + "]";
       return {
         op: "TURN", b: b, r: r, d: d, s: s, t: t,
@@ -2173,7 +2179,7 @@ class FF7BinaryDataReader {
       let zDesc = b3 == 0 ? z : "Bank[" + b3 + "][" + z + "]";
       let sDesc = b4 == 0 ? s : "Bank[" + b4 + "][" + s + "]";
       return {
-        op: "OFST", b1: b1, b2: b2, b3: b3, b4: b4, x: x, y: y, z: z, s: s,
+        op: "OFST", b1: b1, b2: b2, b3: b3, b4: b4, x: x, y: y, z: z, s: s, t: t,
         js: "transposeObjectDisplayOnly({x:" + xDesc + ", y:" + yDesc + ", z:" + zDesc + ", speed:" + sDesc + "});"
       };
     }
@@ -2302,7 +2308,7 @@ class FF7BinaryDataReader {
 
     if (op == 0xd1) {
       let s = $r.readUByte();
-      let funcDesc = s == 0 ? "disableAllLineTriggers" : "enableAllLineTriggers";
+      let funcDesc = s == 0 ? "disableThisLineTrigger" : "enableThisLineTrigger";
       return {
         op: "LINON",
         s: s,
@@ -2341,23 +2347,29 @@ class FF7BinaryDataReader {
     if (op == 0xd4) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let v1 = $r.readUShort(), v2 = $r.readUShort(), v3 = $r.readUShort(), v4 = $r.readUByte();
+      let d = $r.readUShort(), m = $r.readUShort(), a = $r.readUShort(), s = $r.readUByte();
+      let dDesc = b1 == 0 ? d : "Bank[" + b1 + "][" + d + "]"
+      let mDesc = b2 == 0 ? m : "Bank[" + b2 + "][" + m + "]"
+      let aDesc = b3 == 0 ? a : "Bank[" + b3 + "][" + a + "]"
+      let sDesc = b4 == 0 ? s : "Bank[" + b4 + "][" + s + "]"
       return {
-        op: "SIN", b1: b1, b2: b2, b3: b3, b4: b4, v1: v1, v2: v2, v3: v3, v4: v4,
-        js: "doMathSinOp0xd4({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
-          ", v1:" + v1 + ", v2:" + v2 + ", v3:" + v3 + ", v4:" + v4 + "});"
-      };
+        op: "SIN", b1: b1, b2: b2, b3: b3, b4: b4, d: d, m: m, a: a, s: s,
+        js: `calculateSin({desination: ${dDesc}, sourceAngle: ${sDesc}, multiplicand: ${mDesc}, addition: ${aDesc}});`
+      }
     }
 
     if (op == 0xd5) {
       let b1b2 = $r.readUByte(), b1 = (b1b2 & 0xF0) >> 4, b2 = (b1b2 & 0x0F);
       let b3b4 = $r.readUByte(), b3 = (b3b4 & 0xF0) >> 4, b4 = (b3b4 & 0x0F);
-      let v1 = $r.readUShort(), v2 = $r.readUShort(), v3 = $r.readUShort(), v4 = $r.readUByte();
+      let d = $r.readUShort(), m = $r.readUShort(), a = $r.readUShort(), s = $r.readUByte();
+      let dDesc = b1 == 0 ? d : "Bank[" + b1 + "][" + d + "]"
+      let mDesc = b2 == 0 ? m : "Bank[" + b2 + "][" + m + "]"
+      let aDesc = b3 == 0 ? a : "Bank[" + b3 + "][" + a + "]"
+      let sDesc = b4 == 0 ? s : "Bank[" + b4 + "][" + s + "]"
       return {
-        op: "COS", b1: b1, b2: b2, b3: b3, b4: b4, v1: v1, v2: v2, v3: v3, v4: v4,
-        js: "doMathCosOp0xd5({b1:" + b1 + ", b2:" + b2 + ", b3:" + b3 + ", b4:" + b4 +
-          ", v1:" + v1 + ", v2:" + v2 + ", v3:" + v3 + ", v4:" + v4 + "});"
-      };
+        op: "COS", b1: b1, b2: b2, b3: b3, b4: b4, d: d, m: m, a: a, s: s,
+        js: `calculateCos({desination: ${dDesc}, sourceAngle: ${sDesc}, multiplicand: ${mDesc}, addition: ${aDesc}});`
+      }
     }
 
     if (op == 0xd6) {

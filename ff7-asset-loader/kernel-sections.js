@@ -140,6 +140,7 @@ const getWeaponSectionData = (sectionData, names, descriptions) => {
 
         let object = {
             index: i,
+            itemId: i + 128,
             name: names[i],
             description: descriptions[i],
             targets: parseKernelEnums(Enums.TargetData, targetData),
@@ -216,6 +217,7 @@ const getArmorSectionData = (sectionData, names, descriptions) => {
 
         let object = {
             index: i,
+            itemId: i + 256,
             name: names[i],
             description: descriptions[i],
             elementDamageModifier: parseKernelEnums(Enums.DamageModifier, elementDamageModifier),//?
@@ -264,9 +266,9 @@ const getAccessorySectionData = (sectionData, names, descriptions) => {
 
         let object = {
             index: i,
+            itemId: i + 288,
             name: names[i],
             description: descriptions[i],
-
             boostedStat1: parseKernelEnums(Enums.CharacterStat, boostedStat1),
             boostedStat2: parseKernelEnums(Enums.CharacterStat, boostedStat2),
             boostedStat1Bonus: boostedStat1Bonus,
@@ -376,7 +378,7 @@ const extractWindowBinElements = async (fileId, outputKernelDirectory, metadataD
             windowBinAssetMap[assetType] = elements
         }
         if (assetType === 'battle-menu-text-large') {
-            console.log('battle-menu-text-large')
+            // console.log('battle-menu-text-large')
             const colorElements = []
             for (let i = 0; i < windowBinAssetMap[assetType].length; i++) {
                 const element = windowBinAssetMap[assetType][i]
