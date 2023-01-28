@@ -1,0 +1,1126 @@
+Will translate the following animFileId:  aafe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":0,"y":251.71875,"z":180}, bone17Rotation={"x":0,"y":108.28125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/aafe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/aafe.a.gltf
+
+Will translate the following animFileId:  acfe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":0,"y":251.71875,"z":180}, bone17Rotation={"x":0,"y":108.28125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/acfe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/acfe.a.gltf
+
+Will translate the following animFileId:  caed
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/caed.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/caed.a.gltf
+
+Will translate the following animFileId:  hsgb
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsgb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsgb.a.gltf
+
+
+
+Will translate the following animFileId:  hsgc
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsgc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsgc.a.gltf
+Will translate the following animFileId:  hsgd
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsgd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsgd.a.gltf
+Will translate the following animFileId:  hshb
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":270.87890625,"y":0,"z":359.736328125}, bone13Rotation={"x":359.736328125,"y":251.103515625,"z":179.208984375}, bone17Rotation={"x":359.736328125,"y":108.896484375,"z":180.791015625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hshb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hshb.a.gltf
+Will translate the following animFileId:  hshc
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":300.234375,"y":180,"z":179.736328125}, bone13Rotation={"x":9.404296875,"y":253.4765625,"z":208.916015625}, bone17Rotation={"x":9.404296875,"y":106.5234375,"z":151.083984375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hshc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hshc.a.gltf
+Will translate the following animFileId:  hshd
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":300.234375,"y":180,"z":179.736328125}, bone13Rotation={"x":9.404296875,"y":253.4765625,"z":208.916015625}, bone17Rotation={"x":9.404296875,"y":106.5234375,"z":151.083984375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hshd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hshd.a.gltf
+Will translate the following animFileId:  hshe
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":300.234375,"y":180,"z":179.736328125}, bone13Rotation={"x":9.404296875,"y":253.4765625,"z":208.916015625}, bone17Rotation={"x":9.404296875,"y":106.5234375,"z":151.083984375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hshe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hshe.a.gltf
+Will translate the following animFileId:  hshf
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":297.59765625,"y":180,"z":179.736328125}, bone13Rotation={"x":8.61328125,"y":253.125,"z":206.279296875}, bone17Rotation={"x":8.61328125,"y":106.962890625,"z":153.720703125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hshf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hshf.a.gltf
+Will translate the following animFileId:  hsia
+f=0: rootRotation={"x":0,"y":0,"z":180}, bone0Rotation={"x":270.3515625,"y":0,"z":359.736328125}, bone13Rotation={"x":359.912109375,"y":251.103515625,"z":179.6484375}, bone17Rotation={"x":359.912109375,"y":108.896484375,"z":180.3515625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsia.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsia.a.gltf
+Will translate the following animFileId:  hsib
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.087890625,"y":0,"z":0.3515625}, bone13Rotation={"x":312.1875,"y":26.103515625,"z":236.513671875}, bone17Rotation={"x":0,"y":250.576171875,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsib.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsib.a.gltf
+Will translate the following animFileId:  hsic
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":280.1953125,"y":0,"z":359.736328125}, bone13Rotation={"x":356.66015625,"y":251.3671875,"z":170.33203125}, bone17Rotation={"x":356.66015625,"y":108.6328125,"z":189.66796875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsic.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsic.a.gltf
+Will translate the following animFileId:  hsid
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":2.197265625,"z":0}, bone13Rotation={"x":0,"y":267.802734375,"z":0}, bone17Rotation={"x":0,"y":92.197265625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsid.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsid.a.gltf
+Will translate the following animFileId:  hsie
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":2.197265625,"z":0}, bone13Rotation={"x":0,"y":267.802734375,"z":0}, bone17Rotation={"x":0,"y":92.197265625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsie.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsie.a.gltf
+Will translate the following animFileId:  hsif
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":2.197265625,"z":0}, bone13Rotation={"x":0,"y":267.802734375,"z":0}, bone17Rotation={"x":0,"y":92.197265625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsif.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsif.a.gltf
+Will translate the following animFileId:  hsja
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":2.197265625,"z":0}, bone13Rotation={"x":0,"y":267.802734375,"z":0}, bone17Rotation={"x":0,"y":92.197265625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsja.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsja.a.gltf
+Will translate the following animFileId:  hsjb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsjb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsjb.a.gltf
+Will translate the following animFileId:  hsjc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hsjc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hsjc.a.gltf
+Will translate the following animFileId:  hthc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":334.3359375,"y":0.3515625,"z":0.703125}, bone13Rotation={"x":321.328125,"y":120.673828125,"z":148.7109375}, bone17Rotation={"x":16.787109375,"y":350.595703125,"z":357.099609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hthc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hthc.a.gltf
+Will translate the following animFileId:  hthd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":332.490234375,"y":0.3515625,"z":0.703125}, bone13Rotation={"x":322.470703125,"y":115.6640625,"z":153.45703125}, bone17Rotation={"x":16.611328125,"y":352.177734375,"z":357.626953125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hthd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hthd.a.gltf
+Will translate the following animFileId:  hthe
+f=0: rootRotation={"x":65.56640625,"y":0,"z":0}, bone0Rotation={"x":340.400390625,"y":0.439453125,"z":0.791015625}, bone13Rotation={"x":313.06640625,"y":134.82421875,"z":122.255859375}, bone17Rotation={"x":5.80078125,"y":355.95703125,"z":359.208984375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hthe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hthe.a.gltf
+Will translate the following animFileId:  hthf
+f=0: rootRotation={"x":55.634765625,"y":0,"z":0}, bone0Rotation={"x":341.19140625,"y":0.439453125,"z":0.791015625}, bone13Rotation={"x":313.76953125,"y":132.890625,"z":125.33203125}, bone17Rotation={"x":10.634765625,"y":354.19921875,"z":358.505859375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hthf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hthf.a.gltf
+Will translate the following animFileId:  htia
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":338.994140625,"y":180.3515625,"z":180}, bone13Rotation={"x":308.232421875,"y":293.203125,"z":341.3671875}, bone17Rotation={"x":359.82421875,"y":89.033203125,"z":356.923828125}
+Wrote: /opt/kujata-data/data/field/char.lgp/htia.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htia.a.gltf
+Will translate the following animFileId:  htib
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":338.994140625,"y":180.3515625,"z":180}, bone13Rotation={"x":308.232421875,"y":293.203125,"z":341.3671875}, bone17Rotation={"x":359.82421875,"y":89.033203125,"z":356.923828125}
+Wrote: /opt/kujata-data/data/field/char.lgp/htib.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htib.a.gltf
+Will translate the following animFileId:  htic
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0.3515625,"z":0}, bone13Rotation={"x":313.857421875,"y":60.556640625,"z":234.4921875}, bone17Rotation={"x":85.60546875,"y":340.48828125,"z":270}
+Wrote: /opt/kujata-data/data/field/char.lgp/htic.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htic.a.gltf
+Will translate the following animFileId:  htid
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.4609375,"y":120.498046875,"z":239.853515625}, bone13Rotation={"x":295.48828125,"y":347.080078125,"z":284.0625}, bone17Rotation={"x":88.76953125,"y":276.416015625,"z":188.96484375}
+Wrote: /opt/kujata-data/data/field/char.lgp/htid.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htid.a.gltf
+Will translate the following animFileId:  htie
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.4609375,"y":120.234375,"z":240.1171875}, bone13Rotation={"x":295.048828125,"y":345.146484375,"z":284.853515625}, bone17Rotation={"x":89.912109375,"y":349.892578125,"z":262.44140625}
+Wrote: /opt/kujata-data/data/field/char.lgp/htie.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htie.a.gltf
+Will translate the following animFileId:  htif
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":352.44140625,"y":180,"z":180.087890625}, bone13Rotation={"x":6.240234375,"y":269.12109375,"z":352.353515625}, bone17Rotation={"x":6.591796875,"y":90.87890625,"z":7.646484375}
+Wrote: /opt/kujata-data/data/field/char.lgp/htif.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htif.a.gltf
+Will translate the following animFileId:  htja
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.513671875,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":258.75}, bone17Rotation={"x":0,"y":96.416015625,"z":100.986328125}
+Wrote: /opt/kujata-data/data/field/char.lgp/htja.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htja.a.gltf
+Will translate the following animFileId:  htjb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.513671875,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":258.75}, bone17Rotation={"x":0,"y":96.416015625,"z":100.986328125}
+Wrote: /opt/kujata-data/data/field/char.lgp/htjb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htjb.a.gltf
+Will translate the following animFileId:  htjc
+f=0: rootRotation={"x":359.033203125,"y":344.00390625,"z":0.087890625}, bone0Rotation={"x":270,"y":0.3515625,"z":0}, bone13Rotation={"x":322.998046875,"y":25.927734375,"z":231.240234375}, bone17Rotation={"x":77.607421875,"y":271.845703125,"z":164.8828125}
+Wrote: /opt/kujata-data/data/field/char.lgp/htjc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htjc.a.gltf
+Will translate the following animFileId:  htjd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":2.197265625,"z":0}, bone13Rotation={"x":0,"y":267.802734375,"z":0}, bone17Rotation={"x":0,"y":92.197265625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/htjd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/htjd.a.gltf
+Will translate the following animFileId:  huhe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":308.14453125,"y":0,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/huhe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huhe.a.gltf
+Will translate the following animFileId:  huhf
+f=0: rootRotation={"x":359.912109375,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":308.14453125,"y":0,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/huhf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huhf.a.gltf
+Will translate the following animFileId:  huia
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":308.14453125,"y":0,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/huia.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huia.a.gltf
+Will translate the following animFileId:  huib
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":308.14453125,"y":0,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/huib.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huib.a.gltf
+Will translate the following animFileId:  huic
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":285.556640625,"y":0.087890625,"z":2.021484375}, bone13Rotation={"x":359.384765625,"y":267.802734375,"z":344.443359375}, bone17Rotation={"x":359.47265625,"y":92.021484375,"z":195.556640625}
+Wrote: /opt/kujata-data/data/field/char.lgp/huic.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huic.a.gltf
+Will translate the following animFileId:  huid
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":8.525390625,"y":358.9453125,"z":359.82421875}, bone13Rotation={"x":340.224609375,"y":10.810546875,"z":342.685546875}, bone17Rotation={"x":62.666015625,"y":307.79296875,"z":310.869140625}
+Wrote: /opt/kujata-data/data/field/char.lgp/huid.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huid.a.gltf
+Will translate the following animFileId:  huie
+Wrote: /opt/kujata-data/data/field/char.lgp/huie.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huie.a.gltf
+Will translate the following animFileId:  huif
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":42.802734375,"y":263.056640625,"z":80.244140625}, bone13Rotation={"x":40.166015625,"y":121.552734375,"z":27.158203125}, bone17Rotation={"x":313.681640625,"y":249.2578125,"z":10.107421875}
+Wrote: /opt/kujata-data/data/field/char.lgp/huif.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huif.a.gltf
+Will translate the following animFileId:  huja
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":69.697265625,"y":356.220703125,"z":176.1328125}, bone13Rotation={"x":293.466796875,"y":310.95703125,"z":321.50390625}, bone17Rotation={"x":63.369140625,"y":356.748046875,"z":288.10546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/huja.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huja.a.gltf
+Will translate the following animFileId:  hujb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":346.640625,"y":0.087890625,"z":341.630859375}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hujb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hujb.a.gltf
+Will translate the following animFileId:  hujc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":342.24609375,"y":1.494140625,"z":338.02734375}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hujc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hujc.a.gltf
+Will translate the following animFileId:  hujd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":282.744140625,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hujd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hujd.a.gltf
+Will translate the following animFileId:  huje
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.98828125,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":177.01171875}, bone17Rotation={"x":0,"y":90,"z":182.98828125}
+Wrote: /opt/kujata-data/data/field/char.lgp/huje.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/huje.a.gltf
+Will translate the following animFileId:  hujf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":180}, bone17Rotation={"x":0,"y":90,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hujf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hujf.a.gltf
+Will translate the following animFileId:  hvaa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.98828125,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":177.01171875}, bone17Rotation={"x":0,"y":90,"z":182.98828125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvaa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvaa.a.gltf
+Will translate the following animFileId:  hvab
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":311.044921875,"y":359.560546875,"z":0.52734375}, bone13Rotation={"x":336.796875,"y":0,"z":0}, bone17Rotation={"x":63.10546875,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvab.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvab.a.gltf
+Will translate the following animFileId:  hvac
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":312.890625,"y":359.560546875,"z":0.52734375}, bone13Rotation={"x":336.005859375,"y":0,"z":0}, bone17Rotation={"x":62.138671875,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvac.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvac.a.gltf
+Will translate the following animFileId:  hvad
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":290.654296875,"y":359.208984375,"z":0.87890625}, bone13Rotation={"x":336.09375,"y":0,"z":0}, bone17Rotation={"x":75.41015625,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvad.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvad.a.gltf
+Will translate the following animFileId:  hvae
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":271.23046875,"y":0,"z":0}, bone13Rotation={"x":288.28125,"y":6.416015625,"z":262.79296875}, bone17Rotation={"x":67.763671875,"y":273.251953125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvae.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvae.a.gltf
+Will translate the following animFileId:  hvaf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":283.974609375,"y":71.103515625,"z":198.45703125}, bone17Rotation={"x":74.35546875,"y":273.251953125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvaf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvaf.a.gltf
+Will translate the following animFileId:  hvba
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.962890625,"y":0,"z":0}, bone13Rotation={"x":352.353515625,"y":359.736328125,"z":237.12890625}, bone17Rotation={"x":64.6875,"y":273.251953125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvba.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvba.a.gltf
+Will translate the following animFileId:  hvbb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.52734375,"y":0,"z":0}, bone13Rotation={"x":288.984375,"y":181.7578125,"z":178.330078125}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbb.a.gltf
+Will translate the following animFileId:  hvbc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":291.357421875,"y":0,"z":0}, bone13Rotation={"x":343.125,"y":349.8046875,"z":2.98828125}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbc.a.gltf
+Will translate the following animFileId:  hvbd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":271.23046875,"y":0,"z":0.263671875}, bone13Rotation={"x":315.615234375,"y":27.861328125,"z":235.546875}, bone17Rotation={"x":359.6484375,"y":250.576171875,"z":358.857421875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbd.a.gltf
+Will translate the following animFileId:  hvbe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":283.974609375,"y":0,"z":0.263671875}, bone13Rotation={"x":351.9140625,"y":39.990234375,"z":227.021484375}, bone17Rotation={"x":355.4296875,"y":251.103515625,"z":346.81640625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbe.a.gltf
+Will translate the following animFileId:  hvbf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.615234375,"y":0,"z":359.912109375}, bone13Rotation={"x":359.912109375,"y":263.583984375,"z":269.384765625}, bone17Rotation={"x":359.912109375,"y":96.416015625,"z":90.615234375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvbf.a.gltf
+Will translate the following animFileId:  hvca
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.185546875,"y":0,"z":359.912109375}, bone13Rotation={"x":359.384765625,"y":263.583984375,"z":264.814453125}, bone17Rotation={"x":359.384765625,"y":96.416015625,"z":95.185546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvca.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvca.a.gltf
+Will translate the following animFileId:  hvcb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.09765625,"y":0,"z":359.912109375}, bone13Rotation={"x":359.47265625,"y":263.583984375,"z":264.990234375}, bone17Rotation={"x":359.47265625,"y":96.416015625,"z":95.009765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvcb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvcb.a.gltf
+Will translate the following animFileId:  hvcc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":278.701171875,"y":0,"z":359.912109375}, bone13Rotation={"x":359.033203125,"y":263.671875,"z":261.298828125}, bone17Rotation={"x":359.033203125,"y":96.328125,"z":98.701171875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvcc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvcc.a.gltf
+Will translate the following animFileId:  hvcd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":278.96484375,"y":0,"z":359.912109375}, bone13Rotation={"x":359.033203125,"y":263.671875,"z":261.123046875}, bone17Rotation={"x":359.033203125,"y":96.328125,"z":98.876953125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvcd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvcd.a.gltf
+Will translate the following animFileId:  hvce
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvce.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvce.a.gltf
+Will translate the following animFileId:  hvdd
+Wrote: /opt/kujata-data/data/field/char.lgp/hvdd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvdd.a.gltf
+Will translate the following animFileId:  hvde
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":280.72265625,"y":180,"z":179.912109375}, bone13Rotation={"x":1.23046875,"y":263.671875,"z":280.72265625}, bone17Rotation={"x":1.23046875,"y":96.328125,"z":79.27734375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvde.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvde.a.gltf
+Will translate the following animFileId:  hvdf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.724609375,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":177.275390625}, bone17Rotation={"x":0,"y":90,"z":182.724609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvdf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvdf.a.gltf
+Will translate the following animFileId:  hvea
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":353.49609375,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":96.50390625}, bone17Rotation={"x":0,"y":90,"z":263.49609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvea.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvea.a.gltf
+Will translate the following animFileId:  hveb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":353.49609375,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":96.50390625}, bone17Rotation={"x":0,"y":90,"z":263.49609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hveb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hveb.a.gltf
+Will translate the following animFileId:  hvec
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":312.802734375,"y":359.560546875,"z":0.52734375}, bone13Rotation={"x":338.37890625,"y":0,"z":0}, bone17Rotation={"x":61.875,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvec.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvec.a.gltf
+Will translate the following animFileId:  hved
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":327.12890625,"y":359.6484375,"z":0.439453125}, bone13Rotation={"x":354.0234375,"y":0,"z":0}, bone17Rotation={"x":89.6484375,"y":182.28515625,"z":182.28515625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hved.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hved.a.gltf
+Will translate the following animFileId:  hvee
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":327.12890625,"y":359.6484375,"z":0.439453125}, bone13Rotation={"x":354.0234375,"y":0,"z":0}, bone17Rotation={"x":89.6484375,"y":182.28515625,"z":182.28515625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvee.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvee.a.gltf
+Will translate the following animFileId:  hvef
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":282.041015625,"y":356.220703125,"z":273.69140625}, bone17Rotation={"x":71.71875,"y":279.4921875,"z":185.9765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvef.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvef.a.gltf
+Will translate the following animFileId:  hvfa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":10.107421875,"y":10.986328125,"z":1.93359375}, bone13Rotation={"x":343.564453125,"y":28.65234375,"z":207.158203125}, bone17Rotation={"x":40.166015625,"y":46.669921875,"z":325.810546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfa.a.gltf
+Will translate the following animFileId:  hvfb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":10.107421875,"y":10.986328125,"z":1.93359375}, bone13Rotation={"x":344.970703125,"y":26.103515625,"z":207.685546875}, bone17Rotation={"x":40.166015625,"y":46.669921875,"z":325.810546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfb.a.gltf
+Will translate the following animFileId:  hvfc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.8671875,"y":0,"z":0}, bone13Rotation={"x":287.841796875,"y":193.88671875,"z":166.728515625}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfc.a.gltf
+Will translate the following animFileId:  hvfd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":347.87109375,"y":359.912109375,"z":0}, bone13Rotation={"x":325.546875,"y":358.9453125,"z":0.615234375}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfd.a.gltf
+Will translate the following animFileId:  hvfe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":347.87109375,"y":359.912109375,"z":0}, bone13Rotation={"x":326.162109375,"y":359.912109375,"z":0.087890625}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvfe.a.gltf
+Will translate the following animFileId:  hvff
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.52734375,"y":180.087890625,"z":180.263671875}, bone13Rotation={"x":312.01171875,"y":27.0703125,"z":235.458984375}, bone17Rotation={"x":0.17578125,"y":250.576171875,"z":0.52734375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvff.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvff.a.gltf
+Will translate the following animFileId:  hvga
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":351.474609375,"y":0,"z":0.087890625}, bone13Rotation={"x":330.29296875,"y":30.9375,"z":212.607421875}, bone17Rotation={"x":340.576171875,"y":266.923828125,"z":279.140625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvga.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvga.a.gltf
+Will translate the following animFileId:  hvgb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":351.474609375,"y":0,"z":0.087890625}, bone13Rotation={"x":330.29296875,"y":30.234375,"z":212.783203125}, bone17Rotation={"x":340.576171875,"y":266.923828125,"z":279.140625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgb.a.gltf
+Will translate the following animFileId:  hvgc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":351.474609375,"y":0,"z":0.087890625}, bone13Rotation={"x":330.1171875,"y":29.794921875,"z":213.046875}, bone17Rotation={"x":340.576171875,"y":266.923828125,"z":279.140625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgc.a.gltf
+Will translate the following animFileId:  hvgd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgd.a.gltf
+Will translate the following animFileId:  hvge
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvge.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvge.a.gltf
+Will translate the following animFileId:  hvgf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvgf.a.gltf
+Will translate the following animFileId:  hvha
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvha.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvha.a.gltf
+Will translate the following animFileId:  hvhb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhb.a.gltf
+Will translate the following animFileId:  hvhc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhc.a.gltf
+Will translate the following animFileId:  hvhd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.3515625,"y":270,"z":89.912109375}, bone13Rotation={"x":0.3515625,"y":263.583984375,"z":270}, bone17Rotation={"x":359.6484375,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhd.a.gltf
+Will translate the following animFileId:  hvhe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.603515625,"y":267.626953125,"z":92.373046875}, bone13Rotation={"x":3.603515625,"y":263.583984375,"z":269.736328125}, bone17Rotation={"x":356.396484375,"y":96.50390625,"z":89.47265625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhe.a.gltf
+Will translate the following animFileId:  hvhf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":279.580078125,"y":0,"z":358.2421875}, bone13Rotation={"x":0.263671875,"y":271.7578125,"z":350.419921875}, bone17Rotation={"x":0.263671875,"y":88.330078125,"z":189.580078125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvhf.a.gltf
+Will translate the following animFileId:  hvia
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":279.580078125,"y":0,"z":357.5390625}, bone13Rotation={"x":0.17578125,"y":271.0546875,"z":350.419921875}, bone17Rotation={"x":0.439453125,"y":87.626953125,"z":189.580078125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvia.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvia.a.gltf
+Will translate the following animFileId:  hvib
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":278.96484375,"y":349.1015625,"z":345.76171875}, bone13Rotation={"x":358.330078125,"y":248.466796875,"z":351.2109375}, bone17Rotation={"x":2.197265625,"y":65.0390625,"z":188.701171875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvib.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvib.a.gltf
+Will translate the following animFileId:  hvic
+f=0: rootRotation={"x":89.296875,"y":180,"z":180}, bone0Rotation={"x":290.91796875,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvic.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvic.a.gltf
+Will translate the following animFileId:  hvid
+f=0: rootRotation={"x":336.533203125,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvid.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvid.a.gltf
+Will translate the following animFileId:  hvie
+f=0: rootRotation={"x":336.533203125,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvie.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvie.a.gltf
+Will translate the following animFileId:  hvif
+f=0: rootRotation={"x":89.296875,"y":180,"z":180}, bone0Rotation={"x":290.126953125,"y":180.263671875,"z":173.671875}, bone13Rotation={"x":0,"y":252.59765625,"z":180}, bone17Rotation={"x":0,"y":113.994140625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvif.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvif.a.gltf
+Will translate the following animFileId:  hvja
+f=0: rootRotation={"x":89.296875,"y":180,"z":180}, bone0Rotation={"x":287.2265625,"y":183.076171875,"z":194.150390625}, bone13Rotation={"x":0,"y":274.130859375,"z":180}, bone17Rotation={"x":0,"y":119.53125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvja.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvja.a.gltf
+Will translate the following animFileId:  hvjb
+f=0: rootRotation={"x":89.296875,"y":180,"z":180}, bone0Rotation={"x":276.50390625,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvjb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvjb.a.gltf
+Will translate the following animFileId:  hvjc
+f=0: rootRotation={"x":89.296875,"y":180,"z":180}, bone0Rotation={"x":311.220703125,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvjc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvjc.a.gltf
+Will translate the following animFileId:  hvjd
+f=0: rootRotation={"x":52.91015625,"y":180,"z":180}, bone0Rotation={"x":270,"y":0.3515625,"z":0}, bone13Rotation={"x":336.005859375,"y":272.98828125,"z":358.76953125}, bone17Rotation={"x":80.771484375,"y":278.525390625,"z":208.30078125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvjd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvjd.a.gltf
+Will translate the following animFileId:  hvje
+f=0: rootRotation={"x":88.2421875,"y":0,"z":0}, bone0Rotation={"x":272.98828125,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":177.01171875}, bone17Rotation={"x":0,"y":90,"z":182.98828125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hvje.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hvje.a.gltf
+Will translate the following animFileId:  hwhf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":356.572265625,"y":4.130859375,"z":0.087890625}, bone13Rotation={"x":304.62890625,"y":179.033203125,"z":180.791015625}, bone17Rotation={"x":12.392578125,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hwhf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hwhf.a.gltf
+Will translate the following animFileId:  hwia
+f=0: rootRotation={"x":86.1328125,"y":0,"z":0}, bone0Rotation={"x":310.517578125,"y":359.912109375,"z":0}, bone13Rotation={"x":355.869140625,"y":265.078125,"z":229.658203125}, bone17Rotation={"x":355.78125,"y":94.921875,"z":130.341796875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hwia.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hwia.a.gltf
+Will translate the following animFileId:  hxac
+Wrote: /opt/kujata-data/data/field/char.lgp/hxac.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxac.a.gltf
+Will translate the following animFileId:  hxad
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.09765625,"y":0,"z":0}, bone13Rotation={"x":284.765625,"y":181.40625,"z":178.59375}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxad.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxad.a.gltf
+Will translate the following animFileId:  hxae
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxae.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxae.a.gltf
+Will translate the following animFileId:  hxaf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":276.064453125,"y":0,"z":359.736328125}, bone13Rotation={"x":358.06640625,"y":251.19140625,"z":174.19921875}, bone17Rotation={"x":358.06640625,"y":108.80859375,"z":185.80078125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxaf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxaf.a.gltf
+Will translate the following animFileId:  hxba
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":350.771484375,"y":352.177734375,"z":1.23046875}, bone13Rotation={"x":342.7734375,"y":259.27734375,"z":99.66796875}, bone17Rotation={"x":339.873046875,"y":85.60546875,"z":260.15625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxba.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxba.a.gltf
+Will translate the following animFileId:  hxbb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxbb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxbb.a.gltf
+Will translate the following animFileId:  hxib
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.787109375,"y":0,"z":0}, bone13Rotation={"x":72.158203125,"y":0.87890625,"z":270.966796875}, bone17Rotation={"x":283.88671875,"y":225.791015625,"z":135.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxib.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxib.a.gltf
+Will translate the following animFileId:  hxic
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.787109375,"y":0,"z":10.546875}, bone13Rotation={"x":52.91015625,"y":57.3046875,"z":332.9296875}, bone17Rotation={"x":306.38671875,"y":338.466796875,"z":17.666015625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxic.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxic.a.gltf
+Will translate the following animFileId:  hxid
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.611328125,"y":0,"z":0}, bone13Rotation={"x":72.158203125,"y":0.439453125,"z":270.439453125}, bone17Rotation={"x":283.88671875,"y":225.791015625,"z":135.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxid.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxid.a.gltf
+Will translate the following animFileId:  hxie
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.25,"y":0,"z":0}, bone13Rotation={"x":72.59765625,"y":354.111328125,"z":263.759765625}, bone17Rotation={"x":283.271484375,"y":228.515625,"z":132.275390625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxie.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxie.a.gltf
+Will translate the following animFileId:  hxif
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.6015625,"y":0,"z":0}, bone13Rotation={"x":34.62890625,"y":55.458984375,"z":339.345703125}, bone17Rotation={"x":286.171875,"y":319.39453125,"z":39.375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxif.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxif.a.gltf
+Will translate the following animFileId:  hxja
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.80078125,"y":0,"z":0}, bone13Rotation={"x":76.640625,"y":46.142578125,"z":315.087890625}, bone17Rotation={"x":286.171875,"y":319.39453125,"z":39.375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxja.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxja.a.gltf
+Will translate the following animFileId:  hxjb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.77734375,"y":0,"z":0}, bone13Rotation={"x":72.24609375,"y":346.81640625,"z":256.201171875}, bone17Rotation={"x":283.88671875,"y":225.791015625,"z":135.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjb.a.gltf
+Will translate the following animFileId:  hxjc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.69921875,"y":358.857421875,"z":2.109375}, bone13Rotation={"x":72.158203125,"y":0.87890625,"z":270.87890625}, bone17Rotation={"x":283.0078125,"y":226.40625,"z":134.384765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjc.a.gltf
+Will translate the following animFileId:  hxjd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":301.81640625,"y":330.556640625,"z":343.916015625}, bone13Rotation={"x":38.759765625,"y":351.5625,"z":257.783203125}, bone17Rotation={"x":293.642578125,"y":106.34765625,"z":252.24609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjd.a.gltf
+Will translate the following animFileId:  hxje
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxje.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxje.a.gltf
+Will translate the following animFileId:  hxjf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0.087890625,"z":0}, bone13Rotation={"x":310.869140625,"y":53.876953125,"z":310.869140625}, bone17Rotation={"x":0,"y":19.423828125,"z":359.912109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hxjf.a.gltf
+Will translate the following animFileId:  hyaa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":2.4609375,"z":0}, bone13Rotation={"x":324.580078125,"y":31.46484375,"z":335.302734375}, bone17Rotation={"x":0.439453125,"y":0.3515625,"z":359.912109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyaa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyaa.a.gltf
+Will translate the following animFileId:  hyab
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":2.4609375,"z":0}, bone13Rotation={"x":324.580078125,"y":31.46484375,"z":335.302734375}, bone17Rotation={"x":0.439453125,"y":0.3515625,"z":359.912109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyab.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyab.a.gltf
+Will translate the following animFileId:  hyac
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":271.40625,"y":0,"z":0.087890625}, bone13Rotation={"x":309.375,"y":46.494140625,"z":317.548828125}, bone17Rotation={"x":0,"y":19.423828125,"z":359.912109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyac.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyac.a.gltf
+Will translate the following animFileId:  hyad
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.44921875,"y":180,"z":180.087890625}, bone13Rotation={"x":316.93359375,"y":27.7734375,"z":335.830078125}, bone17Rotation={"x":30.498046875,"y":19.248046875,"z":9.931640625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyad.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyad.a.gltf
+Will translate the following animFileId:  hyae
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyae.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyae.a.gltf
+Will translate the following animFileId:  hyaf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyaf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyaf.a.gltf
+Will translate the following animFileId:  hyba
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyba.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyba.a.gltf
+Will translate the following animFileId:  hybb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.52734375,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hybb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hybb.a.gltf
+Will translate the following animFileId:  hybc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hybc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hybc.a.gltf
+Will translate the following animFileId:  hybd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hybd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hybd.a.gltf
+Will translate the following animFileId:  hybe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hybe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hybe.a.gltf
+Will translate the following animFileId:  hybf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hybf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hybf.a.gltf
+Will translate the following animFileId:  hyca
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.17578125,"y":270,"z":89.736328125}, bone13Rotation={"x":0.17578125,"y":251.103515625,"z":179.912109375}, bone17Rotation={"x":359.82421875,"y":108.896484375,"z":179.912109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyca.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyca.a.gltf
+Will translate the following animFileId:  hycb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":274.39453125,"y":13.095703125,"z":259.892578125}, bone17Rotation={"x":68.02734375,"y":273.251953125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hycb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hycb.a.gltf
+Will translate the following animFileId:  hycc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.17578125,"y":270,"z":89.912109375}, bone13Rotation={"x":0.17578125,"y":263.583984375,"z":270}, bone17Rotation={"x":359.82421875,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/hycc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hycc.a.gltf
+Will translate the following animFileId:  hycd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hycd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hycd.a.gltf
+Will translate the following animFileId:  hyce
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyce.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyce.a.gltf
+Will translate the following animFileId:  hycf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hycf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hycf.a.gltf
+Will translate the following animFileId:  hyda
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyda.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyda.a.gltf
+Will translate the following animFileId:  hydb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":301.025390625,"y":180,"z":180}, bone13Rotation={"x":0,"y":270,"z":211.025390625}, bone17Rotation={"x":0,"y":90,"z":148.974609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hydb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hydb.a.gltf
+Will translate the following animFileId:  hydc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":180}, bone17Rotation={"x":0,"y":90,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hydc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hydc.a.gltf
+Will translate the following animFileId:  hydd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":180}, bone17Rotation={"x":0,"y":90,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hydd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hydd.a.gltf
+Will translate the following animFileId:  hyde
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":180}, bone17Rotation={"x":0,"y":90,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyde.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyde.a.gltf
+Will translate the following animFileId:  hydf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":314.6484375,"y":359.560546875,"z":0.52734375}, bone13Rotation={"x":350.595703125,"y":0,"z":0}, bone17Rotation={"x":62.40234375,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hydf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hydf.a.gltf
+Will translate the following animFileId:  hyea
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":295.48828125,"y":179.912109375,"z":180}, bone13Rotation={"x":2.724609375,"y":264.19921875,"z":295.400390625}, bone17Rotation={"x":2.8125,"y":95.80078125,"z":64.599609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyea.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyea.a.gltf
+Will translate the following animFileId:  hyeb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":295.48828125,"y":179.912109375,"z":180}, bone13Rotation={"x":2.724609375,"y":264.19921875,"z":295.400390625}, bone17Rotation={"x":2.8125,"y":95.80078125,"z":64.599609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyeb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyeb.a.gltf
+Will translate the following animFileId:  hyec
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.609375,"y":179.912109375,"z":180}, bone13Rotation={"x":2.63671875,"y":264.111328125,"z":294.521484375}, bone17Rotation={"x":2.724609375,"y":95.888671875,"z":65.478515625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyec.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyec.a.gltf
+Will translate the following animFileId:  hyed
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":354.990234375,"y":0,"z":0}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyed.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyed.a.gltf
+Will translate the following animFileId:  hyee
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":352.96875,"y":0,"z":0}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyee.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyee.a.gltf
+Will translate the following animFileId:  hyef
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.087890625,"y":0,"z":0.3515625}, bone13Rotation={"x":313.59375,"y":30.05859375,"z":233.525390625}, bone17Rotation={"x":0,"y":250.576171875,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyef.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyef.a.gltf
+Will translate the following animFileId:  hyfa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":282.3046875,"y":179.82421875,"z":179.912109375}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyfa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyfa.a.gltf
+Will translate the following animFileId:  hyfb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.609375,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyfb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyfb.a.gltf
+Will translate the following animFileId:  hyfc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.609375,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hyfc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hyfc.a.gltf
+Will translate the following animFileId:  hzec
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":276.767578125,"y":0,"z":0}, bone13Rotation={"x":297.94921875,"y":136.58203125,"z":354.638671875}, bone17Rotation={"x":60.732421875,"y":135.87890625,"z":184.21875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzec.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzec.a.gltf
+Will translate the following animFileId:  hzed
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":354.0234375,"y":13.271484375,"z":358.59375}, bone13Rotation={"x":340.048828125,"y":281.07421875,"z":96.328125}, bone17Rotation={"x":342.333984375,"y":105.205078125,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzed.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzed.a.gltf
+Will translate the following animFileId:  hzee
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.439453125,"y":331.787109375,"z":27.94921875}, bone13Rotation={"x":0.087890625,"y":251.103515625,"z":179.560546875}, bone17Rotation={"x":359.6484375,"y":108.896484375,"z":180.263671875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzee.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzee.a.gltf
+Will translate the following animFileId:  hzef
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.6015625,"y":336.26953125,"z":23.02734375}, bone13Rotation={"x":0.87890625,"y":250.576171875,"z":168.486328125}, bone17Rotation={"x":352.265625,"y":107.9296875,"z":188.61328125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzef.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzef.a.gltf
+Will translate the following animFileId:  hzfa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.185546875,"y":189.4921875,"z":170.244140625}, bone13Rotation={"x":2.4609375,"y":251.19140625,"z":184.5703125}, bone17Rotation={"x":0.87890625,"y":108.896484375,"z":174.90234375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfa.a.gltf
+Will translate the following animFileId:  hzfb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":60.29296875,"y":350.595703125,"z":352.001953125}, bone13Rotation={"x":347.16796875,"y":284.0625,"z":27.0703125}, bone17Rotation={"x":354.462890625,"y":70.751953125,"z":330.732421875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfb.a.gltf
+Will translate the following animFileId:  hzfc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":282.12890625,"y":331.5234375,"z":27.685546875}, bone13Rotation={"x":1.845703125,"y":250.3125,"z":168.046875}, bone17Rotation={"x":351.2109375,"y":107.75390625,"z":188.349609375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfc.a.gltf
+Will translate the following animFileId:  hzfd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.77734375,"y":330.556640625,"z":28.564453125}, bone13Rotation={"x":2.021484375,"y":250.3125,"z":168.3984375}, bone17Rotation={"x":351.298828125,"y":107.75390625,"z":187.91015625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfd.a.gltf
+Will translate the following animFileId:  hzfe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":282.12890625,"y":331.611328125,"z":40.60546875}, bone13Rotation={"x":4.482421875,"y":263.056640625,"z":168.75}, bone17Rotation={"x":349.541015625,"y":120.849609375,"z":186.15234375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzfe.a.gltf
+Will translate the following animFileId:  hzff
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":285.205078125,"y":338.115234375,"z":33.75}, bone13Rotation={"x":3.955078125,"y":262.705078125,"z":165.322265625}, bone17Rotation={"x":347.87109375,"y":120.05859375,"z":189.31640625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzff.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzff.a.gltf
+Will translate the following animFileId:  hzga
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":348.22265625,"y":194.4140625,"z":177.01171875}, bone13Rotation={"x":2.900390625,"y":283.798828125,"z":258.22265625}, bone17Rotation={"x":357.099609375,"y":103.798828125,"z":101.77734375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzga.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzga.a.gltf
+Will translate the following animFileId:  hzgb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.8125,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":177.1875}, bone17Rotation={"x":0,"y":90,"z":182.8125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgb.a.gltf
+Will translate the following animFileId:  hzgc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.251953125,"y":180,"z":184.5703125}, bone13Rotation={"x":359.736328125,"y":274.658203125,"z":183.251953125}, bone17Rotation={"x":0.263671875,"y":94.658203125,"z":176.748046875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgc.a.gltf
+Will translate the following animFileId:  hzgd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.63671875,"y":180,"z":180}, bone13Rotation={"x":0,"y":270,"z":182.63671875}, bone17Rotation={"x":0,"y":90,"z":177.36328125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgd.a.gltf
+Will translate the following animFileId:  hzge
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.9765625,"y":180,"z":180}, bone13Rotation={"x":0,"y":270,"z":185.9765625}, bone17Rotation={"x":0,"y":90,"z":174.0234375}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzge.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzge.a.gltf
+Will translate the following animFileId:  hzgf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.251953125,"y":180,"z":180}, bone13Rotation={"x":0,"y":270,"z":183.251953125}, bone17Rotation={"x":0,"y":90,"z":176.748046875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzgf.a.gltf
+Will translate the following animFileId:  hzha
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.251953125,"y":180,"z":180}, bone13Rotation={"x":0,"y":270,"z":183.251953125}, bone17Rotation={"x":0,"y":90,"z":176.748046875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzha.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzha.a.gltf
+Will translate the following animFileId:  hzhb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":271.142578125,"y":0.17578125,"z":359.82421875}, bone13Rotation={"x":0,"y":270,"z":178.857421875}, bone17Rotation={"x":0,"y":90,"z":181.142578125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhb.a.gltf
+Will translate the following animFileId:  hzhc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":355.078125,"y":0.263671875,"z":278.4375}, bone13Rotation={"x":351.9140625,"y":28.564453125,"z":193.53515625}, bone17Rotation={"x":6.591796875,"y":90.87890625,"z":2.373046875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhc.a.gltf
+Will translate the following animFileId:  hzhd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.615234375,"y":180,"z":180.3515625}, bone13Rotation={"x":287.314453125,"y":327.041015625,"z":304.27734375}, bone17Rotation={"x":85.60546875,"y":333.017578125,"z":262.529296875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhd.a.gltf
+Will translate the following animFileId:  hzhe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":287.841796875,"y":180,"z":184.21875}, bone13Rotation={"x":286.69921875,"y":7.91015625,"z":263.408203125}, bone17Rotation={"x":78.75,"y":259.365234375,"z":188.61328125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhe.a.gltf
+Will translate the following animFileId:  hzhf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":295.400390625,"y":180,"z":180.3515625}, bone13Rotation={"x":299.970703125,"y":44.560546875,"z":222.626953125}, bone17Rotation={"x":87.5390625,"y":227.109375,"z":156.533203125}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzhf.a.gltf
+Will translate the following animFileId:  hzia
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":290.21484375,"y":180.087890625,"z":180.3515625}, bone13Rotation={"x":289.86328125,"y":7.20703125,"z":263.935546875}, bone17Rotation={"x":74.443359375,"y":262.529296875,"z":191.513671875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzia.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzia.a.gltf
+Will translate the following animFileId:  hzib
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":287.75390625,"y":179.82421875,"z":179.82421875}, bone13Rotation={"x":288.10546875,"y":9.84375,"z":261.123046875}, bone17Rotation={"x":72.421875,"y":263.408203125,"z":192.216796875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzib.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzib.a.gltf
+Will translate the following animFileId:  hzic
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":283.7109375,"y":180,"z":165.234375}, bone13Rotation={"x":312.71484375,"y":25.048828125,"z":239.4140625}, bone17Rotation={"x":72.421875,"y":263.408203125,"z":192.216796875}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzic.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzic.a.gltf
+Will translate the following animFileId:  hzid
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":279.228515625,"y":193.359375,"z":154.599609375}, bone13Rotation={"x":312.71484375,"y":25.048828125,"z":239.4140625}, bone17Rotation={"x":85.078125,"y":244.072265625,"z":177.5390625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzid.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzid.a.gltf
+Will translate the following animFileId:  hzie
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":2.021484375,"y":31.025390625,"z":330.46875}, bone13Rotation={"x":270.615234375,"y":0,"z":0}, bone17Rotation={"x":74.1796875,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzie.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzie.a.gltf
+Will translate the following animFileId:  hzif
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":310.166015625,"y":359.47265625,"z":0.52734375}, bone13Rotation={"x":345.9375,"y":0,"z":0}, bone17Rotation={"x":62.314453125,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzif.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzif.a.gltf
+Will translate the following animFileId:  hzja
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":280.37109375,"y":349.716796875,"z":10.810546875}, bone13Rotation={"x":298.564453125,"y":0,"z":0}, bone17Rotation={"x":75.322265625,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzja.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzja.a.gltf
+Will translate the following animFileId:  hzjb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":285.1171875,"y":181.7578125,"z":178.154296875}, bone13Rotation={"x":282.392578125,"y":0,"z":0}, bone17Rotation={"x":75.322265625,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjb.a.gltf
+Will translate the following animFileId:  hzjc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.439453125,"y":263.408203125,"z":96.50390625}, bone13Rotation={"x":296.015625,"y":0,"z":0}, bone17Rotation={"x":75.322265625,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjc.a.gltf
+Will translate the following animFileId:  hzjd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.109375,"y":348.134765625,"z":11.77734375}, bone13Rotation={"x":296.19140625,"y":0,"z":0}, bone17Rotation={"x":75.322265625,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjd.a.gltf
+Will translate the following animFileId:  hzje
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.515625,"y":187.03125,"z":172.880859375}, bone13Rotation={"x":296.19140625,"y":0,"z":0}, bone17Rotation={"x":75.322265625,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzje.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzje.a.gltf
+Will translate the following animFileId:  hzjf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.33984375,"y":352.001953125,"z":7.91015625}, bone13Rotation={"x":293.02734375,"y":0,"z":0}, bone17Rotation={"x":76.201171875,"y":180.087890625,"z":180.087890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/hzjf.a.gltf
+Will translate the following animFileId:  iaaa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":36.5625,"y":0,"z":0}, bone13Rotation={"x":354.90234375,"y":273.779296875,"z":143.26171875}, bone17Rotation={"x":354.7265625,"y":86.1328125,"z":216.73828125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaaa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaaa.a.gltf
+Will translate the following animFileId:  iaab
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaab.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaab.a.gltf
+Will translate the following animFileId:  iaac
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":5.537109375,"z":0}, bone13Rotation={"x":0,"y":269.208984375,"z":270}, bone17Rotation={"x":0,"y":102.041015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaac.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaac.a.gltf
+Will translate the following animFileId:  iaad
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":281.953125,"y":180,"z":179.912109375}, bone13Rotation={"x":1.318359375,"y":263.671875,"z":281.865234375}, bone17Rotation={"x":1.318359375,"y":96.328125,"z":78.134765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaad.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaad.a.gltf
+Will translate the following animFileId:  iaae
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.1640625,"y":0,"z":359.912109375}, bone13Rotation={"x":359.6484375,"y":263.583984375,"z":266.8359375}, bone17Rotation={"x":359.6484375,"y":96.416015625,"z":93.1640625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaae.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaae.a.gltf
+Will translate the following animFileId:  iaaf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":274.482421875,"y":180,"z":179.912109375}, bone13Rotation={"x":0.52734375,"y":263.583984375,"z":274.482421875}, bone17Rotation={"x":0.52734375,"y":96.416015625,"z":85.517578125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaaf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaaf.a.gltf
+Will translate the following animFileId:  iaba
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.439453125,"y":180,"z":179.912109375}, bone13Rotation={"x":0.087890625,"y":263.583984375,"z":270.439453125}, bone17Rotation={"x":0.087890625,"y":96.416015625,"z":89.560546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaba.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaba.a.gltf
+Will translate the following animFileId:  iabb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.912109375,"z":0}, bone13Rotation={"x":0,"y":263.583984375,"z":270}, bone17Rotation={"x":0,"y":96.416015625,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/iabb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iabb.a.gltf
+Will translate the following animFileId:  iabc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.251953125,"y":0,"z":359.912109375}, bone13Rotation={"x":359.6484375,"y":263.583984375,"z":266.8359375}, bone17Rotation={"x":359.6484375,"y":96.416015625,"z":93.1640625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iabc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iabc.a.gltf
+Will translate the following animFileId:  iabd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":27.158203125,"y":195.380859375,"z":187.119140625}, bone13Rotation={"x":294.609375,"y":341.54296875,"z":289.51171875}, bone17Rotation={"x":48.1640625,"y":10.107421875,"z":279.228515625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iabd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iabd.a.gltf
+Will translate the following animFileId:  iabe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":271.318359375,"y":180,"z":180}, bone13Rotation={"x":284.23828125,"y":3.69140625,"z":266.484375}, bone17Rotation={"x":71.19140625,"y":272.373046875,"z":179.208984375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iabe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iabe.a.gltf
+Will translate the following animFileId:  iabf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":285.732421875,"y":187.294921875,"z":172.96875}, bone13Rotation={"x":296.982421875,"y":70.3125,"z":203.203125}, bone17Rotation={"x":56.953125,"y":105.99609375,"z":10.72265625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iabf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iabf.a.gltf
+Will translate the following animFileId:  iaca
+f=0: rootRotation={"x":0,"y":334.51171875,"z":0}, bone0Rotation={"x":287.578125,"y":180,"z":180}, bone13Rotation={"x":332.75390625,"y":50.009765625,"z":206.982421875}, bone17Rotation={"x":58.798828125,"y":89.47265625,"z":356.748046875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaca.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaca.a.gltf
+Will translate the following animFileId:  iacb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":283.53515625,"y":180,"z":180}, bone13Rotation={"x":304.716796875,"y":68.466796875,"z":203.466796875}, bone17Rotation={"x":59.0625,"y":113.115234375,"z":17.40234375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iacb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iacb.a.gltf
+Will translate the following animFileId:  iacc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":282.919921875,"y":180,"z":180}, bone13Rotation={"x":302.783203125,"y":65.654296875,"z":206.015625}, bone17Rotation={"x":63.984375,"y":117.7734375,"z":22.32421875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iacc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iacc.a.gltf
+Will translate the following animFileId:  iacd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":282.3046875,"y":180,"z":180}, bone13Rotation={"x":338.90625,"y":27.509765625,"z":223.59375}, bone17Rotation={"x":68.02734375,"y":241.171875,"z":153.017578125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iacd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iacd.a.gltf
+Will translate the following animFileId:  iace
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":277.470703125,"y":180,"z":180}, bone13Rotation={"x":338.02734375,"y":27.94921875,"z":224.12109375}, bone17Rotation={"x":78.662109375,"y":222.099609375,"z":132.71484375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iace.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iace.a.gltf
+Will translate the following animFileId:  iacf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":16.435546875,"y":359.82421875,"z":0}, bone13Rotation={"x":346.201171875,"y":340.048828125,"z":4.921875}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iacf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iacf.a.gltf
+Will translate the following animFileId:  iada
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.615234375,"y":0,"z":0}, bone13Rotation={"x":293.115234375,"y":185.2734375,"z":175.078125}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iada.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iada.a.gltf
+Will translate the following animFileId:  iadb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.5234375,"y":0,"z":0}, bone13Rotation={"x":341.19140625,"y":290.7421875,"z":40.4296875}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iadb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iadb.a.gltf
+Will translate the following animFileId:  iadc
+f=0: rootRotation={"x":352.79296875,"y":0,"z":0}, bone0Rotation={"x":275.80078125,"y":0,"z":0}, bone13Rotation={"x":341.19140625,"y":290.7421875,"z":40.4296875}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iadc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iadc.a.gltf
+Will translate the following animFileId:  iadd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":285.99609375,"y":359.912109375,"z":0}, bone13Rotation={"x":338.5546875,"y":291.708984375,"z":42.626953125}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iadd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iadd.a.gltf
+Will translate the following animFileId:  iade
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":287.841796875,"y":0,"z":359.384765625}, bone13Rotation={"x":337.8515625,"y":291.97265625,"z":43.154296875}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iade.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iade.a.gltf
+Will translate the following animFileId:  iadf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":288.193359375,"y":0,"z":347.87109375}, bone13Rotation={"x":295.400390625,"y":180,"z":180}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iadf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iadf.a.gltf
+Will translate the following animFileId:  iaea
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":290.7421875,"y":358.681640625,"z":350.5078125}, bone13Rotation={"x":287.578125,"y":181.7578125,"z":178.330078125}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaea.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaea.a.gltf
+Will translate the following animFileId:  iaeb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":0.263671875,"y":0,"z":0}, bone13Rotation={"x":357.978515625,"y":358.9453125,"z":231.416015625}, bone17Rotation={"x":340.224609375,"y":270.087890625,"z":269.82421875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaeb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaeb.a.gltf
+Will translate the following animFileId:  iaec
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":277.3828125,"y":180,"z":180.263671875}, bone13Rotation={"x":323.0859375,"y":8.0859375,"z":249.609375}, bone17Rotation={"x":2.4609375,"y":250.751953125,"z":7.03125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaec.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaec.a.gltf
+Will translate the following animFileId:  iaed
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":288.28125,"y":180,"z":180.263671875}, bone13Rotation={"x":325.546875,"y":17.9296875,"z":239.94140625}, bone17Rotation={"x":6.064453125,"y":251.455078125,"z":17.40234375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaed.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaed.a.gltf
+Will translate the following animFileId:  iaee
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":279.31640625,"y":180,"z":180.263671875}, bone13Rotation={"x":323.173828125,"y":7.91015625,"z":249.78515625}, bone17Rotation={"x":3.076171875,"y":250.83984375,"z":8.7890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaee.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaee.a.gltf
+Will translate the following animFileId:  iaef
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":277.3828125,"y":180,"z":180.263671875}, bone13Rotation={"x":323.701171875,"y":8.7890625,"z":248.203125}, bone17Rotation={"x":2.4609375,"y":250.751953125,"z":7.03125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaef.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaef.a.gltf
+Will translate the following animFileId:  iafa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":277.3828125,"y":180,"z":180.263671875}, bone13Rotation={"x":330.8203125,"y":21.26953125,"z":230.888671875}, bone17Rotation={"x":2.4609375,"y":250.751953125,"z":7.03125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iafa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iafa.a.gltf
+Will translate the following animFileId:  iafb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.63671875,"y":209.970703125,"z":152.138671875}, bone13Rotation={"x":330.8203125,"y":21.26953125,"z":230.888671875}, bone17Rotation={"x":2.021484375,"y":252.421875,"z":1.845703125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iafb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iafb.a.gltf
+Will translate the following animFileId:  iafc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.109375,"y":180,"z":180.439453125}, bone13Rotation={"x":322.734375,"y":0,"z":0}, bone17Rotation={"x":7.822265625,"y":0,"z":359.912109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iafc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iafc.a.gltf
+Will translate the following animFileId:  iafd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":315.966796875,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iafd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iafd.a.gltf
+Will translate the following animFileId:  iafe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":283.7109375,"y":0.87890625,"z":358.9453125}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iafe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iafe.a.gltf
+Will translate the following animFileId:  iaff
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":283.7109375,"y":0.87890625,"z":358.9453125}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaff.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaff.a.gltf
+Will translate the following animFileId:  iaga
+f=0: rootRotation={"x":357.71484375,"y":0,"z":0}, bone0Rotation={"x":272.28515625,"y":354.638671875,"z":5.80078125}, bone13Rotation={"x":337.060546875,"y":289.951171875,"z":334.86328125}, bone17Rotation={"x":12.83203125,"y":82.08984375,"z":354.287109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaga.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaga.a.gltf
+Will translate the following animFileId:  iagb
+f=0: rootRotation={"x":357.71484375,"y":0,"z":0}, bone0Rotation={"x":272.28515625,"y":0.3515625,"z":0}, bone13Rotation={"x":337.412109375,"y":289.951171875,"z":335.0390625}, bone17Rotation={"x":12.83203125,"y":82.08984375,"z":354.287109375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iagb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iagb.a.gltf
+Will translate the following animFileId:  iagc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0.3515625,"z":0}, bone13Rotation={"x":286.259765625,"y":317.98828125,"z":313.2421875}, bone17Rotation={"x":82.705078125,"y":40.693359375,"z":327.12890625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iagc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iagc.a.gltf
+Will translate the following animFileId:  iagd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":9.31640625,"z":0}, bone13Rotation={"x":0,"y":272.900390625,"z":270}, bone17Rotation={"x":0,"y":105.8203125,"z":90}
+Wrote: /opt/kujata-data/data/field/char.lgp/iagd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iagd.a.gltf
+Will translate the following animFileId:  iage
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":0,"y":270,"z":180}, bone17Rotation={"x":0,"y":90,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iage.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iage.a.gltf
+Will translate the following animFileId:  iagf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":349.365234375,"y":0.263671875,"z":359.912109375}, bone17Rotation={"x":10.37109375,"y":0,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/iagf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iagf.a.gltf
+Will translate the following animFileId:  iaha
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":313.59375,"y":0,"z":0}, bone13Rotation={"x":347.34375,"y":0,"z":0}, bone17Rotation={"x":61.875,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaha.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaha.a.gltf
+Will translate the following animFileId:  iahb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.724609375,"y":0,"z":0}, bone13Rotation={"x":294.9609375,"y":179.384765625,"z":180.52734375}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iahb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iahb.a.gltf
+Will translate the following animFileId:  iahc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.087890625,"y":0,"z":0.3515625}, bone13Rotation={"x":312.1875,"y":26.279296875,"z":236.25}, bone17Rotation={"x":0,"y":250.576171875,"z":0}
+Wrote: /opt/kujata-data/data/field/char.lgp/iahc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iahc.a.gltf
+Will translate the following animFileId:  iahd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":0,"z":0}, bone13Rotation={"x":280.107421875,"y":322.20703125,"z":308.232421875}, bone17Rotation={"x":71.015625,"y":272.021484375,"z":178.857421875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iahd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iahd.a.gltf
+Will translate the following animFileId:  iahe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.3515625,"y":86.66015625,"z":270}, bone13Rotation={"x":0,"y":273.33984375,"z":0}, bone17Rotation={"x":0,"y":86.66015625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iahe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iahe.a.gltf
+Will translate the following animFileId:  iahf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":240.556640625,"z":158.115234375}, bone13Rotation={"x":0,"y":312.099609375,"z":0}, bone17Rotation={"x":0,"y":128.583984375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iahf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iahf.a.gltf
+Will translate the following animFileId:  iaia
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.087890625,"y":180.087890625,"z":180}, bone13Rotation={"x":0,"y":253.037109375,"z":0}, bone17Rotation={"x":0,"y":106.962890625,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaia.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaia.a.gltf
+Will translate the following animFileId:  iaib
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.021484375,"y":261.9140625,"z":97.822265625}, bone13Rotation={"x":2.021484375,"y":251.103515625,"z":179.6484375}, bone17Rotation={"x":358.154296875,"y":108.984375,"z":179.033203125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaib.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaib.a.gltf
+Will translate the following animFileId:  iaic
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.427734375,"y":327.216796875,"z":32.6953125}, bone13Rotation={"x":1.845703125,"y":269.912109375,"z":177.1875}, bone17Rotation={"x":358.154296875,"y":89.912109375,"z":182.8125}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaic.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaic.a.gltf
+Will translate the following animFileId:  iaid
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":271.40625,"y":260.595703125,"z":99.84375}, bone13Rotation={"x":282.65625,"y":341.54296875,"z":288.896484375}, bone17Rotation={"x":83.84765625,"y":38.3203125,"z":327.919921875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaid.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaid.a.gltf
+Will translate the following animFileId:  iaie
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":317.109375,"y":359.6484375,"z":0.52734375}, bone13Rotation={"x":355.78125,"y":0,"z":0}, bone17Rotation={"x":69.78515625,"y":180,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaie.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaie.a.gltf
+Will translate the following animFileId:  iaif
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":272.021484375,"y":262.08984375,"z":97.822265625}, bone13Rotation={"x":2.021484375,"y":263.583984375,"z":270.087890625}, bone17Rotation={"x":357.978515625,"y":96.416015625,"z":89.47265625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaif.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaif.a.gltf
+Will translate the following animFileId:  iaja
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":273.1640625,"y":180,"z":180}, bone13Rotation={"x":287.75390625,"y":50.712890625,"z":217.705078125}, bone17Rotation={"x":76.201171875,"y":273.251953125,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iaja.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iaja.a.gltf
+Will translate the following animFileId:  iajb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":276.15234375,"y":0,"z":0}, bone13Rotation={"x":272.197265625,"y":207.94921875,"z":152.05078125}, bone17Rotation={"x":348.046875,"y":118.037109375,"z":263.759765625}
+Wrote: /opt/kujata-data/data/field/char.lgp/iajb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iajb.a.gltf
+Will translate the following animFileId:  iajc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.791015625,"y":0,"z":0.3515625}, bone13Rotation={"x":312.36328125,"y":27.158203125,"z":235.107421875}, bone17Rotation={"x":359.736328125,"y":250.576171875,"z":359.296875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iajc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iajc.a.gltf
+Will translate the following animFileId:  ibab
+Wrote: /opt/kujata-data/data/field/char.lgp/ibab.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/ibab.a.gltf
+Will translate the following animFileId:  ibac
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":348.837890625,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/ibac.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/ibac.a.gltf
+Will translate the following animFileId:  ibgb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/ibgb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/ibgb.a.gltf
+Will translate the following animFileId:  ibgc
+f=0: rootRotation={"x":0,"y":0.3515625,"z":0}, bone0Rotation={"x":270.087890625,"y":357.978515625,"z":1.7578125}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/ibgc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/ibgc.a.gltf
+Will translate the following animFileId:  iccd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.08203125,"y":180,"z":179.736328125}, bone13Rotation={"x":7.646484375,"y":252.59765625,"z":202.939453125}, bone17Rotation={"x":7.646484375,"y":107.40234375,"z":157.060546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/iccd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iccd.a.gltf
+Will translate the following animFileId:  icce
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.08203125,"y":180,"z":179.736328125}, bone13Rotation={"x":7.646484375,"y":252.59765625,"z":202.939453125}, bone17Rotation={"x":7.646484375,"y":107.40234375,"z":157.060546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/icce.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icce.a.gltf
+Will translate the following animFileId:  iccf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.697265625,"y":178.505859375,"z":181.142578125}, bone13Rotation={"x":7.20703125,"y":252.421875,"z":203.642578125}, bone17Rotation={"x":8.349609375,"y":107.05078125,"z":156.708984375}
+Wrote: /opt/kujata-data/data/field/char.lgp/iccf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iccf.a.gltf
+Will translate the following animFileId:  icda
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icda.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icda.a.gltf
+Will translate the following animFileId:  icdb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.08203125,"y":180,"z":179.736328125}, bone13Rotation={"x":7.646484375,"y":252.59765625,"z":202.939453125}, bone17Rotation={"x":7.646484375,"y":107.40234375,"z":157.060546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/icdb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icdb.a.gltf
+Will translate the following animFileId:  icdc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":294.08203125,"y":180,"z":179.736328125}, bone13Rotation={"x":7.646484375,"y":252.59765625,"z":202.939453125}, bone17Rotation={"x":7.646484375,"y":107.40234375,"z":157.060546875}
+Wrote: /opt/kujata-data/data/field/char.lgp/icdc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icdc.a.gltf
+Will translate the following animFileId:  icdd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.87890625,"y":359.736328125,"z":0.703125}, bone13Rotation={"x":285.8203125,"y":318.779296875,"z":312.36328125}, bone17Rotation={"x":77.255859375,"y":65.390625,"z":355.341796875}
+Wrote: /opt/kujata-data/data/field/char.lgp/icdd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icdd.a.gltf
+Will translate the following animFileId:  icde
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":318.515625,"y":359.736328125,"z":0}, bone13Rotation={"x":21.09375,"y":251.103515625,"z":180}, bone17Rotation={"x":13.974609375,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icde.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icde.a.gltf
+Will translate the following animFileId:  icdf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":318.515625,"y":359.736328125,"z":0}, bone13Rotation={"x":21.09375,"y":251.103515625,"z":180}, bone17Rotation={"x":13.974609375,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icdf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icdf.a.gltf
+Will translate the following animFileId:  icea
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":359.6484375,"y":359.736328125,"z":0}, bone13Rotation={"x":21.09375,"y":251.103515625,"z":180}, bone17Rotation={"x":13.974609375,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icea.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icea.a.gltf
+Will translate the following animFileId:  iceb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":359.6484375,"y":359.736328125,"z":0}, bone13Rotation={"x":21.09375,"y":251.103515625,"z":180}, bone17Rotation={"x":13.974609375,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iceb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iceb.a.gltf
+Will translate the following animFileId:  icec
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":357.275390625,"y":359.736328125,"z":0}, bone13Rotation={"x":20.478515625,"y":251.103515625,"z":180}, bone17Rotation={"x":13.974609375,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icec.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icec.a.gltf
+Will translate the following animFileId:  iced
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":299.970703125,"y":359.736328125,"z":0}, bone13Rotation={"x":4.04296875,"y":251.103515625,"z":180}, bone17Rotation={"x":13.974609375,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/iced.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/iced.a.gltf
+Will translate the following animFileId:  icee
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":285.46875,"y":179.736328125,"z":180}, bone13Rotation={"x":4.04296875,"y":251.103515625,"z":180}, bone17Rotation={"x":13.974609375,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icee.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icee.a.gltf
+Will translate the following animFileId:  icef
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270.87890625,"y":314.736328125,"z":45}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icef.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icef.a.gltf
+Will translate the following animFileId:  icfa
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":285.908203125,"y":318.8671875,"z":39.7265625}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icfa.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icfa.a.gltf
+Will translate the following animFileId:  icfb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icfb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icfb.a.gltf
+Will translate the following animFileId:  icfc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icfc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icfc.a.gltf
+Will translate the following animFileId:  icfd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.875,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icfd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icfd.a.gltf
+Will translate the following animFileId:  icfe
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":286.875,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icfe.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icfe.a.gltf
+Will translate the following animFileId:  icff
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":358.2421875,"z":0}, bone13Rotation={"x":0,"y":271.7578125,"z":0}, bone17Rotation={"x":0,"y":88.2421875,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icff.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icff.a.gltf
+Will translate the following animFileId:  icga
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":358.2421875,"z":0}, bone13Rotation={"x":0,"y":271.7578125,"z":0}, bone17Rotation={"x":0,"y":88.2421875,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icga.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icga.a.gltf
+Will translate the following animFileId:  icgb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":358.2421875,"z":0}, bone13Rotation={"x":0,"y":271.7578125,"z":0}, bone17Rotation={"x":0,"y":88.2421875,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icgb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icgb.a.gltf
+Will translate the following animFileId:  icgc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":358.2421875,"z":0}, bone13Rotation={"x":0,"y":271.7578125,"z":0}, bone17Rotation={"x":0,"y":88.2421875,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icgc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icgc.a.gltf
+Will translate the following animFileId:  icgd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":358.2421875,"z":0}, bone13Rotation={"x":0,"y":271.7578125,"z":0}, bone17Rotation={"x":0,"y":88.2421875,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icgd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icgd.a.gltf
+Will translate the following animFileId:  icge
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":358.2421875,"z":0}, bone13Rotation={"x":0,"y":271.7578125,"z":0}, bone17Rotation={"x":0,"y":88.2421875,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icge.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icge.a.gltf
+Will translate the following animFileId:  icgf
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icgf.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icgf.a.gltf
+Will translate the following animFileId:  icha
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":275.9765625,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/icha.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/icha.a.gltf
+Will translate the following animFileId:  ichb
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":270,"y":359.736328125,"z":0}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/ichb.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/ichb.a.gltf
+Will translate the following animFileId:  ichc
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":283.623046875,"y":179.736328125,"z":180}, bone13Rotation={"x":0,"y":251.103515625,"z":180}, bone17Rotation={"x":0,"y":108.896484375,"z":180}
+Wrote: /opt/kujata-data/data/field/char.lgp/ichc.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/ichc.a.gltf
+Will translate the following animFileId:  ichd
+f=0: rootRotation={"x":0,"y":0,"z":0}, bone0Rotation={"x":330.99609375,"y":180,"z":179.82421875}, bone13Rotation={"x":16.34765625,"y":260.595703125,"z":239.677734375}, bone17Rotation={"x":16.611328125,"y":99.4921875,"z":120.41015625}
+Wrote: /opt/kujata-data/data/field/char.lgp/ichd.a.bin
+Wrote: /opt/kujata-data/data/field/char.lgp/ichd.a.gltf

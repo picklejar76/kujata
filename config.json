@@ -1,45 +1,89 @@
 {
-  "inputFieldCharDirectory": "/code/ff7/ff7-fenrir/workings-out/unlgp/unlgp-char.lgp",
+
+  "inputFieldCharDirectory": "/opt/ff7/unpacked/field/char.lgp",
   "inputFieldCharDirectoryDescription": "Location of files unpacked from field/char.lgp like AAAA.HRC",
-  "outputFieldCharDirectory": "/code/ff7/kujata-data-dg/data/field/char.lgp",
+
+  "outputFieldCharDirectory": "/git/ff7/picklejar76/kujata-data/data/field/char.lgp",
   "outputFieldCharDirectoryDescription": "Where the translator will put output files like aaaa.hrc.gltf, aaaa.hrc.bin",
+
   "texturesDirectory": "textures",
   "texturesDirectoryDescription": "Location of texture files like aabb.png, relative to outputGltfDirectory",
-  "inputFieldFLevelDirectory": "/code/ff7/ff7-fenrir/workings-out/unlgp/unlgp-flevel.lgp",
+
+  "inputFieldFLevelDirectory": "/opt/ff7/unpacked/field/flevel.lgp",
   "inputFieldFLevelDirectoryDescription": "Location of files unpacked from field/flevel.lgp like maplist, md1stin, flevel.siz, c_eye2.tex",
-  "outputFieldFLevelDirectory": "/code/ff7/kujata-data-dg/data/field/flevel.lgp",
+
+  "outputFieldFLevelDirectory": "/git/ff7/picklejar76/kujata-data/data/field/flevel.lgp",
   "outputFieldFLevelDirectoryDescription": "Where the translator will put output files like maplist.json, md1stin.json",
-  "inputWMWorldUSDirectory": "/code/ff7/ff7-fenrir/workings-out/unlgp/unlgp-world_us.lgp",
+
+  "inputWMWorldUSDirectory": "/opt/ff7/unpacked/wm/world_us.lgp",
   "inputWMWorldUSDirectoryDescription": "Location of files unpacked from wm/world_us.lgp field.tbl, wm0.ev",
-  "outputWMWorldUSDirectory": "/code/ff7/kujata-data-dg/data/wm/world_us.lgp",
+
+  "outputWMWorldUSDirectory": "/git/ff7/kujata-data/data/wm/world_us.lgp",
   "outputWMWorldUSDirectoryDescription": "Where the translator will put output files like wm-field.json, wm0.json",
-  "inputBattleBattleDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/battle/battle.lgp",
+
+  "inputBattleBattleDirectory": "/opt/ff7/unpacked/battle/battle.lgp",
   "inputBattleBattleDirectoryDescription": "Location of files unpacked from battle/battle.lgp like rtaa",
-  "outputBattleBattleDirectory": "/code/ff7/kujata-data-dg/data/battle/battle.lgp",
+
+  "outputBattleBattleDirectory": "/git/ff7/picklejar76/kujata-data/data/battle/battle.lgp",
   "outputBattleBattleDirectoryDescription": "Where the translator will put output battle models",
-  "ifalnaJsonFile": "/code/ff7/kujata-dg/ifalna-db/ifalna.json",
+
+  "inputBattleSceneBinDirectory": "/opt/ff7/unpacked/battle/scene.bin",
+  "inputBattleSceneBinDirectoryDescription": "Location of files unpacked from battle/scene.bin like scene1, scene2, etc.",
+
+  "ifalnaJsonFile": "/git/ff7/picklejar76/kujata/ifalna-db/ifalna.json",
   "ifalnaJsonFileDescription": "Location of ifalna.json file containing animation metadata for each field model",
-  "inputKernelDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/kernel",
+
+  "inputKernelDirectory": "/opt/ff7/original-data/kernel",
   "inputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
-  "outputKernelDirectory": "/code/ff7/kujata-data-dg/data/kernel",
-  "outputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
-  "metadataDirectory": "/code/ff7/kujata-data-dg/metadata",
+
+  "outputKernelDirectory": "/git/ff7/picklejar76/kujata-data/data/kernel",
+  "inputKernelDirectoryDescription": "Location of kernel directory containing KERNEL.BIN, kernel2.bin, WINDOW.BIN",
+
+  "metadataDirectory": "/git/ff7/picklejar76/kujata-data/metadata",
   "metadataDirectoryDescription": "Where the translator will read and write metadata files like scene-graph.json, op-code-usages.json",
+
   "inputSoundsDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/sound",
   "inputSoundsDirectoryDescription": "Location of the audio.dat and audio.fmt files",
-  "outputSoundsDirectory": "/code/ff7/kujata-data-dg/media/sounds",
+
+  "outputSoundsDirectory": "/git/ff7/kujata-data/media/sounds",
   "outputSoundsDirectoryDescription": "Output location of the sound audio files",
+
   "inputMusicDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/music",
   "inputMusicDirectoryDescription": "Location of music.idx and .wav music files",
+
   "inputMusicOggDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/music_ogg",
   "inputMusicOggDirectoryDescription": "Location of .ogg music files",
-  "outputMusicDirectory": "/code/ff7/kujata-data-dg/media/music",
+
+  "outputMusicDirectory": "/git/ff7/kujata-data/media/music",
   "outputMusicDirectoryDescription": "Output location of the music audio files",
+
   "inputMoviesDirectory": "/Steam/steamapps/common/FINAL FANTASY VII/data/movies",
   "inputMoviesDirectoryDescription": "Location of .avi movie files",
+
   "inputMoviecamDirectory": "/code/ff7/ff7-fenrir/workings-out/unlgp/unlgp-moviecam.lgp",
   "inputMoviecamDirectoryDescription": "Location of files unpacked from movies/moviecam.lgp like biglight.cam",
-  "outputMoviesDirectory": "/code/ff7/kujata-data-dg/media/movies",
+
+  "outputMoviesDirectory": "/git/ff7/kujata-data/media/movies",
   "outputMoviesDirectoryDescription": "Output location of the movie files",
-  "renderBackgroundLayers": true
+
+  "renderBackgroundLayers": true,
+
+  "framesPerSecond":       { "battle":   7.5,  "field":   30.0 },
+  "reverseVertexOrder":    { "battle":  true,  "field":   true },
+  "bonePositionScaleX":    { "battle":   1.0,  "field":    1.0 },
+  "bonePositionScaleY":    { "battle":   1.0,  "field":     1.0 },
+  "bonePositionScaleZ":    { "battle":   1.0,  "field":     1.0 },
+  "boneRotationScaleX":    { "battle":   1.0,  "field":     1.0 },
+  "boneRotationScaleY":    { "battle":   1.0,  "field":    1.0 },
+  "boneRotationScaleZ":    { "battle":   1.0,  "field":    1.0 },
+  "boneRotationDegreesX":  { "battle":   0.0,  "field":   0.0 },
+  "boneRotationDegreesY":  { "battle":   0.0,  "field":    0.0 },
+  "boneRotationDegreesZ":  { "battle":   0.0,  "field":    0.0 },
+  "rootRotationDegreesX":  { "battle":   0.0,  "field":   180.0 },
+  "rootRotationDegreesY":  { "battle":   0.0,  "field":    0.0 },
+  "rootRotationDegreesZ":  { "battle":   0.0,  "field":    0.0 },
+  "containerRotationDegreesX":  { "battle": 180.0,  "field":   0.0 },
+  "containerRotationDegreesY":  { "battle":   0.0,  "field":    0.0 },
+  "containerRotationDegreesZ":  { "battle":   0.0,  "field":    0.0 }
+
 }

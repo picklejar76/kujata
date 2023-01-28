@@ -1,0 +1,1759 @@
+{
+  "formationSetups": [
+    {
+      "background": "7",
+      "nextFormationID": -1,
+      "escapeCounter": 1,
+      "unused": -1,
+      "nextArenaFormationIDs": [
+        999,
+        999,
+        999,
+        999
+      ],
+      "flags": "fffd",
+      "layoutType": 0,
+      "cameraPositionIndex": 45
+    },
+    {
+      "background": "7",
+      "nextFormationID": -1,
+      "escapeCounter": 1,
+      "unused": -1,
+      "nextArenaFormationIDs": [
+        999,
+        999,
+        999,
+        999
+      ],
+      "flags": "ffed",
+      "layoutType": 0,
+      "cameraPositionIndex": 11
+    },
+    {
+      "background": "7",
+      "nextFormationID": -1,
+      "escapeCounter": 1,
+      "unused": -1,
+      "nextArenaFormationIDs": [
+        999,
+        999,
+        999,
+        999
+      ],
+      "flags": "fffd",
+      "layoutType": 0,
+      "cameraPositionIndex": 22
+    },
+    {
+      "background": "7",
+      "nextFormationID": -1,
+      "escapeCounter": 1,
+      "unused": -1,
+      "nextArenaFormationIDs": [
+        999,
+        999,
+        999,
+        999
+      ],
+      "flags": "fffd",
+      "layoutType": 0,
+      "cameraPositionIndex": 3
+    }
+  ],
+  "cameraPositions": [
+    {
+      "formation": 0,
+      "camera": 0,
+      "location": {
+        "x": 9540,
+        "y": -2504,
+        "z": 1749
+      },
+      "target": {
+        "x": 0,
+        "y": -176,
+        "z": -148
+      }
+    },
+    {
+      "formation": 0,
+      "camera": 1,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    },
+    {
+      "formation": 0,
+      "camera": 2,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    },
+    {
+      "formation": 1,
+      "camera": 0,
+      "location": {
+        "x": 8448,
+        "y": -968,
+        "z": 544
+      },
+      "target": {
+        "x": 0,
+        "y": -432,
+        "z": 544
+      }
+    },
+    {
+      "formation": 1,
+      "camera": 1,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    },
+    {
+      "formation": 1,
+      "camera": 2,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    },
+    {
+      "formation": 2,
+      "camera": 0,
+      "location": {
+        "x": 5185,
+        "y": -2440,
+        "z": -8532
+      },
+      "target": {
+        "x": 0,
+        "y": 32,
+        "z": 460
+      }
+    },
+    {
+      "formation": 2,
+      "camera": 1,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    },
+    {
+      "formation": 2,
+      "camera": 2,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    },
+    {
+      "formation": 3,
+      "camera": 0,
+      "location": {
+        "x": 4694,
+        "y": -840,
+        "z": -6181
+      },
+      "target": {
+        "x": 0,
+        "y": -416,
+        "z": 844
+      }
+    },
+    {
+      "formation": 3,
+      "camera": 1,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    },
+    {
+      "formation": 3,
+      "camera": 2,
+      "location": {
+        "x": 10000,
+        "y": -5000,
+        "z": 6000
+      },
+      "target": {
+        "x": 0,
+        "y": 400,
+        "z": 300
+      }
+    }
+  ],
+  "enemyFormations": [
+    {
+      "formation": 0,
+      "enemy": 0,
+      "enemyId": 211,
+      "location": {
+        "x": -1300,
+        "y": 0,
+        "z": -1500
+      },
+      "row": 1,
+      "coverFlags": "0",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 0,
+      "enemy": 1,
+      "enemyId": 211,
+      "location": {
+        "x": 1300,
+        "y": 0,
+        "z": -1500
+      },
+      "row": 1,
+      "coverFlags": "0",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 0,
+      "enemy": 2,
+      "enemyId": 211,
+      "location": {
+        "x": 0,
+        "y": 0,
+        "z": -2700
+      },
+      "row": 2,
+      "coverFlags": "0",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 0,
+      "enemy": 3,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 0,
+      "enemy": 4,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 0,
+      "enemy": 5,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 1,
+      "enemy": 0,
+      "enemyId": 205,
+      "location": {
+        "x": 0,
+        "y": 0,
+        "z": -1500
+      },
+      "row": 1,
+      "coverFlags": "0",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 1,
+      "enemy": 1,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 1,
+      "enemy": 2,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 1,
+      "enemy": 3,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 1,
+      "enemy": 4,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 1,
+      "enemy": 5,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 2,
+      "enemy": 0,
+      "enemyId": 211,
+      "location": {
+        "x": -800,
+        "y": 0,
+        "z": -1700
+      },
+      "row": 1,
+      "coverFlags": "0",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 2,
+      "enemy": 1,
+      "enemyId": 211,
+      "location": {
+        "x": 800,
+        "y": 0,
+        "z": -2100
+      },
+      "row": 1,
+      "coverFlags": "0",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 2,
+      "enemy": 2,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 2,
+      "enemy": 3,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 2,
+      "enemy": 4,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 2,
+      "enemy": 5,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 3,
+      "enemy": 0,
+      "enemyId": 210,
+      "location": {
+        "x": 0,
+        "y": 0,
+        "z": -1800
+      },
+      "row": 1,
+      "coverFlags": "0",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 3,
+      "enemy": 1,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 3,
+      "enemy": 2,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 3,
+      "enemy": 3,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 3,
+      "enemy": 4,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    },
+    {
+      "formation": 3,
+      "enemy": 5,
+      "enemyId": -1,
+      "location": {
+        "x": -1,
+        "y": -1,
+        "z": -1
+      },
+      "row": -1,
+      "coverFlags": "ffff",
+      "initFlags": "ffffffff"
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Ice Golem ",
+      "modelId": 205,
+      "modelFilename": "hxaa",
+      "level": 40,
+      "speed": 75,
+      "luck": 0,
+      "evade": 10,
+      "str": 100,
+      "def": 40,
+      "mag": 70,
+      "magDef": 50,
+      "attackElements": [
+        {
+          "element": 1,
+          "elementRate": 6
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        }
+      ],
+      "attacks": [
+        {
+          "attackId": 531,
+          "animationId": 3
+        },
+        {
+          "attackId": 667,
+          "animationId": 8
+        },
+        {
+          "attackId": 829,
+          "animationId": 7
+        },
+        {
+          "attackId": 533,
+          "animationId": 6
+        },
+        {
+          "attackId": 534,
+          "animationId": 12
+        },
+        {
+          "attackId": 535,
+          "animationId": 13
+        },
+        {
+          "attackId": 669,
+          "animationId": 14
+        },
+        {
+          "attackId": 670,
+          "animationId": 15
+        },
+        {
+          "attackId": 671,
+          "animationId": 16
+        },
+        {
+          "attackId": 672,
+          "animationId": 17
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        }
+      ],
+      "cameraOverrides": [
+        65535,
+        214,
+        367,
+        65535,
+        235,
+        275,
+        235,
+        275,
+        235,
+        275,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535
+      ],
+      "itemDropRates": [
+        8,
+        160,
+        255,
+        255
+      ],
+      "items": [
+        1,
+        1,
+        65535,
+        65535
+      ],
+      "manipAttacks": [
+        65535,
+        65535,
+        65535
+      ],
+      "unk1": 65535,
+      "mp": 300,
+      "ap": 70,
+      "morphItem": 65535,
+      "backAttackMultiplier": 16,
+      "hp": 4000,
+      "exp": 1000,
+      "gil": 1500,
+      "statusImmunityFlags": "ff3fe7bf"
+    },
+    {
+      "name": "Snow ",
+      "modelId": 210,
+      "modelFilename": "icaa",
+      "level": 32,
+      "speed": 70,
+      "luck": 10,
+      "evade": 1,
+      "str": 50,
+      "def": 33,
+      "mag": 80,
+      "magDef": 69,
+      "attackElements": [
+        {
+          "element": 1,
+          "elementRate": 6
+        },
+        {
+          "element": 0,
+          "elementRate": 2
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        }
+      ],
+      "attacks": [
+        {
+          "attackId": 30,
+          "animationId": 3
+        },
+        {
+          "attackId": 31,
+          "animationId": 3
+        },
+        {
+          "attackId": 890,
+          "animationId": 4
+        },
+        {
+          "attackId": 891,
+          "animationId": 5
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        }
+      ],
+      "cameraOverrides": [
+        65535,
+        65535,
+        215,
+        208,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535
+      ],
+      "itemDropRates": [
+        8,
+        136,
+        255,
+        255
+      ],
+      "items": [
+        33,
+        297,
+        65535,
+        65535
+      ],
+      "manipAttacks": [
+        891,
+        65535,
+        65535
+      ],
+      "unk1": 65534,
+      "mp": 160,
+      "ap": 42,
+      "morphItem": 65535,
+      "backAttackMultiplier": 16,
+      "hp": 4000,
+      "exp": 500,
+      "gil": 700,
+      "statusImmunityFlags": "ff1f873a"
+    },
+    {
+      "name": "Bandersnatch ",
+      "modelId": 211,
+      "modelFilename": "idaa",
+      "level": 30,
+      "speed": 55,
+      "luck": 0,
+      "evade": 1,
+      "str": 68,
+      "def": 23,
+      "mag": 25,
+      "magDef": 38,
+      "attackElements": [
+        {
+          "element": 1,
+          "elementRate": 4
+        },
+        {
+          "element": 0,
+          "elementRate": 2
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        },
+        {
+          "element": 255,
+          "elementRate": 255
+        }
+      ],
+      "attacks": [
+        {
+          "attackId": 370,
+          "animationId": 3
+        },
+        {
+          "attackId": 683,
+          "animationId": 4
+        },
+        {
+          "attackId": 549,
+          "animationId": 5
+        },
+        {
+          "attackId": 684,
+          "animationId": 6
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        },
+        {
+          "attackId": 65535,
+          "animationId": 255
+        }
+      ],
+      "cameraOverrides": [
+        65535,
+        65535,
+        336,
+        336,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535,
+        65535
+      ],
+      "itemDropRates": [
+        8,
+        255,
+        255,
+        255
+      ],
+      "items": [
+        1,
+        65535,
+        65535,
+        65535
+      ],
+      "manipAttacks": [
+        370,
+        683,
+        65535
+      ],
+      "unk1": 65535,
+      "mp": 100,
+      "ap": 40,
+      "morphItem": 33,
+      "backAttackMultiplier": 16,
+      "hp": 860,
+      "exp": 510,
+      "gil": 600,
+      "statusImmunityFlags": "ffbfe7bf"
+    }
+  ],
+  "attacks": [
+    {
+      "attackPercent": 95,
+      "impactAnimationId": 38,
+      "targetAnimationId": 2,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 35,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000011",
+      "attackAnimationId": 255,
+      "damageFormula": "11",
+      "attackStrength": 16,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "100000000000",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 531,
+      "name": "Golem Punch"
+    },
+    {
+      "attackPercent": 95,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000011",
+      "attackAnimationId": 95,
+      "damageFormula": "11",
+      "attackStrength": 16,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000010",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 667,
+      "name": "Cold Snap"
+    },
+    {
+      "attackPercent": 120,
+      "impactAnimationId": 255,
+      "targetAnimationId": 2,
+      "unknown": 255,
+      "mpCost": 15,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000111",
+      "attackAnimationId": 76,
+      "damageFormula": "22",
+      "attackStrength": 15,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000100",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 829,
+      "name": "Wide Grazer"
+    },
+    {
+      "attackPercent": 110,
+      "impactAnimationId": 38,
+      "targetAnimationId": 2,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 35,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000011",
+      "attackAnimationId": 255,
+      "damageFormula": "11",
+      "attackStrength": 30,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "100000000000",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 533,
+      "name": "Megaton Punch"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000000",
+      "attackAnimationId": 255,
+      "damageFormula": "00",
+      "attackStrength": 0,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 534,
+      "name": "Advance"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000000",
+      "attackAnimationId": 255,
+      "damageFormula": "00",
+      "attackStrength": 0,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 535,
+      "name": "Retreat"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000000",
+      "attackAnimationId": 255,
+      "damageFormula": "00",
+      "attackStrength": 0,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111101111111",
+      "attackId": 669,
+      "name": "Defense Start"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000000",
+      "attackAnimationId": 255,
+      "damageFormula": "00",
+      "attackStrength": 0,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111101111111",
+      "attackId": 670,
+      "name": "Defense Down"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000000",
+      "attackAnimationId": 255,
+      "damageFormula": "00",
+      "attackStrength": 0,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111101111111",
+      "attackId": 671,
+      "name": "Advance"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000000",
+      "attackAnimationId": 255,
+      "damageFormula": "00",
+      "attackStrength": 0,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111101111111",
+      "attackId": 672,
+      "name": "Retreat"
+    },
+    {
+      "attackPercent": 100,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 4,
+      "impactSound": 65535,
+      "stCamera": 7,
+      "mtCamera": 36,
+      "attackTargetFlags": "00001111",
+      "attackAnimationId": 30,
+      "damageFormula": "22",
+      "attackStrength": 8,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000010",
+      "specialAttackFlags": "1111110111111111",
+      "attackId": 30,
+      "name": "Ice"
+    },
+    {
+      "attackPercent": 100,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 22,
+      "impactSound": 65535,
+      "stCamera": 13,
+      "mtCamera": 36,
+      "attackTargetFlags": "00001111",
+      "attackAnimationId": 31,
+      "damageFormula": "22",
+      "attackStrength": 20,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000010",
+      "specialAttackFlags": "1111110111111111",
+      "attackId": 31,
+      "name": "Ice2"
+    },
+    {
+      "attackPercent": 90,
+      "impactAnimationId": 255,
+      "targetAnimationId": 1,
+      "unknown": 255,
+      "mpCost": 5,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000011",
+      "attackAnimationId": 37,
+      "damageFormula": "22",
+      "attackStrength": 0,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "00111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "00000000000000000000000001000000",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 890,
+      "name": "Fascination"
+    },
+    {
+      "attackPercent": 90,
+      "impactAnimationId": 255,
+      "targetAnimationId": 1,
+      "unknown": 255,
+      "mpCost": 12,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000011",
+      "attackAnimationId": 59,
+      "damageFormula": "22",
+      "attackStrength": 6,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000010",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 891,
+      "name": "Cold Breath"
+    },
+    {
+      "attackPercent": 100,
+      "impactAnimationId": 37,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 35,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000011",
+      "attackAnimationId": 255,
+      "damageFormula": "11",
+      "attackStrength": 16,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "100000000000",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 370,
+      "name": "Bodyblow"
+    },
+    {
+      "attackPercent": 95,
+      "impactAnimationId": 60,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 226,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000011",
+      "attackAnimationId": 255,
+      "damageFormula": "11",
+      "attackStrength": 20,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "00001100",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "00000000000000000000000001000000",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 683,
+      "name": "Bite"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 57,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000001",
+      "attackAnimationId": 94,
+      "damageFormula": "24",
+      "attackStrength": 32,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "01111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "00000000000000000000000000000001",
+      "attackElementFlags": "1000000000",
+      "specialAttackFlags": "1111111011111111",
+      "attackId": 549,
+      "name": "Howling"
+    },
+    {
+      "attackPercent": 95,
+      "impactAnimationId": 255,
+      "targetAnimationId": 0,
+      "unknown": 255,
+      "mpCost": 0,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "00000000",
+      "attackAnimationId": 255,
+      "damageFormula": "00",
+      "attackStrength": 20,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "00000000",
+      "specialAttackFlags": "1111111101111111",
+      "attackId": 684,
+      "name": "Howling"
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    },
+    {
+      "attackPercent": 255,
+      "impactAnimationId": 255,
+      "targetAnimationId": 255,
+      "unknown": 255,
+      "mpCost": 65535,
+      "impactSound": 65535,
+      "stCamera": 65535,
+      "mtCamera": 65535,
+      "attackTargetFlags": "11111111",
+      "attackAnimationId": 255,
+      "damageFormula": "ff",
+      "attackStrength": 255,
+      "conditionFlags": "11111111",
+      "statusEffectChangeFlags": "11111111",
+      "addlEffects": "ff",
+      "addlEffectsModifier": 255,
+      "statusFlags": "11111111111111111111111111111111",
+      "attackElementFlags": "1111111111111111",
+      "specialAttackFlags": "1111111111111111",
+      "attackId": 65535,
+      "name": ""
+    }
+  ]
+}

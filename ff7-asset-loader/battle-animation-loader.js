@@ -179,7 +179,7 @@ module.exports = class BattleAnimationLoader {
     bone.AccumBetaL  = bone.AccumBetaS  < 0 ? bone.AccumBetaS  + 0x1000 : bone.AccumBetaS;
     bone.AccumGammaL = bone.AccumGammaS < 0 ? bone.AccumGammaS + 0x1000 : bone.AccumGammaS;
     bone.x = this.getDegreesFromRaw(bone.AccumAlphaL, 0);
-    bone.y  = this.getDegreesFromRaw(bone.AccumBetaL,  0);
+    bone.y = this.getDegreesFromRaw(bone.AccumBetaL,  0);
     bone.z = this.getDegreesFromRaw(bone.AccumGammaL, 0);
     return bone;
   }
@@ -193,7 +193,7 @@ module.exports = class BattleAnimationLoader {
     bone.AccumBetaL  = bone.AccumBetaS  < 0 ? bone.AccumBetaS  + 0x1000 : bone.AccumBetaS;
     bone.AccumGammaL = bone.AccumGammaS < 0 ? bone.AccumGammaS + 0x1000 : bone.AccumGammaS;
     bone.x = this.getDegreesFromRaw(bone.AccumAlphaL, 0);
-    bone.y  = this.getDegreesFromRaw(bone.AccumBetaL,  0);
+    bone.y = this.getDegreesFromRaw(bone.AccumBetaL,  0);
     bone.z = this.getDegreesFromRaw(bone.AccumGammaL, 0);
     return bone;
   }
@@ -204,6 +204,8 @@ module.exports = class BattleAnimationLoader {
     frame.rootTranslation = {};
     frame.rootTranslation.x = this.getBitBlockV(stream, 16, offsetBitHolder);
     //console.log("X_start=" +frame.rootTranslation.x);
+  // TODO(picklejar): determine why it was previously:
+  //frame.rootTranslation.y = this.getBitBlockV(stream, 16, offsetBitHolder);
     frame.rootTranslation.y = -this.getBitBlockV(stream, 16, offsetBitHolder);
     //console.log("Y_start=" +frame.rootTranslation.x);
     frame.rootTranslation.z = this.getBitBlockV(stream, 16, offsetBitHolder);
@@ -226,6 +228,10 @@ module.exports = class BattleAnimationLoader {
     for (let oi=0; oi<3; oi++) {
       let flag = this.getBitBlockV(stream, 1, offsetBitHolder) & 1;
       let offLength = flag == 0 ? 7 : 16;
+  // TODO(picklejar): determine why it was previously:
+    //if      (oi == 0) { frame.rootTranslation.x = this.getBitBlockV(stream, offLength, offsetBitHolder) + lastFrame.rootTranslation.x; }
+    //else if (oi == 1) { frame.rootTranslation.y = this.getBitBlockV(stream, offLength, offsetBitHolder) + lastFrame.rootTranslation.y; }
+    //else              { frame.rootTranslation.z = this.getBitBlockV(stream, offLength, offsetBitHolder) + lastFrame.rootTranslation.z; }
       if      (oi == 0) { frame.rootTranslation.x =  this.getBitBlockV(stream, offLength, offsetBitHolder) + lastFrame.rootTranslation.x; }
       else if (oi == 1) { frame.rootTranslation.y = -this.getBitBlockV(stream, offLength, offsetBitHolder) + lastFrame.rootTranslation.y; }
       else              { frame.rootTranslation.z =  this.getBitBlockV(stream, offLength, offsetBitHolder) + lastFrame.rootTranslation.z; }
@@ -324,21 +330,21 @@ module.exports = class BattleAnimationLoader {
     r.offset = startOffset + animation.blockLength + 12;
 
     if (!isWeaponAnim)
-	  {
-	    // final adjustment for bone rotations
+    {
+      // final adjustment for bone rotations
       animation.numBones--; // don't "count" the root bone
-	
+
       for (let frame of animation.animationFrames) {
         frame.rootRotation = frame.boneRotations[0];
-        frame.boneRotations = frame.boneRotations.slice(1);   
-	    }
-	  }
-	  else
-	  {
-	    for (let frame of animation.animationFrames) {
-  		  frame.rootRotation = frame.boneRotations[0];		
-	    }
-	  }
+        frame.boneRotations = frame.boneRotations.slice(1);
+      }
+    }
+    else
+    {
+      for (let frame of animation.animationFrames) {
+        frame.rootRotation = frame.boneRotations[0];		
+      }
+    }
 
     return animation;
   }

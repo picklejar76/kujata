@@ -8,7 +8,7 @@ let config = JSON.parse(fs.readFileSync('../config.json', 'utf-8'));
 let battleModelLoader = new BattleModelLoader();
 let battleAnimationLoader = new BattleAnimationLoader();
 
-let prefix = "rt"; // rtXX = Cloud
+let prefix = "ct"; // rtXX = Cloud, cyXX=Elphadunk
 let modelFilename = prefix + "aa";         // rtaa = Cloud's model
 let animPackFilename = prefix + "da"; // rtda = Cloud's animation pack
 let battleModel = battleModelLoader.loadBattleModel(config, modelFilename, true);

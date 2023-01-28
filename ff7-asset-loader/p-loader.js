@@ -2,7 +2,57 @@ const fs = require("fs");
 
 module.exports = {
 
-  loadP: function (config, pBaseFilename, isBattleModel) {
+  loadP: function(config, pBaseFilename, isBattleModel) {
+
+    var calculateFaceNormal = function(model, polygon) {
+      let p1 = model.vertices[polygon.vertexIndex1];
+      let p2 = model.vertices[polygon.vertexIndex2];
+      let p3 = model.vertices[polygon.vertexIndex3];
+      let u = {
+        x: p2.x - p1.x,
+        y: p2.y - p1.y,
+        z: p2.z - p1.z
+      };
+      let v = {
+        x: p3.x - p1.x,
+        y: p3.y - p1.y,
+        z: p3.z - p1.z
+      };
+      // u.y = -u.y;
+      // v.y = -v.y;
+      let normal = {
+        x: u.y * v.z - u.z * v.y,
+        y: u.z * v.x - u.x * v.z,
+        z: u.x * v.y - u.y * v.x
+      };
+      let length = Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z);
+      return {
+        x: normal.x / length,
+        y: normal.y / length,
+        z: normal.z / length
+      };
+      //return { x: 0, y: -1, z: 0 };
+      //return normal;
+    };
+
+    var addMissingNormals = function(model) {
+      if (model.normals.length == 0) {
+        //console.log("normals are missing, will add them...");
+        for (let polygon of model.polygons) {
+          let normal = calculateFaceNormal(model, polygon);
+          let length = Math.sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z);
+          //console.log("length=" + length + ", normal=" + JSON.stringify(normal));
+          model.normals.push(normal);
+          let normalIndex = model.normals.length - 1;
+          polygon.normalIndex1 = normalIndex;
+          polygon.normalIndex2 = normalIndex;
+          polygon.normalIndex3 = normalIndex;
+        }
+      } else {
+        //console.log("model already has normals, count=" + model.normals.length);
+      }
+      model.numNormals = model.normals.length;
+    };
 
     var buffer = {};
     if (isBattleModel) {
@@ -12,10 +62,10 @@ module.exports = {
     }
     var offset = 0;
 
-    var readInt = function () { let i = buffer.readInt32LE(offset); offset += 4; return i; }
-    var readFloat = function () { let f = buffer.readFloatLE(offset); offset += 4; return f; }
-    var readByte = function () { let b = buffer.readUInt8(offset); offset += 1; return b; }
-    var readShort = function () { let s = buffer.readInt16LE(offset); offset += 2; return s; }
+    var readInt   = function() { let i = buffer.readInt32LE(offset); offset += 4; return i; }
+    var readFloat = function() { let f = buffer.readFloatLE(offset); offset += 4; return f; }
+    var readByte  = function() { let b = buffer.readUInt8  (offset); offset += 1; return b; }
+    var readShort = function() { let s = buffer.readInt16LE(offset); offset += 2; return s; }
     let fileSizeBytes = buffer.length;
 
     let model = {
@@ -128,6 +178,9 @@ module.exports = {
     // Normal Index Table
     for (let i = 0; i < model.numNormalIndices; i++) {
       // console.log('model.numNormalIndices', model.numNormalIndices, i, offset)
+      // TODO(picklejar): dangarfield fixed cvba fix below
+      // by surrounding the readInt() with this if condition.
+      // Test and verify that this doesn't break other models.
       if (offset + 4 <= buffer.length) { // Issue with cvba, runs out of buffer
         let ithNormalIndex = readInt(); // vertex v uses normal n
       }
@@ -136,6 +189,11 @@ module.exports = {
     if (offset != fileSizeBytes) {
       console.log("WARNING: Did not reach end of file data!");
     }
+
+    // TODO(picklejar): dangarfield was not using the feature
+    // below, find out why he didn't need it.
+    addMissingNormals(model);
+
     return model;
   }
 

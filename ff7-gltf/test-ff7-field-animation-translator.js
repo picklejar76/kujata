@@ -12,8 +12,9 @@ let translator = new FF7FieldAnimationTranslator();
 // animFileIds = animFileIds.filter(a => a === 'bvjf')
 // animFileIds = animFileIds.filter(a => a === 'bxia')
 
+// translate every animation in field-animation-metadata.json
 for (let animFileId of animFileIds) {
-  console.log('anim', animFileId)
+  //console.log('anim', animFileId);
   translator.translateFF7FieldAnimationToGLTF(config, animFileId);
 }
 
