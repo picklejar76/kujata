@@ -66,6 +66,9 @@
   "outputMoviesDirectory": "/git/ff7/kujata-data/media/movies",
   "outputMoviesDirectoryDescription": "Output location of the movie files",
 
+  "outputJsonDirectory": "/git/ff7/kujata-data/json",
+  "outputJsonDirectoryDescription": "Output location of JSON intermediate data",
+
   "renderBackgroundLayers": true,
 
   "framesPerSecond":       { "battle":   7.5,  "field":   30.0 },
